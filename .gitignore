@@ -1,0 +1,10 @@
+/auto/
+/*.aux
+/*.bbl
+/*.blg
+/*.fdb_latexmk
+/*.fls
+/mnras_template.log
+/mnras_template.out
+/mnras_template.pdf
+/mnras_template.synctex.gz
