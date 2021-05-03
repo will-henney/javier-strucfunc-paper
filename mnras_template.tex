@@ -21,12 +21,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Basic setup. Most papers should leave these options alone.
-\documentclass[fleqn,usenatbib]{mnras}
+\documentclass[fleqn,usenatbib, useAMS, a4paper]{mnras}
 
 % MNRAS is set in Times font. If you don't have this installed (most LaTeX
 % installations will e fine) or prefer the old Computer Modern fonts, comment
 % out the following line
-\usepackage{newtxtext,newtxmath}
+\usepackage{newtxtext}
+\usepackage[varg,varvw,smallerops]{newtxmath}
 % Depending on your LaTeX fonts installation, you might get better results with one of these:
 %\usepackage{mathptmx}
 %\usepackage{txfonts}
@@ -53,6 +54,15 @@
 % overwriting existing commands. Example:
 %\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
 
+% A better \ion command that works in more circumstances
+\newcommand\ION[2]{#1\,\scalebox{0.9}[0.8]{\uppercase{#2}}}
+\newcounter{ionstage}
+\renewcommand{\ion}[2]{\setcounter{ionstage}{#2}% 
+  \ensuremath{\mathrm{#1\,\scriptstyle\Roman{ionstage}}}}
+\newcommand\hii{\ion{H}{2}}
+\newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
+\newcommand\los{\ensuremath{_{\mathrm{los}}}}
+
 \newcommand\halpha{H${\alpha}$}
 \newcommand\n{[\ion{N}{II}]$\lambda$6584}
 \newcommand\oi{[\ion{O}{III}]$\lambda$5007}
@@ -67,7 +77,7 @@
 
 % Title of the paper, and the short title which is used in the headers.
 % Keep the title short and informative.
-\title[Turbulence in GHRs]{Turbulence in giant HII regions}
+\title[Turbulence in H II regiosn]{Turbulence in compact to giant HII regions}
 
 % The list of authors, and the short list which is used in the headers.
 % If you need two or more lines of authors, add an extra line using \newauthor
@@ -96,8 +106,20 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
 
 % Abstract of the paper
 \begin{abstract}
-
-We study the turbulent velocity fluctuations in the ionized gas of four giant HII regions using the radial velocity field in the H$\alpha$ emission line. The data was acquired by long-slit spectroscopy and Fabry-Perot observations obtained with the William Herschel Telescope. Each velocity sample is statistically analyzed with the second order structure function. The correlations in our results shows evidence that the velocity field can be consider in a turbulent state. This turbulent motions are described by a power-law with a mean index of 1.7 for different sized regions at different distances. The physical interpretation of the power-law behavior consider that an energy cascade is taking place in the photoionized gas.
+  Fluctuations of centroid velocities on the plane of the sky are a powerful tool for studying the turbulent dynamics of emission line regions.
+  We apply the technique to archival observations of a diverse sample of 8 \hii{} regions
+  in the Milky Way and other Local Group galaxies,
+  which span more than two orders of magnitude in size and luminosity.
+  By fitting a simple functional form to the second-order velocity structure function,
+  we extract three parameters for the fluctuations in each region:
+  total velocity dispersion, \(\sigma\),
+  autocorrelation length, \(r_0\), and power-law slope, \(m\).
+  The velocity dispersion is found to correlate primarily with luminosity,
+  while the autocorrelation length correlates primarily with the size of the region.
+  The power-law slope shows an apparent correlation with distance,
+  but this is probably an artifact of poor spatial resolution for the most distant regions.
+  \textbf{Add a sentence about the conclusions!}
+  % We study the turbulent velocity fluctuations in the ionized gas of four giant HII regions using the radial velocity field in the H$\alpha$ emission line. The data was acquired by long-slit spectroscopy and Fabry-Perot observations obtained with the William Herschel Telescope. Each velocity sample is statistically analyzed with the second order structure function. The correlations in our results shows evidence that the velocity field can be consider in a turbulent state. This turbulent motions are described by a power-law with a mean index of 1.7 for different sized regions at different distances. The physical interpretation of the power-law behavior consider that an energy cascade is taking place in the photoionized gas.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
