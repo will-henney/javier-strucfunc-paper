@@ -23,6 +23,13 @@
 % Basic setup. Most papers should leave these options alone.
 \documentclass[fleqn,usenatbib, useAMS, a4paper]{mnras}
 
+
+\usepackage{savesym}
+\savesymbol{tablenum}
+\usepackage{siunitx}
+\restoresymbol{SIX}{tablenum}
+
+
 % MNRAS is set in Times font. If you don't have this installed (most LaTeX
 % installations will e fine) or prefer the old Computer Modern fonts, comment
 % out the following line
@@ -47,6 +54,10 @@
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{multicol}
 
+\usepackage{xcolor}
+\hypersetup{colorlinks=True, linkcolor=blue!50!black, citecolor=black,
+  urlcolor=blue!50!black}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
@@ -70,7 +81,6 @@
 \newcommand\n{[\ion{N}{II}]$\lambda$6584}
 \newcommand\oi{[\ion{O}{III}]$\lambda$5007}
 \newcommand\s{[\ion{S}{II}]$\lambda$6737}
-\newcommand\si{$\sigma$}
 \newcommand\kms{$^{-1}$}
 
 
