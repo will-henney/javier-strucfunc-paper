@@ -169,6 +169,9 @@ HII regions -- ISM
 %%%%%%%%%%%%%%%%% BODY OF PAPER %%%%%%%%%%%%%%%%%%
 
 \section{Introduction}
+
+
+
 \WILL{I think it would be best to lead with a description of the dynamics of H II regions before mentioning the turbulence}.
 
 
@@ -771,7 +774,76 @@ JGV acknowledges and thanks CONACYT for the PhD research scholarship. We are gra
 %%%%%%%%%%%%%%%%% APPENDICES %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%\appendix
+\appendix
+
+\section{Degradation of the structure function due to observational limitations}
+\label{sec:degr-struct-funct}
+
+\subsection{Finite box effects}
+\label{sec:finite-box-effects}
+
+\begin{figure}
+  \begin{tabular}{@{} l @{}}
+    (a)\\
+    \includegraphics[width=\linewidth]{Figures/fake-finite-box-images}
+    \\[\bigskipamount]
+    (b)\\
+    \includegraphics[width=\linewidth]{Figures/fake-finite-box-strucfunc}
+  \end{tabular}
+  \caption{Effects of finite box size on the structure function.
+    (a)~Construction of simulated turbulent velocity fields of different sizes
+    by repeated division of an initial field of size \(512 \times 512\) pixels.
+    The \(j\)th level of division yields \(N = 4^j\) fields,
+    each of linear size \(L \times L\) where \(L = 2^{9 - j}\). 
+    (b)~Resultant structure functions.
+  }
+  \label{fig:finite-box}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Figures/fake-finite-box-effect}
+  \caption{
+    Reduction of apparent velocity variance and correlation length
+    due to finite box size.
+  }
+  \label{fig:finite-box-effect}
+\end{figure}
+
+
+
+\subsection{Effects of seeing}
+\label{sec:effects-seeing-struc}
+
+
+
+\begin{figure}
+  \begin{tabular}{@{} l @{}}
+    (a)\\
+    \includegraphics[width=\linewidth]{Figures/fake-seeing-nonp-thumbnails}\\
+    (b)\\
+    \includegraphics[width=\linewidth]{Figures/fake-seeing-nonp-reduction}
+  \end{tabular}
+  \caption{Effects of seeing on the structure function.
+    (a)~Each row shows a different simulated random velocity field on a \(256^2\) grid
+    (see text for details).
+    The left column shows the original field,
+    while the remaining columns show the effects of smoothing by a gaussian kernel
+    with RMS width \(s_0\) from 1 to 32 pixels.
+    The same color scale is used for all columns, ranging from \(-3\) to \(+3\) times
+    the standard deviation of the unsmoothed map.
+    (b)~Relative change in the second-order structure function due to the gaussian smoothing.
+    Solid lines with symbols show the average over the 4 maps of
+    \(B(r, s_0) / B(r, s_0 = 0)\) as a function of separation \(r\),
+    with a separation of \(2 s_0\) indicated by a large filled circle on each curve.
+    Dashed lines shows the empirical fit discussed in the text.
+    The dotted line shows the correlation length of the original fields,
+    while colored plus symbols show the apparent correlation length of the smoothed fields.
+  }
+  \label{fig:seeing-reduction}
+\end{figure}
+
+
+
 
 %\section{Velocity maps}\label{sec:VelMaps}
 
