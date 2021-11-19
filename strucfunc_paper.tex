@@ -142,23 +142,21 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
   To characterize these fluctuations we apply a statistical analysis using the second-order structure function to archival \halpha\ observations of a diverse sample of 9 \hii{} regions.
   This regions are located in the Milky Way and other Local Group galaxies, and
   span more than two orders of magnitude in size and luminosity.
-  By fitting a simple functional form of the structure function to our results
-  we extract three parameters related to the fluctuations in each region: the
-  total velocity dispersion \(\sigma\), which spans from 3 to 15 km s\(^{-1}\), the
-  autocorrelation length \(r_0\), which covers 0.06 - 8 pc, and the power-law slope \(m\), which ranges from 0.82 to 1.95.
+  We proposed a functional form of the structure function that takes into account the observational seeing, the instrument noise and the size of the observational box.
+  By fitting this functional to our results we extract three parameters related to the fluctuations in each region: 
+  the total velocity dispersion \(\sigma\), which spans from 3 to 15 km s\(^{-1}\), the
+  autocorrelation length \(r_0\), which covers 0.06 - 8 pc, and the power-law slope \(m\), which ranges from 0.7 to 1.3.
   The velocity dispersion is found to correlate primarily with luminosity,
   while the autocorrelation length correlates primarily with the size of the region.
-  The power-law slope shows an apparent correlation with distance,
-  but this is probably an artifact of poor spatial resolution for the most distant regions.
   A comparison between \(\sigma\) and \(\sigma_{POS}\) shows that this last value is at roughly the double for all regions.
+  We found that our proposed functional form describe with more accuracy the inertial range and our methodology guarantees consistency for comparison between the galactic and giant HII regions.
   \textbf{Add a sentence about the conclusions!}
-  % We study the turbulent velocity fluctuations in the ionized gas of four giant HII regions using the radial velocity field in the H$\alpha$ emission line. The data was acquired by long-slit spectroscopy and Fabry-Perot observations obtained with the William Herschel Telescope. Each velocity sample is statistically analyzed with the second order structure function. The correlations in our results shows evidence that the velocity field can be consider in a turbulent state. This turbulent motions are described by a power-law with a mean index of 1.7 for different sized regions at different distances. The physical interpretation of the power-law behavior consider that an energy cascade is taking place in the photoionized gas.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
 \begin{keywords}
-HII regions -- ISM
+HII regions -- ISM: kinematics and dynamics -- turbulence
 \end{keywords}
 
 
@@ -170,68 +168,39 @@ HII regions -- ISM
 
 \section{Introduction}
 
-
-
 \WILL{I think it would be best to lead with a description of the dynamics of H II regions before mentioning the turbulence}.
 
+HII regions are far from been static objects.
+Initially, the gas of a HII region is ionized in a previously disturbed medium.
+When the formed star starts emitting, the energy and matter coming from it interacts with the surrounding medium, putting in motion a series of dynamical processes that have a considerable effect in the velocity field of the HII regions.
+Different investigations have shown a complex velocity structure particularly to each region. 
+Mainly, the excess in the thermal broadening on the spectral lines is interpreted as disorder motions along the line-of-sight (LOS).
+Motions like the expansion or rotation of the region can be accounted for, but after these are considered, still persist a random velocity component in the region.
+It has become customary to investigate this random component as turbulence in the ionized gas.
 
-
-It is known that the speed of sound in a HII region is of the order of \(c_{HII} \sim\) 13 km s\kms.
-\citet{smith1970} discovered that the probable velocities of internal motions of extragalactic HII regions, \(\sigma_{W}\) (line width integrated over the whole HII region), were in the range of $\sim$ 19-34 km s\kms\ covering supersonic values.
-\citet{skillman1984kinematics} found broad profiles in giant extragalactic HII regions (GEHRs) that have a FWHM\(>\)30km s\kms. 
-This property is mainly used to distinguish between 'normal' and 'giant' HII regions. Other differences are their size, luminosity and their stellar population. 
-For the velocity to be supersonic it is necessary a continuous mechanism to maintain the observed motions, as supersonic motions are expected to dissipate energy via shocks \citep{1994Ap&SS.216..285C}.
-Also, this non-thermal broadening on the spectral emission lines has been suggested as evidence of disorder motions along the line-of-sight (LOS) of the ionized gas. 
-Turbulence is suggested as a mechanism that can stir the medium and maintain the supersonic velocities. 
-The large lengths of astrophysical objects, ranging in scales from 10$^{6}$ to 10$^{17}$ m \citep{2010ApJ...710..853C}, and the high Reynolds numbers (Re), in the order of 10$^{4}$ - 10$^{9}$, are the main properties that supports the idea of a turbulent interstellar medium.
-Previous studies \citep{1999intu.conf.....F,2004ARA&A..42..211E,scalo2004interstellar} revealed that different phases of the interstellar medium show fluctuations on their velocity field that can be interpreted as evidence of random motions.
-
-The usual picture considers that interstellar turbulence is driven on different scales by various energetic processes.
-Also, it is thought that the formation of structures like filaments and shells in the diffuse medium is determined by large-scale turbulence.
-Stars are the mainly mechanism proposed to account for the large input of kinetic energy through UV radiation, but the dominant energetic sources and their relation to turbulence still is unclear.
-
-\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the HII regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $L_{H} \sim \sigma ^{\sim 4}$).
-They conclude that GEHRs follow this relations as self-gravity systems like globular clusters or elliptical galaxies.
-The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(L_{H_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
-\citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass finding \(\sigma \propto r^{0.42}\), \(L_{H_{\alpha}} \propto r^{2.72}\) and \(L_{H_{\alpha}} \propto \sigma^{4.18}\). This results imply that the same process are seen at high redshifts and the current epoch in star forming regions. \citet{2015MNRAS.449.3568M} found that the relation is also found in dwarf galaxies with a \(L_{H_{\alpha}} \propto \sigma^{5}\).   
-
-The idea of a virial system has been developed by \citet{1993ApJ...418..767T,munoz1996} into the \textit{Cometary Stirring Model} (CSM) with the aim to separate the mechanism that contribute to the line broadening.
-The stellar winds also tend to be used for an explanation of the line broadening and turbulence in GEHRs \citep{1994ApJ...425..720C}.
-This features seems to drive visually the regions with filaments, arcs and shells.
-On their spectra double and multiple emission features are signature of these objects.
-\citet{2020MNRAS.494...97S} argue that winds on ionizing clusters in GEHR must merge into a hot cluster because of the close proximity of the massive stars.
-\citet{2019ApJ...871...17U} propose that stellar feedback is an important source of energy to maintain turbulence in nearby galaxies.
-
-The classic turbulence theory \citep{kolm1} assumes a three-dimensional isotropic, incompressible and subsonic flow where an energy cascade is taking place.
-The interstellar matter does not have those physical properties and our observations are in two-dimensions.
-But as mentioned above the idea of an energy cascade is used to understand our observations.
-The energy cascade goes from the largest vortices where the energy in injected until it reaches dissipation with the smallest vortices.
-In the energy cascade three scales are defined based on their Reynolds number.
-The energy injection scale (Re $\rightarrow \infty$), $L_{EI}$, the dissipation scale (Re $\rightarrow$ 1), $L_{D}$ and the inertial scale, $L_{I}$, between the previous two.
-Since the energy distributions depends on the scale, the energy cascade concept is described with an energy spectrum, $E(k) \propto k$ where $k$ is the wave number for a determined scale $l$ ($k \equiv r^{-1}$).
-
-The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second order structure function (the Fourier transform of the energy spectrum, $E(k)$).
+The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second order structure function.
 This studies span from galactic HII regions \citep{1986ApJ...300..624R} like Orion \citep{von1951methode,munch1958internal,castaneda1988,1992ApJ...387..229O,arthur2016turbulence} to giant HII regions \citep{1961MNRAS.122....1F,lagrois2009multi,lagrois2011}, like NGC 604 in the M 33 galaxy \citep{tanco1997,2019arXiv191203543M}.
 
-The procedure using the structure function allow us to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the photoionized gas, but despite the previous evidence of this fluctuations not been random, little is understood about their nature.
+The procedure using the structure function allow us to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the photoionized gas.
 Several problems arise in the study of these fluctuation.
-Intrinsic with observations there is the projection of a three-dimensional function into the plane-of-sky \citep{von1951methode,munch1958internal}.
-Other statistical techniques like velocity channel analysis (VCA) \citep{2000ApJ...537..720L} have been proved to better recreate the spectrum of the velocity field \citep{medina2014,arthur2016turbulence}.
-More recently, the structure function was used with full 6D measurements (position-velocity) to study the motions of stars in the Orion Molecular Cloud Complex.
-\citet{2021ApJ...907L..40H} argue that newborn stars should reflect the turbulent kinematics of their natal clouds.
-Using this previous method they are free of the projected element that interfere with previous gas-based studies and their results agree with the scaling law proposed by \citet{1981MNRAS.194..809L}.
+One of them is that there is no well-established theory for turbulence in astronomical conditions, these being that the medium is compressible and supersonic, and will result in the presence of shock waves \citep{lagrois2011,arthur2016turbulence}.
+On the other hand, it is known that these regions are created on the edge of molecular clouds, so they will reach a blister or champagne phase, introducing large-scale gradients not related with random motions \citep{Mivi1995}.
+Intrinsic with observations there is the projection of a three-dimensional function into the plane-of-sky \citep{von1951methode,munch1958internal,1964SvA.....8..210K} leading to a loss in information.
 
-Despite different issues that are related with the nature of the problem of turbulence in HII regions, the vast majority of research using the second-order structure function consider individual regions and hence different methodology.
-\citet{1987ApJ...317..686O} has determined the structure functions for a sample of galactic HII regions but isn't conclusive about them.
-The individuality of previous works and the need to understand the relationship between the measured turbulent properties for different classes of HII regions has lead us to develop this investigation.
+There are also a series of problems related to the observations that to date have not been formally addressed like the previous ones.
+These problems are that: 1) following observations, there is the seeing and noise due to the telescope and instrument, and 2) that the observations are mostly limited to only one part of the nebula.
+This has the consequence that when analyzing a turbulent field, the velocity fluctuations related to small and large scales will be affected due to artifacts introduced by the problems mentioned above.
+In turbulence theory, the largest and smallest scales are the most important as they relate to the energy transfer of the turbulence spectrum, which implies that it is necessary to consider them for a correct characterization of the turbulence in the velocity field.
+Disregarding the above has led previous investigations in HII regions to erroneous conclusions about the nature of this energy spectrum.
+
+To face these problems, we study the effects of seeing, noise and observational box size in an artificial velocity field to develop and propose a correct form that fits the results of a statistical analysis of the field of velocity of HII regions.
+This aims to leave little room for the interpretation of results and to characterize in a more precise way the turbulence in ionized nebulae, something that has not been considered in previous works.
+Also, we aim to fill a gap with an uniform statistical analysis of turbulence between galactic and giant HII regions.
 
 Using archival data we perform the second-order structure function on a sample of HII regions.
-Our sample spans in size from 4 pc to 400 pc and has luminosities between 10\(^{37}\) - 10\(^{39}\) erg s\(^{-1}\); from galactic to extragalactic HII regions.
-We apply an uniform methodology of a functional form of the structure function to characterize the turbulent using the  autocorrelation length, \(r_0\), and power-law slope, \(m\).
-Our results are compared with physical properties of each region and are also compared with previous investigations.
-With this work we aim to fill a gap with an uniform statistical analysis of turbulence between galactic and giant HII regions.
-
-The paper follows the next order: in Section \ref{sec:HIIsample} we describe the observational data and some main kinematics properties of each region. In Section \ref{sec:met} we present the statistical method used in this work. Section \ref{sec:results} presents the structure function of each region along with the turbulent parameters obtained by a non-linear regression method. In Section \ref{sec:discussion} we discuss our findings in the context of previous works.   
+Our sample spans in size from 4 pc to 400 pc and has luminosities between 10\(^{37}\)-10\(^{39}\) erg s\(^{-1}\) going from galactic to extragalactic HII regions.
+We apply an uniform methodology of a functional form of the structure function to characterize the turbulent using the velocity field variance, $\sigma^2$, autocorrelation length, \(r_0\), and power-law slope, \(m\).
+Our results are compared with physical properties of each region and with previous investigations.
 
 \section{\boldmath Sample of \hii{} regions}\label{sec:HIIsample}
 
@@ -299,8 +268,13 @@ The paper follows the next order: in Section \ref{sec:HIIsample} we describe the
   \label{fig:velocity-maps}
 \end{figure*}
 
-We use previous published observational data to measure the second-order velocity structure function for a number of nine HII regions located in the Milky Way, the Magellanic clouds and in the M 33 and NGC 6822 galaxies. 
-Table \ref{tab:Reg} shows the names with the main physical properties of each region. 
+Previous works that apply a statistical analysis on the velocity field of HII regions  
+tend to consider just one region.
+With the aim to develop a more complete study we choose 9 objects in the \halpha\ emission line.
+This give us the opportunity to compare for first time the structure function of various objects following the same methodology.
+We use previous published observational data to measure characterize the velocity field o HII regions located in the Milky Way, the Magellanic clouds and in the M 33 and NGC 6822 galaxies. 
+Figure \ref{fig:hii-regions} shows the images of our sample.
+Table \ref{tab:Reg} shows the names with the physical properties of interest in each region. 
 
 \subsection{Regions in the Milky Way and Magellanic Clouds}
 \label{sec:regions-milky-way}
@@ -332,27 +306,27 @@ It has more than 30 O stars that ionize N66, the largest HII region \citep{2011A
 \citet{2008ApJ...688.1050G} propose an expanding H II region or bubble blown by the winds of the massive progenitor as a mechanism that shapes the recent star formation in this region in addition to the photoionizing process of the OB stars. 
 This mechanism is similar to shell-like H ii regions, with a central cluster in a cavity, and with ongoing star formation triggered around their periphery.
 
-The dwarf irregular galaxy, NGC 6822, is located at a distance of 500 kpc (1'' = 2.4 pc) \citep{2012A&A...540A.135S} and the brightest HII regions are Hubble V (HV) and Hubble X (HX).
-%HV has a characteristic length of 100 pc and a luminosity at its core of in L$_{H_\alpha}$ = 1 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
-%HX has a characteristic length of 140 pc and a luminosity at its core of in L$_{H_\alpha}$ = 2.4 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
-%Two recognized OB associations \citep{1991ApJ...379..621H,1992AJ....104.1374W} are identified within the region of HV and HX. HV is located near 'Hodge OB 8', and HX is located near 'Hodge OB13'  \citep{1999PASP..111.1382O}.
+The dwarf irregular galaxy, NGC 6822, is located at a distance of 500 kpc (1'' = 2.4 pc) \citep{2012A&A...540A.135S} and the brightest HII regions are Hubble X and Hubble V (HX and HV hereafter).
+HV has a characteristic length of 100 pc and a luminosity at its core of in L$_{H_\alpha}$ = 1 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
+HX has a characteristic length of 140 pc and a luminosity at its core of in L$_{H_\alpha}$ = 2.4 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
+Two recognized OB associations \citep{1991ApJ...379..621H,1992AJ....104.1374W} are identified within the region of HV and HX. HV is located near 'Hodge OB 8', and HX is located near 'Hodge OB13'  \citep{1999PASP..111.1382O}.
 
-%NGC 604 is the brightest giant HII region in the M33 galaxy visually dominated by a big loop, many shells and different size filaments.
-%It is located at the distance of 840 kpc (1'' = 4.1 pc) \citep{2015KamKinematics} with a length of 400 pc.
-%It has a luminosity in L$_{H_\alpha}$ = 10$^{39.42}$ erg s$^{-1}$ \citep{2002MNRAS.329..481B} and in L$_{X}$=9.3$\times$ 10$^{35}$ erg s$^{-1}$ \citep{2008ApJ...685..919T}.
-%\citet{2012ApJ...761....3M} derive an average age of 4$\pm$1 Myr and a total stellar mass of 1.6$^{+1.6}_{-1.0} \times$ 10$^{5}$M$_{\odot}$ for the region.
-%The stellar population has been identified and classified by \citet{1996ApJ...456..174H} (and references therein).
-%Recently, \citet{2011MNRAS.411..235E} focused on studying the Wolf-Rayet (WR) and red super giants (RSGs) stars population.
-%\citet{2012AJ....143...43F} focused on the massive young stellar objects (MYSOs).
-%The average ages for the stars, was determined to be from 3 to 5 Myr \citep{1996ApJ...456..174H} and with the RSGs as an older population have an age of 12.4 $\pm$ 2.1 Myr \citep{2011MNRAS.411..235E}.
-%This suggest that two episodes of star formation, at least, have taken place in the GEHR.
+NGC 604 is the brightest giant HII region in the M33 galaxy visually dominated by a big loop, many shells and different size filaments.
+It is located at the distance of 840 kpc (1'' = 4.1 pc) \citep{2015KamKinematics} with a length of 400 pc.
+It has a luminosity in L$_{H_\alpha}$ = 10$^{39.42}$ erg s$^{-1}$ \citep{2002MNRAS.329..481B} and in L$_{X}$=9.3$\times$ 10$^{35}$ erg s$^{-1}$ \citep{2008ApJ...685..919T}.
+\citet{2012ApJ...761....3M} derive an average age of 4$\pm$1 Myr and a total stellar mass of 1.6$^{+1.6}_{-1.0} \times$ 10$^{5}$M$_{\odot}$ for the region.
+The stellar population has been identified and classified by \citet{1996ApJ...456..174H} (and references therein).
+Recently, \citet{2011MNRAS.411..235E} focused on studying the Wolf-Rayet (WR) and red super giants (RSGs) stars population.
+\citet{2012AJ....143...43F} focused on the massive young stellar objects (MYSOs).
+The average ages for the stars, was determined to be from 3 to 5 Myr \citep{1996ApJ...456..174H} and with the RSGs as an older population have an age of 12.4 $\pm$ 2.1 Myr \citep{2011MNRAS.411..235E}.
+This suggest that two episodes of star formation, at least, have taken place in the GEHR.
 %\citep{1984A&A...141...49H} identified a gradient from the west to the SE of the nebula of 30 km s$^{-1}$.
 
-%NGC 595 is the second brightest giant HII region in the M33 galaxy.
+NGC 595 is the second brightest giant HII region in the M33 galaxy.
 %The electronic temperature is 7,670 $\pm$116 K \citep{2010MNRAS.402.1635R}.
-%\citet{1983A&A...119..185V} made an estimate of the total masses of HI and HII in the nebula to obtain values of M$_{HI}=$ 1.2 $\times$ 10 $^{6}$ M$_{\odot}$ and M$_{HII} =$ 4.6 $\times$ 10 $^{5}$ M$_{\odot}$, and a ionizing luminosity of the star cluster is estimated at 5 $\times$ 10$^{50}$ erg s $^{1}$.
-%\citet{1996AJ....111.1128M} estimate an age of 4.5 Myrs consistent with \citet{1993AJ....105.1400D}.
-%It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{1996AJ....111.1128M}, ten WRs confirmed with spectroscopy \citet{1993AJ....105.1400D}, nine of the WN type and a WC, located near the bright core of the region.
+\citet{1983A&A...119..185V} made an estimate of the total masses of HI and HII in the nebula to obtain values of M$_{HI}=$ 1.2 $\times$ 10 $^{6}$ M$_{\odot}$ and M$_{HII} =$ 4.6 $\times$ 10 $^{5}$ M$_{\odot}$, and a ionizing luminosity of the star cluster is estimated at 5 $\times$ 10$^{50}$ erg s $^{1}$.
+\citet{1996AJ....111.1128M} estimate an age of 4.5 Myrs consistent with \citet{1993AJ....105.1400D}.
+It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{1996AJ....111.1128M}, ten WRs confirmed with spectroscopy \citet{1993AJ....105.1400D}, nine of the WN type and a WC, located near the bright core of the region.
 
 \subsection{Observations}
 
@@ -387,142 +361,158 @@ The format of the data cube was of 256*256*100 with a spatial scale of 0.26 pixe
 Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L}. The NGC 604 TAURUS-II observations were used by \citet{sabalisck1995supersonic}, \citet{tanco1997} and \citet{2019arXiv191203543M}.
 
 \begin{table*}
-\begin{center}\caption{Sumary of properties \citep{1984ApJ...287..116K} \citep{1986ApJ...300..624R}}
-\begin{tabular}{ccccccccc}\hline
-HII    &  Dist.  & Diameter & log L(H$_{\alpha}$) & SFR      &  $ \langle N_{e} \rangle_{rms}$    & M(H$^{+}$) & Filling & \(\sigma_{W}\) \\
-Region     &  [kpc] &  [pc]     &  [erg/s]            & [ ]      & [cm$^{-3}$] & [M$_{\odot}$] & Factor & [km/s] \\ \hline
-NGC 604 &820$\pm$30  & 400    &   39.65    & 0.011 & 3  & 7 $\times$ 10$^{5}$ & 0.1 & 23.1 \\
-NGC 595 &820$\pm$30  & 400    &   39.36    & 0.009 & 4  & 4.6 $\times$ 10$^{5}$ & & 27.1 \\
-Hubble X  &   490$\pm$40  & 160     &    38.6      &  0.004   &  5 & 23 000& 0.02 & 13.4 \\
-Hubble V  &   490$\pm$40  & 130     &    38.87     &  0.005   &  8 &    & & 14.7 \\
-30 Dor    &   49.97$\pm$0.19    & 98.9    &    39.76     & 0.0130   & 250&    & & 31.7 \\
-Carina    &   2.35$\pm$0.05  & 15      &    39.6      & 0.01     & 500&    & 0.05 & \\
-NGC 346   &   61.9$\pm$1.1 & 64      &    38.67     & 0.0021   & 100&    &     & \\
-Lagoon    &   1.25 & 25      &    37.47     & 0.0001   &  60& 900& 0.012 & \\
-Orion     &   0.436$\pm$0.02  & 5       &    37        & 0.000053 & 150& 50 & 0.027 & \\\hline
+\begin{center}\caption{Summary of properties.}
+\begin{tabular}{ccccc}\hline
+HII       &  Distance (D)          & Diameter (R) & log L(H$_{\alpha}$) &  \(\langle \sigma_{LOS} \rangle \) \\
+Region    &  [kpc]          &  [pc]    &  [erg/s]            &    [km/s]  \\ 
+\hline
+Orion small   & 0.436$\pm$0.02  & 0.6  &    37               &   6.0      \\
+Orion large   & 0.436$\pm$0.02  & 5    &    37               &   6.0      \\ 
+Lagoon    & 1.25$\pm$0.12   & 25       &    37.47            &   13.6     \\
+Carina    & 2.35$\pm$0.05   & 15       &    39.6             &   22.4     \\
+30 Dor    & 49.97$\pm$0.19  & 98.9     &    39.76            &   31.7     \\
+NGC 346   & 61.9$\pm$1.1    & 64       &    38.67            &   10.2     \\
+Hubble X  & 490$\pm$40      & 160      &    38.6             &   13.4     \\
+Hubble V  & 490$\pm$40      & 130      &    38.87            &   12.3     \\
+NGC 604   & 820$\pm$30      & 400      &    39.65            &   16.2     \\
+NGC 595   & 820$\pm$30      & 400      &    39.36            &   18.3     \\
+\hline
 \end{tabular}\label{tab:Reg}
 \end{center}
 \end{table*} 
 
 %2013ApJ...773...69G M33 dist
+% \citep{1984ApJ...287..116K} \citep{1986ApJ...300..624R}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Methods}\label{sec:met}
 
-%\subsection{The second order structure function}
+\subsection{Turbulence}
 
-%One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density \citep{1984ApJ...277..556S}.
-%They are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
-%By means of describing the statistical properties of these fluctuations they can be assumed as a product of a stochastic field statistical tools.
+The classic turbulence theory \citep{kolm1} assumes a three-dimensional isotropic, incompressible and subsonic flow where an energy cascade is taking place.
+The energy cascade goes from the largest vortices where the energy in injected until it reaches dissipation with the smallest vortices.
+In the energy cascade three scales are defined based on their Reynolds number.
+The energy injection scale (Re $\rightarrow \infty$), $L_{EI}$, the dissipation scale (Re $\rightarrow$ 1), $L_{D}$ and the inertial scale, $L_{I}$, between the previous two.
+Since the energy distributions depends on the scale, the energy cascade concept is described with an energy spectrum, $E(k) \propto k$ where $k$ is the wave number for a determined scale $l$ ($k \equiv r^{-1}$).
 
-%The statistical function we use to study the velocity field of the HII regions is the second-order structure function, $B(r)$, defined as:
+The total specific energy of a determined $l$ scale is of the order $\langle v_{l}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
 
-%\begin{equation}\label{eq:S}
-%B(\boldsymbol{r})=\dfrac{\sum[V_{r}(\boldsymbol{x}+\boldsymbol{r})-V_{r}(\boldsymbol{x}) ]^{2}}{N(\boldsymbol{r})}
-%\end{equation}
+\begin{equation}\label{eq:veles}
+ \langle v_{l}^{2} \rangle = \int_{k}^{\infty} E(k)dk
+\end{equation}
 
-%where, $V_{r}(\boldsymbol{x})= V_{obs}(\boldsymbol{x})-\langle V_{obs}(\boldsymbol{x}) \rangle$ and N($\boldsymbol{r}$) is the number of points at each separation \(r\), called lag.
+This energy is of the order of $(\epsilon l)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$. From the above equation we obtain the Kolmogorov law:
 
-%As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
-%This follows if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
-%In these sense the structure function is used as a tool to investigate the projection of a three.dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
+\begin{equation}\label{eq:kolm}
+E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
+\end{equation}
 
-%We also use the functional form of the structure function:
+For Kolmogorov turbulence $\beta = -5 / 3$, and for supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 
-%\begin{equation}\label{eq:b}
-%b(r)=2[1-C(r)]\zeta+\eta
-%\end{equation}
+\subsection{The second order structure function}
 
-%where $C(r)=1/[1+(r/r_{0})^{m}]$ \citep{1984ApJ...277..556S,arthur2016turbulence}.
-%The term $r_{0}$ is the correlation length of the turbulence, the value of \(r\) in pc where equation \ref{eq:S} reach the value of \(\sigma^2\), and $m$ is the index that adjust our results.
-%The term $\zeta$ is a correction for small scales considering a Gaussian seeing, $s_{0}$, and has the form $tanh^{2}[(r/2s_{0})^2]$, and \(\eta\) is the observational noise. 
-%In this idealized case, at scales larger than r$_{0}$ the structure function flattens as it tends towards the asymptotic value of 2$\sigma$ \citep{arthur2016turbulence}.
+One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density \citep{1984ApJ...277..556S}.
+They are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
+By means of describing the statistical properties of these fluctuations they can be assumed as a product of a stochastic field statistical tools.
 
-%\subsection{Application to our HII regions sample}\label{sec:apply}
+The statistical function we use to study the velocity field of the HII regions is the second-order structure function, $B(r)$, defined as:
 
-%The results and the errors of $r_{0}$ and $m$ are obtained using equations \ref{eq:S} and \ref{eq:b} in a chi-square (\(\chi^2)\) statistic in order to do a non-linear least-squares fit of a model to our data \citep{newville_matthew_2014_11813}. 
-%In this way we avoid one fundamental problem in the interpretation of the structure function results. The slope in the majority of previous studies and hence, the correlation length, is obtained by eye. 
-%The traditional way to find it is to determine a particular range of ascending values in the structure function results. %If this increase in values is stopped it is commonly assumed that one particular range has been found. 
-%In some cases this procedure keeps going up to large scales, giving two or more inertial regimes;this has lead to the interpretation of multiple energy injection scales.
-%Since the previous described method isn't conclusive we choose the chi-square (\(\chi^2)\) statistic to present the significance of our results. 
-%This way we can maintain consistency in our analysis.
+\begin{equation}\label{eq:Br}
+B(\boldsymbol{r})=\dfrac{\sum[V_{r}(\boldsymbol{x}+\boldsymbol{r})-V_{r}(\boldsymbol{x}) ]^{2}}{N(\boldsymbol{r})}
+\end{equation}
+
+where, $V_{r}(\boldsymbol{x})= V_{obs}(\boldsymbol{x})-\langle V_{obs}(\boldsymbol{x}) \rangle$ and N($\boldsymbol{r}$) is the number of points at each separation \(r\), called lag.
+
+As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
+This follows if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
+In these sense the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
+
+\subsection{Application to our HII regions sample}\label{sec:apply}
+
+We use the functional form of the structure function in terms of the autocorrelation function:
+
+\begin{equation}\label{eq:ff}
+b(r;r_0,m) = 2\sigma^2(1-C(r))
+\end{equation}
+
+where $C(r)$ is a new form of the autocorrelation function in the form:
+
+\begin{equation}\label{eq:ffnew}
+C(r) = exp[-ln2(\frac{r}{r_0})^m]
+\end{equation}
+
+substituing the previourly form $C(r)=1/[1+(r/r_{0})^{m}]$ \citep{1984ApJ...277..556S,arthur2016turbulence}.
+
+The term $r_{0}$ is the correlation length of the turbulence, the value of \(r\) in pc where equation \ref{eq:Br} reach the value of \(\sigma^2\), and $m$ is the index that adjust our results.
+In this idealized case, at scales larger than r$_{0}$ the structure function flattens as it tends towards the asymptotic value of 2$\sigma$ \citep{arthur2016turbulence}.
+
+The model proposed to describe the seeing at small scales is:
+
+\begin{equation}\label{eq:ffs}
+S(r; s_0, r_0) = \frac{e^\frac{-s_0}{r_0}}{1+(\frac{2s_0}{r})^\frac{2}{3}}
+\end{equation}
+
+and the model that consider the effect of the observational box size is:
+
+\begin{equation}\label{eq:ffb}
+\beta(r_0) = 1 - exp[\frac{L_{box}}{3.6r_0}] 
+\end{equation}
+
+where $L_{box}$ is the diagonal length of the observational box.
+
+The final form of our proposed functional of the structure function is in the form:
+
+\begin{equation}\label{eq:fff}
+B(r) = b(r; \beta r_0, \beta m)*S(r; s_0, r_0)+B_{noise}
+\end{equation}
+
+The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares
+fit to obtain the best values for the turbulent parameters. 
+We use equation \ref{eq:fff} in a chi-square analysis applying the equation:
+
+\begin{equation}\label{eq:chi}
+\chi^2 = \sum_i ^N \frac{[y_i^{measure}-y_i^{model} (\boldsymbol{v})]^2}{\epsilon_i ^2}
+\end{equation}
+
+using the package \textit{lmfit} \citep{newville_matthew_2014_11813}. 
+
+In this way we avoid one fundamental problem in the interpretation of the structure function results. 
+The slope in the majority of previous studies and hence, the correlation length, is obtained without a formal procedure. 
+The traditional way to find it is to determine a particular range of ascending values in the structure function results. 
+If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
+In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to the erroneous interpretation of multiple inertial scales.
 
 
 \section{Results}\label{sec:results}
 
 \subsection{Data}
 
-The Figure \ref{fig:hist}....
-
-%\begin{table*}
-%  \begin{center}
-%    \caption{General statistical properties of the centroid velocities.} 
-%\begin{tabular}{cccc}\hline
-%HII         &$\mu$   &$\sigma^{2}$       &No. of  \\
-%Region      &[km/s]  &[km$^{2}$/s$^{2}$] &points  \\ \hline
-%NGC 604     &3.56    &54.63              &9 510    \\
-%NGC 595     &2.82    &44.13              &8 765    \\
-%Hubble V    &-1.23   &7.87               &5 832   \\
-%Hubble X    &-5.95   &12.9               &6 925   \\
-%30Dor       &265.56* &252.79             &363 059 \\
-%Carina      &-8.83   &17.89              &855     \\
-%NGC 346     &        &31.36              &112 796 \\
-%Lagoon      &-6.26   &7.53               &1 176   \\
-%Orion Large &-1.25   &10.43              &359     \\
-%Orion Small &        &9.61               &        \\ \hline
-%\end{tabular}\label{tab:Data}
-%\end{center}
-%\end{table*} 
+The Figure \ref{fig:velocity-maps} shows the velocity maps of each HII region in the \halpha\ emission line.
+All velocities are relative to the systemic velocity of each region, with more negative velocities shown in blue and more positive velocities in red. The range of velocities is different for each region and is shown in each map. The more negative velocities are shown in blue and more positive velocities are shown in red.
+The Figure \ref{fig:hist} shows the probability density functions of our sample of HII regions.
+All the distributions are far from being consider Gaussian, implying that there are multiple kinematics components in the regions.
 
 \begin{figure*}
  \centering
  \includegraphics[width=5in]{Figures/Hist/Hist}\par
- \caption{Histograms of the centroid velocities of our sample of HII regions. }
+ \caption{Histograms of the centroid velocities in \halpha\ of our sample of HII regions. }
  \label{fig:hist}
 \end{figure*}
 
 \subsection{HII regions structure functions}
 
-Figure \ref{fig:SFs}...
-
-Table \ref{tab:Res}...
-
-
-%Table \ref{tab:Res} presents the three parameters we obtain from the analysis on the fluctuations of the velocities using the second order structure function.
-%The second column is the velocity dispersion \(\sigma\) of each sample of centroid velocities.
-%The third column is the correlation length \(r_0\).
-%The index \(m\) is shown in the forth column;
-%this index is used as a reference for comparison between theory and observations.
-%In the fifth column we show the reduced chi-square value obtained using a non-linear regression algorithm. 
-%Finally we show the mean velocity dispersion across the line-of-sight \(\sigma_{LOS}\) with the aim to investigate how statistically homogeneous the regions are.
-
-%In the appendix \ref{sec:StructFunct} the Figures \ref{fig:SF604}-\ref{fig:SFM42} show the second-order structure functions of the different HII regions for the \halpha\ emission line.
-
-%The power-law fit in the structure function for the both regions in the M33 galaxy in is performed above scales of 1.7 pc.
-%For NGC 604 the index is correspond to 1.95 with a correlation length of 8.75 pc. For NGC 595 the values obtained are 1.75 and 9 pc.
-%For NGC 6822 regions, Hubble X and Hubble V, the $m$ index is 1.7 and 1.62, with a correlation length of 3.62 and 2.7 pc, respectively.
-%The 30Dor nebula \citep{Castro:2018a} has a correlation length of 2.7 pc and an index of 1.22.
-%NGC 346 correlation length is 1.4 pc and its index is 1.13.
-
-%The Carina observations allow us to measure a blue shifted and a red shifted layer \citet{Damiani:2016a}. It is possible to combine the moments from the sum of two components \citep{2008RMxAA..44..181G}, we use this combined sample for the structure function analysis.
-%Carina has an index of 0.82 with a correlation length of 0.94 pc.
-%The galactic region Lagoon nebula \citep{Damiani:2017b} presents a correlation length of 1.78 pc and a index of 1.56.
-
-%For Orion we have the opportunity to study two different observations. \citet{1987A&A...176..347H} observations allow us to study the large scale of the nebula, covering 4 pc, while \cite{arthur2016turbulence} allow us to study the small scales up to 0.4 pc. Large scales results shows an index of 0.9 with a correlation length of 0.84 pc while the small scales have 1.44 and 0.062 pc.
-  
-%The highest \(\sigma\) is 15.8 km s\(^{-1}\) for 30Dor.
-%This is two times higher than NGC 604 that has a value of 7.4 km s\(^{-1}\), followed by NGC 595 with 6.64 km s\(^{-1}\).
-%NGC 346 is next with a value of 5.6 km s\(^{-1}\), followed by Carina with 4.22 km s\(^{-1}\).
-%Hubble X and M42 have a value of 3.59 and 3.23 km s\(^{-1}\), respectively.
-%Hubble V has 2.8 km s\(^{-1}\) and last mof all sample is Lagoon with 2.7 km s\(^{-1}\).
+Figures \ref{fig:strucfunc-fit-A}-\ref{fig:strucfunc-fit-C} shows the structure function of each region along with the fit obtained using the non-linear regression.
+Table \ref{tab:Res} presents the turbulent parameters we obtain the regression.
+The second column correspond to the variance \(\sigma^2\) of the velocity field.
+The index \(m\) is shown in the third column and is used as a reference for comparison between theory and observations.
+The fourth column is the correlation length \(r_0\).
 
 \begin{figure*}
   \centering
   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-A}
-  \label{fig:strucfunc-fit-A}
-  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}
+  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-A}
 \end{figure*}
 
 \begin{figure*}
@@ -535,258 +525,196 @@ Table \ref{tab:Res}...
 \begin{figure*}
   \centering
   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-C}
-  \label{fig:strucfunc-fit-C}
-  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}
+  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-C}
 \end{figure*}
 
-% \begin{figure*}
-% \centering
-% \begin{multicols}{3}
-% \includegraphics[width=2in]{Figures/SFplots/604.pdf}\par
-% \includegraphics[width=2in]{Figures/SFplots/595.pdf}\par
-% \includegraphics[width=2in]{Figures/SFplots/346.pdf}\par
-% \end{multicols}
-% \begin{multicols}{3}
-% \includegraphics[width=2in]{Figures/SFplots/Hubble V.pdf}\par
-% \includegraphics[width=2in]{Figures/SFplots/Hubble X.pdf}\par
-% \includegraphics[width=2in]{Figures/SFplots/tarantula.pdf}\par
-% \end{multicols}
-% \begin{multicols}{3}
-% \includegraphics[width=2in]{Figures/SFplots/Carina.pdf}\par
-% \includegraphics[width=2in]{Figures/SFplots/M8.pdf}\par
-% \includegraphics[width=2in]{Figures/SFplots/OS.pdf}\par
-% \end{multicols}
-% \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line investigated in this work. The first two rows consider extragalactic regions while the last row shows galactic regions.}
-% \label{fig:SFs}
-% \end{figure*}
+\input{SFresults}
+%\begin{table*}
+% \begin{center}\caption{Main results.
+%  a) \citet{tanco1997}
+%      b) \citet{2019arXiv191203543M}
+%      c) \citet{Castro:2018a}
+%      d) \citet{Damiani:2016a}
+%      e) \citet{Damiani:2017b}
+%      f) \citet{1987A&A...176..347H}
+%      g) \citet{arthur2016turbulence}.}
+% \begin{tabular}{ccccccccc}\hline
+% HII         &\(\sigma^{2}\) &\(r_0\)                     &\(m\)    &\(\langle \sigma_{LOS} \rangle \) & Previously\\
+% Region      &[km/s]$^{2}$     &[pc]                        &                           &  [km/s]& used in:\\ \hline
+% NGC 604     & 80.93$\pm$25.31 &  9.12$\pm$2.98  & 0.82$\pm$0.20  & 16.2 & a,b \\
+% NGC 595     & 56.45$\pm$1.69  & 11.69$\pm$0.45  & 1.29$\pm$0.04  & 18.3 & - \\
+% Hubble X    & 15.55$\pm$1.50  &  3.90$\pm$0.28  & 0.94$\pm$0.12  & 13.4 & - \\ 
+% Hubble V    & 10.46$\pm$0.75  &  3.42$\pm$0.33  & 0.73$\pm$0.09  & 12.3 & - \\  
+% 30 Dor      & 350.87$\pm$21.59 & 4.60$\pm$0.43  & 0.84$\pm$0.03  & 31.7 & c\\
+% Carina      & 16.74$\pm$1.13  & 0.66$\pm$0.08  & 1.36$\pm$0.29  & 22.4 & d\\
+% NGC 346     & 38.03$\pm$1.09  & 1.90$\pm$0.09  & 0.78$\pm$0.02  & 10.2 & -\\
+% Lagoon      & 7.29$\pm$0.84   & 1.00$\pm$0.17  & 1.12$\pm$0.09  & 13.6 & e\\ 
+% Orion Large & 5.97$\pm$0.58   & 0.73$\pm$0.17  & 1.72$\pm$0.524 & 6.0 & f \\
+% Orion Small & 16.92$\pm$0.97  & 0.091$\pm$0.006 & 1.06$\pm$0.01 & 6.0 & g \\\hline	  
+% \end{tabular}\label{tab:Res}
+% \end{center}
+%\end{table*}  
 
-\begin{table*}
- \begin{center}\caption{Main results.
-  a) \citet{tanco1997}
-      b) \citet{2019arXiv191203543M}
-      c) \citet{Castro:2018a}
-      d) \citet{Damiani:2016a}
-      e) \citet{Damiani:2017b}
-      f) \citet{1987A&A...176..347H}
-      g) \citet{arthur2016turbulence}.}
- \begin{tabular}{ccccccccc}\hline
- HII         &\(\sigma^{2}\) &\(r_0\)                     &\(m\)    &\(\langle \sigma_{LOS} \rangle \) & Previously\\
- Region      &[km/s]$^{2}$     &[pc]                        &                           &  [km/s]& used in:\\ \hline
- NGC 604     &      &8.75\(^{+0.68}_{-0.75}\)    &1.95\(^{+0.12}_{-0.14}\)   &16.2  &a,b \\
- NGC 595     &       &8.99\(^{+0.58}_{-0.71}\)    &1.75\(^{+0.10}_{-0.10}\)   &18.3  &- \\
- Hubble V    &      &2.7\(^{+0.24}_{-0.14}\)     &1.62\(^{+0.11}_{-0.09}\)   &13.4  &- \\ 
- Hubble X    &       &3.62\(^{+0.18}_{-0.15}\)    &1.7\(^{+0.08}_{-0.09}\)    &12.3  &- \\   
- 30 Dor      &        &2.69\(^{+0.08}_{-0.03}\)    &1.22\(^{+0.022}_{-0.007}\) &31.7* &c\\
- Carina      &        &0.53\(^{+0.12}_{-0.11}\)    &1.19\(^{+0.20}_{ -0.16}\)  &22.4  &d\\
- NGC 346     &        &1.4\(^{+0.05}_{-0.75}\)     &1.13\(^{+0.03}_{-0.03}\)   &10.2* &-\\
- Lagoon      &        &1.78\(^{+0.07}_{-0.07}\)    &1.56\(^{+0.05}_{-0.05}\)   &13.6  &e\\ 
- Orion Large &        &0.84\(^{+0.37}_{-0.24}\)    &0.9\(^{+0.04}_{-0.04}\)    &6     &f \\
- Orion Small &        & 0.062\(^{+0.003}_{-0.001}\)&1.44\(^{+0.11}_{-0.01}\)   &6     &g \\\hline	  
- \end{tabular}\label{tab:Res}
- \end{center}
-\end{table*}  
+\subsubsection{Velocity field \(\sigma\)}
 
-%\subsection{Structure function power indices \(m\)}
+%The highest \(\sigma\) is 15.8 km s\(^{-1}\) for 30Dor.
+%This is two times higher than NGC 604 that has a value of 7.4 km s\(^{-1}\), followed by NGC 595 with 6.64 km s\(^{-1}\).
+%NGC 346 is next with a value of 5.6 km s\(^{-1}\), followed by Carina with 4.22 km s\(^{-1}\).
+%Hubble X and M42 have a value of 3.59 and 3.23 km s\(^{-1}\), respectively.
+%Hubble V has 2.8 km s\(^{-1}\) and last mof all sample is Lagoon with 2.7 km s\(^{-1}\).
 
-%It is possible that the index \(m\) is biased to \(m>\)1.6 for the extragalactic regions and \(m<\)1.5 for nearby regions.
-%This could be attributed to a data quality issues because the inability to resolve distant regions in the same way we do with nearby objects.
-%Since we are not observing all the inertial range on distant regions the \(m\) parameter  should be taken with some caution.
+\subsubsection{Structure function power indices \(m\)}
 
-%We can compute the $m_{3D}$ index from the two dimensional \(m\), if we assume that the $m_{3D}$ index lies between the limits of projection smoothing and a sheet-like distribution. 
-%For our observations we have 0.82 $<$ m$_{3D}$ $<$ 1.95.
-%This is done following the procedure by \cite{arthur2016turbulence} assuming the relationship m$_{2D}$ - 1 $<$ m$_{3D}$ $<$ m$_{2D}$.
-%This give us a considerable large range of 1. 
-%Though \cite{arthur2016turbulence} are comparing emission lines and not regions we can conclude that the index \(m\) still is far away as a unique parameter for measuring turbulence and that the three-dimensional behavior would probably encompass a wide range of indices as seen in the two-dimensional observations.
+It has been proposed for comparison between two-dimensional observations and the three-dimensional value of the astronomical object what it is called projection smoothing \citep{von1951methode, munch1958internal,1987ApJ...317..686O}, where:
 
+\begin{equation}\label{eq:exp1}
+m_{2D}= m_{3D} + 1
+\end{equation}
 
-%\subsection{Significance on the length scale \(r_0\)}
+or when the astronomical object is almost two-dimensional (sheet-like) we have:
 
-%Ideally the correlation length \(r_0\), should represent the scale of dominant energy injection. 
-%Since it is unclear what are the mechanisms driving the turbulence, thought a lot of options are candidates, it is difficult to pinpoint one particular as main responsible. 
-%The possibility that the correlation length reveals the answer to the cause of observed motions is a long shot, but it is clear that each velocity field has a corresponding \(r_0\) value. 
-%The range covered in our results goes from 0.06 to 9 pc, a small range in comparison with the two order magnitude difference in size and luminosity.
+\begin{equation}\label{eq:exp2}
+m_{2D} \sim m_{3D}
+\end{equation}
 
-\subsection{Correlations between turbulent parameters}
+If the extension of the region is compared with its depth the value of the index is $\frac{5}{3}$. While the case where the extension is much greater than its depth (two-dimensional) will have a value of $\frac{2}{3}$.
 
-Figure \ref{fig:mr0}
+We can compute the $m_{3D}$ index from the two dimensional \(m\), if we assume that the $m_{3D}$ index lies between the limits of projection smoothing and a sheet-like distribution. 
+Following the procedure by \cite{arthur2016turbulence} and assuming the relationship m$_{2D}$ - 1 $<$ m$_{3D}$ $<$ m$_{2D}$ we have 0.36 $<$ m$_{3D}$ $<$ 0.72.
+Though \cite{arthur2016turbulence} are comparing emission lines and not regions, we can conclude that the index \(m\) still is far away as a unique parameter for measuring turbulence on ionized regions.
 
-\begin{figure}
- \centering 
- \includegraphics[width=2in]{Figures/mr0.pdf}
- \caption{ }
- \label{fig:mr0}
-\end{figure}
+\subsubsection{Significance on the length scale \(r_0\)}
 
+Ideally the correlation length \(r_0\), should represent the scale of dominant energy injection. 
+Since it is unclear what are the mechanisms driving the turbulence, thought a lot of options are candidates, it is difficult to pinpoint one particular process as the main responsible. 
+The possibility that the correlation length reveals the answer to the cause of observed motions is a long shot, but it is clear that each velocity field has a corresponding \(r_0\) value. 
+The range covered in our results goes from 0.09 to 11 pc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Discussion}\label{sec:discussion}
 
-\subsection{Comparison with previous structure functions}
-
-%In Section \ref{sec:apply} we mentioned the reduced chi-square method we are using for determining the correlation length and the index of the slope. Since this is the first time this method is applied to a sample of HII regions (at least for our knowledge), the results are bounded to be different from previous investigations, including the one that have the same observations as \citet{arthur2016turbulence} and \citet{2019arXiv191203543M}. We will focus on the interpretation of each investigation results and leave the comparison of values as second issue.
-
-%A complete analysis on different emissions lines of the structure function on Orion was carried out by \citet{arthur2016turbulence} and reference therein. 
-%They observed a tendency that higher ionization lines presents higher values on the magnitude dispersion and the steepness of the structure function slope. 
-%This results just consider one component on the Gaussian fit. 
-%The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [OIII] emission lines and for [SII] they found \(m \sim 0.8 \pm 0.1\). 
-%The correlation length for all lines is \(\approx\) 0.05 pc. For the same \halpha\ observation we obtained a value of 1.44 and a correlation length of 0.062 pc. 
-%As a comparison for the large scales \citep{1987A&A...176..347H} the value is 0.9 with a considerable agreement with previous results. 
-%The change in the index could be attributed to the multiple scales of energy injection that are present in the nebula.
-
-%The first attempt at characterizing turbulence in a giant extragalactic HII region, GEHR, was done by \citet{1961MNRAS.122....1F} with the 30 Doradus complex in the LMC, finding no indication of turbulent motions between scale of 10 and 100 pc.
-%\citet{2019arXiv191203543M} also investigated the structure function in 30 Doradus finding on their results that the structure function is entirely flat on scales from 3 to 200 pc.
-%In the context of the high-resolution observations it is possible to see why their results do not reflect the turbulent structure of the nebula; their observations cover a region where the large-scale velocity fluctuations are uncorrelated.
-%There is a good agreement with the single-Gaussian fit results from \citet{2019arXiv191203543M} (Figure 15 Top on their work), while \citet{1961MNRAS.122....1F} results do not overlap with ours.
-%From the previous this is the first time turbulence structure is found in 30 Doradus through the structure function.
-
-%There is broad agreement in our results and previous studies considering NGC 604 from \citet{tanco1997} and \citet{2019arXiv191203543M}, and using the same TAURUS-II data.
-%Despite this general agreement the interpretations in each study is different.
-%\citet{tanco1997} conclude about a double regime acting on the kinetic energy spectrum.
-%According to this double cascading, turbulence is being forced at scales of \(\approx\)10 pc while and energy cascade has developed down to the smallest scales and other, as an inverse cascade, extends up to scale of \(\approx\)70 pc.
-%Interesting enough, \citet{tanco1997} mentioned various characteristic scale lengths, the most notorious is the \(\approx\)10 pc, a value close to our correlation length of \(\approx\)9 pc, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
-%None of the previous studies present a power-law index for the structure function to compare our results.
-%\citet{2019arXiv191203543M} addresses some issues with TAURUS II data while comparing profiles between the previous instrument TAURUS I where there exist a difference between observations (see section 4.1 on their paper).
-%As we agree with them in the importance of observing NGC 604 at higher spatial resolution, we have prove that a consistent method in analyzing structure function is key to obtaining trustworthy results.
-
-%For our NGC 595 \halpha\ emission line results there is no correspondence in the structure function between our results and previous investigations.
-%Our observations cover the brightest part of the region and have smaller resolution.
-%\citet{lagrois2009multi} and \citet{lagrois2011} structure functions results does not cover scales $<$10 pc, where in our results the correlation is taking place.
-%\citet{lagrois2011} used the data from \citet{lagrois2009multi} to complement the structure function analysis with the auto correlation function and filters to the velocity field to get rid of non-turbulent movements.
-%Their sigma is 5.92$\pm$0.15 km/s with a correlation length is 43 pc.
-%The high difference is because the consider that this happen at 2$\sigma$ (equation 13 on their paper).
-%The power-law index they provide is 1.55$\pm$0.01.
-
 \subsection{Correlations between physical properties and turbulent parameters}
 
-Table \ref{tab:RestStats}...
+Scaling relations between parameters like size and luminosity are common tools to study HII regions, along dwarf galaxies and high-redshift star formation regions.
+\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the HII regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $L_{H} \sim \sigma ^{\sim 4}$).
+They conclude that GEHRs follow this relations as self-gravity systems like globular clusters or elliptical galaxies.
+The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(L_{H_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
+\citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(L_{H_{\alpha}} \propto r^{2.72}\) and \(L_{H_{\alpha}} \propto \sigma^{4.18}\). 
+This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
+\citet{2015MNRAS.449.3568M} found that the relation is also found in dwarf galaxies with a \(L_{H_{\alpha}} \propto \sigma^{5}\).   
 
-Figure \ref{fig:sigvsl}...
+With the aim to investigate the scaling relations for our sample of HII regions and the turbulent parameters obtained, we use the properties in Table \ref{tab:Reg} with the values in Table \ref{tab:Res} to adjust a fit in the form $X = aY +b$. 
+For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
+The results are shown in Table \ref{tab:RestStats} in ascending order for the $p$-value.
+In the Figures \ref{fig:rvsR}-\ref{fig:svss} are shown the correlations that are significant.
 
-Figure \ref{fig:sigvssig}...
+The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region.
 
-
-%As we mentioned in the introduction, the scaling relations between parameters like size and luminosity are common tools to study HII regions along dwarf galaxies and high-redshift star formation regions; in the past those relationships, particularly in GEHRs, made them candidates as standard candles. 
-%We apply these methods with the turbulent parameters \(r_0\) and index \(m\).
-
-%Using the first three columns in Tables \ref{tab:Reg} and \ref{tab:Res}, we obtain the Pearson correlation coefficient $r$. Between luminosity (L) and \(\sigma\) it is 0.71, between distance (D) and \(m\) the value is 0.73, and finally between size (R) and \(r_0\) we have 0.96. 
-%By means of a significance test and assuming that a uncorrelated sample produces our results, for the first two relationships we have a probability value $p$ of 0.02 and for the remaining one of <10\(^{-5}\).
-%Applying and ordinary least-square regression (OLS) we find a form Y = aX + b; this values along the previous ones is shown in Table \ref{tab:RestStats}.
-
-%The relationship between L vs \(\sigma\) is one of the most studied. 
-%This relationship help us understanding how the star formation affects the gas motions and how star formation is regulated by feedback processes. 
-%Figure \ref{fig:sigvsl} shows different studies of the L vs \(\sigma\) relationship \citep{1988A&A...201..199A,Rozas:2006b,2015MNRAS.449.3568M}. 
-%In this case it is normally used the deconvolution of the observed lines taking account thermal broadening and instrumental broadening leaving the \(\sigma_{LOS}\). 
-%For the data present in Figure \ref{fig:sigvsl}, excluding \(\sigma_{POS}\), we obtain using the same OLS \(log \sigma_{LOS} = 0.145 \pm 0.008 (logL_{H\alpha}) - (4.42 \pm 0.336) \).
-%Since the R-squared is 0.596 it is not possible just to invert the OLS results for a comparison with the more classical relationship. 
-%Inverting axes we obtain \(log L_{H\alpha} = 4.09 \pm 0.23 log (\sigma_{LOS}) + (34.17 \pm 0.32) \), being in accord to previous relationships. 
-
-%It is also possible to use our results from Table \ref{tab:Res} for a comparison with other relationship, in this case considering the separation \(r\).
-%Using the mean slope index \(\langle m \rangle \), 1.4, we can assume \(\Delta V^{2} \propto r^{1.4} \) and obtain \(r \propto V^{1.5} \), close to what previous studies have determined. 
-
-\begin{table*}
-\begin{center}\caption{Parameters of the linear regression (Y = aX + b).}
-\begin{tabular}{cccccc}\hline
-Y                    &X         &a               &b                &r     & p                \\ \hline
-log \(r_0\)          &log \(R\) &0.65\(\pm\)0.06 &-0.83\(\pm\)0.11 & 0.96 & <10\(^{-5}\)    \\ 
-log \(\sigma\)       &log \(L\) &0.16\(\pm\)0.05 &-5.54\(\pm\)2.13 & 0.71 & 0.02             \\
-log \(m\)            &log \(D\) &0.05\(\pm\)0.02 &-0.05\(\pm\)0.03 & 0.73 & 0.02  \\ 
-*log \(\sigma_{LOS}\) &log \(L\) &0.145\(\pm\)0.008 &-4.42\(\pm\)0.33 & 0.77 & <10\(^{-5}\)  \\ 
-*log \(L\) &log \(\sigma_{LOS}\) &4.09\(\pm\)0.23 &34.17\(\pm\)0.32 & 0.77 & <10\(^{-5}\)  \\ 
-log \(\sigma\)       &log \(\sigma_{LOS}\) &0.72\(\pm\)0.27 &-0.14\(\pm\)0.31 &0.68 & 0.02 \\ \hline
-\end{tabular}\label{tab:RestStats}
-\end{center}
-\end{table*} 
+\input{Corr}
 
 \begin{figure}
 \centering 
-\includegraphics[width=3in]{Figures/lvss.pdf}
-\caption{}
+\includegraphics[width=3in]{Figures/rvsR}
+\caption{The log $r_0$-log $R$ plane derived form our results an data in the literature. A fit with slope of 0.67$\pm$0.07 is shown in solid black line that is the mean of all red lines that reflect the posterior of the Bayessian analysis. }
+\label{fig:rvsR}
+\end{figure}
+
+\begin{figure}
+\centering 
+\includegraphics[width=3in]{Figures/svsL}
+\caption{Same as Fig. \ref{fig:rvsR} but for the log $\sigma$-log $L(H_{\alpha})$ plane.}
 \label{fig:sigvsl}
 \end{figure}
 
-\subsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
-
-%The analysis employed until now is not conclusive about the true velocity fluctuations observed in each nebula. 
-%As pointed out by \citet{arthur2016turbulence} other techniques also allow us to study these fluctuations. 
-%Following their procedure, it is possible to see from Table \ref{tab:Res} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
-%In the case of homogeneous turbulent velocity we can consider the effect of 'project smearing', \citet{arthur2016turbulence} and reference therein, where the projection from three to two dimensions over a line-of-sight depth \(H\) reduces the plane-of-sky amplitude if \(r_{0} < H\).
-%With a value of \(\sigma / \sigma_{LOS}\) = 0.5 we obtain \(r_{0} / H \approx\) 0.02-0.1 \citep{1984ApJ...277..556S}. 
-
-%Trying to answer if the observed turbulence can account for the non-thermal line broadening can be used as a diagnostic...
-
-
 \begin{figure}
 \centering 
-\includegraphics[width=2in]{Figures/sigmas.pdf}
-\caption{Log \(\sigma_{LOS}\) vs Log \(\sigma\) plot. The values are taken from Table \ref{tab:Res}. The solid-gray line indicate one-to-one correlation and the dotted-black line indicate the relation in Table \ref{tab:RestStats}. The size of the markers indicate the distance to the region, the bigger the marker the farther the region. }
-\label{fig:sigvssig}
+\includegraphics[width=3in]{Figures/svss.pdf}
+\caption{Same as Fig. \ref{fig:rvsR} but for the log $\sigma$-log $\sigma_{LOS}$ plane.}
+\label{fig:svss}
 \end{figure}
 
-%\subsection{What turbulence scales can tell us about kinematics of the ionized gas?}
+\subsubsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
 
-%In the Table \ref{tab:ResII} the second column show the separation where the value 2\(\sigma\) is reached.
-%We also show the ratio \(r_{max}/r_{0}\), where \(r_{max}\) is the maximum separation or lag in pc; this value is related to the size of each sample box. 
-%The forth column shows the Taylor scale, \(l_T\), which measures the average spatial extent of velocity gradients. \citet{1999ApJ...524..895M} define this scale as:
+The analysis employed until now is not conclusive about the true velocity fluctuations observed in each nebula. 
+As pointed out by \citet{arthur2016turbulence} other techniques also allow us to study these fluctuations. 
+Following their procedure, it is possible to see from Table \ref{tab:Res} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
+In the case of homogeneous turbulent velocity we can consider the effect of 'project smearing', \citet{arthur2016turbulence} and reference therein, where the projection from three to two dimensions over a line-of-sight depth \(H\) reduces the plane-of-sky amplitude if \(r_{0} < H\).
+With a value of \(\sigma / \sigma_{LOS}\) = 0.5 we obtain \(r_{0} / H \approx\) 0.02-0.1 \citep{1984ApJ...277..556S}.
 
-%\begin{equation}\label{eq:TS}
-%l_T=\dfrac{\sigma r_s}{\sigma_{r_s}}
-%\end{equation}
+\subsection{Comparison with previous structure functions}
 
-%where \(r_s\) is the smallest separation \(r\) and \(\sigma_{r_s}\) the value of the structure function at that separation. 
+In Section \ref{sec:apply} we mentioned the reduced chi-square method we are using for determining the correlation length and the index of the slope. Since this is the first time this method is applied to a sample of HII regions (at least for our knowledge), the results are bounded to be different from previous investigations, including the one that have the same observations as \citet{arthur2016turbulence} and \citet{2019arXiv191203543M}. 
 
-%It is possible to calculate how this Taylor micro-scale is related to the correlation length by:
+A complete analysis on different emissions lines of the structure function on Orion was carried out by \citet{arthur2016turbulence} and reference therein. 
+They observed a tendency that higher ionization lines presents higher values on the magnitude dispersion and the steepness of the structure function slope. 
+This results just consider one component on the Gaussian fit. 
+The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [OIII] emission lines and for [SII] they found \(m \sim 0.8 \pm 0.1\). 
+The correlation length for all lines is \(\approx\) 0.05 pc. For the same \halpha\ observation we obtained a value of 1.06$\pm$0.01 and a correlation length of 0.092$\pm$0.007 pc. 
 
-%\begin{equation}\label{eq:TS1}
-%l_T=\dfrac{r_s}{\sqrt{2}}(\dfrac{r_0}{r_s})^{m/2}
-%\end{equation}  
+The first attempt at characterizing turbulence in a giant extragalactic HII region, GEHR, was done by \citet{1961MNRAS.122....1F} with the 30 Doradus complex in the LMC, finding no indication of turbulent motions between scale of 10 and 100 pc.
+\citet{2019arXiv191203543M} also investigated the structure function in 30 Doradus finding on their results that the structure function is entirely flat on scales from 3 to 200 pc.
+In the context of the high-resolution observations it is possible to see why their results do not reflect the turbulent structure of the nebula; their observations cover a region where the large-scale velocity fluctuations are uncorrelated.
+There is a good agreement with the single-Gaussian fit results from \citet{2019arXiv191203543M} (Figure 15 Top on their work), while \citet{1961MNRAS.122....1F} results do not overlap with ours.
+From this analysis this is the first time turbulence characterized in 30 Doradus using the structure function.
 
-%Finally in the table we present the Reynolds Number...
+There is broad agreement in our structure function results and previous studies that consider NGC 604, mainly because where are using the same data \citep{tanco1997,2019arXiv191203543M}. 
+from \citet{tanco1997} and \citet{2019arXiv191203543M}, and using the same TAURUS-II data.
+Despite this general agreement the interpretations in each study is different.
+\citet{tanco1997} conclude about a double regime acting on the kinetic energy spectrum.
+According to this double cascading, turbulence is being forced at scales of \(\approx\)10 pc while and energy cascade has developed down to the smallest scales and other, as an inverse cascade, extends up to scale of \(\approx\)70 pc.
+Interesting enough, \citet{tanco1997} mentioned various characteristic scale lengths, the most notorious is the \(\approx\)10 pc, a value close to our correlation length of \(\approx\)9 pc, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
+None of the previous studies present a power-law index for the structure function to compare our results.
+\citet{2019arXiv191203543M} addresses some issues with TAURUS II data while comparing profiles between the previous instrument TAURUS I where there exist a difference between observations (see section 4.1 on their paper).
+As we agree with them in the importance of observing NGC 604 at higher spatial resolution, we have prove that a consistent method in analyzing structure function is key to obtaining trustworthy results.
 
-\begin{table}
-\begin{center}\caption{Other significant turbulent scales}
-\begin{tabular}{cccccc}\hline
-HII         &r$_{2\sigma}$ &\(r_{max}\)/\(r_0\)  &\(l_T\) & \(Re\)* \\
-Region      &[pc]          &                     &[pc]    &   \\ \hline
-NGC 604     &28.73         &15.49                &5.35    &   \\
-NGC 595     &18.50         &21.01                &5.57    &   \\
-Hubble V    &11.61         &19.95                &1.80    &   \\ 
-Hubble X    &21.99         &21.67                &1.97    &   \\   
-30 Dor      &11.26         &8.99                 &0.59    &   \\
-Carina      &1.93          &31.55                &0.402   &   \\
-NGC 346     &5.78          &10.73                &0.39    &   \\
-Lagoon      &6.14          &10.68                &0.66    &   \\ 
-Orion Large &-             &2.98                 &0.24    &   \\
-Orion Small &0.162         &10.42                &0.019   &   \\ \hline	  
-\end{tabular}\label{tab:ResII}
-\end{center}
-\end{table}  
-
-%With the aim to relate each \(r_0\) with each region we invoke previous studies on the kinematics of the ionized gas. 
-%\citet{sabalisck1995supersonic} studied NGC 604 revealing that the kinematics of the region behave different considering %different scales.
-%High emission knots on the region encompasses supersonic global velocity dispersion values of 14 $<$ \(\sigma_{LOS}\) $<$ 20 km s\(^{-1}\).
-%This knots are well fitted with Gaussian profiles thus, defining the kinematic core \citep{munoz1996}.
-%A characteristic radius for them is \(\sim\) 7 pc.
-%\citet{yang1996} identified 5 expanding shells within NGC 604, and one of them (Shell 3 on their paper) fall into our observations.
-%This shells is 40 pc in diameter with an expansion velocity above 50 km s\(^{-1}\).
-%This scales are related to the presence of strong stellar winds caused by massive stars.
-%For the NGC 604 case, there is no clear relation between the \(r_0\) and some particular energy injection mechanism...
-%it is also the nearest analog of more extreme star-forming regions, such as 30 Doradus in the Large Magellanic Cloud.
+For our NGC 595 \halpha\ emission line results there is no correspondence in the structure function between our results and previous investigations.
+Our observations cover the brightest part of the region and have smaller resolution.
+\citet{lagrois2009multi} and \citet{lagrois2011} structure functions results does not cover scales $<$10 pc, where in our results the correlation is taking place.
+\citet{lagrois2011} used the data from \citet{lagrois2009multi} to complement the structure function analysis with the auto correlation function and filters to the velocity field to get rid of non-turbulent movements.
+Their sigma is 5.92$\pm$0.15 km/s with a correlation length is 43 pc.
+The high difference is because the consider that this happen at 2$\sigma$ (equation 13 on their paper).
+The power-law index they provide is 1.55$\pm$0.01.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \section{Conclusions}\label{sec:conclusions}
 
-%\begin{enumerate}
-%    \item The giant HII regions in  M 33, NGC 604 and NGC 595 shows an index of 1.7 and 1.55, respectively. 
+The previous analysis was able to characterize the turbulence by determining a single inertial scale where the ionized gas behavior can be described by means of a power law.
+To determine the inertial scale more precisely than in previous works, a new functional form was proposed for the second-order structure function that considers observational effects such as: seeing, noise and the size of the observational box.
+These effects had not been considered in detail before and have important consequences is the interpretation of the inertial scale.
+
+The new functional form of the structure function accurately determines the important parameters related to turbulence which are: the correlation length, the exponent of a power law that fits the results and the real variance of the region.
+Compared to the majority of previous works, the previous parameters had been calculated using the criteria of each author.
+A chi-square adjustment was performed using Bayesian statistics to determine the confidence intervals for each parameter.
+
+This proposed analysis can be expanded to other HII regions with the possibility of comparing the results between them since the proposed method guarantees their homogeneity and the ability to develop a future catalog of these regions in a coherent way.
+It could even be used to investigate the velocity fields of other phases of the interstellar medium.
+The study of turbulence between ionized regions and the molecular clouds that give them birth can be carried out in a concise way, having the correct methods with the intention of advancing the understanding of the kinematic relationships between them.
+
+\begin{enumerate}
+\item For 30 Doradus with an observational box size of 32 pc an index of 0.84$\pm$0.03 is obtained with an inertial scale between 0.1 and 5 pc, and with a variance of 350$\pm$21 km$^2$/s$^2$. 
     
-%    \item The structure functions are presented for the first time for Hubble X and Hubble V, in NGC 6822. Hubble V shows and index of 1.65 and a correlation length of 3 pc, while Hubble X results are 1.6 and 4 pc.
+\item For NGC 604 with an observational box size of 173 pc an index of 0.82$\pm$0.20 is obtained with an inertial scale between 2 and 9 pc, and with a variance of 81$\pm$25 km$^2$/s$^2$.
     
-%    \item The structure function of 30 Dor is presented for the first time using high-resolution observations that allows to observe scales $>$0.1 pc. A correlated structure function is obtained with a correlation lenght of 2.7 pc and a power-law index of 1.15. This new results show that previous studies on 30 Dor structure functions were analyzing large scales where no velocity fluctuations are present.
+\item For NGC 595 with an observational box size of 196 pc an index of 1.3$\pm$0.04 is obtained with an inertial scale between 0.5 and 12 pc, and with a variance of 56$\pm$1.6 km$^2$/s$^2$.
+
+\item For NGC 346 with an observational box size of 20 pc an index of 0.78$\pm$0.02 is obtained with an inertial scale between 0.06 and 2 pc, and with a variance of 38$\pm$1.0 km$^2$/s$^2$.
+
+\item For Orion small with an observational box size of 0.45 pc an index of 1.06$\pm$0.02 is obtained with an inertial scale between 0.002 and 0.09 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
+
+\item For Carina with an observational box size of 20 pc an index of 1.36$\pm$0.30 is obtained with an inertial scale between 0.008 and 0.6 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
+
+\item For Hubble X with an observational box size of 78 pc an index of 0.94$\pm$0.12 is obtained with an inertial scale between 0.5 and 4 pc, and with a variance of 15.5$\pm$1.5 km$^2$/s$^2$.
+
+\item For Hubble V with an observational box size of 61 pc an index of 0.72$\pm$0.09 is obtained with an inertial scale between 0.5 and 3 pc, and with a variance of 10.6$\pm$0.8 km$^2$/s$^2$.
+
+\item For Lagoon with an observational box size of 16 pc an index of 1.12$\pm$0.09 is obtained with an inertial scale between 0.005 and 1 pc, and with a variance of 7.2$\pm$0.8 km$^2$/s$^2$.
+
+\item For Orion large with an observational box size of 3 pc an index of 1.72$\pm$0.24 is obtained with an inertial scale between 0.1 and 0.7 pc, and with a variance of 6$\pm$0.5 km$^2$/s$^2$.
 
     
-%\end{enumerate}
+\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -847,7 +775,6 @@ JGV acknowledges and thanks CONACYT for the PhD research scholarship. We are gra
 \label{sec:effects-seeing-struc}
 
 
-
 \begin{figure}
   \begin{tabular}{@{} l @{}}
     (a)\\
@@ -874,69 +801,6 @@ JGV acknowledges and thanks CONACYT for the PhD research scholarship. We are gra
   \label{fig:seeing-reduction}
 \end{figure}
 
-
-
-
-%\section{Velocity maps}\label{sec:VelMaps}
-
-%The Figures \ref{fig:M604}-\ref{fig:MOrion} show the two-dimensional radial velocity map of each region.
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=2.5in]{Figures/M6T}
-%\caption{Radial velocity maps of NGC 604 in H$\alpha$.  }
-%\label{fig:M604}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=2.5in]{Figures/M5T}
-%\caption{Radial velocity map of NGC 595 in H$\alpha$.}
-%\label{fig:M595}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=2.5in]{Figures/MV}
-%\caption{Radial velocity map of Hubble V in H$\alpha$.}
-%\label{fig:MHV}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=2.5in]{Figures/MX}
-%\caption{Radial velocity map of Hubble X in H$\alpha$.}
-%\label{fig:MHX}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=2.5in]{Figures/M30D}
-%\caption{Radial velocity map of 30 Dor in H$\alpha$ \citep{Castro:2018a}.}
-%\label{fig:M30Dor}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=2.5in]{Figures/Car}
-%\caption{Radial velocity map of Carina in H$\alpha$ taken from \citet{Damiani:2016a}.}
-%\label{fig:MCar}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=3in]{Figures/M8H.png}
-%\includegraphics[width=3.5in]{Figures/M8}
-%\caption{Radial velocity map of M8 in H$\alpha$. Taken from \citep{Damiani:2017b} and \citet{1987A&A...176..338H}.}
-%\label{fig:MM8}
-%\end{figure}
-
-%\begin{figure}
-%\centering 
-%\includegraphics[width=3in]{Figures/OrionL}
-%\caption{Radial velocity map of Orion in H$\alpha$ taken from \citet{1987A&A...176..347H}.}
-%\label{fig:MOrion}
-%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
