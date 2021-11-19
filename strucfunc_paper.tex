@@ -432,50 +432,55 @@ In these sense the structure function is used as a tool to investigate the proje
 \subsection{Application to our HII regions sample}\label{sec:apply}
 
 We use the functional form of the structure function in terms of the autocorrelation function:
-
+%
 \begin{equation}\label{eq:ff}
-b(r;r_0,m) = 2\sigma^2(1-C(r))
+b(r; r_0, m) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
 \end{equation}
-
+%
 where $C(r)$ is a new form of the autocorrelation function in the form:
-
+%
 \begin{equation}\label{eq:ffnew}
-C(r) = exp[-ln2(\frac{r}{r_0})^m]
+  C(r) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right]
 \end{equation}
-
+%
 substituing the previourly form $C(r)=1/[1+(r/r_{0})^{m}]$ \citep{1984ApJ...277..556S,arthur2016turbulence}.
 
 The term $r_{0}$ is the correlation length of the turbulence, the value of \(r\) in pc where equation \ref{eq:Br} reach the value of \(\sigma^2\), and $m$ is the index that adjust our results.
 In this idealized case, at scales larger than r$_{0}$ the structure function flattens as it tends towards the asymptotic value of 2$\sigma$ \citep{arthur2016turbulence}.
 
 The model proposed to describe the seeing at small scales is:
-
+%
 \begin{equation}\label{eq:ffs}
-S(r; s_0, r_0) = \frac{e^\frac{-s_0}{r_0}}{1+(\frac{2s_0}{r})^\frac{2}{3}}
+  S(r; s_0, r_0) = \frac{
+    e^{-s_0 / r_0}
+  }{
+    1+(2s_0 / r)^{2 / 3}
+  }
 \end{equation}
-
+%
 and the model that consider the effect of the observational box size is:
 
 \begin{equation}\label{eq:ffb}
-\beta(r_0) = 1 - exp[\frac{L_{box}}{3.6r_0}] 
+% \beta(r_0) = 1 - exp[\frac{L_{box}}{3.6r_0}] 
+  \beta(r_0) = 1 - \exp \left[ -L_{\text{box}} / (3.6 r_0) \right] 
 \end{equation}
-
-where $L_{box}$ is the diagonal length of the observational box.
+%
+where $L_{\text{box}}$ is the diagonal length of the observational box.
 
 The final form of our proposed functional of the structure function is in the form:
-
+%
 \begin{equation}\label{eq:fff}
-B(r) = b(r; \beta r_0, \beta m)*S(r; s_0, r_0)+B_{noise}
+B(r) = b(r; \beta r_0, \beta m) \times S(r; s_0, r_0) + B_{\text{noise}}
 \end{equation}
 
 The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares
 fit to obtain the best values for the turbulent parameters. 
 We use equation \ref{eq:fff} in a chi-square analysis applying the equation:
-
+%
 \begin{equation}\label{eq:chi}
-\chi^2 = \sum_i ^N \frac{[y_i^{measure}-y_i^{model} (\boldsymbol{v})]^2}{\epsilon_i ^2}
+  \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
 \end{equation}
-
+%
 using the package \textit{lmfit} \citep{newville_matthew_2014_11813}. 
 
 In this way we avoid one fundamental problem in the interpretation of the structure function results. 
