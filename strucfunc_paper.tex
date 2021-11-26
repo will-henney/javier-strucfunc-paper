@@ -330,13 +330,14 @@ It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{19
 
 \subsection{Observations}
 
-We use data from \citet{1987A&A...176..347H} and \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
-\cite{1987A&A...176..347H} observations were obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
-A Fabry-Pérot interferometer was used with a étalon a separation of 0.5 mm. 
-Interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula. 
-The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.
+%We use data from \citet{1987A&A...176..347H} and \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
+%\cite{1987A&A...176..347H} observations were obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
+%A Fabry-Pérot interferometer was used with a étalon a separation of 0.5 mm. 
+%Interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula. 
+%The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.
 
-\citet{arthur2016turbulence} observations were initially published by \citet{2008RMxAA..44..181G}. 
+We use data from \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
+Their observations were initially published by \citet{2008RMxAA..44..181G}. 
 The data was obtained with the echelle spectrograph attached to the 4 m telescope at Kitti Peak National Observatory (KPNO).
 These observation cover 3 \(\times\) 5 arcmin\(^{2}\) of the central (Huygens) part of the Orion nebula.
 The data consist of 96, North-South orientated 300 arcsec slits at 2 arcsec intervals with a width of 0.8 arcsec with a velocity resolution of 8 km s\(^{-1}\).
@@ -363,19 +364,19 @@ Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS 
 \begin{table*}
 \begin{center}\caption{Summary of properties.}
 \begin{tabular}{ccccc}\hline
-HII       &  Distance (D)          & Diameter (R) & log L(H$_{\alpha}$) &  \(\langle \sigma_{LOS} \rangle \) \\
+HII       &  Distance ($D$)          & Diameter ($R$) & log L(H$_{\alpha}$) &  \(\langle \sigma_{\text{LOS}} \rangle \) \\
 Region    &  [kpc]          &  [pc]    &  [erg/s]            &    [km/s]  \\ 
 \hline
-Orion small   & 0.436$\pm$0.02  & 0.6  &    37               &   6.0      \\
-Orion large   & 0.436$\pm$0.02  & 5    &    37               &   6.0      \\ 
-Lagoon    & 1.25$\pm$0.12   & 25       &    37.47            &   13.6     \\
-Carina    & 2.35$\pm$0.05   & 15       &    39.6             &   22.4     \\
-30 Dor    & 49.97$\pm$0.19  & 98.9     &    39.76            &   31.7     \\
-NGC 346   & 61.9$\pm$1.1    & 64       &    38.67            &   10.2     \\
-Hubble X  & 490$\pm$40      & 160      &    38.6             &   13.4     \\
-Hubble V  & 490$\pm$40      & 130      &    38.87            &   12.3     \\
-NGC 604   & 820$\pm$30      & 400      &    39.65            &   16.2     \\
-NGC 595   & 820$\pm$30      & 400      &    39.36            &   18.3     \\
+Orion    & 0.436$\pm$0.02  & 0.6$\pm$0.06  &    37               &   6.0      \\
+%Orion large   & 0.436$\pm$0.02  & 5$\pm$0.5    &    37               &   6.0      \\ 
+Lagoon    & 1.25$\pm$0.12   & 25$\pm$2.5       &    37.47            &   13.6     \\
+Carina    & 2.35$\pm$0.05   & 15$\pm$1.5       &    39.6             &   22.4     \\
+30 Dor    & 49.97$\pm$0.19  & 98.9$\pm$9.8     &    39.76            &   31.7     \\
+NGC 346   & 61.9$\pm$1.1    & 64$\pm$6.4       &    38.67            &   10.2     \\
+Hubble X  & 490$\pm$40      & 160$\pm$16      &    38.6             &   13.4     \\
+Hubble V  & 490$\pm$40      & 130$\pm$13 &    38.87            &   12.3     \\
+NGC 604   & 820$\pm$30      & 400$\pm$40      &    39.65            &   16.2     \\
+NGC 595   & 820$\pm$30      & 400$\pm$40      &    39.36            &   18.3     \\
 \hline
 \end{tabular}\label{tab:Reg}
 \end{center}
@@ -391,59 +392,91 @@ NGC 595   & 820$\pm$30      & 400      &    39.36            &   18.3     \\
 
 \subsection{Turbulence}
 
-The classic turbulence theory \citep{kolm1} assumes a three-dimensional isotropic, incompressible and subsonic flow where an energy cascade is taking place.
-The energy cascade goes from the largest vortices where the energy in injected until it reaches dissipation with the smallest vortices.
-In the energy cascade three scales are defined based on their Reynolds number.
-The energy injection scale (Re $\rightarrow \infty$), $L_{EI}$, the dissipation scale (Re $\rightarrow$ 1), $L_{D}$ and the inertial scale, $L_{I}$, between the previous two.
-Since the energy distributions depends on the scale, the energy cascade concept is described with an energy spectrum, $E(k) \propto k$ where $k$ is the wave number for a determined scale $l$ ($k \equiv r^{-1}$).
+The existence of turbulent flows in astrophysical objects, ranging in scales from 10$^{6}$ to 10$^{17}$ m \citep{2010ApJ...710..853C} is the consequence of the high Reynolds numbers, $Re$, between 10$^{4}$ and 10$^{9}$ \citep{1949ApJ...110..329C,lagrois2011} that characterized these objects.
+The classic turbulence theory assumes a three-dimensional isotropic, incompressible and subsonic flow that can be described using an energy spectrum \citep{kolm1}.
+The concept of the energy spectrum is based on the assumption that the energy is cascading down inside the flow from the largest to the smallest scales.
+The different scales in the energy cascade are defined based on their $Re$.
+In one side of the spectrum there is the energy, \(L\), injection scale that is related to the largest vortices, where $ Re \rightarrow \infty$.
+On the other side of the spectrum there is the dissipation of energy at small scales, \(l\), where $Re \rightarrow$ 1 and it is assumed that small vortices are responsible for the friction that dissipates the energy flux into thermal energy.
+In between there is the inertial range, \(l  << r << L\) , where in a stationary case there energy transfer is at a constant rate,.
+The energy cascade concept is described with an energy spectrum, $E(k) \propto k^{\beta}$ where $k$ is the wave number for a determined scale $r$ ($k \equiv r^{-1}$).
 
-The total specific energy of a determined $l$ scale is of the order $\langle v_{l}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
-
-\begin{equation}\label{eq:veles}
- \langle v_{l}^{2} \rangle = \int_{k}^{\infty} E(k)dk
+The total specific energy of a determined $r$ scale is of the order $\langle v_{r}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
+\begin{equation}\label{eq:energyspectrum}
+ \langle v_{r}^{2} \rangle = \int_{k}^{\infty} E(k)dk
 \end{equation}
-
-This energy is of the order of $(\epsilon l)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$. From the above equation we obtain the Kolmogorov law:
+%
+It is assumed that this energy is of the order of $(\epsilon r)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$ we differentiate Equation \ref{eq:energyspectrum} and obtained the final form of the spectrum:
 
 \begin{equation}\label{eq:kolm}
 E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
 \end{equation}
+%
+where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$ is the Kolmogorov index.
+%For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 
-For Kolmogorov turbulence $\beta = -5 / 3$, and for supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
+\subsection{The second-order structure function}
 
-\subsection{The second order structure function}
+One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density .
+These fluctuations are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
+It is possible to describe the statistical properties of these fluctuations if they are assumed as a product of a stochastic field \citep{1984ApJ...277..556S}. 
+This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
 
-One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density \citep{1984ApJ...277..556S}.
-They are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
-By means of describing the statistical properties of these fluctuations they can be assumed as a product of a stochastic field statistical tools.
-
-The statistical function we use to study the velocity field of the HII regions is the second-order structure function, $B(r)$, defined as:
+The second-order structure function of the velocity centroids, $B(r)$, is defined as:
 
 \begin{equation}\label{eq:Br}
-B(\boldsymbol{r})=\dfrac{\sum[V_{r}(\boldsymbol{x}+\boldsymbol{r})-V_{r}(\boldsymbol{x}) ]^{2}}{N(\boldsymbol{r})}
+B(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\boldsymbol{x} + \boldsymbol{r}) - V_{c}(\boldsymbol{x}) ]^{2}} {N(\boldsymbol{r})}
 \end{equation}
+%
+where $N(\boldsymbol{r})$ is the number of pair points at each separation \(\boldsymbol{r}\), called lag. 
+In the Kolmogorov model \(B(r) \propto r^{2/3}\).
 
-where, $V_{r}(\boldsymbol{x})= V_{obs}(\boldsymbol{x})-\langle V_{obs}(\boldsymbol{x}) \rangle$ and N($\boldsymbol{r}$) is the number of points at each separation \(r\), called lag.
+The variance of the centroid velocity fluctuations is:
 
-As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
-This follows if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
-In these sense the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
+\begin{equation}\label{eq:variance}
+\sigma^2  = \frac{\sum_{\text{pixels}}[ V_c (\boldsymbol{x}) -\langle V_ c\rangle  ]^2}{N}
+\end{equation}
+%
+the, \(\langle V_c \rangle \) is the mean centroid velocity
+
+\begin{equation}\label{eq:mean}
+\langle V_c \rangle \  = \frac{\sum_{\text{pixels}}[ V_c (\boldsymbol{x})]}{N}
+\end{equation}
+%
+The summation in Equation \ref{eq:Br} is over all data pairs for each separation \(N(\boldsymbol{r})\).
+The summations in Equations \ref{eq:variance} and \ref{eq:mean} are over the total number of valid pixels in the (\textit{x},\textit{y})-plane.
 
 \subsection{Application to our HII regions sample}\label{sec:apply}
 
-We use the functional form of the structure function in terms of the autocorrelation function:
+The autocovariance function is:
+
+\begin{equation}\label{eq:Cr}
+C(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\boldsymbol{x} + \boldsymbol{r}) \times V_{c}(\boldsymbol{x}) ]} {N(\boldsymbol{r})}
+\end{equation}
+%
+and is another statistical tool used in studying the turbulent flows.
+The interpretation of the Equation \ref{eq:Cr} depends on the assumption of homogeneity, which may be violated for astrophysical processes.
+Because of this, Equation \ref{eq:Br} is a better approach to characterize the velocity fluctuations even in the presence of large scale linear gradients and may be sensitive to a wider range of scales \citep{1984ApJ...277..556S}.
+
+For the homogeneous random field, Equations \ref{eq:Br} and \ref{eq:Cr} are related by:
+
+\begin{equation}\label{eq:functional}
+B(r) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
+\end{equation}
+
+Based on Equation \ref{eq:functional} we use the functional of the structure function in the form:
 %
 \begin{equation}\label{eq:ff}
 b(r; r_0, m) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
 \end{equation}
 %
-where $C(r)$ is a new form of the autocorrelation function in the form:
+where $C(r)$ is now the new form of the autocorrelation function in the proposed form:
 %
 \begin{equation}\label{eq:ffnew}
   C(r) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right]
 \end{equation}
 %
-substituing the previourly form $C(r)=1/[1+(r/r_{0})^{m}]$ \citep{1984ApJ...277..556S,arthur2016turbulence}.
+substituting the previously $C(r)=1/[1+(r/r_{0})^{m}]$ \citep{1966igd..book.....K,1984ApJ...277..556S}.
 
 The term $r_{0}$ is the correlation length of the turbulence, the value of \(r\) in pc where equation \ref{eq:Br} reach the value of \(\sigma^2\), and $m$ is the index that adjust our results.
 In this idealized case, at scales larger than r$_{0}$ the structure function flattens as it tends towards the asymptotic value of 2$\sigma$ \citep{arthur2016turbulence}.
@@ -562,6 +595,9 @@ The fourth column is the correlation length \(r_0\).
 
 \subsubsection{Velocity field \(\sigma\)}
 
+The true variance of the velocity fields obtained with the analysis in Section \ref{sec:apply} is shown in the second column in Table \ref{tab:Res}. 
+For all regions except for Carina and Lagoon there is an slight increase in the value of $\sigma$.
+
 %The highest \(\sigma\) is 15.8 km s\(^{-1}\) for 30Dor.
 %This is two times higher than NGC 604 that has a value of 7.4 km s\(^{-1}\), followed by NGC 595 with 6.64 km s\(^{-1}\).
 %NGC 346 is next with a value of 5.6 km s\(^{-1}\), followed by Carina with 4.22 km s\(^{-1}\).
@@ -569,6 +605,10 @@ The fourth column is the correlation length \(r_0\).
 %Hubble V has 2.8 km s\(^{-1}\) and last mof all sample is Lagoon with 2.7 km s\(^{-1}\).
 
 \subsubsection{Structure function power indices \(m\)}
+
+%As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
+%This follows if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
+%In these sense the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
 
 It has been proposed for comparison between two-dimensional observations and the three-dimensional value of the astronomical object what it is called projection smoothing \citep{von1951methode, munch1958internal,1987ApJ...317..686O}, where:
 
@@ -586,13 +626,12 @@ If the extension of the region is compared with its depth the value of the index
 
 We can compute the $m_{3D}$ index from the two dimensional \(m\), if we assume that the $m_{3D}$ index lies between the limits of projection smoothing and a sheet-like distribution. 
 Following the procedure by \cite{arthur2016turbulence} and assuming the relationship m$_{2D}$ - 1 $<$ m$_{3D}$ $<$ m$_{2D}$ we have 0.36 $<$ m$_{3D}$ $<$ 0.72.
-Though \cite{arthur2016turbulence} are comparing emission lines and not regions, we can conclude that the index \(m\) still is far away as a unique parameter for measuring turbulence on ionized regions.
+
 
 \subsubsection{Significance on the length scale \(r_0\)}
 
 Ideally the correlation length \(r_0\), should represent the scale of dominant energy injection. 
 Since it is unclear what are the mechanisms driving the turbulence, thought a lot of options are candidates, it is difficult to pinpoint one particular process as the main responsible. 
-The possibility that the correlation length reveals the answer to the cause of observed motions is a long shot, but it is clear that each velocity field has a corresponding \(r_0\) value. 
 The range covered in our results goes from 0.09 to 11 pc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -602,19 +641,31 @@ The range covered in our results goes from 0.09 to 11 pc.
 \subsection{Correlations between physical properties and turbulent parameters}
 
 Scaling relations between parameters like size and luminosity are common tools to study HII regions, along dwarf galaxies and high-redshift star formation regions.
-\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the HII regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $L_{H} \sim \sigma ^{\sim 4}$).
+\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the HII regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $\text{L}_{\text{H}} \sim \sigma ^{\sim 4}$).
 They conclude that GEHRs follow this relations as self-gravity systems like globular clusters or elliptical galaxies.
-The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(L_{H_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
-\citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(L_{H_{\alpha}} \propto r^{2.72}\) and \(L_{H_{\alpha}} \propto \sigma^{4.18}\). 
+The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
+\citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\). 
 This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
-\citet{2015MNRAS.449.3568M} found that the relation is also found in dwarf galaxies with a \(L_{H_{\alpha}} \propto \sigma^{5}\).   
+\citet{2015MNRAS.449.3568M} found that the relation is also found in dwarf galaxies with a \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).  
 
-With the aim to investigate the scaling relations for our sample of HII regions and the turbulent parameters obtained, we use the properties in Table \ref{tab:Reg} with the values in Table \ref{tab:Res} to adjust a fit in the form $X = aY +b$. 
+%\citet{1981MNRAS.194..809L}
+
+With the aim to investigate the scaling relations for our sample of HII regions and the turbulent parameters, we use the properties in Table \ref{tab:Reg} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form $Y = aX +b$. 
 For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
-The results are shown in Table \ref{tab:RestStats} in ascending order for the $p$-value.
-In the Figures \ref{fig:rvsR}-\ref{fig:svss} are shown the correlations that are significant.
+The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
+In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level lower than 0.10.
+In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
 
-The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region.
+The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of $\log r_0 = (0.67 \pm 0.072) \log R-(0.797 \pm 0.131)$.
+
+The Figure \ref{fig:sigvsl} shows the log $\sigma$-log $\text{L}(\text{H}_{\alpha})$ plane.
+Since this relation is the most common it can be use for comparison with the investigations mentioned in at the beginning of the section.
+Our results give us a relation of $\log \sigma = (0.175 \pm 0.093) \log \text{L}(\text{H}_{\alpha})-(6.065 \pm 3.608)$.
+It is customary in the literature to present $\text{L} (\text{H}_{\alpha})$ as the dependent variable.
+In our case if we choose the upper positive error and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.7}\). 
+Using the same procedure in \textit{linmix} and changing the variables we obtained $\log \text{L}(\text{H}_{\alpha}) = (3.32\pm 1.89) \log \sigma -(36.23 \pm 1.45)$.
+Both relations are close to the previously proposed \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4}\)
+
 
 \input{Corr}
 
@@ -635,17 +686,23 @@ The Figure \ref{fig:rvsR} shows the strongest correlation, being this between th
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/svss.pdf}
-\caption{Same as Fig. \ref{fig:rvsR} but for the log $\sigma$-log $\sigma_{LOS}$ plane.}
+\caption{Same as Fig. \ref{fig:rvsR} but for the log $\sigma$-log $\sigma_{\text{LOS}}$ plane. The dotted line represents slope equal to unity.}
 \label{fig:svss}
 \end{figure}
 
 \subsubsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
 
-The analysis employed until now is not conclusive about the true velocity fluctuations observed in each nebula. 
-As pointed out by \citet{arthur2016turbulence} other techniques also allow us to study these fluctuations. 
-Following their procedure, it is possible to see from Table \ref{tab:Res} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
-In the case of homogeneous turbulent velocity we can consider the effect of 'project smearing', \citet{arthur2016turbulence} and reference therein, where the projection from three to two dimensions over a line-of-sight depth \(H\) reduces the plane-of-sky amplitude if \(r_{0} < H\).
-With a value of \(\sigma / \sigma_{LOS}\) = 0.5 we obtain \(r_{0} / H \approx\) 0.02-0.1 \citep{1984ApJ...277..556S}.
+The broad in the velocity width of the emission line represents the range of velocities along the line-of-sight (LOS), among thermal movements. 
+We can consider as a main broadening mechanisms the kinematical disorder along the LOS related to velocity gradients by the clumpiness on the molecular cloud and turbulent movements.
+On the plane-of-sky (POS) the consequences of those gradients and movements is measured in every pixel. The spatial variations on the velocity field would depend on the targeted pixel, depending on the motions inside the cloud (LOS component).
+This reasoning has lead to \citet{2011MNRAS.413..705L} to propose a direct relationship between \(\sigma_{\text{LOS}}\) and \(\sigma_{\text{POS}}\) (or just \(\sigma\) in this work).
+
+It have been mentioned that the projection of the velocity fluctuations reduces the actual amplitude in the line-of-sight \citep{1984ApJ...277..556S,arthur2016turbulence}.
+We can see from Table \ref{tab:Res} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
+In the case of homogeneous turbulent velocity we can consider the effect of \textit{project smearing} \citep{1984ApJ...277..556S}, where the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
+With a value of \(\sigma / \sigma_{\text{LOS}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.01-0.1.
+
+The Figure \ref{fig:svss} shows the log $\sigma$-log $\sigma_{\text{LOS}}$ plane with a relationship of $\log \sigma = (0.79 \pm 0.45) \log \sigma_{\text{LOS}}-(0.18 \pm 0.51)$ .
 
 \subsection{Comparison with previous structure functions}
 
@@ -678,7 +735,6 @@ Our observations cover the brightest part of the region and have smaller resolut
 \citet{lagrois2009multi} and \citet{lagrois2011} structure functions results does not cover scales $<$10 pc, where in our results the correlation is taking place.
 \citet{lagrois2011} used the data from \citet{lagrois2009multi} to complement the structure function analysis with the auto correlation function and filters to the velocity field to get rid of non-turbulent movements.
 Their sigma is 5.92$\pm$0.15 km/s with a correlation length is 43 pc.
-The high difference is because the consider that this happen at 2$\sigma$ (equation 13 on their paper).
 The power-law index they provide is 1.55$\pm$0.01.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -706,7 +762,7 @@ The study of turbulence between ionized regions and the molecular clouds that gi
 
 \item For NGC 346 with an observational box size of 20 pc an index of 0.78$\pm$0.02 is obtained with an inertial scale between 0.06 and 2 pc, and with a variance of 38$\pm$1.0 km$^2$/s$^2$.
 
-\item For Orion small with an observational box size of 0.45 pc an index of 1.06$\pm$0.02 is obtained with an inertial scale between 0.002 and 0.09 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
+\item For Orion with an observational box size of 0.45 pc an index of 1.06$\pm$0.02 is obtained with an inertial scale between 0.002 and 0.09 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
 
 \item For Carina with an observational box size of 20 pc an index of 1.36$\pm$0.30 is obtained with an inertial scale between 0.008 and 0.6 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
 
@@ -716,7 +772,6 @@ The study of turbulence between ionized regions and the molecular clouds that gi
 
 \item For Lagoon with an observational box size of 16 pc an index of 1.12$\pm$0.09 is obtained with an inertial scale between 0.005 and 1 pc, and with a variance of 7.2$\pm$0.8 km$^2$/s$^2$.
 
-\item For Orion large with an observational box size of 3 pc an index of 1.72$\pm$0.24 is obtained with an inertial scale between 0.1 and 0.7 pc, and with a variance of 6$\pm$0.5 km$^2$/s$^2$.
 
     
 \end{enumerate}
