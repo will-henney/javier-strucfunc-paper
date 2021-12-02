@@ -423,24 +423,28 @@ It is possible to describe the statistical properties of these fluctuations if t
 This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
 
 The second-order structure function of the velocity centroids, $B(r)$, is defined as:
-
+%
 \begin{equation}\label{eq:Br}
-B(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\boldsymbol{x} + \boldsymbol{r}) - V_{c}(\boldsymbol{x}) ]^{2}} {N(\boldsymbol{r})}
+  B(\boldsymbol{r}) = \dfrac{1}{N(\boldsymbol{r})}
+  \,
+  \sum_{\text{pairs}} \bigl[
+  V_{c}(\boldsymbol{x} + \boldsymbol{r}) - V_{c}(\boldsymbol{x})
+  \bigr]^{2}
 \end{equation}
 %
 where $N(\boldsymbol{r})$ is the number of pair points at each separation \(\boldsymbol{r}\), called lag. 
 In the Kolmogorov model \(B(r) \propto r^{2/3}\).
 
 The variance of the centroid velocity fluctuations is:
-
+%
 \begin{equation}\label{eq:variance}
-\sigma^2  = \frac{\sum_{\text{pixels}}[ V_c (\boldsymbol{x}) -\langle V_ c\rangle  ]^2}{N}
+\sigma^2  = \frac{1}{N} \sum_{\text{pixels}} \bigl[ V_c (\boldsymbol{x}) -\langle V_ c\rangle  \bigr]^2
 \end{equation}
 %
 the, \(\langle V_c \rangle \) is the mean centroid velocity
-
+%
 \begin{equation}\label{eq:mean}
-\langle V_c \rangle \  = \frac{\sum_{\text{pixels}}[ V_c (\boldsymbol{x})]}{N}
+\langle V_c \rangle \  = \frac{1}{N} \sum_{\text{pixels}} V_c (\boldsymbol{x})
 \end{equation}
 %
 The summation in Equation \ref{eq:Br} is over all data pairs for each separation \(N(\boldsymbol{r})\).
