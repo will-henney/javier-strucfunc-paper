@@ -116,8 +116,8 @@
 \author[J. García Vázquez et al.]{
 J. García Vázquez,$^{1}$\thanks{E-mail: jgarciav1600@alumno.ipn.mx}
 J. Zsargo,$^{1}$
-W. J. Henney$^{2}$
-and H. O. Castañeda$^{1}$
+and W. J. Henney$^{2}$
+%and H. O. Castañeda$^{1}$
 \\
 % List of institutions
 $^{1}$Escuela Superior de Física y Matemáticas, Instituto Politécnico Nacional, Ciudad de México, México.\\
@@ -142,15 +142,13 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
   To characterize these fluctuations we apply a statistical analysis using the second-order structure function to archival \halpha\ observations of a diverse sample of 9 \hii{} regions.
   This regions are located in the Milky Way and other Local Group galaxies, and
   span more than two orders of magnitude in size and luminosity.
-  We proposed a functional form of the structure function that takes into account the observational seeing, the instrument noise and the size of the observational box.
-  By fitting this functional to our results we extract three parameters related to the fluctuations in each region: 
-  the total velocity dispersion \(\sigma\), which spans from 3 to 15 km s\(^{-1}\), the
-  autocorrelation length \(r_0\), which covers 0.06 - 8 pc, and the power-law slope \(m\), which ranges from 0.7 to 1.3.
-  The velocity dispersion is found to correlate primarily with luminosity,
-  while the autocorrelation length correlates primarily with the size of the region.
+  We propose a functional form of the structure function that considers observational constraints.
+  By using a chi-square analysis fitting this functional to our results we extract three parameters related to the fluctuations in the velocity field in each region. 
+  The true velocity dispersion \(\sigma\), which spans from 3 to 15 km s\(^{-1}\), the
+  autocorrelation length \(r_0\) covering to 0.06 - 8 pc, and the power-law slope \(m\) of the velocity field, which ranges from 0.7 to 1.3.
+  The velocity dispersion is found to correlate primarily with luminosity and the autocorrelation length correlates primarily with the size of the region.
   A comparison between \(\sigma\) and \(\sigma_{POS}\) shows that this last value is at roughly the double for all regions.
   We found that our proposed functional form describe with more accuracy the inertial range and our methodology guarantees consistency for comparison between the galactic and giant HII regions.
-  \textbf{Add a sentence about the conclusions!}
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -168,32 +166,31 @@ HII regions -- ISM: kinematics and dynamics -- turbulence
 
 \section{Introduction}
 
-\WILL{I think it would be best to lead with a description of the dynamics of H II regions before mentioning the turbulence}.
-
 HII regions are far from been static objects.
 Initially, the gas of a HII region is ionized in a previously disturbed medium.
-When the formed star starts emitting, the energy and matter coming from it interacts with the surrounding medium, putting in motion a series of dynamical processes that have a considerable effect in the velocity field of the HII regions.
-Different investigations have shown a complex velocity structure particularly to each region. 
-Mainly, the excess in the thermal broadening on the spectral lines is interpreted as disorder motions along the line-of-sight (LOS).
-Motions like the expansion or rotation of the region can be accounted for, but after these are considered, still persist a random velocity component in the region.
+When the recently created star starts emitting, the energy and matter coming from it interacts with the surrounding medium, putting in motion a series of dynamical processes that have a considerable effect in the velocity field of the now HII region.
+Different investigations have shown that a complex velocity structure is particularly to each region. 
+The excess in the thermal broadening on the spectral lines is interpreted as disorder motions along the line-of-sight (LOS).
+Large-scale motions like the expansion or rotation of the region can be accounted for, but even after these are considered still persist a random component in the region velocity field.
 It has become customary to investigate this random component as turbulence in the ionized gas.
 
-The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second order structure function.
+The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second-order structure function.
 This studies span from galactic HII regions \citep{1986ApJ...300..624R} like Orion \citep{von1951methode,munch1958internal,castaneda1988,1992ApJ...387..229O,arthur2016turbulence} to giant HII regions \citep{1961MNRAS.122....1F,lagrois2009multi,lagrois2011}, like NGC 604 in the M 33 galaxy \citep{tanco1997,2019arXiv191203543M}.
 
 The procedure using the structure function allow us to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the photoionized gas.
 Several problems arise in the study of these fluctuation.
-One of them is that there is no well-established theory for turbulence in astronomical conditions, these being that the medium is compressible and supersonic, and will result in the presence of shock waves \citep{lagrois2011,arthur2016turbulence}.
-On the other hand, it is known that these regions are created on the edge of molecular clouds, so they will reach a blister or champagne phase, introducing large-scale gradients not related with random motions \citep{Mivi1995}.
-Intrinsic with observations there is the projection of a three-dimensional function into the plane-of-sky \citep{von1951methode,munch1958internal,1964SvA.....8..210K} leading to a loss in information.
+One of them is that there is no well-established theory for turbulence in astronomical conditions; these being that the medium is compressible and supersonic.
+This conditions will develop shock waves in the HII region changing the energy balance \citep{lagrois2011,arthur2016turbulence}.
+Two it is known that these regions are created on the edge of molecular clouds, so they will reach a blister or champagne phase, introducing large-scale gradients not related with random motions \citep{Mivi1995}.
+And three, in regard with observations, there is the projection of a three-dimensional function into the plane-of-sky \citep{von1951methode,munch1958internal,1964SvA.....8..210K} leading to a loss in information of the velocity spectrum.
 
 There are also a series of problems related to the observations that to date have not been formally addressed like the previous ones.
 These problems are that: 1) following observations, there is the seeing and noise due to the telescope and instrument, and 2) that the observations are mostly limited to only one part of the nebula.
 This has the consequence that when analyzing a turbulent field, the velocity fluctuations related to small and large scales will be affected due to artifacts introduced by the problems mentioned above.
 In turbulence theory, the largest and smallest scales are the most important as they relate to the energy transfer of the turbulence spectrum, which implies that it is necessary to consider them for a correct characterization of the turbulence in the velocity field.
-Disregarding the above has led previous investigations in HII regions to erroneous conclusions about the nature of this energy spectrum.
+Disregarding the above has led previous investigations in HII regions to erroneous conclusions about the nature of the energy spectrum.
 
-To face these problems, we study the effects of seeing, noise and observational box size in an artificial velocity field to develop and propose a correct form that fits the results of a statistical analysis of the field of velocity of HII regions.
+To face these problems, we study the effects of seeing, noise and observational box size using an artificial velocity field to develop and propose a better form that fits the results of a statistical analysis in the velocity field of HII regions.
 This aims to leave little room for the interpretation of results and to characterize in a more precise way the turbulence in ionized nebulae, something that has not been considered in previous works.
 Also, we aim to fill a gap with an uniform statistical analysis of turbulence between galactic and giant HII regions.
 
@@ -268,18 +265,17 @@ Our results are compared with physical properties of each region and with previo
   \label{fig:velocity-maps}
 \end{figure*}
 
-Previous works that apply a statistical analysis on the velocity field of HII regions  
-tend to consider just one region.
-With the aim to develop a more complete study we choose 9 objects in the \halpha\ emission line.
-This give us the opportunity to compare for first time the structure function of various objects following the same methodology.
-We use previous published observational data to measure characterize the velocity field o HII regions located in the Milky Way, the Magellanic clouds and in the M 33 and NGC 6822 galaxies. 
-Figure \ref{fig:hii-regions} shows the images of our sample.
-Table \ref{tab:Reg} shows the names with the physical properties of interest in each region. 
+Previous investigations using the second-order structure function on the velocity field use, in majority, one HII region and their own methodology.
+This has the consequences that only the same authors can compare their results in a direct way and the gap in the interpretation between authors doesn't aid the understanding of the topic.
+To deal with this issue we choose 9 objects in the \halpha\ emission line and use the the same methodology in all the regions.
+This give us the opportunity to compare for first time the structure function of various objects.
+We use previous published observational data to characterize the velocity field o HII regions located in the Milky Way, the Magellanic clouds and in the M 33 and NGC 6822 galaxies. 
+Figure \ref{fig:hii-regions} shows the images of our HII region sample and Table \ref{tab:Reg} shows the the physical properties of interest in each region. 
 
 \subsection{Regions in the Milky Way and Magellanic Clouds}
 \label{sec:regions-milky-way}
 
-Orion (M42) is the prototype galactic HII region and one on the best objects studied in the sky.
+Orion (M42) is the prototype galactic HII region and one of the mores studied in the sky.
 Located at a distance of 440 pc \citep{2008AJ....136.1566O} its main physical and kinematics properties, along its stellar population are documented in \citet{2001ARA&A..39...99O}.
 The main ionizing star is \(\theta^{1}\)Ori C (spectral type \(\sim\)O7) and with other 3 B-type stars they form the Trapezium cluster.
 The position of Orion near the side of the Orion Molecular Cloud (OMC-1) make it an ongoing star formation region and a example of a blister HII region. Some of these young stars are accountable for stellar jets and Herbig-Haro objects seen in the nebula \citep{arthur2016turbulence}.
@@ -288,7 +284,7 @@ The Carina nebula is a large star-forming complex located at a distance of 2 350
 Young clusters like Trumpler 14 and 16, and Collinder 228 together form the Car OB1 association.
 This OB association has more than 65 stars earlier than B0, and several Wolf-Rayet stars.
 The most star is a luminous blue variable, $\eta$ Car \citep{Damiani:2016a}.
-As a star formation region,it presents several phenomena related with young stars as: evaporating protoplanetary discs, erosion of large dust pillars and the triggering of a second generation of embedded stars, Herbig-Haro objects, to mention some, \citet{2008hsf2.book..138S} and reference therein.
+As a star formation region, it presents several phenomena related with young stars as evaporating protoplanetary discs, erosion of large dust pillars and the triggering of a second generation of embedded stars, Herbig-Haro objects, to mention some, \citet{2008hsf2.book..138S} and reference therein.
 An approaching and receding kinematics components are known in the nebula.
 
 The Lagoon Nebula (M8, NGC6523) is located at a distance of 1 250 pc \citep{2005A&A...430..941P} and contains the young stellar cluster NGC6530.
@@ -644,29 +640,34 @@ The range covered in our results goes from 0.09 to 11 pc.
 
 \subsection{Correlations between physical properties and turbulent parameters}
 
-Scaling relations between parameters like size and luminosity are common tools to study HII regions, along dwarf galaxies and high-redshift star formation regions.
+Relationship between the physical properties of HII regions, like size and luminosity, and the velocity dispersion have been used as tools for concluding scaling relations for these objects.
+These relations have also been studied in dwarf galaxies and high-redshift star formation regions.
 \citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the HII regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $\text{L}_{\text{H}} \sim \sigma ^{\sim 4}$).
-They conclude that GEHRs follow this relations as self-gravity systems like globular clusters or elliptical galaxies.
+They conclude that GEHRs follow this relation because they behave as self-gravitatory systems like globular clusters or elliptical galaxies.
 The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
-\citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\). 
-This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
-\citet{2015MNRAS.449.3568M} found that the relation is also found in dwarf galaxies with a \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).  
-
 %\citet{1981MNRAS.194..809L}
 
-With the aim to investigate the scaling relations for our sample of HII regions and the turbulent parameters, we use the properties in Table \ref{tab:Reg} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form $Y = aX +b$. 
+
+
+\citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
+This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
+Recently, \citet{2015MNRAS.449.3568M} found that the relation in dwarf galaxies is \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).
+\citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
+
+This line of investigation is followed using the scaling relation as a research tool between the properties of the sample of HII regions and our results. 
+We use the properties in Table \ref{tab:Reg} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form $Y = aX +b$. 
 For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
 The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
-In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level lower than 0.10.
+In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level  $p \leq $0.10.
 In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
 
-The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of $\log r_0 = (0.67 \pm 0.072) \log R-(0.797 \pm 0.131)$.
+The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of $\log r_0 = (0.69 \pm 0.07) \log R-(0.85 \pm 0.14)$.
 
 The Figure \ref{fig:sigvsl} shows the log $\sigma$-log $\text{L}(\text{H}_{\alpha})$ plane.
-Since this relation is the most common it can be use for comparison with the investigations mentioned in at the beginning of the section.
-Our results give us a relation of $\log \sigma = (0.175 \pm 0.093) \log \text{L}(\text{H}_{\alpha})-(6.065 \pm 3.608)$.
+Since this relation is the most common it can be use for comparison with the investigations mentioned at the beginning of this section.
+Our results give us a relation of $\log \sigma = (0.16 \pm 0.12) \log \text{L}(\text{H}_{\alpha})-(5.6 \pm 5.0)$.
 It is customary in the literature to present $\text{L} (\text{H}_{\alpha})$ as the dependent variable.
-In our case if we choose the upper positive error and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.7}\). 
+In our case if we choose the upper positive error and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.5}\). 
 Using the same procedure in \textit{linmix} and changing the variables we obtained $\log \text{L}(\text{H}_{\alpha}) = (3.32\pm 1.89) \log \sigma -(36.23 \pm 1.45)$.
 Both relations are close to the previously proposed \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4}\)
 
@@ -697,8 +698,8 @@ Both relations are close to the previously proposed \(\text{L}_{\text{H}_{\alpha
 \subsubsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
 
 The broad in the velocity width of the emission line represents the range of velocities along the line-of-sight (LOS), among thermal movements. 
-We can consider as a main broadening mechanisms the kinematical disorder along the LOS related to velocity gradients by the clumpiness on the molecular cloud and turbulent movements.
-On the plane-of-sky (POS) the consequences of those gradients and movements is measured in every pixel. The spatial variations on the velocity field would depend on the targeted pixel, depending on the motions inside the cloud (LOS component).
+We can consider as a main broadening mechanisms, the kinematical disorder along the LOS related to velocity gradients by the clumpiness on the molecular cloud and turbulent movements.
+On the plane-of-sky (POS) the consequences of those gradients and movements is measured in every pixel. The spatial variations on the velocity field would depend on the targeted pixel, depending on the motions inside the cloud (the LOS component).
 This reasoning has lead to \citet{2011MNRAS.413..705L} to propose a direct relationship between \(\sigma_{\text{LOS}}\) and \(\sigma_{\text{POS}}\) (or just \(\sigma\) in this work).
 
 It have been mentioned that the projection of the velocity fluctuations reduces the actual amplitude in the line-of-sight \citep{1984ApJ...277..556S,arthur2016turbulence}.
@@ -706,7 +707,7 @@ We can see from Table \ref{tab:Res} that the line-of-sight velocity dispersion i
 In the case of homogeneous turbulent velocity we can consider the effect of \textit{project smearing} \citep{1984ApJ...277..556S}, where the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
 With a value of \(\sigma / \sigma_{\text{LOS}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.01-0.1.
 
-The Figure \ref{fig:svss} shows the log $\sigma$-log $\sigma_{\text{LOS}}$ plane with a relationship of $\log \sigma = (0.79 \pm 0.45) \log \sigma_{\text{LOS}}-(0.18 \pm 0.51)$ .
+The Figure \ref{fig:svss} shows the log $\sigma$-log $\sigma_{\text{LOS}}$ plane with a relationship of $\log \sigma = (0.75 \pm 0.60) \log \sigma_{\text{LOS}}-(0.13 \pm 0.70)$ .
 
 \subsection{Comparison with previous structure functions}
 
