@@ -166,6 +166,8 @@ HII regions -- ISM: kinematics and dynamics -- turbulence
 
 \section{Introduction}
 
+
+%% Will version 2021-12-07 of Intro first para (what we are studying)
 Photoionized regions around high-mass stars (\hii{} regions)
 show highly vigorous dynamics
 as a result of the star formation process and the energy and momentum
@@ -184,25 +186,68 @@ of order \SI{30}{km.s^{-1}} \citep{Torres-Flores:2013t, Castro:2018a}.
 The same tendency of increasing velocity dispersion (\(\sigma\))
 and luminosity (\(L\))
 continues up to the scale of entire galaxies
-with an approximate relation \(L \propto \sigma^n\) that spans
+with an approximate relation \(L \propto \sigma^\alpha\) that spans
 more than 5 orders of magnitude in luminosity
-with a  power-law index \(n = 3\) to~\(7\)
-\cite{Rozas:2006b, Moiseev:2015a}.
-However, it is unclear whether a single physical mechanism
+with a  power-law index \(\alpha = 3\) to~\(7\)
+\cite{terlevich1981, Rozas:2006b, Chavez:2014a, Moiseev:2015a}.
+However, it is not known whether a single physical mechanism
 underlies this relationship at all scales.
 The relative importance of gravity and the various stellar feedback mechanisms
 (heating, direct radiation pressure, stellar winds, cluster winds)
 are unclear in many cases and are frequently disputed \citep{Krumholz:2016a, Melnick:2021x}.
 
+% Javier initial version
+%
+% HII regions are far from been static objects.  Initially, the gas of
+% a HII region is ionized in a previously disturbed medium.  When the
+% recently created star starts emitting, the energy and matter coming
+% from it interacts with the surrounding medium, putting in motion a
+% series of dynamical processes that have a considerable effect in the
+% velocity field of the now HII region.  Different investigations have
+% shown that a complex velocity structure is particularly to each
+% region.  The excess in the thermal broadening on the spectral lines
+% is interpreted as disorder motions along the line-of-sight (LOS).
+% Large-scale motions like the expansion or rotation of the region can
+% be accounted for, but even after these are considered still persist
+% a random component in the region velocity field.  It has become
+% customary to investigate this random component as turbulence in the
+% ionized gas.
 
-HII regions are far from been static objects.
-Initially, the gas of a HII region is ionized in a previously disturbed medium.
-When the recently created star starts emitting, the energy and matter coming from it interacts with the surrounding medium, putting in motion a series of dynamical processes that have a considerable effect in the velocity field of the now HII region.
-Different investigations have shown that a complex velocity structure is particularly to each region. 
-The excess in the thermal broadening on the spectral lines is interpreted as disorder motions along the line-of-sight (LOS).
-Large-scale motions like the expansion or rotation of the region can be accounted for, but even after these are considered still persist a random component in the region velocity field.
-It has become customary to investigate this random component as turbulence in the ionized gas.
+%% Will version 2021-12-07 of Intro second para (how we are studying it)
+One of the simplest ways to measure the velocity dispersion of an \hii{} region
+is to use the Doppler width of a strong emission line, such as the
+optical hydrogen recombination line \ha{} \Wav{6563}.
+We will use \(\sigma\los\) to denote
+the root-mean-square (RMS) line-of-sight velocity dispersion determined in this way.
+Unfortunately, there are many processes that contribute to this width
+in addition to the line-of-sight turbulent velocity fluctuations,
+such as thermal and fine-structure broadening, instrumental broadening,
+dust scattering, 
+and large-scale expansion
+\citetext{see \citealp{Rozas:2006b} and \citealp{Garcia-Diaz:2008a}
+  for detailed discussion}.
+All except the last of these can in principal be approximately corrected for,
+which is a reasonable strategy to apply in the case of high-luminosity regions
+where the turbulent width is expected to be larger than the correction terms.
+However, for lower luminosity regions the turbulent velocities are much smaller,
+which limits the accuracy of such a correction process
+\citetextP{see section 3.4 of \citealp{Arthur:2016a}}. 
 
+An alternative way to study turbulent motions is to measure
+the fluctuations on the plane of the sky of the velocity centroids of an emission line
+\citep{von1951methode}.
+We will denote the RMS magnitude of these fluctuations by \(\sigma\pos\).
+In addition to being unaffected by the various nuisance broadening mechanisms
+discussed in the previous paragraph,
+this also offers the opportunity to study the spatial scale of the fluctuations
+by measuring average velocity differences as a function of
+the angular separation between two points.
+Different mathematical tools can be used to study these spatial fluctuations,
+such as the autocorrelation function \citep{lagrois2011}
+and \(\Delta\)-variance \citep{Ossenkopf:2006a}.
+In this paper, we will concentrate on the second order structure function.
+
+% Javier's original para 2
 The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second-order structure function.
 This studies span from galactic HII regions \citep{1986ApJ...300..624R} like Orion \citep{von1951methode,munch1958internal,castaneda1988,1992ApJ...387..229O,arthur2016turbulence} to giant HII regions \citep{1961MNRAS.122....1F,lagrois2009multi,lagrois2011}, like NGC 604 in the M 33 galaxy \citep{tanco1997,2019arXiv191203543M}.
 
@@ -832,9 +877,11 @@ JGV acknowledges and thanks CONACYT for the PhD research scholarship. We are gra
 
 \section{Degradation of the structure function due to observational limitations}
 \label{sec:degr-struct-funct}
+Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
 
 \subsection{Finite box effects}
 \label{sec:finite-box-effects}
+
 
 \begin{figure}
   \begin{tabular}{@{} l @{}}
