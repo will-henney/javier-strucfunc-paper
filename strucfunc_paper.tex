@@ -189,7 +189,7 @@ continues up to the scale of entire galaxies
 with an approximate relation \(L \propto \sigma^\alpha\) that spans
 more than 5 orders of magnitude in luminosity
 with a  power-law index \(\alpha = 3\) to~\(7\)
-\cite{terlevich1981, Rozas:2006b, Chavez:2014a, Moiseev:2015a}.
+\citep{terlevich1981, Rozas:2006b, Chavez:2014a, Moiseev:2015a}.
 However, it is not known whether a single physical mechanism
 underlies this relationship at all scales.
 The relative importance of gravity and the various stellar feedback mechanisms
@@ -216,7 +216,8 @@ are unclear in many cases and are frequently disputed \citep{Krumholz:2016a, Mel
 %% Will version 2021-12-07 of Intro second para (how we are studying it)
 One of the simplest ways to measure the velocity dispersion of an \hii{} region
 is to use the Doppler width of a strong emission line, such as the
-optical hydrogen recombination line \ha{} \Wav{6563}.
+optical hydrogen recombination line \ha{} \Wav{6563}
+\citetext{e.g., \citealp{1986ApJ...300..624R}}.
 We will use \(\sigma\los\) to denote
 the root-mean-square (RMS) line-of-sight velocity dispersion determined in this way.
 Unfortunately, there are many processes that contribute to this width
@@ -231,7 +232,7 @@ which is a reasonable strategy to apply in the case of high-luminosity regions
 where the turbulent width is expected to be larger than the correction terms.
 However, for lower luminosity regions the turbulent velocities are much smaller,
 which limits the accuracy of such a correction process
-\citetextP{see section 3.4 of \citealp{Arthur:2016a}}. 
+\citetext{see section 3.4 of \citealp{arthur2016turbulence}}. 
 
 An alternative way to study turbulent motions is to measure
 the fluctuations on the plane of the sky of the velocity centroids of an emission line
@@ -245,33 +246,84 @@ the angular separation between two points.
 Different mathematical tools can be used to study these spatial fluctuations,
 such as the autocorrelation function \citep{lagrois2011}
 and \(\Delta\)-variance \citep{Ossenkopf:2006a}.
-In this paper, we will concentrate on the second order structure function.
+In this work, we will concentrate on the second order structure function,
+\(B(r)\) (see section \ref{sec:second-order-struct}),
+which has been used in many previous studies of velocity fluctuations
+in \hii{} regions in our own Galaxy
+% Javier cited the wrong Roy & Joncas here - now corrected (should be 1985 not 1986)
+% Also, Medina+ 2014  better than Arthur+ 2016
+\citep{munch1958internal, castaneda1988, Roy:1985a, 1992ApJ...387..229O, medina2014}
+and in external galaxies
+\citep{1961MNRAS.122....1F, tanco1997, lagrois2009multi, lagrois2011, Melnick:2021x}.
 
 % Javier's original para 2
-The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second-order structure function.
-This studies span from galactic HII regions \citep{1986ApJ...300..624R} like Orion \citep{von1951methode,munch1958internal,castaneda1988,1992ApJ...387..229O,arthur2016turbulence} to giant HII regions \citep{1961MNRAS.122....1F,lagrois2009multi,lagrois2011}, like NGC 604 in the M 33 galaxy \citep{tanco1997,2019arXiv191203543M}.
 
-The procedure using the structure function allow us to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the photoionized gas.
-Several problems arise in the study of these fluctuation.
-One of them is that there is no well-established theory for turbulence in astronomical conditions; these being that the medium is compressible and supersonic.
-This conditions will develop shock waves in the HII region changing the energy balance \citep{lagrois2011,arthur2016turbulence}.
-Two it is known that these regions are created on the edge of molecular clouds, so they will reach a blister or champagne phase, introducing large-scale gradients not related with random motions \citep{Mivi1995}.
-And three, in regard with observations, there is the projection of a three-dimensional function into the plane-of-sky \citep{von1951methode,munch1958internal,1964SvA.....8..210K} leading to a loss in information of the velocity spectrum.
+% The fluctuations associated with the centroid velocities on the plane-of-sky (POS) of photoionized regions have been characterized several times using the second-order structure function.
+% This studies span from galactic HII regions \citep{1986ApJ...300..624R} like Orion \citep{von1951methode,munch1958internal,castaneda1988,1992ApJ...387..229O,arthur2016turbulence} to giant HII regions \citep{1961MNRAS.122....1F,lagrois2009multi,lagrois2011}, like NGC 604 in the M 33 galaxy \citep{tanco1997,2019arXiv191203543M}.
 
-There are also a series of problems related to the observations that to date have not been formally addressed like the previous ones.
-These problems are that: 1) following observations, there is the seeing and noise due to the telescope and instrument, and 2) that the observations are mostly limited to only one part of the nebula.
-This has the consequence that when analyzing a turbulent field, the velocity fluctuations related to small and large scales will be affected due to artifacts introduced by the problems mentioned above.
-In turbulence theory, the largest and smallest scales are the most important as they relate to the energy transfer of the turbulence spectrum, which implies that it is necessary to consider them for a correct characterization of the turbulence in the velocity field.
-Disregarding the above has led previous investigations in HII regions to erroneous conclusions about the nature of the energy spectrum.
+% Will's 2021-12-08 new version of Intro para 4: description of our methodology
+In this paper,
+we employ archival data from a wide variety of integral field and multi-longslit
+spectrographic datasets to analyze spatially resolved \ha{} velocity maps for a sample of
+nine \hii{} regions (Figure~\ref{fig:hii-regions}),
+ranging in size from \SI{0.5}{pc} to \SI{200}{pc}
+and in \ha{} luminosity from \SI{e37}{erg.s^{-1}} to  \SI{e39}{erg.s^{-1}}.
+The observations and the physical characteristics of our sample
+are described in section~\ref{sec:HIIsample}.
 
-To face these problems, we study the effects of seeing, noise and observational box size using an artificial velocity field to develop and propose a better form that fits the results of a statistical analysis in the velocity field of HII regions.
-This aims to leave little room for the interpretation of results and to characterize in a more precise way the turbulence in ionized nebulae, something that has not been considered in previous works.
-Also, we aim to fill a gap with an uniform statistical analysis of turbulence between galactic and giant HII regions.
+We apply a uniform methodology to the analysis of the structure function
+by fitting a simple functional form that consists of a power law of slope \(m\)
+at small separations,
+transitioning to a constant value at separations larger than
+an autocorrelation length \(r_0\).
+This is described in section~\ref{sec:met}.
+We also take into account three observational limitations of the datasets:
+the finite angular resolution, \(s_0\) (set by pixel spacing or atmospheric seeing);
+the finite map size, \(L\);
+and a contribution of spatially uncorrelated noise, \(B_0\),
+to the observed structure function.
+In Appendix~\ref{sec:degr-struct-funct} we use simulated velocity maps to derive
+appropriate functional forms for the effects of \(s_0\), \(L\) and \(B_0\).
+In our fits, we marginalize over these nuisance parameters to obtain robust
+credibility limits for the parameters of astrophysical interest:
+\(\sigma\pos\), \(r_0\), and \(m\).
+The results of these fits are presented in section~\ref{sec:results}.
 
-Using archival data we perform the second-order structure function on a sample of HII regions.
-Our sample spans in size from 4 pc to 400 pc and has luminosities between 10\(^{37}\)-10\(^{39}\) erg s\(^{-1}\) going from galactic to extragalactic HII regions.
-We apply an uniform methodology of a functional form of the structure function to characterize the turbulent using the velocity field variance, $\sigma^2$, autocorrelation length, \(r_0\), and power-law slope, \(m\).
-Our results are compared with physical properties of each region and with previous investigations.
+In section~\ref{sec:discussion} we discuss the relation
+of our results to previous studies and the correlations that we find
+between the structure function parameters and other properties of
+the \hii{} regions in our sample.
+We also discuss the implications of our results for the existence of a
+Kolmogorov-type turbulent energy cascade and the nature of the driving mechanism
+for the velocity fluctuations.
+Finally, in section~\ref{sec:conclusions} we summarise our conclusions.
+
+%% Previous Javier version of final paragraphs of Intro. I think I
+%% have incorporated most of this in my own version, but more
+%% concisely.  However, I haven't mentioned the projection effects -
+%% maybe that would be tetter just in section 3
+
+% The procedure using the structure function allow us to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the photoionized gas.
+% Several problems arise in the study of these fluctuation.
+% One of them is that there is no well-established theory for turbulence in astronomical conditions; these being that the medium is compressible and supersonic.
+% This conditions will develop shock waves in the HII region changing the energy balance \citep{lagrois2011,arthur2016turbulence}.
+% Two it is known that these regions are created on the edge of molecular clouds, so they will reach a blister or champagne phase, introducing large-scale gradients not related with random motions \citep{Mivi1995}.
+% And three, in regard with observations, there is the projection of a three-dimensional function into the plane-of-sky \citep{von1951methode,munch1958internal,1964SvA.....8..210K} leading to a loss in information of the velocity spectrum.
+
+% There are also a series of problems related to the observations that to date have not been formally addressed like the previous ones.
+% These problems are that: 1) following observations, there is the seeing and noise due to the telescope and instrument, and 2) that the observations are mostly limited to only one part of the nebula.
+% This has the consequence that when analyzing a turbulent field, the velocity fluctuations related to small and large scales will be affected due to artifacts introduced by the problems mentioned above.
+% In turbulence theory, the largest and smallest scales are the most important as they relate to the energy transfer of the turbulence spectrum, which implies that it is necessary to consider them for a correct characterization of the turbulence in the velocity field.
+% Disregarding the above has led previous investigations in HII regions to erroneous conclusions about the nature of the energy spectrum.
+
+% To face these problems, we study the effects of seeing, noise and observational box size using an artificial velocity field to develop and propose a better form that fits the results of a statistical analysis in the velocity field of HII regions.
+% This aims to leave little room for the interpretation of results and to characterize in a more precise way the turbulence in ionized nebulae, something that has not been considered in previous works.
+% Also, we aim to fill a gap with an uniform statistical analysis of turbulence between galactic and giant HII regions.
+
+% Using archival data we perform the second-order structure function on a sample of HII regions.
+% Our sample spans in size from 4 pc to 400 pc and has luminosities between 10\(^{37}\)-10\(^{39}\) erg s\(^{-1}\) going from galactic to extragalactic HII regions.
+% We apply an uniform methodology of a functional form of the structure function to characterize the turbulent using the velocity field variance, $\sigma^2$, autocorrelation length, \(r_0\), and power-law slope, \(m\).
+% Our results are compared with physical properties of each region and with previous investigations.
 
 \section{\boldmath Sample of \hii{} regions}\label{sec:HIIsample}
 
@@ -486,8 +538,8 @@ where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$
 %For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 
 \subsection{The second-order structure function}
-
-One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density .
+\label{sec:second-order-struct}
+One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density.
 These fluctuations are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
 It is possible to describe the statistical properties of these fluctuations if they are assumed as a product of a stochastic field \citep{1984ApJ...277..556S}. 
 This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
