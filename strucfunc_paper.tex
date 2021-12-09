@@ -325,7 +325,9 @@ Finally, in section~\ref{sec:conclusions} we summarise our conclusions.
 % We apply an uniform methodology of a functional form of the structure function to characterize the turbulent using the velocity field variance, $\sigma^2$, autocorrelation length, \(r_0\), and power-law slope, \(m\).
 % Our results are compared with physical properties of each region and with previous investigations.
 
-\section{\boldmath Sample of \hii{} regions}\label{sec:HIIsample}
+
+\section{\boldmath Observations of the \hii{} region sample}
+\label{sec:HIIsample}
 
 \begin{figure*}
   \centering
@@ -391,12 +393,87 @@ Finally, in section~\ref{sec:conclusions} we summarise our conclusions.
   \label{fig:velocity-maps}
 \end{figure*}
 
-Previous investigations using the second-order structure function on the velocity field use, in majority, one HII region and their own methodology.
-This has the consequences that only the same authors can compare their results in a direct way and the gap in the interpretation between authors doesn't aid the understanding of the topic.
-To deal with this issue we choose 9 objects in the \halpha\ emission line and use the the same methodology in all the regions.
-This give us the opportunity to compare for first time the structure function of various objects.
-We use previous published observational data to characterize the velocity field o HII regions located in the Milky Way, the Magellanic clouds and in the M 33 and NGC 6822 galaxies. 
-Figure \ref{fig:hii-regions} shows the images of our HII region sample and Table \ref{tab:Reg} shows the the physical properties of interest in each region. 
+Previous investigations of the centroid velocity structure function in \hii{} regions
+have used a variety of methodologies, which makes it difficult to compare results
+between different regions.  \citet{arthur2016turbulence} summarise historical results
+for the Orion Nebula in their Table~5.
+The most significant differences are seen when different emission line tracers are used,
+but even when using the same line, there is some variance between different studies
+in the derived values for both the velocity dispersion \(\sigma\pos\) and power-law slope \(m\).
+It is therefore worthwhile to employ a uniform approach across a variety of different regions.
+To that end, we have selected 9 \hii{} regions,
+covering a broad range in size and luminosity,
+for which good quality mapping of the \ha{} line exists in the literature
+or in data archives.
+Figure~\ref{fig:hii-regions} shows optical images of
+each region in our sample
+and Table~\ref{tab:Reg} lists their most important physical parameters.
+The derived centroid \ha{} velocity maps are shown in Figure~\ref{fig:velocity-maps}.
+Our sample includes three Milky Way regions
+(at approximate distance of \num{0.5} to \SI{2}{kpc}),
+two regions in the Magellanic Clouds (\num{50} to \SI{60}{kpc}),
+and four regions in more distant galaxies of the Local Group
+(\num{500} to \SI{800}{kpc}).
+Further details of the observations and the sources themselves
+are given in the following two sections.
+
+\subsection{Spectroscopic datasets}
+
+%We use data from \citet{1987A&A...176..347H} and \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
+%\cite{1987A&A...176..347H} observations were obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
+%A Fabry-Pérot interferometer was used with a étalon a separation of 0.5 mm. 
+%Interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula. 
+%The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.
+
+
+\subsubsection{Longslit echelle spectroscopy}
+\label{sec:longsl-echelle-spect}
+
+For the Orion Nebula, we use data obtained with the echelle spectrograph attached to the \SI{4}{m} telescope at Kitt Peak National Observatory (KPNO) initially published in
+\citet{Doi:2004a}.
+These observations cover a \(\SI{3}{arcmin} \times \SI{5}{arcmin}\) region of the
+central (Huygens) part of the Orion Nebula.
+The data consist of 96 North--South orientated \SI{300}{arcsec} slits,
+uniformly spaced at \SI{2}{arcsec} intervals with a width of \SI{0.8}{arcsec}
+with a velocity resolution of \SI{8}{km.s^{-1}}. 
+For the centroid velocities, we use the intensity-weighted
+mean velocities calculated by \citet{Garcia-Diaz:2008a},
+who used additional observations with East--West oriented slits
+to refine the inter-slit velocity calibration. 
+Unlike in the previous analysis of this dataset by \citet{arthur2016turbulence},
+we do not mask out regions affected by known high-velocity outflows.
+This decision was made for consistency with the analysis of more distant regions,
+where such a masking out is not possible.
+
+\subsubsection{FLAMES multi-fiber spectroscopy}
+\label{sec:flames-multi-fiber}
+
+Archival data from \citet{Damiani:2016a} and \citet{Damiani:2017b} are use to study the Carina nebula and Lagoon nebula, respectively. 
+The ESO VLT/FLAMES multi-fiber spectograph \citep{2002Msngr.110....1P} was used for these observations (Gaia-ESO Survey internal release \(iDR4\)). 
+The Survey targets are low-mass stars ranging down to magnitude V \(\sim\) 18.5.
+Mainly the spectra were obtained with the spectographs Giraffe (HR15N setup \(R \sim19 000\), wavelength range 6444-6818 \AA) and the UVES (setup 580, R \(\sim\)4700, range 4768-6830 \AA).
+
+\subsubsection{MUSE integral field spectroscopy}
+\label{sec:muse-integral-field}
+
+Using observations from \citet{Castro:2018a} (private communication) we study 30 Dor.
+NGC 2070 was observed as part of the MUSE SV (Science Verification) programme at the Very Large Telescope (VLT) in August 2014, when the instrument was new. 
+Four overlapping fields, each with an individual field of 1' \(\times\) 1' and a pixel scale of 0.2''/pixel were observed with exposure times of 4 \(\times\) 10s, 4 \(\times\) 60s, and 4 \(\times\) 600s. 
+The table 1 on their work summarize the propertie of each field.
+The data were reduced using the MUSE pipeline based on ESOREX recipes, with final astrometric calibration using the catalog of \citet{1999A&A...341...98S}. 
+The final spectra span 4595-9366 \AA, with a resolving power of \(R \sim3 000\) around \halpha\  \citep{Castro:2018a}.
+
+\subsubsection{TAURUS-II Fabry-Perot spectroscopy}
+\label{sec:taurus-ii-fabry}
+
+The archival data used in this work for the extragalactic giant regions, NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument in the 4.2-m William Herschel Telescope (WHT) of del Roque de los Muchachos Observatory (ORM) in La Palma, Spain and was retrieved from the La Palma archive\footnote{\url{http://casu.ast.cam.ac.uk/casuadc/ingarch}}.
+\citet{sabalisck1995supersonic} mentioned the main aspects of the observations (1990 July 31).
+The two-dimensional imaging spectroscopy was captured using an IPCS-II detector and the 125 $\mu$m etalon.
+The cumulative integration time per frame is 36 s with a seeing value of 1''.
+The format of the data cube was of 256*256*100 with a spatial scale of 0.26 pixel$^{-1}$.
+Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L}. The NGC 604 TAURUS-II observations were used by \citet{sabalisck1995supersonic}, \citet{tanco1997} and \citet{2019arXiv191203543M}.
+
+
 
 \subsection{Regions in the Milky Way and Magellanic Clouds}
 \label{sec:regions-milky-way}
@@ -450,38 +527,6 @@ NGC 595 is the second brightest giant HII region in the M33 galaxy.
 \citet{1996AJ....111.1128M} estimate an age of 4.5 Myrs consistent with \citet{1993AJ....105.1400D}.
 It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{1996AJ....111.1128M}, ten WRs confirmed with spectroscopy \citet{1993AJ....105.1400D}, nine of the WN type and a WC, located near the bright core of the region.
 
-\subsection{Observations}
-
-%We use data from \citet{1987A&A...176..347H} and \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
-%\cite{1987A&A...176..347H} observations were obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
-%A Fabry-Pérot interferometer was used with a étalon a separation of 0.5 mm. 
-%Interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula. 
-%The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.
-
-We use data from \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
-Their observations were initially published by \citet{Garcia-Diaz:2008a}. 
-The data was obtained with the echelle spectrograph attached to the 4 m telescope at Kitti Peak National Observatory (KPNO).
-These observation cover 3 \(\times\) 5 arcmin\(^{2}\) of the central (Huygens) part of the Orion nebula.
-The data consist of 96, North-South orientated 300 arcsec slits at 2 arcsec intervals with a width of 0.8 arcsec with a velocity resolution of 8 km s\(^{-1}\).
-
-Archival data from \citet{Damiani:2016a} and \citet{Damiani:2017b} are use to study the Carina nebula and Lagoon nebula, respectively. 
-The ESO VLT/FLAMES multi-fiber spectograph \citep{2002Msngr.110....1P} was used for these observations (Gaia-ESO Survey internal release \(iDR4\)). 
-The Survey targets are low-mass stars ranging down to magnitude V \(\sim\) 18.5.
-Mainly the spectra were obtained with the spectographs Giraffe (HR15N setup \(R \sim19 000\), wavelength range 6444-6818 \AA) and the UVES (setup 580, R \(\sim\)4700, range 4768-6830 \AA).
-
-Using observations from \citet{Castro:2018a} (private communication) we study 30 Dor.
-NGC 2070 was observed as part of the MUSE SV (Science Verification) programme at the Very Large Telescope (VLT) in August 2014, when the instrument was new. 
-Four overlapping fields, each with an individual field of 1' \(\times\) 1' and a pixel scale of 0.2''/pixel were observed with exposure times of 4 \(\times\) 10s, 4 \(\times\) 60s, and 4 \(\times\) 600s. 
-The table 1 on their work summarize the propertie of each field.
-The data were reduced using the MUSE pipeline based on ESOREX recipes, with final astrometric calibration using the catalog of \citet{1999A&A...341...98S}. 
-The final spectra span 4595-9366 \AA, with a resolving power of \(R \sim3 000\) around \halpha\  \citep{Castro:2018a}.
-
-The archival data used in this work for the extragalactic giant regions, NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument in the 4.2-m William Herschel Telescope (WHT) of del Roque de los Muchachos Observatory (ORM) in La Palma, Spain and was retrieved from the La Palma archive\footnote{\url{http://casu.ast.cam.ac.uk/casuadc/ingarch}}.
-\citet{sabalisck1995supersonic} mentioned the main aspects of the observations (1990 July 31).
-The two-dimensional imaging spectroscopy was captured using an IPCS-II detector and the 125 $\mu$m etalon.
-The cumulative integration time per frame is 36 s with a seeing value of 1''.
-The format of the data cube was of 256*256*100 with a spatial scale of 0.26 pixel$^{-1}$.
-Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L}. The NGC 604 TAURUS-II observations were used by \citet{sabalisck1995supersonic}, \citet{tanco1997} and \citet{2019arXiv191203543M}.
 
 \begin{table*}
 \begin{center}\caption{Summary of properties.}
