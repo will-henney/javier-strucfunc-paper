@@ -57,6 +57,11 @@
 \usepackage{xcolor}
 
 %% Package set-up
+\usepackage{booktabs}
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of lrc column types
+\newcolumntype{R}{>{$}r<{$}} 
+\newcolumntype{C}{>{$}c<{$}}
 
 % Use more muted colors for links
 \hypersetup{colorlinks=True, linkcolor=blue!50!black, citecolor=black,
@@ -254,7 +259,7 @@ in \hii{} regions in our own Galaxy
 % Also, Medina+ 2014  better than Arthur+ 2016
 \citep{munch1958internal, castaneda1988, Roy:1985a, 1992ApJ...387..229O, medina2014}
 and in external galaxies
-\citep{1961MNRAS.122....1F, tanco1997, lagrois2009multi, lagrois2011, Melnick:2021x}.
+\citep{1961MNRAS.122....1F, Medina-Tanco:1997a, lagrois2009multi, lagrois2011, Melnick:2021x}.
 
 % Javier's original para 2
 
@@ -425,6 +430,15 @@ are given in the following two sections.
 %Interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula. 
 %The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.
 
+Wherever possible, we calculate the centroid velocity directly as the first moment
+of the line intensity profile for each position on the nebula.
+So long as the signal-to-noise is high enough,
+this mean velocity can be calculated to a much higher precision
+than the nominal velocity resolution of the spectrograph. 
+In a few cases, as noted below, we are working with already reduced data,
+which are provided in the form of Gaussian fits to the line profiles.
+In the cases where multiple Gaussian components have been fitted,
+we take the flux-weighted mean velocity of these components to be the centroid.
 
 \subsubsection{Longslit echelle spectroscopy}
 \label{sec:longsl-echelle-spect}
@@ -448,40 +462,103 @@ where such a masking out is not possible.
 \subsubsection{FLAMES multi-fiber spectroscopy}
 \label{sec:flames-multi-fiber}
 
-Archival data from \citet{Damiani:2016a} and \citet{Damiani:2017b} are use to study the Carina nebula and Lagoon nebula, respectively. 
-The ESO VLT/FLAMES multi-fiber spectograph \citep{2002Msngr.110....1P} was used for these observations (Gaia-ESO Survey internal release \(iDR4\)). 
-The Survey targets are low-mass stars ranging down to magnitude V \(\sim\) 18.5.
-Mainly the spectra were obtained with the spectographs Giraffe (HR15N setup \(R \sim19 000\), wavelength range 6444-6818 \AA) and the UVES (setup 580, R \(\sim\)4700, range 4768-6830 \AA).
+Archival data from \citet{Damiani:2016a} and \citet{Damiani:2017b} are used
+to study the Carina Nebula and Lagoon Nebula, respectively.
+These were obtained as a by-product of a study of young stars in their respective regions
+as part of the Gaia-ESO Spectroscopic Survey \citep{Gilmore:2012v, Randich:2013m}
+using VLT/FLAMES with the GIRAFFE and UVES spectrographs \citep{2002Msngr.110....1P}.
+The spectra are from multiple discrete fiber positions in each nebula
+(866 positions in Carina; 1089 in the Lagoon),
+visible as colored disks in Figure~\ref{fig:velocity-maps}.
+The angular separation between fibers varies across the maps with
+average nearest-neighbor distance of \SI{21 \pm 17}{arcsec}.
+The spectral resolution ranges from  \SI{6}{km.s^{-1}} (UVES) to \SI{16}{km.s^{-1}} (GIRAFFE).
+We do not have access to the individual spectra, but instead use the
+Gaussian fits to the line profiles from \citep{Damiani:2016a, Damiani:2017b},
+obtained from data tables downloaded from the CDS Vizier service.\footnote{%
+  \url{https://doi.org//10.26093/cds/vizier.35910074} and
+  \url{https://doi.org//10.26093/cds/vizier.36040135}.}
+For the Lagoon, we use single-Gaussian fits, while for Carina we take the
+flux-weighted mean of the blue and red component of two-Gaussian fits.
+
 
 \subsubsection{MUSE integral field spectroscopy}
 \label{sec:muse-integral-field}
 
-Using observations from \citet{Castro:2018a} (private communication) we study 30 Dor.
-NGC 2070 was observed as part of the MUSE SV (Science Verification) programme at the Very Large Telescope (VLT) in August 2014, when the instrument was new. 
-Four overlapping fields, each with an individual field of 1' \(\times\) 1' and a pixel scale of 0.2''/pixel were observed with exposure times of 4 \(\times\) 10s, 4 \(\times\) 60s, and 4 \(\times\) 600s. 
-The table 1 on their work summarize the propertie of each field.
-The data were reduced using the MUSE pipeline based on ESOREX recipes, with final astrometric calibration using the catalog of \citet{1999A&A...341...98S}. 
-The final spectra span 4595-9366 \AA, with a resolving power of \(R \sim3 000\) around \halpha\  \citep{Castro:2018a}.
+For the Magellanic Cloud regions 30~Doradus and NGC~346 we use data obtained
+with the MUSE spectrograph \citep{Bacon:2010a, Bacon:2014a} on the VLT.\@
+Each exposure consists of a \(300 \times 300\) pixel spectral image with a plate scale
+of \SI{0.2}{arcsec.pixel^{-1}} and a spectral resolution of \SI{110}{km.s^{-1}}
+at \ha{}.
+For 30~Doradus, four separate exposures are mosaicked to give a square field of
+size \(\SI{2}{arcmin}\) \citep{Castro:2018a}. 
+We use centroid velocities of single Gaussian fits to the \ha{} line.\footnote{%
+  Data kindly provided by Norberto Castro Rodríguez, priv.~comm.
+}
+For NGC~346, we use a single field that was observed in 2016 as part of
+ESO observing program 098.D-0211(A) (P.I. W.-R.~Hamann).
+We obtained the pipeline-reduced data cubes from the ESO data archive\footnote{%
+  \url{http://archive.eso.org/wdb/wdb/eso/eso_archive_main/query?prog_id=098.D-0211(A)}
+}
+and extracted the \ha{} profile using tools in the MPDAF python library.\footnote{
+  \url{https://mpdaf.readthedocs.io/en/latest/}
+} 
 
 \subsubsection{TAURUS-II Fabry-Perot spectroscopy}
 \label{sec:taurus-ii-fabry}
 
-The archival data used in this work for the extragalactic giant regions, NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument in the 4.2-m William Herschel Telescope (WHT) of del Roque de los Muchachos Observatory (ORM) in La Palma, Spain and was retrieved from the La Palma archive\footnote{\url{http://casu.ast.cam.ac.uk/casuadc/ingarch}}.
-\citet{sabalisck1995supersonic} mentioned the main aspects of the observations (1990 July 31).
-The two-dimensional imaging spectroscopy was captured using an IPCS-II detector and the 125 $\mu$m etalon.
-The cumulative integration time per frame is 36 s with a seeing value of 1''.
-The format of the data cube was of 256*256*100 with a spatial scale of 0.26 pixel$^{-1}$.
-Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L}. The NGC 604 TAURUS-II observations were used by \citet{sabalisck1995supersonic}, \citet{tanco1997} and \citet{2019arXiv191203543M}.
+The archival data used in this work for the extragalactic giant regions, NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument
+\citep{Gordon:2000v}
+on the \SI{4.2}{m} William Herschel Telescope (WHT) of
+el Roque de los Muchachos Observatory (ORM) in La Palma, Spain
+and was retrieved from the La Palma archive\footnote{\url{http://casu.ast.cam.ac.uk/casuadc/ingarch}}.
+Each velocity image is \(256 \times 256\) pixels on the sky,
+with a spatial scale of \SI{0.26}{arcsec.pixel^{-1}}
+and a spectral resolution of \SI{40}{km.s^{-1}}.
+The NGC~604 observations were previously reported and analysed in
+\citet{sabalisck1995supersonic}, \citet{Medina-Tanco:1997a} and \citet{Melnick:2021x}.
+
+% \citet{sabalisck1995supersonic} mentioned the main aspects of the observations (1990 July 31).
+% The two-dimensional imaging spectroscopy was captured using an IPCS-II detector and the 125 $\mu$m etalon.
+% The cumulative integration time per frame is 36 s with a seeing value of 1''.
+% The format of the data cube was of 256*256*100 with a spatial scale of 0.26 pixel$^{-1}$.
+% Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L}. The NGC 604 TAURUS-II observations were used by \citet{sabalisck1995supersonic}, \citet{tanco1997} and \citet{2019arXiv191203543M}.
 
 
-
-\subsection{Regions in the Milky Way and Magellanic Clouds}
+\subsection{Physical properties of the sample regions}
 \label{sec:regions-milky-way}
+
+\begin{table}
+\begin{center}\caption{Summary of properties of our \hii{} region sample}
+\begin{tabular}{l CCCC}\toprule
+\hii{}    &  \text{Distance,}\ D& \text{Diameter,}\ R & \log L(\ha) &  \langle \sigma\los \rangle \\
+  Region    &  [\si{kpc}]          &  [\si{pc}]    &  [\si{erg.s^{-1}}]            &    [\si{km.s^{-1}}]  \\ 
+\midrule
+Orion    & 0.436 \pm 0.02  & 0.6 \pm 0.06  &    37               &   6.0      \\
+%Orion large   & 0.436 \pm 0.02  & 5 \pm 0.5    &    37               &   6.0      \\ 
+Lagoon    & 1.25 \pm 0.12   & 25 \pm 2.5       &    37.47            &   13.6     \\
+Carina    & 2.35 \pm 0.05   & 15 \pm 1.5       &    39.6             &   22.4     \\
+30 Dor    & 50.0 \pm 0.2  & 98.9 \pm 9.8     &    39.76            &   31.7     \\
+NGC 346   & 62 \pm 1    & 64 \pm 6.4       &    38.67            &   10.2     \\
+Hubble X  & 490 \pm 40      & 160 \pm 16      &    38.6             &   13.4     \\
+Hubble V  & 490 \pm 40      & 130 \pm 13 &    38.87            &   12.3     \\
+NGC 604   & 820 \pm 30      & 400 \pm 40      &    39.65            &   16.2     \\
+NGC 595   & 820 \pm 30      & 400 \pm 40      &    39.36            &   18.3     \\
+\bottomrule
+\end{tabular}\label{tab:Reg}
+\end{center}
+\end{table} 
+
+\subsubsection{Orion Nebula}
+\label{sec:orion-nebula}
 
 Orion (M42) is the prototype galactic HII region and one of the mores studied in the sky.
 Located at a distance of 440 pc \citep{2008AJ....136.1566O} its main physical and kinematics properties, along its stellar population are documented in \citet{2001ARA&A..39...99O}.
 The main ionizing star is \(\theta^{1}\)Ori C (spectral type \(\sim\)O7) and with other 3 B-type stars they form the Trapezium cluster.
 The position of Orion near the side of the Orion Molecular Cloud (OMC-1) make it an ongoing star formation region and a example of a blister HII region. Some of these young stars are accountable for stellar jets and Herbig-Haro objects seen in the nebula \citep{arthur2016turbulence}.
+
+\subsubsection{Carina Nebula}
+\label{sec:carina-nebula}
 
 The Carina nebula is a large star-forming complex located at a distance of 2 350 pc \citep{2006ApJ...644.1151S}.
 Young clusters like Trumpler 14 and 16, and Collinder 228 together form the Car OB1 association.
@@ -490,25 +567,44 @@ The most star is a luminous blue variable, $\eta$ Car \citep{Damiani:2016a}.
 As a star formation region, it presents several phenomena related with young stars as evaporating protoplanetary discs, erosion of large dust pillars and the triggering of a second generation of embedded stars, Herbig-Haro objects, to mention some, \citet{2008hsf2.book..138S} and reference therein.
 An approaching and receding kinematics components are known in the nebula.
 
+\subsubsection{Lagoon Nebula}
+\label{sec:lagoon-nebula}
+
+
 The Lagoon Nebula (M8, NGC6523) is located at a distance of 1 250 pc \citep{2005A&A...430..941P} and contains the young stellar cluster NGC6530.
 The region is illuminated by different massive stars of spectral types O and B, the hottest being 9 Sgr, type O4V \citep{Damiani:2017b}.
 Optically, the brightest part of the nebula is called 'Hourglass nebula' which surrounds and obscures the star Herschel 36, type O7 \citep{1986AJ.....91..870W}. 
 The velocity field shows several expanding shells, related to the cluster NGC 6530, the O stars 9 Sgr and Herschel 36, and the massive protostar M8East-IR. A blueshifted, neutral layer is also in very good agreement with predictions of champagne-flow models of blister HII regions \citep{Damiani:2017b}. The properties of the nebula are reviewed by \citet{2008hsf2.book..533T}.
+
+\subsubsection{30 Doradus}
+\label{sec:30-doradus}
 
 The Tarantula Nebula (30 Doradus) is a luminous star-forming region in the LMC (Large Magellanic Cloud) and is the most luminous complex in the Local Group \citep{1984ApJ...287..116K}. The nebula is located at a distance of 49.9 kpc \citep{2013Natur.495...76P}.
 It host the star forming region NGC 2070 that contains the massive star cluster R136. 
 The star formation rate gas increased recently, 1-3 Myr ago \citep{2016ApJ...833..154C}, and the central ionized region spans for 40 pc.
 This nebula is used as a comparison for extragalactic star-forming regions.
 
+\subsubsection{NGC 346}
+\label{sec:ngc-346}
+
+
 NGC 346 is the most active star-formation region in the SMC (Small Magellanic Cloud) located at a distance of 62 kpc \citep{2001ApJ...562..303D}. 
 It has more than 30 O stars that ionize N66, the largest HII region \citep{2011ApJ...740...10D}.
 \citet{2008ApJ...688.1050G} propose an expanding H II region or bubble blown by the winds of the massive progenitor as a mechanism that shapes the recent star formation in this region in addition to the photoionizing process of the OB stars. 
 This mechanism is similar to shell-like H ii regions, with a central cluster in a cavity, and with ongoing star formation triggered around their periphery.
 
+\subsubsection{Hubble X and Hubble V in NGC 6822}
+\label{sec:hubble-x-hubble}
+
+
 The dwarf irregular galaxy, NGC 6822, is located at a distance of 500 kpc (1'' = 2.4 pc) \citep{2012A&A...540A.135S} and the brightest HII regions are Hubble X and Hubble V (HX and HV hereafter).
 HV has a characteristic length of 100 pc and a luminosity at its core of in L$_{H_\alpha}$ = 1 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
 HX has a characteristic length of 140 pc and a luminosity at its core of in L$_{H_\alpha}$ = 2.4 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
 Two recognized OB associations \citep{1991ApJ...379..621H,1992AJ....104.1374W} are identified within the region of HV and HX. HV is located near 'Hodge OB 8', and HX is located near 'Hodge OB13'  \citep{1999PASP..111.1382O}.
+
+
+\subsubsection{NGC~595 and NGC~604 in M33}
+\label{sec:ngc-595-ngc}
 
 NGC 604 is the brightest giant HII region in the M33 galaxy visually dominated by a big loop, many shells and different size filaments.
 It is located at the distance of 840 kpc (1'' = 4.1 pc) \citep{2015KamKinematics} with a length of 400 pc.
@@ -528,26 +624,6 @@ NGC 595 is the second brightest giant HII region in the M33 galaxy.
 It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{1996AJ....111.1128M}, ten WRs confirmed with spectroscopy \citet{1993AJ....105.1400D}, nine of the WN type and a WC, located near the bright core of the region.
 
 
-\begin{table*}
-\begin{center}\caption{Summary of properties.}
-\begin{tabular}{ccccc}\hline
-HII       &  Distance ($D$)          & Diameter ($R$) & log L(H$_{\alpha}$) &  \(\langle \sigma_{\text{LOS}} \rangle \) \\
-Region    &  [kpc]          &  [pc]    &  [erg/s]            &    [km/s]  \\ 
-\hline
-Orion    & 0.436$\pm$0.02  & 0.6$\pm$0.06  &    37               &   6.0      \\
-%Orion large   & 0.436$\pm$0.02  & 5$\pm$0.5    &    37               &   6.0      \\ 
-Lagoon    & 1.25$\pm$0.12   & 25$\pm$2.5       &    37.47            &   13.6     \\
-Carina    & 2.35$\pm$0.05   & 15$\pm$1.5       &    39.6             &   22.4     \\
-30 Dor    & 49.97$\pm$0.19  & 98.9$\pm$9.8     &    39.76            &   31.7     \\
-NGC 346   & 61.9$\pm$1.1    & 64$\pm$6.4       &    38.67            &   10.2     \\
-Hubble X  & 490$\pm$40      & 160$\pm$16      &    38.6             &   13.4     \\
-Hubble V  & 490$\pm$40      & 130$\pm$13 &    38.87            &   12.3     \\
-NGC 604   & 820$\pm$30      & 400$\pm$40      &    39.65            &   16.2     \\
-NGC 595   & 820$\pm$30      & 400$\pm$40      &    39.36            &   18.3     \\
-\hline
-\end{tabular}\label{tab:Reg}
-\end{center}
-\end{table*} 
 
 %2013ApJ...773...69G M33 dist
 % \citep{1984ApJ...287..116K} \citep{1986ApJ...300..624R}
@@ -896,12 +972,12 @@ In the context of the high-resolution observations it is possible to see why the
 There is a good agreement with the single-Gaussian fit results from \citet{2019arXiv191203543M} (Figure 15 Top on their work), while \citet{1961MNRAS.122....1F} results do not overlap with ours.
 From this analysis this is the first time turbulence characterized in 30 Doradus using the structure function.
 
-There is broad agreement in our structure function results and previous studies that consider NGC 604, mainly because where are using the same data \citep{tanco1997,2019arXiv191203543M}. 
-from \citet{tanco1997} and \citet{2019arXiv191203543M}, and using the same TAURUS-II data.
+There is broad agreement in our structure function results and previous studies that consider NGC 604, mainly because where are using the same data \citep{Medina-Tanco:1997a, Melnick:2021x}. 
+from \citet{Medina-Tanco:1997a} and \citet{Melnick:2021x}, and using the same TAURUS-II data.
 Despite this general agreement the interpretations in each study is different.
-\citet{tanco1997} conclude about a double regime acting on the kinetic energy spectrum.
+\citet{Medina-Tanco:1997a} conclude about a double regime acting on the kinetic energy spectrum.
 According to this double cascading, turbulence is being forced at scales of \(\approx\)10 pc while and energy cascade has developed down to the smallest scales and other, as an inverse cascade, extends up to scale of \(\approx\)70 pc.
-Interesting enough, \citet{tanco1997} mentioned various characteristic scale lengths, the most notorious is the \(\approx\)10 pc, a value close to our correlation length of \(\approx\)9 pc, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
+Interesting enough, \citet{Medina-Tanco:1997a} mentioned various characteristic scale lengths, the most notorious is the \(\approx\)10 pc, a value close to our correlation length of \(\approx\)9 pc, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
 None of the previous studies present a power-law index for the structure function to compare our results.
 \citet{2019arXiv191203543M} addresses some issues with TAURUS II data while comparing profiles between the previous instrument TAURUS I where there exist a difference between observations (see section 4.1 on their paper).
 As we agree with them in the importance of observing NGC 604 at higher spatial resolution, we have prove that a consistent method in analyzing structure function is key to obtaining trustworthy results.
@@ -956,7 +1032,15 @@ The study of turbulence between ionized regions and the molecular clouds that gi
 
 \section*{Acknowledgements}
 
-JGV acknowledges and thanks CONACYT for the PhD research scholarship. We are grateful to Norberto Castro Rodríguez for providing maps of emission line velocity moments for 30 Doradus derived from MUSE-VLT observations.
+Based on observations made with KPNO telescopes
+\textit{complete KPNO acknowldgment}.
+Based on observations made with ESO Telescopes at the La Silla Paranal Observatory under programme IDs 076.C-0888 and 098.D-0211.
+Based on observations made as part of the Gaia-ESO Spectroscopic Survey
+\textit{complete Gaia-ESO acknowldgment}.
+Based on observations made with the WHT
+\textit{complete WHT acknowldgment}.
+JGV acknowledges and thanks CONACyT-Mexico for a PhD research scholarship.
+We are grateful to Norberto Castro Rodríguez for providing maps of emission line velocity moments for 30 Doradus derived from MUSE-VLT observations.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
