@@ -631,32 +631,8 @@ It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{19
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Methods}\label{sec:met}
+\section{Plane-of-sky velocity fluctuations}\label{sec:met}
 
-\subsection{Turbulence}
-
-The existence of turbulent flows in astrophysical objects, ranging in scales from 10$^{6}$ to 10$^{17}$ m \citep{2010ApJ...710..853C} is the consequence of the high Reynolds numbers, $Re$, between 10$^{4}$ and 10$^{9}$ \citep{1949ApJ...110..329C,lagrois2011} that characterized these objects.
-The classic turbulence theory assumes a three-dimensional isotropic, incompressible and subsonic flow that can be described using an energy spectrum \citep{kolm1}.
-The concept of the energy spectrum is based on the assumption that the energy is cascading down inside the flow from the largest to the smallest scales.
-The different scales in the energy cascade are defined based on their $Re$.
-In one side of the spectrum there is the energy, \(L\), injection scale that is related to the largest vortices, where $ Re \rightarrow \infty$.
-On the other side of the spectrum there is the dissipation of energy at small scales, \(l\), where $Re \rightarrow$ 1 and it is assumed that small vortices are responsible for the friction that dissipates the energy flux into thermal energy.
-In between there is the inertial range, \(l  << r << L\) , where in a stationary case there energy transfer is at a constant rate,.
-The energy cascade concept is described with an energy spectrum, $E(k) \propto k^{\beta}$ where $k$ is the wave number for a determined scale $r$ ($k \equiv r^{-1}$).
-
-The total specific energy of a determined $r$ scale is of the order $\langle v_{r}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
-\begin{equation}\label{eq:energyspectrum}
- \langle v_{r}^{2} \rangle = \int_{k}^{\infty} E(k)dk
-\end{equation}
-%
-It is assumed that this energy is of the order of $(\epsilon r)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$ we differentiate Equation \ref{eq:energyspectrum} and obtained the final form of the spectrum:
-
-\begin{equation}\label{eq:kolm}
-E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
-\end{equation}
-%
-where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$ is the Kolmogorov index.
-%For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 
 \subsection{The second-order structure function}
 \label{sec:second-order-struct}
@@ -769,6 +745,35 @@ The slope in the majority of previous studies and hence, the correlation length,
 The traditional way to find it is to determine a particular range of ascending values in the structure function results. 
 If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
 In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to the erroneous interpretation of multiple inertial scales.
+
+
+\subsection{Turbulence}
+
+\textit{Will 2021-12-10: Moving this section to later for now. Maybe
+  this material could go in discussion}
+
+The existence of turbulent flows in astrophysical objects, ranging in scales from 10$^{6}$ to 10$^{17}$ m \citep{2010ApJ...710..853C} is the consequence of the high Reynolds numbers, $Re$, between 10$^{4}$ and 10$^{9}$ \citep{1949ApJ...110..329C,lagrois2011} that characterized these objects.
+The classic turbulence theory assumes a three-dimensional isotropic, incompressible and subsonic flow that can be described using an energy spectrum \citep{kolm1}.
+The concept of the energy spectrum is based on the assumption that the energy is cascading down inside the flow from the largest to the smallest scales.
+The different scales in the energy cascade are defined based on their $Re$.
+In one side of the spectrum there is the energy, \(L\), injection scale that is related to the largest vortices, where $ Re \rightarrow \infty$.
+On the other side of the spectrum there is the dissipation of energy at small scales, \(l\), where $Re \rightarrow$ 1 and it is assumed that small vortices are responsible for the friction that dissipates the energy flux into thermal energy.
+In between there is the inertial range, \(l  << r << L\) , where in a stationary case there energy transfer is at a constant rate,.
+The energy cascade concept is described with an energy spectrum, $E(k) \propto k^{\beta}$ where $k$ is the wave number for a determined scale $r$ ($k \equiv r^{-1}$).
+
+The total specific energy of a determined $r$ scale is of the order $\langle v_{r}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
+\begin{equation}\label{eq:energyspectrum}
+ \langle v_{r}^{2} \rangle = \int_{k}^{\infty} E(k)dk
+\end{equation}
+%
+It is assumed that this energy is of the order of $(\epsilon r)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$ we differentiate Equation \ref{eq:energyspectrum} and obtained the final form of the spectrum:
+
+\begin{equation}\label{eq:kolm}
+E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
+\end{equation}
+%
+where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$ is the Kolmogorov index.
+%For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 
 
 \section{Results}\label{sec:results}
@@ -1034,12 +1039,12 @@ The study of turbulence between ionized regions and the molecular clouds that gi
 \section*{Acknowledgements}
 
 Based on observations made with KPNO telescopes
-\textit{complete KPNO acknowldgment}.
+\textit{complete KPNO acknowledgment}.
 Based on observations made with ESO Telescopes at the La Silla Paranal Observatory under programme IDs 076.C-0888 and 098.D-0211.
 Based on observations made as part of the Gaia-ESO Spectroscopic Survey
-\textit{complete Gaia-ESO acknowldgment}.
+\textit{complete Gaia-ESO acknowledgment}.
 Based on observations made with the WHT
-\textit{complete WHT acknowldgment}.
+\textit{complete WHT acknowledgment}.
 JGV acknowledges and thanks CONACyT-Mexico for a PhD research scholarship.
 We are grateful to Norberto Castro Rodríguez for providing maps of emission line velocity moments for 30 Doradus derived from MUSE-VLT observations.
 
