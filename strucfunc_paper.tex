@@ -150,9 +150,9 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
   We propose a functional form of the structure function that considers observational constraints.
   By using a chi-square analysis fitting this functional to our results we extract three parameters related to the fluctuations in the velocity field in each region. 
   The true velocity dispersion \(\sigma\), which spans from 3 to 15 km s\(^{-1}\), the
-  autocorrelation length \(r_0\) covering to 0.06 - 8 pc, and the power-law slope \(m\) of the velocity field, which ranges from 0.7 to 1.3.
+  autocorrelation length \(r_0\) covering to 0.06 - 8 pc, and the power-law slope \(m\) of the velocity field, which ranges from 0.7 to 1.5.
   The velocity dispersion is found to correlate primarily with luminosity and the autocorrelation length correlates primarily with the size of the region.
-  A comparison between \(\sigma\) and \(\sigma_{POS}\) shows that this last value is at roughly the double for all regions.
+  A comparison between \(\sigma\) and \(\sigma_{POS}\) shows that this last value is roughly the double for all regions.
   We found that our proposed functional form describe with more accuracy the inertial range and our methodology guarantees consistency for comparison between the galactic and giant HII regions.
 \end{abstract}
 
@@ -684,7 +684,7 @@ Because of this, Equation \ref{eq:Br} is a better approach to characterize the v
 For the homogeneous random field, Equations \ref{eq:Br} and \ref{eq:Cr} are related by:
 
 \begin{equation}\label{eq:functional}
-B(r; r_0, m) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
+b(r; r_0, \sigma^2, m) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
 \end{equation}
 
 %Based on Equation \ref{eq:functional} we use the functional of the structure function in the form:
@@ -727,7 +727,7 @@ where $L_{\text{box}}$ is the diagonal length of the observational box.
 The final form of our proposed functional of the structure function is in the form:
 %
 \begin{equation}\label{eq:fff}
-B(r) = b(r; \beta r_0, \beta m) \times S(r; s_0, r_0) + B_{\text{noise}}
+B(r) = b(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
 \end{equation}
 
 The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares
@@ -746,11 +746,28 @@ The traditional way to find it is to determine a particular range of ascending v
 If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
 In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to the erroneous interpretation of multiple inertial scales.
 
+\subsection{Velocity fields of the HII regions}
+
+\textit{Javier 2021-12-28: I'm not quite sure the correct section for this. Since they aren't results, per se, and until now I haven't develop to much discussion with them, I move it here so it end up like Methods and Data, before reporting our findings. }
+
+The Figure \ref{fig:velocity-maps} shows the velocity maps of each HII region in the \halpha\ emission line.
+All velocities are relative to the systemic velocity of each region, with more negative velocities shown in blue and more positive velocities in red. The range of velocities is different for each region and is shown in each map. The more negative velocities are shown in blue and more positive velocities are shown in red.
+The Figure \ref{fig:hist} shows the probability density functions of our sample of HII regions.
+All the distributions are far from being consider Gaussian, implying that there are multiple kinematics components in the regions.
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=5in]{Figures/Hist}\par
+ \caption{Histograms of the centroid velocities in \halpha\ of our sample of HII regions. }
+ \label{fig:hist}
+\end{figure*}
+
+\section{Results}\label{sec:results}
 
 \subsection{Turbulence}
 
 \textit{Will 2021-12-10: Moving this section to later for now. Maybe
-  this material could go in discussion}
+  this material could go in discussion. Javier 2021-12-28: In deciding the correct place for this part, if we ended up including it, I moved it to the results section. For now it makes sense to me because it is where the physical interpretation of the power law and the correlation length are presented for later report the results of each region.}
 
 The existence of turbulent flows in astrophysical objects, ranging in scales from 10$^{6}$ to 10$^{17}$ m \citep{2010ApJ...710..853C} is the consequence of the high Reynolds numbers, $Re$, between 10$^{4}$ and 10$^{9}$ \citep{1949ApJ...110..329C,lagrois2011} that characterized these objects.
 The classic turbulence theory assumes a three-dimensional isotropic, incompressible and subsonic flow that can be described using an energy spectrum \citep{kolm1}.
@@ -775,22 +792,6 @@ E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
 where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$ is the Kolmogorov index.
 %For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 
-
-\section{Results}\label{sec:results}
-
-\subsection{Data}
-
-The Figure \ref{fig:velocity-maps} shows the velocity maps of each HII region in the \halpha\ emission line.
-All velocities are relative to the systemic velocity of each region, with more negative velocities shown in blue and more positive velocities in red. The range of velocities is different for each region and is shown in each map. The more negative velocities are shown in blue and more positive velocities are shown in red.
-The Figure \ref{fig:hist} shows the probability density functions of our sample of HII regions.
-All the distributions are far from being consider Gaussian, implying that there are multiple kinematics components in the regions.
-
-\begin{figure*}
- \centering
- \includegraphics[width=5in]{Figures/Hist/Hist}\par
- \caption{Histograms of the centroid velocities in \halpha\ of our sample of HII regions. }
- \label{fig:hist}
-\end{figure*}
 
 \subsection{HII regions structure functions}
 
@@ -817,6 +818,12 @@ The fourth column is the correlation length \(r_0\).
   \centering
   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-C}
   \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-C}
+\end{figure*}
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-D}
+  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-D}
 \end{figure*}
 
 \input{SFresults}
@@ -891,6 +898,11 @@ The range covered in our results goes from 0.09 to 11 pc.
 
 \section{Discussion}\label{sec:discussion}
 
+In the section \ref{sec:results} we showed that each HII region has a turbulent velocity field that can be characterized using the turbulence theory.
+The turbulent parameters obtained are unique to each velocity field.
+We proceed to develop scaling relations between them and between the physical properties of each region.
+We also do a comparison between our results with previous structure functions.
+
 \subsection{Correlations between physical properties and turbulent parameters}
 
 Relationship between the physical properties of HII regions, like size and luminosity, and the velocity dispersion have been used as tools for concluding scaling relations for these objects.
@@ -900,28 +912,26 @@ They conclude that GEHRs follow this relation because they behave as self-gravit
 The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
 %\citet{1981MNRAS.194..809L}
 
-
-
 \citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
 This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
 Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).
 \citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
-This line of investigation is followed using the scaling relation as a research tool between the properties of the sample of HII regions and our results. 
+We follow through this analysis using the scaling relation as a research tool between the properties of the sample of HII regions and our results. 
 We use the properties in Table \ref{tab:Reg} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form $Y = aX +b$. 
 For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
 The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
-In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level  $p \leq $0.10.
+In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level  $p < $0.05.
 In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
 
-The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of $\log r_0 = (0.69 \pm 0.07) \log R-(0.85 \pm 0.14)$.
+The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of $\log r_0 = (0.68 \pm 0.06) \log R-(0.83 \pm 0.12)$.
 
 The Figure \ref{fig:sigvsl} shows the log $\sigma$-log $\text{L}(\text{H}_{\alpha})$ plane.
 Since this relation is the most common it can be use for comparison with the investigations mentioned at the beginning of this section.
-Our results give us a relation of $\log \sigma = (0.16 \pm 0.12) \log \text{L}(\text{H}_{\alpha})-(5.6 \pm 5.0)$.
+Our results give us a relation of $\log \sigma = (0.17 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(6 \pm 4.0)$.
 It is customary in the literature to present $\text{L} (\text{H}_{\alpha})$ as the dependent variable.
 In our case if we choose the upper positive error and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.5}\). 
-Using the same procedure in \textit{linmix} and changing the variables we obtained $\log \text{L}(\text{H}_{\alpha}) = (3.32\pm 1.89) \log \sigma -(36.23 \pm 1.45)$.
+Using the same procedure in \textit{linmix} and changing the variables we obtained $\log \text{L}(\text{H}_{\alpha}) = (3.2\pm 2) \log \sigma -(36.23 \pm 1.45)$.
 Both relations are close to the previously proposed \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4}\)
 
 
@@ -960,11 +970,11 @@ We can see from Table \ref{tab:Res} that the line-of-sight velocity dispersion i
 In the case of homogeneous turbulent velocity we can consider the effect of \textit{project smearing} \citep{1984ApJ...277..556S}, where the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
 With a value of \(\sigma / \sigma_{\text{LOS}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.01-0.1.
 
-The Figure \ref{fig:svss} shows the log $\sigma$-log $\sigma_{\text{LOS}}$ plane with a relationship of $\log \sigma = (0.75 \pm 0.60) \log \sigma_{\text{LOS}}-(0.13 \pm 0.70)$ .
+The Figure \ref{fig:svss} shows the log $\sigma$-log $\sigma_{\text{LOS}}$ plane with a relationship of $\log \sigma = (0.81 \pm 0.47) \log \sigma_{\text{LOS}}-(0.2 \pm 0.54)$ .
 
 \subsection{Comparison with previous structure functions}
 
-In Section \ref{sec:apply} we mentioned the reduced chi-square method we are using for determining the correlation length and the index of the slope. Since this is the first time this method is applied to a sample of HII regions (at least for our knowledge), the results are bounded to be different from previous investigations, including the one that have the same observations as \citet{arthur2016turbulence} and \citet{2019arXiv191203543M}. 
+In Section \ref{sec:apply} we mentioned the reduced chi-square method we are using for the determination of the correlation length and the index of the slope. Since this is the first time this method is applied to a sample of HII regions (at least for our knowledge), our results are bounded to be different from previous investigations, including the one that have the same observations as \citet{arthur2016turbulence} and \citet{2019arXiv191203543M}. 
 
 A complete analysis on different emissions lines of the structure function on Orion was carried out by \citet{arthur2016turbulence} and reference therein. 
 They observed a tendency that higher ionization lines presents higher values on the magnitude dispersion and the steepness of the structure function slope. 
@@ -1045,8 +1055,8 @@ Based on observations made as part of the Gaia-ESO Spectroscopic Survey
 \textit{complete Gaia-ESO acknowledgment}.
 Based on observations made with the WHT
 \textit{complete WHT acknowledgment}.
-JGV acknowledges and thanks CONACyT-Mexico for a PhD research scholarship.
 We are grateful to Norberto Castro Rodríguez for providing maps of emission line velocity moments for 30 Doradus derived from MUSE-VLT observations.
+JGV acknowledges and thanks CONACyT-Mexico for the PhD research scholarship.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% REFERENCES %%%%%%%%%%%%%%%%%%
@@ -1066,9 +1076,45 @@ We are grateful to Norberto Castro Rodríguez for providing maps of emission lin
 \label{sec:degr-struct-funct}
 Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
 
+For a correct analysis on the structure function it is necessary to consider the consequences that the observational box size and the seeing have on the results.
+To quantify the impact of these considerations on the final structure function, we perform a series of experiments using artificial turbulent velocity maps.
+In particular, our interest is to quantify how this observational limitations affect the determination of parameters such as the correlation length, \(r_0\), and the velocity field variance, \(\sigma^2 \). 
+
+The artificial velocity maps are created using a modified version of the \textit{make$\_$extend} command from the \textit{turbustat} package \citep{Koch2019AJ....158....1K}.
+We create a turbulent velocity field that follows a given power law with and a proposed correlation length, and a variance value indicated as true \(\sigma^2\).
+Using this true \(\sigma^2\) we obtained the true \(r_0\), and these values are used as a reference in the following experiments to quantify the variations.
+The objective is to create a sample of multiple divided maps with different seeing width to compute the structure function in each and characterize the variations. 
+
 \subsection{Finite box effects}
 \label{sec:finite-box-effects}
 
+The Figure \ref{fig:finite-box}a shows some of the simulated velocity fields we use to study the variations in the structure function with respect to the size of the observational box.
+Initially we have an original field of \(512 \times 512 \) pixels that are divided \(n\) times and produce \(N = 4^n\) fields, where each one has a linear size \(L \times L \) with \(L = 2^{9 -n}\).
+The structure function is calculated for each division and later we average all the divisions of the corresponding map. 
+
+The Figure \ref{fig:finite-box}b shows in solid lines the normalized averaged structure functions for the maps in Figure \ref{fig:finite-box}a.
+The number \(N\) of divisions and the length \(L\) are indicated in each structure function.
+The shaded areas show the deviation that each average structure function has due to the different divisions. 
+\textit{(Note: I modified the Figure adding \(\sigma^2\) and \(r_0\) for each SF since I think it is easier and more directly to grasp the effect of reducing the box size. The figure is more 'noisy' but if it seems like it contribute to nothing we can change it back.)}
+
+The blue horizontal and vertical dashed lines show the true \(r_{0}\) and the value of \(\text{B}(r) / \sigma^2 = 1 \), respectively.
+The colored dotted lines indicate the averages, taking into account all the divisions of each map, of the apparent \(r_ {0}\) and the apparent \(\sigma^2 \).
+From this analysis it is clear that \(r_0\) and \(\sigma^ 2 \) decrease with respect to the true values as the size \(L\) of the observational box decreases. 
+This analysis is performed on different maps (no images are shown) given a different power law in the velocity spectrum and different correlation lengths, giving the same results. 
+
+Figure \ref{fig:finite-box-effect} shows the ratio of the correlation length of each averaged map with respect to the true correlation length, \(\text{apparent } r_ 0 /\text{true } r_0 \), as well as the ratio between the averaged variance of each divided map and the true variance, \(\text{apparent } \sigma^2  / \text{true } \sigma^2\).
+We observe that for the values where \(L\), is 20 $> r_0 $ the change in the ratios is null.
+It is for the values where \( L < 10 r_0 \) a considerable decrease in both ratios is observed.
+This behavior is fulfilled for all simulated maps with different power law in the velocity spectrum and different correlation functions, indicated with different colored circles in Figure \ref{fig:finite-box-effect}. 
+These variations of the ratios are used to characterize the effect that the decrease of the observational box size has in \(r_0\) and \(\sigma^2\).
+
+The fitted dashed line in Figure \ref{fig:finite-box-effect} is given by the equation: 
+
+\begin{equation}\label{eq:ajustebox}
+\beta(r_0) = 1 - exp \left[ \frac{L}{3.6r_0} \right] 
+\end{equation}
+%
+and it is used in the functional form that fits the observational structure function when adjusting the results to obtain the reported parameters \(r_0\) and \(\sigma^2 \). 
 
 \begin{figure}
   \begin{tabular}{@{} l @{}}
@@ -1076,7 +1122,7 @@ Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
     \includegraphics[width=\linewidth]{Figures/fake-finite-box-images}
     \\[\bigskipamount]
     (b)\\
-    \includegraphics[width=\linewidth]{Figures/fake-finite-box-strucfunc}
+    \includegraphics[width=\linewidth]{Figures/fake-finite-box-strucfunc2}
   \end{tabular}
   \caption{Effects of finite box size on the structure function.
     (a)~Construction of simulated turbulent velocity fields of different sizes
@@ -1102,6 +1148,49 @@ Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
 \subsection{Effects of seeing}
 \label{sec:effects-seeing-struc}
 
+Ground-based astronomical observations are affected by the seeing produced by the atmosphere.
+When calculating the structure function of these observations, this seeing affects the results at small-scale separations due to the smoothing of velocity fluctuations between adjacent pixels.
+To study the consequences of the seeing we calculate the structure function of velocity maps where an artificial Gaussian seeing with different line widths has been introduced.
+The artificial velocity maps are created in the same way as to study the effect of the observational box.
+Seeing in velocity maps is added via the \textit{astropy} package using the \textit{Gaussian2DKernel} command. 
+
+The rows in Figure \ref{fig:seeing-reduction}a show a synthetic velocity field of 512 \(\times\) 512 divided into four maps of 256 \(\times \) 256.
+The color scale is the same for all maps and it considers \(- 3\) to \(+ 3\) times the standard deviation.
+A Gaussian seeing, \(s_0 \) is applied to each division, with an RMS width ranging from 1 to 32 pixels, shown in the columns of Figure \ref{fig:seeing-reduction}. 
+The structure function is computed in these maps and the averaged considering the same seeing. 
+
+The solid lines in Figure \ref{fig:seeing-reduction}b  show the ratio of the structure function of the averages of the maps with their respective seeing and the map without it: \(B (r, s_0 ) / B (r, s_0 = 0) \).
+The circle symbols indicate the value of 2\(s_0\) while the plus symbols indicate the apparent correlation length of smoothed map.
+The vertical dotted line indicates the true \(r_ {0} \). 
+
+The dashed lines in Figure \ref{fig:seeing-reduction}b are  empirically fits for each ratio.
+To obtain this fit, we start from a convolution of an emission line and Gaussian seeing.
+The emission line has the form \(\text {I}(x, v) = \text{I}_0 \phi [v; \overline {v} (x), \sigma_0]\) and has uniform width and brightness where the only change with respect to position is the velocity centroid.
+The proposed seeing is \(\text{K}(x, s_0)\) of the form \(1 / \sqrt{2 \pi s_0} \exp^ {-x^ 2 / 2s_0 ^ 2} \).
+The convolution \(\text{I}(x, v) \otimes \text{K}(x, s_0) \) is performed to obtain the smoothed map, \(\text {\~I} (x, v) \). 
+
+Then we calculate the average velocity difference of the original map, \(\Delta v \), and the smoothed map,b\(\tilde{\Delta v}\), in the points \( x = \{0, \delta \} \).
+This expansion gives a term that modifies the final form of the structure function, \(\text{\~B} (r)\), where the structure function without the seeing, \(\text{B}(r) \), is corrected by the term \(S_0(r; s_0)\) which has the form: 
+
+\begin{equation}\label{eq:seeingcon}
+S (r;s_0) = \tanh^2 \left[ \left( \dfrac{r}{2s_0} \right)^2 \right]
+\end{equation}
+
+Subsequently, the equation \ref{eq:seeingcon} is empirically modified and we obtain: 
+
+\begin{equation}\label{eq:seeingemp}
+S(r; s_0, r_0) =  \frac{e^\frac{-s_0}{r_0}}{2} \left(1 + \tanh{a \text{ln} \frac{r}{2s_0}} \right)
+\end{equation}
+%
+and the final form of the equation \ref{eq:seeingemp} after a mathematical simplification gives: 
+
+\begin{equation}\label{eq:seeingemp2}
+S(r; s_0, r_0) = \frac{e^\frac{-s_0}{r_0}}{1+(\frac{2s_0}{r})^{2a}}
+\end{equation}
+%
+which describes the fit (dashed lines) in Figure \ref{fig:seeing-reduction}b. 
+
+The equation \ref{eq:seeingemp2} is used to correct the observational structure function, \(\text{B}(r)\). 
 
 \begin{figure}
   \begin{tabular}{@{} l @{}}
