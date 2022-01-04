@@ -429,9 +429,29 @@ are given in the following two sections.
 %A Fabry-Pérot interferometer was used with a étalon a separation of 0.5 mm. 
 %Interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula. 
 %The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.
-
-Wherever possible, we calculate the centroid velocity directly as the first moment
-of the line intensity profile for each position on the nebula.
+\newcommand\xx{\ensuremath{\boldsymbol{x}}}
+Wherever possible, we calculate the centroid velocity \(V_c\)
+directly as the normalized first velocity moment of the spectral line intensity profile
+for each plane-of-sky position \(\xx\) on the nebula:
+\(V_{c}(\xx) = M_1(\xx) / M_0(\xx)\).
+The \(k\)th unnormalized moment \(M_k\) of the continuum-subtracted
+spectral intensity profile \(I(v)\)
+is defined as
+\begin{equation}
+  \label{eq:kth-moment}
+  M_k = \int_{\Delta v} I(v) \, v^k \, dv
+\end{equation}
+where the Doppler velocity \(v\) is calculated according to
+the \texttt{VOPT} convention
+\citetext{Eq.~[32] of \citealt{Greisen:2006a}}:
+\begin{equation}
+  \label{eq:optical-velocity}
+  v \equiv c\, (\lambda - \lambda_0) / \lambda_0 ,
+\end{equation}
+where \(\lambda\) is the observed wavelength,
+\(\lambda_0\) is the rest wavelength, and \(c\) is the speed of light.
+The spectral window \(\Delta v\) is chosen to be just large enough to include
+the entire \ha{} emission line.
 So long as the signal-to-noise is high enough,
 this mean velocity can be calculated to a much higher precision
 than the nominal velocity resolution of the spectrograph. 
@@ -439,6 +459,25 @@ In a few cases, as noted below, we are working with already reduced data,
 which are provided in the form of Gaussian fits to the line profiles.
 In the cases where multiple Gaussian components have been fitted,
 we take the flux-weighted mean velocity of these components to be the centroid.
+
+The observed RMS spectral line width \(\sigma'\) can likewise be found from
+the second velocity moment as
+\begin{equation}
+  \label{eq:observed-sigma}
+  \sigma'(\xx)^2  = [M_2(\xx) / M_0(\xx)] - V_{c}(\xx)^2 .
+\end{equation}
+However, many different broadening mechanisms contribute to this width,
+including the finite spectral resolution \(\sigma_{\mathrm{ins}}\),
+fine-structure splitting \(\sigma_{\mathrm{fs}}\),
+and thermal Doppler broadening \(\sigma_{\mathrm{t}}\).
+In the approximation that all these broadening mechanisms are independent
+and described by Gaussian profiles, then the dispersion of
+line-of-sight velocities due to bulk motions \(\sigma\los\) can be found
+by subtracting these contributions in quadrature from the observed width:
+\begin{equation}
+  \label{eq:sigma-los}
+  \sigma\los^2 = \sigma'^2 - \sigma_{\mathrm{ins}}^2 - \sigma_{\mathrm{fs}}^2 - \sigma_{\mathrm{t}}^2 .
+\end{equation}
 
 \subsubsection{Longslit echelle spectroscopy}
 \label{sec:longsl-echelle-spect}
@@ -636,7 +675,7 @@ It has approximately 250 stars of the OB type, 13 Supergiants and 9 WR \citep{19
 
 \subsection{The second-order structure function}
 \label{sec:second-order-struct}
-One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density.
+One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density.                                     
 These fluctuations are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
 It is possible to describe the statistical properties of these fluctuations if they are assumed as a product of a stochastic field \citep{1984ApJ...277..556S}. 
 This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
@@ -647,7 +686,7 @@ The second-order structure function of the velocity centroids, $B(r)$, is define
   B(\boldsymbol{r}) = \dfrac{1}{N(\boldsymbol{r})}
   \,
   \sum_{\text{pairs}} \bigl[
-  V_{c}(\boldsymbol{x} + \boldsymbol{r}) - V_{c}(\boldsymbol{x})
+  V_{c}(\xx + \boldsymbol{r}) - V_{c}(\xx)
   \bigr]^{2}
 \end{equation}
 %
@@ -657,13 +696,13 @@ In the Kolmogorov model \(B(r) \propto r^{2/3}\).
 The variance of the centroid velocity fluctuations is:
 %
 \begin{equation}\label{eq:variance}
-\sigma^2  = \frac{1}{N} \sum_{\text{pixels}} \bigl[ V_c (\boldsymbol{x}) -\langle V_ c\rangle  \bigr]^2
+\sigma^2  = \frac{1}{N} \sum_{\text{pixels}} \bigl[ V_c (\xx) -\langle V_ c\rangle  \bigr]^2
 \end{equation}
 %
 the, \(\langle V_c \rangle \) is the mean centroid velocity
 %
 \begin{equation}\label{eq:mean}
-\langle V_c \rangle \  = \frac{1}{N} \sum_{\text{pixels}} V_c (\boldsymbol{x})
+\langle V_c \rangle \  = \frac{1}{N} \sum_{\text{pixels}} V_c (\xx)
 \end{equation}
 %
 The summation in Equation \ref{eq:Br} is over all data pairs for each separation \(N(\boldsymbol{r})\).
@@ -674,7 +713,7 @@ The summations in Equations \ref{eq:variance} and \ref{eq:mean} are over the tot
 The autocovariance function is:
 
 \begin{equation}\label{eq:Cr}
-C(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\boldsymbol{x} + \boldsymbol{r}) \times V_{c}(\boldsymbol{x}) ]} {N(\boldsymbol{r})}
+C(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\xx + \boldsymbol{r}) \times V_{c}(\xx) ]} {N(\boldsymbol{r})}
 \end{equation}
 %
 and is another statistical tool used in studying the turbulent flows.
