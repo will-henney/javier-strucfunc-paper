@@ -423,7 +423,7 @@ Further details of the observations and the sources themselves
 are given in the following two sections.
 
 \subsection{Spectroscopic datasets}
-
+\label{sec:spectr-datas}
 %We use data from \citet{1987A&A...176..347H} and \citet{arthur2016turbulence} to study of turbulence in the Orion Nebula.
 %\cite{1987A&A...176..347H} observations were obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
 %A Fabry-Pérot interferometer was used with a étalon a separation of 0.5 mm. 
@@ -478,6 +478,7 @@ by subtracting these contributions in quadrature from the observed width:
   \label{eq:sigma-los}
   \sigma\los^2 = \sigma'^2 - \sigma_{\mathrm{ins}}^2 - \sigma_{\mathrm{fs}}^2 - \sigma_{\mathrm{t}}^2 .
 \end{equation}
+See sec~5.1 of \citet{Garcia-Diaz:2008a} for further details.
 
 \subsubsection{Longslit echelle spectroscopy}
 \label{sec:longsl-echelle-spect}
@@ -690,6 +691,33 @@ They proposed Champagne flows at the periphery of the molecular cloud leading to
 
 \section{Plane-of-sky velocity fluctuations}\label{sec:met}
 
+% \subsection{Velocity fields of the HII regions}
+
+% \textit{Javier 2021-12-28: I'm not quite sure the correct section for this. Since they aren't results, per se, and until now I haven't develop to much discussion with them, I move it here so it end up like Methods and Data, before reporting our findings. }
+
+Figure~\ref{fig:velocity-maps} shows maps of the \ha{} centroid velocity
+\(V_c\) for each \hii{} region in our sample,
+calculated as described above in section~\ref{sec:spectr-datas}
+and after subtracting the mean systemic velocity in each case.
+The color scheme ranges from the most negative velocities in blue
+to the most positive velocities in red,
+but the amplitude of the velocity fluctuations differs considerably between regions,
+as indicated by the color scale bar on each map,
+ranging from \SI{\pm 7}{km.s^{-1}} for the Lagoon
+up to  \SI{\pm 40}{km.s^{-1}} for 30~Doradus.
+This can be appreciated quantitatively in Figure~\ref{fig:hist},
+which shows the probability density function (PDF) of \(V_c\) for each region
+on a common velocity scale and arranged in order of decreasing amplitude
+of velocity fluctuations. 
+All the distributions are far from being consider Gaussian, implying that there are multiple kinematics components in the regions.
+
+\begin{figure*}
+ \centering
+ \includegraphics[width=5in]{Figures/Hist}\par
+ \caption{Histograms of the centroid velocities in \halpha\ of our sample of HII regions. }
+ \label{fig:hist}
+\end{figure*}
+
 
 \subsection{The second-order structure function}
 \label{sec:second-order-struct}
@@ -803,21 +831,6 @@ The traditional way to find it is to determine a particular range of ascending v
 If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
 In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to the erroneous interpretation of multiple inertial scales.
 
-\subsection{Velocity fields of the HII regions}
-
-\textit{Javier 2021-12-28: I'm not quite sure the correct section for this. Since they aren't results, per se, and until now I haven't develop to much discussion with them, I move it here so it end up like Methods and Data, before reporting our findings. }
-
-The Figure \ref{fig:velocity-maps} shows the velocity maps of each HII region in the \halpha\ emission line.
-All velocities are relative to the systemic velocity of each region, with more negative velocities shown in blue and more positive velocities in red. The range of velocities is different for each region and is shown in each map. The more negative velocities are shown in blue and more positive velocities are shown in red.
-The Figure \ref{fig:hist} shows the probability density functions of our sample of HII regions.
-All the distributions are far from being consider Gaussian, implying that there are multiple kinematics components in the regions.
-
-\begin{figure*}
- \centering
- \includegraphics[width=5in]{Figures/Hist}\par
- \caption{Histograms of the centroid velocities in \halpha\ of our sample of HII regions. }
- \label{fig:hist}
-\end{figure*}
 
 \section{Results}\label{sec:results}
 
