@@ -412,7 +412,7 @@ for which good quality mapping of the \ha{} line exists in the literature
 or in data archives.
 Figure~\ref{fig:hii-regions} shows optical images of
 each region in our sample
-and Table~\ref{tab:Reg} lists their most important physical parameters.
+and Table~\ref{tab:regions-properties} lists their most important physical parameters.
 The derived centroid \ha{} velocity maps are shown in Figure~\ref{fig:velocity-maps}.
 Our sample includes three Milky Way regions
 (at approximate distance of \num{0.5} to \SI{2}{kpc}),
@@ -574,7 +574,7 @@ The NGC~604 observations were previously reported and analyzed in
 \hii{}    &  \text{Distance,}\ D& \text{Diameter,}\ R & \log L(\ha) &  \langle \sigma\los \rangle \\
   Region    &  [\si{kpc}]          &  [\si{pc}]    &  [\si{erg.s^{-1}}]            &    [\si{km.s^{-1}}]  \\ 
 \midrule
-Orion     & 0.436 \pm 0.02  & 0.6 \pm 0.06    &    37       &   6.0      \\
+Orion     & 0.436 \pm 0.02  & 0.6 \pm 0.06    &    37.18       &   6.0      \\
 Lagoon    & 1.25 \pm 0.12   & 25 \pm 2.5      &    37.47    &   13.6 \pm 0.04     \\
 Carina    & 2.35 \pm 0.05   & 15 \pm 1.5      &    38.54    &   22.4 \pm 0.09    \\
 30 Dor    & 50.0 \pm 0.2    & 98.9 \pm 9.8    &    39.46    &   31.7     \\
@@ -584,7 +584,7 @@ Hubble V  & 490 \pm 40      & 130 \pm 13      &    38.3     &   12.3     \\
 NGC 595   & 820 \pm 30      & 400 \pm 40      &    38.95    &   18.3 \pm 0.06     \\
 NGC 604   & 820 \pm 30      & 400 \pm 40      &    39.42    &   16.2 \pm 0.08     \\
 \bottomrule
-\end{tabular}\label{tab:Reg}
+\end{tabular}\label{tab:regions-properties}
 \end{center}
 \end{table} 
 
@@ -592,7 +592,8 @@ NGC 604   & 820 \pm 30      & 400 \pm 40      &    39.42    &   16.2 \pm 0.08   
 \label{sec:orion-nebula}
 
 The Orion Nebula (M42) is the prototype galactic HII region located at a distance of 440 pc \citep{2008AJ....136.1566O}.
-The main ionizing star is \(\theta^{1}\)Ori C (spectral type \(\sim\)O7) and with other 3 B-type stars they form the Trapezium cluster.
+The O7 V star \(\theta^{1}\) Ori C is the most luminous and hottest star \citep{2006A&A...448..351S} with an ionizing flux \(Q_0\) of  \SI{e49.12}{photons.s^{-1}}. 
+With other 3 B-type stars they form the Trapezium cluster.
 The position of Orion near the side of the Orion Molecular Cloud (OMC-1) make it an ongoing star formation with a large population of young star, some of which are the sources of stellar jets and Herbig-Haro objects \citep{1993ApJ...410..696O}.
 Its physical properties and kinematics, along its stellar population are documented in \citet{2001ARA&A..39...99O}.
 
@@ -737,8 +738,6 @@ The second-order structure function of the velocity centroids, $B(r)$, is define
 \end{equation}
 %
 where $N(\boldsymbol{r})$ is the number of pair points at each separation \(\boldsymbol{r}\), called lag. 
-In the Kolmogorov model \(B(r) \propto r^{2/3}\).
-
 The variance of the centroid velocity fluctuations is:
 %
 \begin{equation}\label{eq:variance}
@@ -756,40 +755,37 @@ The summations in Equations \ref{eq:variance} and \ref{eq:mean} are over the tot
 
 \subsection{Application to our HII regions sample}\label{sec:apply}
 
-The autocovariance function is:
+The autocovariance function:
 
 \begin{equation}\label{eq:Cr}
 C(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\xx + \boldsymbol{r}) \times V_{c}(\xx) ]} {N(\boldsymbol{r})}
 \end{equation}
 %
-and is another statistical tool used in studying the turbulent flows.
+is another statistical tool used in studying the turbulent flows.
 The interpretation of the Equation \ref{eq:Cr} depends on the assumption of homogeneity, which may be violated for astrophysical processes.
 Because of this, Equation \ref{eq:Br} is a better approach to characterize the velocity fluctuations even in the presence of large scale linear gradients and may be sensitive to a wider range of scales \citep{1984ApJ...277..556S}.
 
-For the homogeneous random field, Equations \ref{eq:Br} and \ref{eq:Cr} are related by:
+For an homogeneous random field equations \ref{eq:Br} and \ref{eq:Cr} are related by:
 
 \begin{equation}\label{eq:functional}
-b(r; r_0, \sigma^2, m) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
+B(r) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
 \end{equation}
 
-%Based on Equation \ref{eq:functional} we use the functional of the structure function in the form:
-%
-%\begin{equation}\label{eq:ff}
-%b(r; r_0, m) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
-%\end{equation}
-%
-%where  is now the new form of the correlation function in the form:
-where $C(r)$ is a new form that we propose of the correlation function:
+We use a new functional for the structure function based on equation \ref{eq:functional}. 
+First we propose a new \(C(r)\) in the form:
 %
 \begin{equation}\label{eq:ffnew}
   C(r) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right]
 \end{equation}
 %
-substituting the previously $C(r)=1/[1+(r/r_{0})^{m}]$ \citep{1966igd..book.....K,1984ApJ...277..556S}.
+The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
+In an idealized case at scales larger than \(r_{0}\)\ the structure function flattens as it tends towards the asymptotic value of 2\(\sigma^2\) \citep{arthur2016turbulence}.
+This substitutes the previously \(C(r) = 1/[1+(r/r_{0})^{m}]\) from \citet{1966igd..book.....K} and
+\citet{1984ApJ...277..556S}.
 
-The term $r_{0}$ is the correlation length of the turbulence, the value of \(r\) in pc where equation \ref{eq:Br} reach the value of \(\sigma^2\), and $m$ is the index that adjust our results.
-In this idealized case, at scales larger than r$_{0}$ the structure function flattens as it tends towards the asymptotic value of 2$\sigma$ \citep{arthur2016turbulence}.
+We also take into account in the new functional observational constraints like the seeing and observational box size (see Appendix~\ref{sec:degr-struct-funct} for details). 
 
+The seeing becomes important at small scales and it is known that has an effect giving a more pronounced stepping in the structure function.
 The model proposed to describe the seeing at small scales is:
 %
 \begin{equation}\label{eq:ffs}
@@ -799,38 +795,38 @@ The model proposed to describe the seeing at small scales is:
     1+(2s_0 / r)^{2 / 3}
   }
 \end{equation}
-%
-and the model that consider the effect of the observational box size is:
+
+The model that consider the effect of the observational box size is:
 
 \begin{equation}\label{eq:ffb}
 % \beta(r_0) = 1 - exp[\frac{L_{box}}{3.6r_0}] 
-  \beta(r_0) = 1 - \exp \left[ -L_{\text{box}} / (3.6 r_0) \right] 
+  \beta(L_{\text{box}},r_0) = 1 - \exp \left[ \frac{-L_{\text{box}}} {3.6 r_0} \right] 
 \end{equation}
 %
-where $L_{\text{box}}$ is the diagonal length of the observational box.
+where the \(L_{\text{box}}\) value is the diagonal length of the observational box.
 
-The final form of our proposed functional of the structure function is in the form:
+Considering the previous models we obtain the final form of our proposed structure function functional:
 %
-\begin{equation}\label{eq:fff}
-B(r) = b(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
+\begin{equation}\label{eq:proposed-functional}
+B_{\text{func}}(r) = B(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
 \end{equation}
+%
+where the term \( B_{\text{noise}}\) is a correction factor that considers the instrument noise at small scales.
+This noise would have the effect of flattening the structure function by removing the effects of the fluctuations which would be interpreted as an uncorrelated property. 
 
-The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares
-fit to obtain the best values for the turbulent parameters. 
-We use equation \ref{eq:fff} in a chi-square analysis applying the equation:
+To maintain an uniform methodology across all the sample of HII regions the results obtained with equation \ref{eq:Br} are use in a non-linear least-squares fit to obtain the best fit for the analysis. 
+For this purpose we use the \textit{python} package \textit{lmfit} \citep{newville_matthew_2014_11813} where the equation \ref{eq:Br} and \ref{eq:proposed-functional} are use in a chi-square analysis following:
 %
 \begin{equation}\label{eq:chi}
   \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
 \end{equation}
 %
-using the package \textit{lmfit} \citep{newville_matthew_2014_11813}. 
 
-In this way we avoid one fundamental problem in the interpretation of the structure function results. 
+In this way we want to avoid one fundamental problem in the interpretation of the structure function. 
 The slope in the majority of previous studies and hence, the correlation length, is obtained without a formal procedure. 
-The traditional way to find it is to determine a particular range of ascending values in the structure function results. 
+The traditional way to find the correlation length it is to determine a particular range of ascending values in the structure function. 
 If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
 In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to the erroneous interpretation of multiple inertial scales.
-
 
 \section{Results}\label{sec:results}
 
@@ -861,6 +857,7 @@ E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
 %
 where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$ is the Kolmogorov index.
 %For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
+%In the Kolmogorov model \(B(r) \propto r^{2/3}\).
 
 
 \subsection{HII regions structure functions}
@@ -925,6 +922,7 @@ The fourth column is the correlation length \(r_0\).
 
 \subsubsection{Velocity field \(\sigma\)}
 
+%Note to me: review bibliography and expand this section
 The true variance of the velocity fields obtained with the analysis in Section \ref{sec:apply} is shown in the second column in Table \ref{tab:Res}. 
 For all regions except for Carina and Lagoon there is an slight increase in the value of $\sigma$.
 
@@ -940,7 +938,8 @@ For all regions except for Carina and Lagoon there is an slight increase in the 
 %This follows if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
 %In these sense the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
 
-It has been proposed for comparison between two-dimensional observations and the three-dimensional value of the astronomical object what it is called projection smoothing \citep{von1951methode, munch1958internal,1987ApJ...317..686O}, where:
+For the comparison between the two-dimensional structure function and the three-dimensional structure function relationships between the power-law were proposed.
+This procedure is called projection smoothing \citep{von1951methode, munch1958internal,1987ApJ...317..686O}.
 
 \begin{equation}\label{eq:exp1}
 m_{2D}= m_{3D} + 1
@@ -954,7 +953,7 @@ m_{2D} \sim m_{3D}
 
 If the extension of the region is compared with its depth the value of the index is $\frac{5}{3}$. While the case where the extension is much greater than its depth (two-dimensional) will have a value of $\frac{2}{3}$.
 
-We can compute the $m_{3D}$ index from the two dimensional \(m\), if we assume that the $m_{3D}$ index lies between the limits of projection smoothing and a sheet-like distribution. 
+We can compute the $m_{3D}$ index from the two dimensional \(m\), if we assume that the m$_{3D}$ index lies between the limits of projection smoothing and a sheet-like distribution. 
 Following the procedure by \cite{arthur2016turbulence} and assuming the relationship m$_{2D}$ - 1 $<$ m$_{3D}$ $<$ m$_{2D}$ we have 0.36 $<$ m$_{3D}$ $<$ 0.72.
 
 
@@ -975,6 +974,7 @@ We also do a comparison between our results with previous structure functions.
 
 \subsection{Correlations between physical properties and turbulent parameters}
 
+%Intro for scaling relations
 Relationship between the physical properties of HII regions, like size and luminosity, and the velocity dispersion have been used as tools for concluding scaling relations for these objects.
 These relations have also been studied in dwarf galaxies and high-redshift star formation regions.
 \citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the HII regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $\text{L}_{\text{H}} \sim \sigma ^{\sim 4}$).
@@ -982,26 +982,31 @@ They conclude that GEHRs follow this relation because they behave as self-gravit
 The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
 %\citet{1981MNRAS.194..809L}
 
+%Previous research on scaling relations
 \citet{2012MNRAS.422.3339W} have found that clumps and HII regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
 This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
 Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).
 \citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
+%methods for our analysis
 We follow through this analysis using the scaling relation as a research tool between the properties of the sample of HII regions and our results. 
-We use the properties in Table \ref{tab:Reg} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form $Y = aX +b$. 
+We use the properties in Table \ref{tab:regions-properties} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form $Y = aX +b$. 
 For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
 The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
 In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level  $p < $0.05.
 In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
 
-The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of $\log r_0 = (0.68 \pm 0.06) \log R-(0.83 \pm 0.12)$.
+%Size vs correlation length
+\textit{Note: Regarding the values and uncertainties of the size of the regions, table \ref{tab:regions-properties},  I was fearing that they might seem kind of arbitrary for the reviewers. So I had the idea of using the box size value instead of the size, and the box size minus the maximun separation r for the uncertainty for the regression analysis (not shown). The results are quite consistent with the size, R, value (see lines below) giving $\log r_0 = (0.77 \pm 0.12) \log box size-(0.80 \pm 0.18)$. There is a diminution for the Pearson correlation value from 0.98 to 0.95 and the p-value changes from 3.7e-07 to 4.49e-05.}
+The Figure \ref{fig:rvsR} shows the strongest correlation, being this between the correlation length $r_0$ and the size $R$ of the region. The relationship we found is relation of \(\log r_0 = (0.68 \pm 0.06) \log R-(0.83 \pm 0.12)\).
 
+\textit{Note: First I was using the luminosities values from the table of the Git page for the regression analysis. But I change them according to the bibliography when writing section 2. The values are quite consistent but for Carina there was some difference. From \SI{e39}{erg.s^{-1}} to \SI{e38}{erg.s^{-1}}.}
 The Figure \ref{fig:sigvsl} shows the log $\sigma$-log $\text{L}(\text{H}_{\alpha})$ plane.
 Since this relation is the most common it can be use for comparison with the investigations mentioned at the beginning of this section.
-Our results give us a relation of $\log \sigma = (0.17 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(6 \pm 4.0)$.
+Our results give us a relation of $\log \sigma = (0.25 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(9 \pm 4.0)$.
 It is customary in the literature to present $\text{L} (\text{H}_{\alpha})$ as the dependent variable.
 In our case if we choose the upper positive error and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.5}\). 
-Using the same procedure in \textit{linmix} and changing the variables we obtained $\log \text{L}(\text{H}_{\alpha}) = (3.2\pm 2) \log \sigma -(36.23 \pm 1.45)$.
+Using the same procedure in \textit{linmix} and changing the variables we obtained $\log \text{L}(\text{H}_{\alpha}) = (3.2\pm 1.4) \log \sigma -(36 \pm 1)$.
 Both relations are close to the previously proposed \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4}\)
 
 
