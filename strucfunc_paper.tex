@@ -775,7 +775,7 @@ We use a new functional for the structure function based on equation \ref{eq:fun
 First we propose a new \(C(r)\) in the form:
 %
 \begin{equation}\label{eq:ffnew}
-  C(r) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right]
+  C(r; r_0, m) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right]
 \end{equation}
 %
 The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
@@ -807,20 +807,29 @@ where the \(L_{\text{box}}\) value is the diagonal length of the observational b
 
 Considering the previous models we obtain the final form of our proposed structure function functional:
 %
-\begin{equation}\label{eq:proposed-functional}
+\begin{equation}\label{eq:sf-functional}
 B_{\text{func}}(r) = B(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
 \end{equation}
 %
 where the term \( B_{\text{noise}}\) is a correction factor that considers the instrument noise at small scales.
 This noise would have the effect of flattening the structure function by removing the effects of the fluctuations which would be interpreted as an uncorrelated property. 
 
-To maintain an uniform methodology across all the sample of HII regions the results obtained with equation \ref{eq:Br} are use in a non-linear least-squares fit to obtain the best fit for the analysis. 
-For this purpose we use the \textit{python} package \textit{lmfit} \citep{newville_matthew_2014_11813} where the equation \ref{eq:Br} and \ref{eq:proposed-functional} are use in a chi-square analysis following:
+The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares fit with the equation \ref{eq:sf-functional} used as an objective function.
+For this purpose we use the \textit{python} package \textit{lmfit} \citep{newville_matthew_2014_11813} where the equation \ref{eq:Br} and \ref{eq:sf-functional} are use in a chi-square statistic defined as:
+%
+%\begin{equation}\label{eq:chi}
+%  \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
+%\end{equation}
+%
 %
 \begin{equation}\label{eq:chi}
-  \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
+  \chi^2 = \sum_i ^N \frac{[B(r)-B_{\text{func}}(r;r_0, \sigma^2, m, s_0, B_{\text{noise}})]^2}{\epsilon_i ^2}
 \end{equation}
 %
+which calculate a value \(\chi\) to be minimized scaled by the inverse of the uncertainty \(\epsilon\) in the data.
+The minimization procedure use the the method \textit{emcee} \citep{2013PASP..125..306F} which is a \textit{python} implementation of the affine-invariant ensemble sampler for Markov chain Monte Carlo (MCMC) by \citet{2010CAMCS...5...65G}.  
+Using these procedure we obtain a sample of fits for the structure function.
+And for the turbulent parameters \(r_{0}\)\ , \(\sigma^2\) and \(m\), and for the observational constraints \(s_0\) and \( B_{\text{noise}}\), we obtain the best fit values with the confidence intervals up to three standard deviations.
 
 In this way we want to avoid one fundamental problem in the interpretation of the structure function. 
 The slope in the majority of previous studies and hence, the correlation length, is obtained without a formal procedure. 
@@ -855,18 +864,23 @@ It is assumed that this energy is of the order of $(\epsilon r)^{\frac{2}{3}} \s
 E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
 \end{equation}
 %
-where \(\epsilon\) is the energy transfer rate and the value of $\beta = -5 / 3$ is the Kolmogorov index.
+where \(\epsilon\) is the energy transfer rate and the value of \(\beta = -5 / 3\) is the Kolmogorov index.
 %For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
 %In the Kolmogorov model \(B(r) \propto r^{2/3}\).
 
 
 \subsection{HII regions structure functions}
 
-Figures \ref{fig:strucfunc-fit-A}-\ref{fig:strucfunc-fit-C} shows the structure function of each region along with the fit obtained using the non-linear regression.
-Table \ref{tab:Res} presents the turbulent parameters we obtain the regression.
-The second column correspond to the variance \(\sigma^2\) of the velocity field.
+Figures \ref{fig:strucfunc-fit-A}-\ref{fig:strucfunc-fit-D} show on the left panels the observational structure function in solid blue dots that we compute using equation \ref{eq:Br} on the velocity fields of Fig. \ref{fig:velocity-maps}.
+The green dashed line indicate the model without instrumental effects using equation \ref{eq:functional}.
+The Figures also show in yellow solid line the mean of samples posterior using equation \ref{eq:sf-functional}.
+The vertical dashed line indicates the correlation length value \(r_0\) and the horizontal dashed line indicates the \(\sigma^2\) value.
+The vertical and horizontal dotted lines shows the value of the observational consideration \(s_0\) and the \(B_{\text{noise}}\) obtained after the analysis described in section~\ref{sec:met}.
+ 
+Table \ref{tab:Res} presents the turbulent parameters along the observational constraints.
+The second column correspond to the true variance \(\sigma^2\) of the velocity field.
 The index \(m\) is shown in the third column and is used as a reference for comparison between theory and observations.
-The fourth column is the correlation length \(r_0\).
+The fourth column is the correlation length in pc.
 
 \begin{figure*}
   \centering
@@ -894,31 +908,6 @@ The fourth column is the correlation length \(r_0\).
 \end{figure*}
 
 \input{SFresults}
-%\begin{table*}
-% \begin{center}\caption{Main results.
-%  a) \citet{tanco1997}
-%      b) \citet{2019arXiv191203543M}
-%      c) \citet{Castro:2018a}
-%      d) \citet{Damiani:2016a}
-%      e) \citet{Damiani:2017b}
-%      f) \citet{1987A&A...176..347H}
-%      g) \citet{arthur2016turbulence}.}
-% \begin{tabular}{ccccccccc}\hline
-% HII         &\(\sigma^{2}\) &\(r_0\)                     &\(m\)    &\(\langle \sigma_{LOS} \rangle \) & Previously\\
-% Region      &[km/s]$^{2}$     &[pc]                        &                           &  [km/s]& used in:\\ \hline
-% NGC 604     & 80.93$\pm$25.31 &  9.12$\pm$2.98  & 0.82$\pm$0.20  & 16.2 & a,b \\
-% NGC 595     & 56.45$\pm$1.69  & 11.69$\pm$0.45  & 1.29$\pm$0.04  & 18.3 & - \\
-% Hubble X    & 15.55$\pm$1.50  &  3.90$\pm$0.28  & 0.94$\pm$0.12  & 13.4 & - \\ 
-% Hubble V    & 10.46$\pm$0.75  &  3.42$\pm$0.33  & 0.73$\pm$0.09  & 12.3 & - \\  
-% 30 Dor      & 350.87$\pm$21.59 & 4.60$\pm$0.43  & 0.84$\pm$0.03  & 31.7 & c\\
-% Carina      & 16.74$\pm$1.13  & 0.66$\pm$0.08  & 1.36$\pm$0.29  & 22.4 & d\\
-% NGC 346     & 38.03$\pm$1.09  & 1.90$\pm$0.09  & 0.78$\pm$0.02  & 10.2 & -\\
-% Lagoon      & 7.29$\pm$0.84   & 1.00$\pm$0.17  & 1.12$\pm$0.09  & 13.6 & e\\ 
-% Orion Large & 5.97$\pm$0.58   & 0.73$\pm$0.17  & 1.72$\pm$0.524 & 6.0 & f \\
-% Orion Small & 16.92$\pm$0.97  & 0.091$\pm$0.006 & 1.06$\pm$0.01 & 6.0 & g \\\hline	  
-% \end{tabular}\label{tab:Res}
-% \end{center}
-%\end{table*}  
 
 \subsubsection{Velocity field \(\sigma\)}
 
