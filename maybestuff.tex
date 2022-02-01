@@ -40,13 +40,6 @@
 %\citet{2020MNRAS.494...97S} argue that winds on ionizing clusters in GEHR must merge into a hot cluster because of the close proximity of the massive stars.
 %\citet{2019ApJ...871...17U} propose that stellar feedback is an important source of energy to maintain turbulence in nearby galaxies.
 
-%The classic turbulence theory \citep{kolm1} assumes a three-dimensional isotropic, incompressible and subsonic flow where an energy cascade is taking place.
-%The interstellar matter does not have those physical properties and our observations are in two-dimensions.
-%But as mentioned above the idea of an energy cascade is used to understand our observations.
-%The energy cascade goes from the largest vortices where the energy in injected until it reaches dissipation with the smallest vortices.
-%In the energy cascade three scales are defined based on their Reynolds number.
-%The energy injection scale (Re $\rightarrow \infty$), $L_{EI}$, the dissipation scale (Re $\rightarrow$ 1), $L_{D}$ and the inertial scale, $L_{I}$, between the previous two.
-%Since the energy distributions depends on the scale, the energy cascade concept is described with an energy spectrum, $E(k) \propto k$ where $k$ is the wave number for a determined scale $l$ ($k \equiv r^{-1}$).
 
 %Other statistical techniques like velocity channel analysis (VCA) \citep{2000ApJ...537..720L} have been proved to better recreate the spectrum of the velocity field \citep{medina2014,arthur2016turbulence}.
 %More recently, the structure function was used with full 6D measurements (position-velocity) to study the motions of stars in the Orion Molecular Cloud Complex.
@@ -57,7 +50,7 @@
 %\citet{smith1970} discovered that the probable velocities of internal motions of extragalactic HII regions, \(\sigma_{W}\) (line width integrated over the whole HII region), were in the range of $\sim$ 19-34 km s\kms\ covering supersonic values.
 %For the velocity to be supersonic it is necessary a continuous mechanism to maintain the observed motions, as supersonic motions are expected to dissipate energy via shocks \citep{1994Ap&SS.216..285C}.
 %Turbulence is suggested as a mechanism that can stir the medium and maintain the supersonic velocities.
-%The large lengths of astrophysical objects, ranging in scales from 10$^{6}$ to 10$^{17}$ m \citep{2010ApJ...710..853C}, and the high Reynolds numbers (Re), in the order of 10$^{4}$ - 10$^{9}$, are properties that supports the idea of a turbulent interstellar medium.
+
 
 
 %\subsection{What turbulence scales can tell us about kinematics of the ionized gas?}
@@ -113,108 +106,9 @@
 %%%%%%%%%%%%%%%other
 
 The groundwork for the statistical study of turbulence was laid by \citet{taylor1935i,taylor1935ii} and \citet{karman1937statistical} and later developed by \citet{kolm1,kolm2} and \citet{heisenberg1951stability}. 
-These mathematical techniques were first applied to astronomical observations by \citet{von1951methode} and \citet{munch1958internal} allowing to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the Orion Nebula. 
-
-\section{Turbulence}\label{sec:turb}
-
-The classic turbulence theory \citep{kolm1} assumes a three-dimensional isotropic, incompressible and subsonic flow, where an energy cascade, with different $l$ sizes in an auto-similar configuration, is taking place. 
-The energy cascades goes downward, from the large vortices until it reaches dissipation with the smallest vortices.
-In this energy cascade three scales can be defined: the energy injection scale (Re $\rightarrow \infty$), $L_{EI}$, the dissipation scale (Re $\rightarrow$ 1), $L_{D}$ and the inertial scale ($L_{I}$) between the previous two. 
-
-In the mathematical description of the Kolmogorov theory the energy transfer, $\epsilon$, in the inertial range can be denoted as $\epsilon \sim \frac{v_{l}^{2}}{\tau_{l}}$, where $v_{l}^{2}$ is the kinetic energy per mass unit and $\tau_{l}$ the time related with velocity fluctuations. 
-Kolmogorov states the relationship \citep{Leqism}:
-
-\begin{equation}\label{eq:velsca}
-v_{l} \sim (\epsilon l)^{\frac{1}{3}}
-\end{equation}
-
-The energy cascade concept can  be described with an energy spectrum, $E(k) \propto k^{-\beta}$ where $k$ is the wave number for a scale $l$ ($k \equiv l^{-1}$). The total specific energy of a determined $l$ scale is of the order $\langle v_{l}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
-
-\begin{equation}\label{eq:veles}
- \langle v_{l}^{2} \rangle = \int_{k}^{\infty} E(k)dk
-\end{equation}
-
-Considering that this energy is of the order of $(\epsilon l)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$ we can substitute in equation \ref{eq:veles} and obtain the Kolmogorov law:
-
-\begin{equation}\label{eq:kolm}
-E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
-\end{equation}
-
-For subsonic (Kolmogorov) turbulence $\beta= -5/3$, and for supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
-
-Equation \ref{eq:velsca} is related to the quadratic velocities differences by:
-
-\begin{equation}\label{eq:sfi}
-(\Delta v)^{2} \sim (\epsilon l)^{\frac{2}{3}}
-\end{equation}
-
-We show in the next section that the term $(\Delta v)^{2}$ can be defined as the structure function. The left term with index that we define as $\alpha= 2/3$ in equation \ref{eq:sfi} is directly related to the energy, the left term in equation \ref{eq:veles}. This index $\alpha$ serves as a reference for the Kolmogorov theory and it is used for direct comparison with observations.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Turbulence}\label{sec:turb}
-
-The classic turbulence theory \citep{kolm1} assumes a three-dimensional isotropic, incompressible and subsonic flow, where an energy cascade, with different $l$ sizes in an auto-similar configuration, is taking place. 
-The energy cascades goes downward, from the large vortices until it reaches dissipation with the smallest vortices.
-In this energy cascade three scales can be defined: the energy injection scale (Re $\rightarrow \infty$), $L_{EI}$, the dissipation scale (Re $\rightarrow$ 1), $L_{D}$ and the inertial scale ($L_{I}$) between the previous two. The energy cascade concept is described with an energy spectrum, $E(k) \propto k^{-\beta}$ where $k$ is the wave number for a scale $l$ ($k \equiv l^{-1}$).Following the mathematical description of the Kolmogorov theory the mean specific energy transfer, $\langle \epsilon \rangle$, in the inertial range can be denoted as $\epsilon \sim \frac{v_{l}^{2}}{\tau_{l}}$, where $v_{l}^{2}$ is the kinetic energy per mass unit and $\tau_{l}$ the time related with velocity fluctuations. Since the total specific energy of a determined $l$ scale is of the order $\langle v_{l}^{2} \rangle$ and is the energy integral above the associated $k$, defined as:
-
-\begin{equation}\label{eq:veles}
- \langle v_{l}^{2} \rangle = \int_{k}^{\infty} E(k)dk
-\end{equation}
-
-Considering that this energy is of the order of $(\epsilon l)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$ we can substitute in equation \ref{eq:veles} and obtain the Kolmogorov law:
-
-\begin{equation}\label{eq:kolm}
-E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
-\end{equation}
-
-Considering the quadratic velocities differences:
-
-\begin{equation}\label{eq:sfi}
-(\Delta v)^{2} \sim (\epsilon l)^{\frac{2}{3}}
-\end{equation}
-
-the term $(\Delta v)^{2}$ can be defined as the structure function. The left term with index that we define as $\alpha= 2/3$ in equation \ref{eq:sfi} is directly related to the energy, the left term in equation \ref{eq:veles}. This index $\alpha$ serves as a reference for the Kolmogorov theory and it is used for direct comparison with observations.
-
-The techniques we used to study the radial velocity sample, $V_{r}(\boldsymbol{x})$, where $V_{r}(\boldsymbol{x})= V_{obs}(\boldsymbol{x})-\langle V_{obs}(\boldsymbol{x}) \rangle$ of a two dimensional field were the second order structure function, $S_{2}(l)$, and the auto correlation function, $R(l)$, defined as: 
-
-\begin{equation}\label{eq:S}
-S_{2}(\boldsymbol{l})=\dfrac{\sum[V_{r}(\boldsymbol{x}+\boldsymbol{l})-V_{r}(\boldsymbol{x}) ]^{2}}{N(\boldsymbol{l})}
-\end{equation}
-
-where $\sigma^{2}$ is the variance of the sample and N($\boldsymbol{l}$) the number of points at each separation.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%The analysis employed until now is not conclusive about the true velocity fluctuations observed in each nebula. 
-%As pointed out by \citet{arthur2016turbulence} other techniques also allow us to study these fluctuations. 
 
 
-%\begin{table*}
-% \begin{center}\caption{Main results.
-%  a) \citet{tanco1997}
-%      b) \citet{2019arXiv191203543M}
-%      c) \citet{Castro:2018a}
-%      d) \citet{Damiani:2016a}
-%      e) \citet{Damiani:2017b}
-%      f) \citet{1987A&A...176..347H}
-%      g) \citet{arthur2016turbulence}.}
-% \begin{tabular}{ccccccccc}\hline
-% HII         &\(\sigma^{2}\) &\(r_0\)                     &\(m\)    &\(\langle \sigma_{LOS} \rangle \) & Previously\\
-% Region      &[km/s]$^{2}$     &[pc]                        &                           &  [km/s]& used in:\\ \hline
-% NGC 604     & 80.93$\pm$25.31 &  9.12$\pm$2.98  & 0.82$\pm$0.20  & 16.2 & a,b \\
-% NGC 595     & 56.45$\pm$1.69  & 11.69$\pm$0.45  & 1.29$\pm$0.04  & 18.3 & - \\
-% Hubble X    & 15.55$\pm$1.50  &  3.90$\pm$0.28  & 0.94$\pm$0.12  & 13.4 & - \\ 
-% Hubble V    & 10.46$\pm$0.75  &  3.42$\pm$0.33  & 0.73$\pm$0.09  & 12.3 & - \\  
-% 30 Dor      & 350.87$\pm$21.59 & 4.60$\pm$0.43  & 0.84$\pm$0.03  & 31.7 & c\\
-% Carina      & 16.74$\pm$1.13  & 0.66$\pm$0.08  & 1.36$\pm$0.29  & 22.4 & d\\
-% NGC 346     & 38.03$\pm$1.09  & 1.90$\pm$0.09  & 0.78$\pm$0.02  & 10.2 & -\\
-% Lagoon      & 7.29$\pm$0.84   & 1.00$\pm$0.17  & 1.12$\pm$0.09  & 13.6 & e\\ 
-% Orion Large & 5.97$\pm$0.58   & 0.73$\pm$0.17  & 1.72$\pm$0.524 & 6.0 & f \\
-% Orion Small & 16.92$\pm$0.97  & 0.091$\pm$0.006 & 1.06$\pm$0.01 & 6.0 & g \\\hline	  
-% \end{tabular}\label{tab:Res}
-% \end{center}
-%\end{table*}  
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\citet{1983A&A...119..185V} made an estimate of the total masses of HI and HII in the nebula to obtain values of M$_{HI}=$ 1.2 $\times$ 10 $^{6}$ M$_{\odot}$ and M$_{HII} =$ 4.6 $\times$ 10 $^{5}$ M$_{\odot}$, and a ionizing luminosity of the star cluster is estimated at 5 $\times$ 10$^{50}$ erg s $^{1}$.
 %The electronic temperature is 7,670 $\pm$116 K \citep{2010MNRAS.402.1635R}.
