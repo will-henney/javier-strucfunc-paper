@@ -987,10 +987,34 @@ The Kolmogorov model predicts that the moment of order 2, the second-order struc
 These mathematical techniques were first applied to astronomical observations by \citet{von1951methode} and \citet{munch1958internal} allowing to determine a distinction between homogeneous turbulence and pure random velocity fluctuations in the Orion Nebula. 
 
 \subsection{Interpretation of the turbulent parameters and origins of interstellar turbulence}\label{sec:interpretation-origin}
+\textit{Note: Still working on this section}
 
-Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection. 
+The structure function used in this work does not reveal the precise characteristic of turbulence, but the statistical results that it provides allow us to determine a distinction between correlated or random velocity fluctuations in the photoionized gas, in which the presence of correlations in the velocity field is a inherent property of turbulence.
+Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a concise way for a comparison of a sample of different regions.
+The following sections addresses a vast series of turbulent problems that could be unravel, among other kinematical research, by expanding the sample of \hii{} regions.
+
+Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
 It is unclear what are the mechanisms driving the turbulence, thought a lot of options are candidates.
-The main energy sources are, of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc supernova explosions inject a large amount of kinetic energy, at scales of several tens of pc the expansion of \hii{} regions is also a source of energy and bipolar flows and jets inject energy at small scales, bouth one tent of a pc.
+The main energy sources are, of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc supernova explosions inject a large amount of kinetic energy, at scales of several tens of pc the expansion of \hii{} regions is also a source of energy and bipolar flows, shocks, and jets inject energy at small scales, about one tenth of a pc.
+The velocity fluctuations are consequence of the combination of the various mechanism already mentioned and wouldn't be correct to attribute these fluctuations solely to one mechanism.
+The complexity of the extraction of pure turbulent motions from velocity profiles in nebulae is not just an observational problem, there is also the lack of precise information on how these mechanism contribute to the emission line broadening \citep{2011MNRAS.413..705L,arthur2016turbulence}. 
+Many of the previous mechanisms, at least in some extent, affect all the \hii{} regions studied in this work.
+\cite{2011MNRAS.413..705L} also discuss the possibility of turbulent motions initiated by champagne flows and stellar winds. 
+
+It is possible to consider from our sample the smallest and largest region for a comparison on the impact of the previous mechanism.
+The Orion core is affected by the stellar wind from \(\theta^1\) Ori C that will confine even the high ionization emission lines to a thick shell.
+Orion also present a champagne flow where the photoionized gas streams away from the ionization front.
+\citet{sabalisck1995supersonic} studied NGC 604 revealing that the kinematics of the region behave different considering different scales.
+High emission knots on the region encompasses supersonic global velocity dispersion values of 14 $<$ \(\sigma_{\text{los}}\) $<$ 20 km s\(^{-1}\).
+This knots are well fitted with Gaussian profiles thus, defining the kinematic core \citep{munoz1996}.
+A characteristic radius for them is \(\sim\) 7 pc.
+\citet{yang1996} identified 5 expanding shells within NGC 604, and one of them (Shell 3 on their paper) fall into our observations.
+This shells is 40 pc in diameter with an expansion velocity above 50 km s\(^{-1}\) in which the scales is related to the presence of strong stellar winds caused by the massive stars in the region.
+
+Although the Orion core and EON, and NGC 604 have different \(r_0\) is not clear if it truly reveal a concrete aspect of the energy input mechanism mentioned earlier.
+Orion mainly energy input comes from one star, meanwhile NGC 604 has more than 200 OB stars including WR stars. 
+The Orion core also presents Herbig-Haro objects, which aren't possible to resolve for more distant regions.
+Though the correlation length been particular to each region, and been correlated mainly with the size (see section~\ref{sec:scaling-relations}), it still needs further studies to reveal the true implication of this property.
 
 The index \(m\) is shown in the last column of Table \ref{tab:Res} and is commonly used as a reference for comparison between observations and the theoretic value of 0.67 (equation \ref{eq:velocity-moments}).
 
@@ -1051,6 +1075,7 @@ The results are shown in Table \ref{tab:RestStats} in ascending order for the p-
 In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level  $p < $0.05.
 In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
 
+%Luminosity vs centroid velocity dispersion
 The Figure \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
 Since this relation is the most common it can be use for comparison with the investigations mentioned at the beginning of this section.
 Our results give us a relation of \(\log \sigma\pos = (0.28 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(10 \pm 4.0)\).
@@ -1071,6 +1096,7 @@ Due to the above, we chose these set values since they come from an unique sourc
 %\subsubsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
 %Note 26/01/22: Expand and polish from here
 
+%sigma pos vs sigma los
 The standard deviation of the velocity centroid and the mean non-thermal linewidth allow us to compare the relation between the kinematical disorder on the plane-of-the sky and along the line-of-sight  \citep{2011MNRAS.413..705L}.
 
 The broad in the velocity width of the emission line represents the range of velocities along the line-of-sight.%, among thermal movements. 
