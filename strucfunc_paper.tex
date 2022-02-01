@@ -654,19 +654,36 @@ They proposed Champagne flows at the periphery of the molecular cloud leading to
 Figure~\ref{fig:velocity-maps} shows maps of the \ha{} centroid velocity
 \(V_c\) for each \hii{} region in our sample,
 calculated as described above in section~\ref{sec:spectr-datas}
-and after subtracting the mean systemic velocity in each case.
-The color scheme ranges from the most negative velocities in blue
-to the most positive velocities in red,
-but the amplitude of the velocity fluctuations differs considerably between regions,
-as indicated by the color scale bar on each map,
-ranging from \SI{\pm 7}{km.s^{-1}} for the Lagoon
-up to  \SI{\pm 40}{km.s^{-1}} for 30~Doradus.
-This is illustrated quantitatively in Figure~\ref{fig:hist},
-where the probability density function (PDF) of \(V_c\) for each region
-is shown on a common velocity scale and arranged in order of decreasing amplitude
-of velocity fluctuations. 
+and after subtracting the mean systemic velocity,
+\(\left\langle V_c\right\rangle\) in each case.
+% The color scheme ranges from the most negative velocities in blue
+% to the most positive velocities in red,
+% but the amplitude of the velocity fluctuations differs considerably between regions,
+% as indicated by the color scale bar on each map,
+% ranging from \SI{\pm 7}{km.s^{-1}} for the Lagoon
+% up to  \SI{\pm 40}{km.s^{-1}} for 30~Doradus.
+The overall amplitude of the plane-of-sky
+velocity fluctuations can be characterized by a dispersion,
+\(\sigma\pos\), defined as:
+\begin{equation}
+  \label{eq:sig-pos}
+  \sigma^2\pos =
+  \left\langle 
+  \bigl[ V_c (\xx_i) -\langle V_ c\rangle  \bigr]^2
+  \right \rangle ,
+\end{equation}
+where the average is performed over all observed points \(i\)
+in a given map.
+Note that \(\sigma\pos\) is also the RMS width of
+the probability density function (PDF) of \(V_c\).
+This PDF for each region is shown in Figure~\ref{fig:hist}
+on a common velocity scale and arranged in order of decreasing \(\sigma\pos\).
+It can be seen that the amplitude of the
+velocity fluctuations varies considerably between regions,
+with \(\sigma\pos\) in 30~Dor being more than 5 times higher than in 
+nearby regions such as Orion.
 
-All of the distributions are significantly non-Gaussian
+All of the PDFs are significantly non-Gaussian
 and many show evidence of a multi-modal structure.
 Some, such as Orion core and Hubble~V, show a single dominant velocity component,
 but most show several distinct peaks,
@@ -699,36 +716,51 @@ whereas NGC~346 has one towards the red.
 
 \subsection{The second-order structure function}
 \label{sec:second-order-struct}
-One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density.                                     
-These fluctuations are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
-It is possible to describe the statistical properties of these fluctuations if they are assumed as a product of a stochastic field \citep{1984ApJ...277..556S}. 
-This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
+% One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density.                                     
+% These fluctuations are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
+% It is possible to describe the statistical properties of these fluctuations if they are assumed as a product of a stochastic field \citep{1984ApJ...277..556S}. 
+% This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
 
-The second-order structure function of the velocity centroids, $B(r)$, is defined as:
+In order to probe the dependence of the velocity fluctuations
+on spatial scale,
+the primary tool that we employ is
+the second order structure function of differences in velocity centroids,
+$B(r)$, which is a function of the scalar separation or lag, \(r\),
+between two points on the plane of the sky:
 %
+\newcommand\Abs[1]{\vert #1\vert}
 \begin{equation}\label{eq:Br}
-  B(\boldsymbol{r}) = \dfrac{1}{N(\boldsymbol{r})}
-  \,
-  \sum_{\text{pairs}} \bigl[
-  V_{c}(\xx + \boldsymbol{r}) - V_{c}(\xx)
-  \bigr]^{2}
+  B(r) = \left\langle 
+  \bigl[
+  V_{c}(\xx_j) - V_{c}(\xx_i)
+  \bigr]^{2} \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
 \end{equation}
-%
-where $N(\boldsymbol{r})$ is the number of pair points at each separation \(\boldsymbol{r}\), called lag. 
-The variance of the centroid velocity fluctuations is:
-%
-\begin{equation}\label{eq:variance}
-\sigma^2  = \frac{1}{N} \sum_{\text{pixels}} \bigl[ V_c (\xx) -\langle V_ c\rangle  \bigr]^2
+The averaging is performed over all pairs of points
+\((i, j)\)
+whose scalar separation \(\Abs{\xx_j - \xx_i}\) is close to \(r\),
+irrespective of the orientation of the separation vector.
+In practice, we achieve this by binning the separations with a constant
+logarithmic width of \SI{0.15}{dex}.
+
+We will also employ the related quantity of the
+normalized spatial autocovariance or autocorrelation function:
+\begin{equation}
+  \label{eq:autocovar}
+  C(r) = \frac{1}{\sigma^2\pos}\left\langle 
+  \bigl[
+  V_{c}(\xx_j) \  V_{c}(\xx_i)
+  \bigr]^{2} \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
 \end{equation}
-%
-the, \(\langle V_c \rangle \) is the mean centroid velocity:
-%
-\begin{equation}\label{eq:mean}
-\langle V_c \rangle \  = \frac{1}{N} \sum_{\text{pixels}} V_c (\xx)
+If the fluctuations are perfectly spatially homogeneous, then the
+two quantities are related \citep{1984ApJ...277..556S} as
+\begin{equation}\label{eq:functional}
+  B(r) = 2\sigma^2\pos \bigl[   1 - C(r)\bigr] .
 \end{equation}
-%
-The summation in Equation \ref{eq:Br} is over all data pairs for each separation \(N(\boldsymbol{r})\).
-The summations in Equations \ref{eq:variance} and \ref{eq:mean} are over the total number of valid pixels in the (\textit{x},\textit{y})-plane.
+In less ideal situations, then \(B(r)\) is to be preferred since it is
+relatively unaffected by non-stationary effects \citep{1984ApJ...277..556S}.
+Nonetheless, \(C(r)\) is more amenable to heuristic reasoning in some cases,
+which we will take advantage of below.
+
 
 \subsection{Application to our HII regions sample}\label{sec:methods-apply}
 
