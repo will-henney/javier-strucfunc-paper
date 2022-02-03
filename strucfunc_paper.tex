@@ -757,36 +757,44 @@ two quantities are related \citep{1984ApJ...277..556S} as
   B(r) = 2\sigma^2\pos \bigl[   1 - C(r)\bigr] .
 \end{equation}
 In less ideal situations, then \(B(r)\) is to be preferred since it is
-relatively unaffected by non-stationary effects \citep{1984ApJ...277..556S}.
+relatively unaffected by non-stationary effects
+such as large-scale linear gradients 
+\citep{1984ApJ...277..556S}.
 Nonetheless, \(C(r)\) is more amenable to heuristic reasoning in some cases,
 which we will take advantage of below.
 
 
-\subsection{Application to our HII regions sample}\label{sec:methods-apply}
+\subsection{A heuristic model for the structure function}\label{sec:methods-apply}
 
-The autocovariance function:
+A common property of homogeneous fluctuating velocity fields is that neighboring points tend to have similar velocities
+(\(C(r) \approx 1\) for small \(r\)),
+whereas points that are far apart may have very different velocities
+(\(C(r) \ll 1\) for large \(r\)).
+The value of the separation that corresponds to
+the transition between these two regimes
+is called the correlation length, \(r_0\).
+In the simplest case,
+two points separated by \(r \gg r_0\) have totally uncorrelated velocities
+in the sense that knowledge of the velocity at the first point is of
+no help in predicting the velocity at the second point.
+At scales smaller than \(r_0\), the fluctuations often show a power-law behavior.
 
-\begin{equation}\label{eq:Cr}
-C(\boldsymbol{r}) = \dfrac{\sum_{\text{pairs}}[V_{c}(\xx + \boldsymbol{r}) \times V_{c}(\xx) ]} {N(\boldsymbol{r})}
-\end{equation}
-%
-is another statistical tool used in studying the turbulent flows.
-The interpretation of the Equation \ref{eq:Cr} depends on the assumption of homogeneity, which may be violated for astrophysical processes.
-Because of this, Equation \ref{eq:Br} is a better approach to characterize the velocity fluctuations even in the presence of large scale linear gradients and may be sensitive to a wider range of scales \citep{1984ApJ...277..556S}.
-
-For an homogeneous random field equations \ref{eq:Br} and \ref{eq:Cr} are related by:
-
-\begin{equation}\label{eq:functional}
-B(r) = 2\sigma^2 \bigl( 1 - C(r) \bigr)
-\end{equation}
-
-We use a new functional for the structure function based on equation \ref{eq:functional}. 
-First we propose a new \(C(r)\) in the form:
+We therefore propose the following 2-parameter model
+for the autocorrelation function:
 %
 \begin{equation}\label{eq:new-correlation-form}
-  C(r; r_0, m) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right]
+  C(r;\ r_0, m) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right].
 \end{equation}
 %
+in which \(r_{0}\)\ is the correlation length (see above)
+and \(m\) is the power-law slope at small scales.
+This is constructed so that \(C(r) = 1/2\) at \(r = r_0\),
+while the exponential form ensures that \(C(r)\) rapidly approaches zero
+for larger separations.
+
+
+
+
 The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
 In an idealized case at scales larger than \(r_{0}\)\ the structure function flattens as it tends towards the asymptotic value of 2\(\sigma^2\) \citep{arthur2016turbulence}.
 This substitutes the previously \(C(r) = 1/[1+(r/r_{0})^{m}]\) from \citet{1966igd..book.....K} and
