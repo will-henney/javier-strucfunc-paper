@@ -781,7 +781,7 @@ no help in predicting the velocity at the second point.
 At scales smaller than \(r_0\), the fluctuations often show a power-law behavior.
 
 In order to capture these two behaviors,
-We therefore propose the following 2-parameter model
+We therefore propose the following idealized 2-parameter model
 for the autocorrelation function:
 %
 \begin{equation}\label{eq:new-correlation-form}
@@ -809,7 +809,7 @@ in the first two regimes, but is more gradual in its approach
 to the large-scale asymptote of \(2 \sigma^2\).
 However, we find that equation~\eqref{eq:new-correlation-form}
 provides a much improved fit to the observed structure functions
-of our sample regions. 
+of our sample regions (see following section). 
 
 
 % The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
@@ -817,7 +817,7 @@ of our sample regions.
 % This substitutes the previously \(C(r) = 1/[1+(r/r_{0})^{m}]\) from \citet{1966igd..book.....K} and
 % \citet{1984ApJ...277..556S}.
 
-\subsection{Effects of observational limitations}
+\subsubsection{Effects of observational limitations}
 \label{sec:effect-observ-limit}
 
 We also take into account in the new functional observational constraints like the seeing and observational box size (see Appendix~\ref{sec:degr-struct-funct} for details). 
@@ -874,10 +874,29 @@ The traditional way to find the correlation length it is to determine a particul
 If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
 In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to an erroneous interpretation of multiple inertial scales.
 
-\subsection{Limitations of the model structure function}
+\subsubsection{Additional effects omitted from the model structure function}
 \label{sec:limit-model-struct}
 
+For separations that are comparable to the diameter \(D\) of the \hii{} region,
+then the supposition of homogeneity must break down.
+For instance, if the amplitude of the velocity fluctuations is higher
+in the core of the region than in the outskirts,
+then the autocorrelation function will be U-shaped
+since all separations with \(r > D/2\) must be between two points in the outskirts,
+which will tend to be relatively well correlated simply because both velocities
+will be close to the mean.
+This yields a corresponding downturn in the structure function at the largest scales.
 
+Another example is if there were a periodic velocity fluctuation,
+with spatial wavelength \(\lambda\),
+then the autocorrelation function would become negative for \(r \approx \lambda/2, 3 \lambda / 2, \dots\),
+which yields periodic peaks in the structure function.
+Neither of these effects can be captured by our model structure function,
+which assumes that the autocorrelation is strictly positive
+and monotonically decreasing with \(r\).
+
+At the very smallest scales, the autocorrelation function is predicted to
+scale quadratically with \(r\)
 
 \section{Results}\label{sec:results}
 
