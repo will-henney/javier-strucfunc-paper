@@ -53,7 +53,7 @@
 \usepackage{amsmath}	% Advanced maths commands
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage{multicol}
-
+\usepackage{enumerate}          % Better lists
 \usepackage{xcolor}
 
 %% Package set-up
@@ -764,7 +764,8 @@ Nonetheless, \(C(r)\) is more amenable to heuristic reasoning in some cases,
 which we will take advantage of below.
 
 
-\subsection{A heuristic model for the structure function}\label{sec:methods-apply}
+\subsection{A heuristic model for the structure function}
+\label{sec:methods-apply}
 
 A common property of homogeneous fluctuating velocity fields is that neighboring points tend to have similar velocities
 (\(C(r) \approx 1\) for small \(r\)),
@@ -779,6 +780,7 @@ in the sense that knowledge of the velocity at the first point is of
 no help in predicting the velocity at the second point.
 At scales smaller than \(r_0\), the fluctuations often show a power-law behavior.
 
+In order to capture these two behaviors,
 We therefore propose the following 2-parameter model
 for the autocorrelation function:
 %
@@ -791,14 +793,32 @@ and \(m\) is the power-law slope at small scales.
 This is constructed so that \(C(r) = 1/2\) at \(r = r_0\),
 while the exponential form ensures that \(C(r)\) rapidly approaches zero
 for larger separations.
+We use equation \eqref{eq:functional} to determine the structure function
+from this model autocorrelation function.
+The resultant model structure function has the following properties:
+\begin{enumerate}[1.]
+ \item Small scales: \(B(r) \propto r^m\) for \(r \ll r_0\);
+ \item Correlation scale: \(B(r_0) = \sigma^2\);
+ \item Large scales: \(B(r) \to 2 \sigma^2\) for \(r \gg r_0\).
+\end{enumerate}
+In a previous paper, we used a different functional form
+\citetext{See Fig.~13 of \citealp{arthur2016turbulence}}:
+\(C(r) = 1/[1+(r/r_{0})^{m}]\), as proposed in \citet{1984ApJ...277..556S},
+which behaves identically to equation~\eqref{eq:new-correlation-form}
+in the first two regimes, but is more gradual in its approach
+to the large-scale asymptote of \(2 \sigma^2\).
+However, we find that equation~\eqref{eq:new-correlation-form}
+provides a much improved fit to the observed structure functions
+of our sample regions. 
 
 
+% The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
+% In an idealized case at scales larger than \(r_{0}\)\ the structure function flattens as it tends towards the asymptotic value of 2\(\sigma^2\) \citep{arthur2016turbulence}.
+% This substitutes the previously \(C(r) = 1/[1+(r/r_{0})^{m}]\) from \citet{1966igd..book.....K} and
+% \citet{1984ApJ...277..556S}.
 
-
-The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
-In an idealized case at scales larger than \(r_{0}\)\ the structure function flattens as it tends towards the asymptotic value of 2\(\sigma^2\) \citep{arthur2016turbulence}.
-This substitutes the previously \(C(r) = 1/[1+(r/r_{0})^{m}]\) from \citet{1966igd..book.....K} and
-\citet{1984ApJ...277..556S}.
+\subsection{Effects of observational limitations}
+\label{sec:effect-observ-limit}
 
 We also take into account in the new functional observational constraints like the seeing and observational box size (see Appendix~\ref{sec:degr-struct-funct} for details). 
 
@@ -806,7 +826,7 @@ The seeing becomes important at small scales and it is known that has an effect 
 The model proposed to describe the seeing at small scales is:
 %
 \begin{equation}\label{eq:ffs}
-  S(r; s_0, r_0) = \frac{
+   S(r; s_0, r_0) = \frac{
     e^{-s_0 / r_0}
   }{
     1+(2s_0 / r)^{2 / 3}
@@ -853,6 +873,11 @@ The slope in the majority of previous studies and hence, the correlation length,
 The traditional way to find the correlation length it is to determine a particular range of ascending values in the structure function. 
 If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
 In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to an erroneous interpretation of multiple inertial scales.
+
+\subsection{Limitations of the model structure function}
+\label{sec:limit-model-struct}
+
+
 
 \section{Results}\label{sec:results}
 
