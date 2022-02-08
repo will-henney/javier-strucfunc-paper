@@ -862,7 +862,7 @@ We present our second-order structure results plotted against separation in pars
 
 Figures \ref{fig:strucfunc-fit-A}-\ref{fig:strucfunc-fit-D} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. The solid circles indicate the range use in the non-linear regression analysis (see section~\ref{sec:methods-apply}), while the open circles are the points of the structure function that where left out.
 This was done to enhance the possibilities of a convergence since the structure function values at large separations are to follow the 2\(\sigma^2\) value according to theory.
-The light shaded areas in the plots show where the separation \(r\) is above half of the box size, \(L\), which is indicated with a vertical dotted line.
+The light shaded areas in the plots show where the separation \(r\) is above half of the box size \(L\), which is indicated with a vertical dotted line.
 
 The green dashed line indicate the mean samples posterior of the model structure function without instrumental effects using equation \ref{eq:functional} and \ref{eq:new-correlation-form}.
 The Figures also show in yellow solid line the mean of samples posterior using equation \ref{eq:sf-functional}.
@@ -875,17 +875,17 @@ These plots shows the one and two dimensional projections of the posterior proba
 They also show the marginalized distribution for each parameter independently in the histograms along the diagonal and then the marginalized two dimensional distributions in the other panels making possible to visualize all of the covariances between parameters \citep{2017ascl.soft02002F}.
 The contours in the plots reflect the 95\(\%\), 99\(\%\), 99.5\(\%\) and 99.9\(\%\) confidence intervals.
 
-The results shown on left panels on Figures \ref{fig:strucfunc-fit-A}-\ref{fig:strucfunc-fit-D} show a typical second-order structure function pattern, where there is a series of ascending values of  \ref{eq:Br} that tends to stabilize around the 2\(\sigma^2\) value, indicating a loss in the correlations at large separations. 
+The results shown on left panels on Figures \ref{fig:strucfunc-fit-A}-\ref{fig:strucfunc-fit-D} show a typical second-order structure function pattern, where there is a series of ascending values of  the structure function that tends to stabilize around the 2\(\sigma^2\) value, indicating a loss in the correlations at large separations. 
 The Carina nebula and Hubble X follow this behavior.
 
-Since we are dealing with a sample of astronomical observations, it is thought that the values at large separations not following the previous pattern reflects movements that are not related to the ionized gas random motions.
+For astronomical observations it is thought that the values at large separations not following the previous pattern reflects movements that are not related to the ionized gas random motions.
 It is known that HII regions are created on the edge of molecular clouds, so they will reach a blister or champagne phase, introducing large-scale gradients \citep{Mivi1995}. 
 Also there is the expansion or rotation of each region.
 
 A more common pattern for structure functions of HII regions looks like a 'hook' where at large separations the structure function values start decreasing.
 This behavior is shown in the Orion core, 30 Doradus, Hubble V, NGC 595 and the EON.
 Less common is the behavior where at large separations there are also a series of ascending values in the structure function, like the Lagoon nebula or NGC 346, or a periodic behavior like NGC 604.
-The reasons of this change on the structure function at large-scales is out of the scope of this investigation.
+The precise reasons of this change on the structure function at large-scales is out of the scope of this investigation.
 
 Table \ref{tab:Res} presents the turbulent parameters results along the obtained observational constraints.
 
@@ -939,7 +939,7 @@ The implications of these results is further developed on the next section.
 
 \section{Discussion}\label{sec:discussion}
 
-\subsection{Turbulence}
+\subsection{Turbulence}\label{sec:turbulence-theory}
 
 \textit{Will 2021-12-10: Moving this section to later for now. Maybe
   this material could go in discussion.}
@@ -998,44 +998,60 @@ These mathematical techniques were first applied to astronomical observations by
 \textit{Note: Still working on this section}
 
 The structure function used in this work does not reveal the precise characteristic of turbulence, but the statistical results that it provides allow us to determine a distinction between correlated or random velocity fluctuations in the photoionized gas, in which the presence of correlations in the velocity field is a inherent property of turbulence.
-Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a concise way for a comparison of a sample of different regions.
-The following sections addresses a vast series of turbulent problems that could be unravel, among other kinematical research, by expanding the sample of \hii{} regions.
+Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a better approach to determine the structure function and a more concise way for a comparison of a sample of different regions.
+The following sections addresses a vast series of turbulent problems that could be unravel by expanding the sample, among more kinematical research of each \hii{} regions.
+
+
+\subsubsection{Correlation length \(r_0\)}
 
 Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
 It is unclear what are the mechanisms driving the turbulence, thought a lot of options are candidates.
-The main energy sources are, of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc supernova explosions inject a large amount of kinetic energy, at scales of several tens of pc the expansion of \hii{} regions is also a source of energy and bipolar flows, shocks, and jets inject energy at small scales, about one tenth of a pc.
+The main energy sources are, of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc, supernova explosions inject a large amount of kinetic energy.
+At scales of several tens of pc the expansion of \hii{} regions is also a source of energy and bipolar flows, shocks, and jets inject energy at small scales, about one tenth of a pc.
+\cite{2011MNRAS.413..705L} also discuss the possibility of turbulent motions initiated by champagne flows and stellar winds. 
 The velocity fluctuations are consequence of the combination of the various mechanism already mentioned and wouldn't be correct to attribute these fluctuations solely to one mechanism.
 The complexity of the extraction of pure turbulent motions from velocity profiles in nebulae is not just an observational problem, there is also the lack of precise information on how these mechanism contribute to the emission line broadening \citep{2011MNRAS.413..705L,arthur2016turbulence}. 
-Many of the previous mechanisms, at least in some extent, affect all the \hii{} regions studied in this work.
-\cite{2011MNRAS.413..705L} also discuss the possibility of turbulent motions initiated by champagne flows and stellar winds. 
 
-It is possible to consider from our sample the smallest and largest region for a comparison on the impact of the previous mechanism.
-The Orion core is affected by the stellar wind from \(\theta^1\) Ori C that will confine even the high ionization emission lines to a thick shell.
+Many of the previous mechanisms, at least in some extent, affect all the \hii{} regions studied in this work.
+It is possible to consider from our sample the smallest and largest regions for a comparison on the impact of the previous mechanism.
+The Orion core is affected by the stellar wind from \(\theta^1\) Ori C \citep{2009AJ....137..367O} that will confine even the high ionization emission lines to a thick shell.
 Orion also present a champagne flow where the photoionized gas streams away from the ionization front.
 \citet{sabalisck1995supersonic} studied NGC 604 revealing that the kinematics of the region behave different considering different scales.
-High emission knots on the region encompasses supersonic global velocity dispersion values of 14 $<$ \(\sigma_{\text{los}}\) $<$ 20 km s\(^{-1}\).
-This knots are well fitted with Gaussian profiles thus, defining the kinematic core \citep{munoz1996}.
-A characteristic radius for them is \(\sim\) 7 pc.
-\citet{yang1996} identified 5 expanding shells within NGC 604, and one of them (Shell 3 on their paper) fall into our observations.
-This shells is 40 pc in diameter with an expansion velocity above 50 km s\(^{-1}\) in which the scales is related to the presence of strong stellar winds caused by the massive stars in the region.
+High emission knots on the region encompasses supersonic global velocity dispersion values of 14 $<$ \(\sigma_{\text{los}}\) $<$ \SI{20}{km.s^{-1}} with a characteristic radius of \(\sim\)\SI{7}{pc} and a Gaussian profile.
+Values of velocity dispersion $>$\SI{20}{km.s^{-1}} are found in low emission cavities where the lines present strong asymmetries.
+These cavities were identified as expanding shells \citep{yang1996} with diameters of \(\sim\)\SI{40}{pc} and a expansion velocity above \SI{50}{km.s^{-1}}
 
 Although the Orion core and EON, and NGC 604 have different \(r_0\) is not clear if it truly reveal a concrete aspect of the energy input mechanism mentioned earlier.
 Orion mainly energy input comes from one star, meanwhile NGC 604 has more than 200 OB stars including WR stars. 
 The Orion core also presents Herbig-Haro objects, which aren't possible to resolve for more distant regions.
-Though the correlation length been particular to each region, and been correlated mainly with the size (see section~\ref{sec:scaling-relations}), it still needs further studies to reveal the true implication of this property.
+Though the correlation length is particular to each region, and it is correlated mainly with the size (see section~\ref{sec:scaling-relations}), it still needs further studies to reveal the true implication of this value with respect the energy input mechanisms.
+
+\subsubsection{Structure function power-law index \(m\)}\label{sec:powe-index}
 
 The index \(m\) is shown in the last column of Table \ref{tab:Res} and is commonly used as a reference for comparison between observations and the theoretic value of 0.67 (equation \ref{eq:velocity-moments}).
+All indices are above this theoretic value and the interpretation of this difference is that the analyzed regions do not comply with the properties established in the development of the turbulence theory.
 
-\subsubsection{Projection smearing}\label{sec:projection-smearing}
+From section~\ref{sec:regions-milky-way} we know that most of all assumption mentioned in section~\ref{sec:turbulence-theory} are not meet for our \hii{} region sample.
+\hii{} regions emerged from a molecular cloud with highly filamentary and clumpy density structure .
+There is a large increase in the temperature because of the photoionization and the density gradients with the pressure gradients accelerate the flow which occurs in multiple scale consequences of the fractal nature of the molecular cloud \citep{arthur2016turbulence}.
+This would result in a inhomogeneous structure characteristic of \hii{ } regions as it is possible to observe in Figure~\ref{fig:hii-regions}.
+The incompressible and subsonic conditions in the flow are clearly not meet since there is evidence of the presence of shock fronts and supersonic velocity values.
+This a a consequences of the inhomogeneous structure mentioned in the paragraph above and other processes as O star winds and radiation pressure which would also aid in the stirring of the gas.
+And as \hii{} regions are regarded as three-dimensional objects there is also the possibility of a sheet-like distribution which could overcome this assumption.
 
-As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
-This follows that if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
-In these sense the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
+For all these reason is expected that \hii{} regions power-law indices do not follow the classic 0.67 value.
+But despite the complex nature of \hii{} regions we observe a common pattern for the structure function and the value of the index falls in a certain limited range of values
 
-It have been mentioned that the projection of the velocity fluctuations reduces the actual amplitude in the line-of-sight \citep{1984ApJ...277..556S,arthur2016turbulence}.
-We can see from Table \ref{tab:Res} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
-In the case of homogeneous turbulent velocity we can consider the effect of \textit{project smearing} \citep{1984ApJ...277..556S}, where the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
-With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02-0.1.
+
+%\subsubsection{Projection smearing}\label{sec:projection-smearing}
+%As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
+%This follows that if we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
+%In these sense the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
+
+%It have been mentioned that the projection of the velocity fluctuations reduces the actual amplitude in the line-of-sight \citep{1984ApJ...277..556S,arthur2016turbulence}.
+%We can see from Table \ref{tab:Res} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
+%In the case of homogeneous turbulent velocity we can consider the effect of \textit{project smearing} \citep{1984ApJ...277..556S}, where the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
+%With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02-0.1.
 
 For the comparison between the two-dimensional structure function and the three-dimensional structure function relationships between the power-law were proposed:
 
@@ -1054,6 +1070,19 @@ While the case where the extension is much greater than its depth (two-dimension
 
 We can compute the \(m_{3D}\) index from the two dimensional \(m\), if we assume that the \(m_{3D}\) index lies between the limits of projection smoothing and a sheet-like distribution. 
 Following the procedure by \cite{arthur2016turbulence} and assuming the relationship \(m_{2D} - 1 < m_{3D}\ < m_{2D}\) we have 0.54 \(< m_{3D} <\) 0.72.
+
+\subsubsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
+
+%sigma pos vs sigma los
+The standard deviation of the velocity centroid and the mean non-thermal linewidth allow us to compare the relation between the kinematical disorder on the plane-of-the sky and along the line-of-sight  \citep{2011MNRAS.413..705L}.
+
+The broad in the velocity width of the emission line represents the range of velocities along the line-of-sight.%, among thermal movements. 
+We can consider as a main broadening mechanisms the kinematical disorder along the LOS related to velocity gradients by the clumpiness on the molecular cloud and turbulent movements.
+On the plane-of-sky the consequences of those gradients and movements is measured in every pixel. 
+The spatial variations on the velocity field would depend on the targeted pixel, depending on the motions inside the cloud (the LOS component).
+This reasoning has lead to \citet{2011MNRAS.413..705L} to propose a direct relationship between \(\sigma_{\text{LOS}}\) and \(\sigma\pos\).
+
+%The Figure \ref{fig:svss} shows the log \(\sigma\)-log \(\sigma_{\text{los}}\) plane with a relationship of \(\log \sigma\pos = (0.76 \pm 0.48) \log \sigma_{\text{los}}-(0.14 \pm 0.54)\).
 
 \subsection{Scaling relations between physical properties and turbulent parameters}\label{sec:scaling-relations}
 
@@ -1080,7 +1109,7 @@ We follow through this analysis using the scaling relation as a research tool be
 We use the properties in Table \ref{tab:regions-properties} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form \(Y = aX +b\). 
 For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
 The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
-In the Figures \ref{fig:rvsR}-\ref{fig:svss} we show the correlations with a significance level  $p < $0.05.
+In the Figures \ref{fig:rvsR} and \ref{fig:sigvsl} we show the correlations with a significance level  $p < $0.05.
 In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
 
 %Luminosity vs centroid velocity dispersion
@@ -1101,19 +1130,6 @@ In this sense these values would represent an upper limit of the size of each re
 Since these objects do not posses a physical edges the size determination is not trivial.
 Due to the above, we chose these set values since they come from an unique source and are foreign to our calculations and observations, which imply that there is no bias in the scaling law we obtain.  
 
-%\subsubsection{Relationship between plane-of-sky and line-of-sight velocity dispersion.}
-%Note 26/01/22: Expand and polish from here
-
-%sigma pos vs sigma los
-The standard deviation of the velocity centroid and the mean non-thermal linewidth allow us to compare the relation between the kinematical disorder on the plane-of-the sky and along the line-of-sight  \citep{2011MNRAS.413..705L}.
-
-The broad in the velocity width of the emission line represents the range of velocities along the line-of-sight.%, among thermal movements. 
-We can consider as a main broadening mechanisms the kinematical disorder along the LOS related to velocity gradients by the clumpiness on the molecular cloud and turbulent movements.
-On the plane-of-sky the consequences of those gradients and movements is measured in every pixel. 
-The spatial variations on the velocity field would depend on the targeted pixel, depending on the motions inside the cloud (the LOS component).
-This reasoning has lead to \citet{2011MNRAS.413..705L} to propose a direct relationship between \(\sigma_{\text{LOS}}\) and \(\sigma\pos\).
-
-The Figure \ref{fig:svss} shows the log \(\sigma\)-log \(\sigma_{\text{los}}\) plane with a relationship of \(\log \sigma\pos = (0.76 \pm 0.48) \log \sigma_{\text{los}}-(0.14 \pm 0.54)\).
 
 \input{Corr}
 
@@ -1131,12 +1147,12 @@ The Figure \ref{fig:svss} shows the log \(\sigma\)-log \(\sigma_{\text{los}}\) p
 \label{fig:sigvsl}
 \end{figure}
 
-\begin{figure}
-\centering 
-\includegraphics[width=3in]{Figures/svss.pdf}
-\caption{Same as Fig. \ref{fig:rvsR} but for the log $\sigma$-log $\sigma_{\text{LOS}}$ plane. The dotted line represents slope equal to unity.}
-\label{fig:svss}
-\end{figure}
+%\begin{figure}
+%\centering 
+%\includegraphics[width=3in]{Figures/svss.pdf}
+%\caption{Same as Fig. \ref{fig:rvsR} but for the log $\sigma$-log $\sigma_{\text{LOS}}$ plane. The dotted line represents slope equal to unity.}
+%\label{fig:svss}
+%\end{figure}
 
 \subsubsection{Kinematic relationship between ionized gas, molecular gas, and stars}
 \label{sec:kinem-rela-betw}
