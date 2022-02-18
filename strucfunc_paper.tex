@@ -971,29 +971,123 @@ The fifth column indicates the size of each observational box in parsecs.
 The index \(m\) is shown in the last column and the range covered by the power-law index in our HII region sample goes from 0.7 to 1.5.
 The implications of these results is further developed on the next section.
 
+\newcommand\sffig[1]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \includegraphics[width=0.45\linewidth]{Figures/sf-emcee-#1}
+       &  \includegraphics[width=0.45\linewidth]{Figures/corner-emcee-#1}
+  \end{tabular}%
+}
+
 \begin{figure*}
   \centering
-  \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-A}
-  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-A}
+  \sffig{OrionS}
+  \caption{
+    Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line from Orion core region.
+  }
+  \label{fig:strucfunc-fit-OrionS}
+\end{figure*}
+\begin{figure*}
+  \centering
+  \sffig{M8}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the Lagoon Nebula. 
+  }
+  \label{fig:strucfunc-fit-M8}
+\end{figure*}
+\begin{figure*}
+  \centering
+  \sffig{CarC}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the Carina Nebula. 
+  }
+  \label{fig:strucfunc-fit-CarC}
+\end{figure*}
+
+
+\begin{figure*}
+  \centering
+  \sffig{N346}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the NGC~346 nebula in the SMC. 
+  }
+  \label{fig:strucfunc-fit-N346}
+\end{figure*}
+\begin{figure*}
+  \centering
+  \sffig{Dor}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the 30~Doradus nebula in the LMC Nebula. 
+  }
+  \label{fig:strucfunc-fit-Dor}
 \end{figure*}
 
 \begin{figure*}
   \centering
-  \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-B}
-  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-B}
+  \sffig{HV}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the Hubble~V nebula.
+  }
+  \label{fig:strucfunc-fit-HV}
+\end{figure*}
+\begin{figure*}
+  \centering
+  \sffig{HX}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the Hubble~X nebula.
+  }
+  \label{fig:strucfunc-fit-HX}
 \end{figure*}
 
 \begin{figure*}
   \centering
-  \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-C}
-  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-C}
+  \sffig{N595}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the NGC~595 nebula.
+  }
+  \label{fig:strucfunc-fit-N595}
+\end{figure*}
+\begin{figure*}
+  \centering
+  \sffig{N604H}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the NGC~604 nebula.
+  }
+  \label{fig:strucfunc-fit-N604H}
 \end{figure*}
 
 \begin{figure*}
   \centering
-  \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-D}
-  \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-D}
+  \sffig{OrionLH}
+  \caption{
+    Same as figure~\ref{fig:strucfunc-fit-OrionS} except for the extended Orion Nebula.
+  }
+  \label{fig:strucfunc-fit-OrionLH}
 \end{figure*}
+
+% \begin{figure*}
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-A}
+%   \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-A}
+% \end{figure*}
+
+% \begin{figure*}
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-B}
+%   \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-B}
+% \end{figure*}
+
+% \begin{figure*}
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-C}
+%   \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-C}
+% \end{figure*}
+
+% \begin{figure*}
+%   \centering
+%   \includegraphics[width=0.8\linewidth]{Figures/strucfunc-fit-D}
+%   \caption{Second-order structure functions for the velocity centroid images of the \(H\alpha\) emission line}\label{fig:strucfunc-fit-D}
+% \end{figure*}
 
 \input{SFresults}
 
