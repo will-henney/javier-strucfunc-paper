@@ -771,9 +771,14 @@ which we will take advantage of below.
  \centering
  \includegraphics[width=\linewidth]{Figures/model-strucfunc-annotated}\par
  \caption{
-   A model structure function for homogeneous fluctuations.
-   (a)~Idealized structure function (blue line) and effects
-   of observational limitations at small and large scales.
+   Example of the model structure function for homogeneous fluctuations,
+   together with a realization of the corresponding velocity field
+   on a \(512 \times 512\) pixel grid.  
+   (a)~Idealized structure function (blue line)
+   for the parameters \(m = 1\) and \(r_0 = \SI{64}{pixels}\).
+   Red and green lines show the effects of observational limitations
+   at small scales (seeing and noise)
+   and at large scales (finite-map effects).
    (b)~Examples of inhomogeneous effects at large scales,
    which are not included in the model structure function.
  }
@@ -811,15 +816,17 @@ from this model autocorrelation function.
 The resultant model structure function has the following properties:
 \begin{enumerate}[1.]
  \item Small scales: \(B(r) \propto r^m\) for \(r \ll r_0\);
- \item Correlation scale: \(B(r_0) = \sigma^2\);
- \item Large scales: \(B(r) \to 2 \sigma^2\) for \(r \gg r_0\).
-\end{enumerate}
+ \item Correlation scale: \(B(r_0) = \sigma\pos^2\);
+ \item Large scales: \(B(r) \to 2 \sigma\pos^2\) for \(r \gg r_0\).
+ \end{enumerate}
+An example is shown by the blue line in Figure~\ref{fig:model-strucfunc}a.
+ 
 In a previous paper, we used a different functional form
 \citetext{See Fig.~13 of \citealp{arthur2016turbulence}}:
 \(C(r) = 1/[1+(r/r_{0})^{m}]\), as proposed in \citet{1984ApJ...277..556S},
 which behaves identically to equation~\eqref{eq:new-correlation-form}
 in the first two regimes, but is more gradual in its approach
-to the large-scale asymptote of \(2 \sigma^2\).
+to the large-scale asymptote of \(2 \sigma\pos^2\).
 However, we find that equation~\eqref{eq:new-correlation-form}
 provides a much improved fit to the observed structure functions
 of our sample regions (see following section). 
