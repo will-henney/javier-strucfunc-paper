@@ -803,7 +803,7 @@ We therefore propose the following idealized 2-parameter model
 for the autocorrelation function:
 %
 \begin{equation}\label{eq:new-correlation-form}
-  C(r;\ r_0, m) = \exp \left[ -(\ln 2) \left( \frac{r}{r_0} \right)^m \right].
+  C(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} 
 \end{equation}
 %
 in which \(r_{0}\)\ is the correlation length (see above)
@@ -841,7 +841,7 @@ of our sample regions (see following section).
 \label{sec:effect-observ-limit}
 
 Two observational effects can modify the observed structure function at the smallest scales.
-On the one hand, the blurring of the observed image by atmospheric seeing
+The first is the blurring of the observed image by atmospheric seeing
 tends to reduce \(B(r)\) for small \(r\).
 In Appendix~\ref{sec:effects-seeing-struc}, we perform numerical experiments
 with synthetic velocity fields and find that
@@ -863,6 +863,25 @@ Note that the effect of seeing is to make the structure function
 bend down away from the idealized power law, 
 becoming increasingly steep at scales smaller than \(s_0\),
 but having a noticeable effect at scales up to \(10 s_0\).
+
+The second effect is the presence of noise in the observational measurements.
+Although this affects all scales,
+it is most noticeable for small separations,
+where the intrinsic structure function is smallest.
+If the noise is spatially uncorrelated,
+then it can be represented as a constant term \(B_{\text{noise}}\).
+Combining the seeing and noise effects yields the corrected
+model structure function:
+\begin{multline}
+  \tilde{B}
+  \bigl( r; \ r_0, \sigma^2\pos, m, s_0, B_{\text{noise}} \bigr)
+  = \\
+  2\sigma^2\pos \left[
+    1 - 2^{- \left( r/r_0 \right)^m} 
+  \right]
+  \,  S(r; s_0, r_0) + B_{\text{noise}}
+\label{eq:sf-corrected}
+\end{multline}
 
 The model that consider the effect of the observational box size is:
 
