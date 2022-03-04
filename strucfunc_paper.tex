@@ -841,8 +841,8 @@ of our sample regions (see following section).
 \label{sec:effect-observ-limit}
 
 Two observational effects can modify the observed structure function at the smallest scales.
-The first is the blurring of the observed image by atmospheric seeing
-tends to reduce \(B(r)\) for small \(r\).
+The first is the blurring of the observed image by atmospheric seeing,
+which tends to reduce \(B(r)\) for small \(r\).
 In Appendix~\ref{sec:effects-seeing-struc}, we perform numerical experiments
 with synthetic velocity fields and find that
 a good approximation to the effects of seeing is to multiply
@@ -864,13 +864,19 @@ bend down away from the idealized power law,
 becoming increasingly steep at scales smaller than \(s_0\),
 but having a noticeable effect at scales up to \(10 s_0\).
 
-The second effect is the presence of noise in the observational measurements.
+The second effect is the presence of instrumental noise
+in the observational measurements,
+such as Poisson noise from photon-counting statistics. 
 Although this affects all scales,
 it is most noticeable for small separations,
 where the intrinsic structure function is smallest.
-If the noise is spatially uncorrelated,
-then it can be represented as a constant term \(B_{\text{noise}}\).
-Combining the seeing and noise effects yields the corrected
+If the noise is spatially uncorrelated
+(equal and independent uncertainties in the velocity
+measurement of each pixel),
+then its contribution to the structure function is independent of separation,
+which means it can be represented as a constant term \(B_{\text{noise}}\).
+
+Combining both the effects of seeing and noise yields the corrected
 model structure function:
 \begin{multline}
   \tilde{B}
@@ -882,6 +888,8 @@ model structure function:
   \,  S(r; s_0, r_0) + B_{\text{noise}}
 \label{eq:sf-corrected}
 \end{multline}
+
+An example model structure function that is affected by both seeing and noise
 
 The model that consider the effect of the observational box size is:
 
