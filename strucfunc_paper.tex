@@ -887,8 +887,30 @@ model structure function:
 \label{eq:sf-functional}
 \end{multline}
 An example of this equation is shown by the red line in Figure~\ref{fig:model-strucfunc}.
+Note that seeing and noise have opposite effects on the slope
+of the structure function at intermediate scales:
+seeing tends to steepen the slope, while noise tends to flatten it.
+This can lead to a degeneracy between these two parameters
+when fitting observations over a limited range of separations.
 
-The model that consider the effect of the observational box size is:
+In Appendix~\ref{sec:finite-box-effects} we consider the effects
+on the structure function of the finite size \(L\) of the observational map.
+If the true correlation length \(r_0\) is more than a small fraction of the map size
+(approximately, \(r_0 > 0.1 L\)),
+then the apparent velocity variance \(\sigma^2'\) measured directly from the data
+is less than the true \(\sigma^2\) of the underlying fluctuations
+(see Figure~\ref{fig:finite-box-effect}).
+This is because the observed map is not large enough to sample
+the full range of velocity variations.
+At the same time, the apparent correlation length \(r_0'\) is smaller
+than the true value.
+
+However, this does not mean that the model structure function needs to be modified;
+equation
+In the limit that \(r_0 \gg L\), then \(r_0'\) becomes independent of 
+
+finding that the apparent 
+
 
 \begin{equation}\label{eq:ffb}
 % \beta(r_0) = 1 - exp[\frac{L_{box}}{3.6r_0}] 
