@@ -921,16 +921,9 @@ For this purpose we use the \textit{python} package \textit{lmfit} \citep{newvil
   \chi^2 = \sum_i ^N \frac{[B(r)-B_{\text{func}}(r;r_0, \sigma^2\pos, m, s_0, B_{\text{noise}})]^2}{\varepsilon_i ^2}
 \end{equation}
 %
-where the turbulent parameters are \(r_{0}\)\ , \(\sigma^2\pos\) and \(m\), and the observational constraints \(s_0\) and \( B_{\text{noise}}\).
+where the turbulent parameters, \(r_{0}\)\, \(\sigma^2\pos\) and \(m\), and the observational constraints \(s_0\) and \( B_{\text{noise}}\), are the set of variables to be optimized in the fit.
 This procedure calculate a value \(\chi\) to be minimized scaled by the inverse of the uncertainty \(\varepsilon\) in the data.
-To obtain the confidence intervals we use the minimization procedure \textit{emcee} \citep{2013PASP..125..306F} which is a \textit{python} implementation of the affine-invariant ensemble sampler for Markov chain Monte Carlo (MCMC) by \citet{2010CAMCS...5...65G}.  
-%Using these procedure we obtain the posteriors for our model and the parameters in equation~\ref{eq:chi}.
-
-%In this way we want to avoid one fundamental problem in the interpretation of the structure function. 
-%The slope in the majority of previous studies and hence, the correlation length, is obtained without a formal procedure. 
-%The traditional way to find the correlation length it is to determine a particular range of ascending values in the structure function. 
-%If this increase in values is stopped or reversed it is commonly assumed that one particular inertial range has been found. 
-%In some cases this procedure keeps going up to large scales, giving two or more inertial regimes leading to an erroneous interpretation of multiple inertial scales.
+Then we proceed to obtain the confidence intervals we use the minimization procedure \textit{emcee} \citep{2013PASP..125..306F} which is a \textit{python} implementation of the affine-invariant ensemble sampler for Markov chain Monte Carlo (MCMC) by \citet{2010CAMCS...5...65G}.  
 
 \subsubsection{Additional effects omitted from the model structure function}
 \label{sec:limit-model-struct}
