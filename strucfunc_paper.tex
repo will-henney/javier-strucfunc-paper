@@ -612,6 +612,7 @@ The irregular dwarf galaxy, NGC 6822, is located at a distance of 500 kpc \citet
 Luminosity \ha{} for HV is \SI{e38.3}{erg.s^{-1}} and for HX is \SI{e38.21}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
 Two recognized OB associations are identified within these HII regions \citep{1991ApJ...379..621H,1992AJ....104.1374W}.
 HV is located near 'Hodge OB 8' and HX is located near 'Hodge OB13'  \citep{1999PASP..111.1382O}.
+\citet{1993PASJ...45..693T} realize a study on the kinematics of HX and HV. 
 
 %HV has a luminosity at its core of in L$_{H_\alpha}$ = 1 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ 
 %HX has a luminosity at its core of in L$_{H_\alpha}$ = 2.4 $\times$ 10$^{49}$ H$\alpha$ photons s$^{-1}$ \citep{1999PASP..111.1382O}.
@@ -676,7 +677,7 @@ where the average is performed over all observed points \(i\)
 in a given map.
 Note that \(\sigma\pos\) is also the RMS width of
 the probability density function (PDF) of \(V_c\).
-This PDF for each region is shown in Figure~\ref{fig:hist}
+This PDF for each region is shown in Figure~\ref{fig:pdfs}
 on a common velocity scale and arranged in order of decreasing \(\sigma\pos\).
 It can be seen that the amplitude of the
 velocity fluctuations varies considerably between regions,
@@ -699,7 +700,7 @@ whereas NGC~346 has one towards the red.
 
 \begin{figure*}
  \centering
- \includegraphics[width=5in]{Figures/Hist}\par
+ \includegraphics[width=5in]{Figures/pdfs}\par
  \caption{
    Histograms of the plane-of-sky variation in the \ha{} centroid velocities.
    Each panel shows the fraction of the observed spatial points
@@ -710,16 +711,13 @@ whereas NGC~346 has one towards the red.
    The bin width is \SI{1}{km.s^{-1}} and the regions are arranged
    in order of decreasing \(\sigma\pos\).
  }
- \label{fig:hist}
+ \label{fig:pdfs}
 \end{figure*}
 
 
 \subsection{The second-order structure function}
 \label{sec:second-order-struct}
-% One of the fundamental properties of turbulent clouds must be spatial fluctuations in velocity and density.                                     
-% These fluctuations are observed as projected spatial fluctuations in the average line-of-sight velocity and integrated column density.
-% It is possible to describe the statistical properties of these fluctuations if they are assumed as a product of a stochastic field \citep{1984ApJ...277..556S}. 
-% This previous assumption give us the ability to apply statistical tools to the velocity field and the analysis of the velocity pattern is reduced to the calculation of the averages and correlations.
+
 
 In order to probe the dependence of the velocity fluctuations
 on spatial scale,
@@ -856,7 +854,7 @@ the model structure function by a factor:
 \end{equation}
 where \(s_0\) is the RMS width of the seeing profile.\footnote{%
   Note that the full-width half maximum (FWHM) seeing width is
-  \(2 (2 \ln 2)^{1/2} s_0 \approx 2.35 s\).
+  \(2 (2 \ln 2)^{1/2} s_0 \approx 2.35 s_0\).
 }
 An example is shown by the green line in Figure~\ref{fig:model-strucfunc}a.
 Note that the effect of seeing is to make the structure function 
@@ -886,7 +884,7 @@ model structure function:
     1 - 2^{- \left( r/r_0 \right)^m} 
   \right]
   \,  S(r; s_0, r_0) + B_{\text{noise}}
-\label{eq:sf-corrected}
+\label{eq:sf-functional}
 \end{multline}
 
 An example model structure function that is affected by both seeing and noise
@@ -900,30 +898,9 @@ The model that consider the effect of the observational box size is:
 %
 where the \(L\) value is the diagonal length of the observational box.
 
-Considering the previous models we obtain the final form of our proposed structure function functional:
-%
-\begin{equation}\label{eq:sf-functional}
-B_{\text{func}}(r) = B(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
-\end{equation}
-%
-where the term \( B_{\text{noise}}\) is a correction factor that considers the instrument noise at small scales.
-This noise would have the effect of flattening the structure function by removing the effects of the fluctuations which would be interpreted as an uncorrelated field. 
-
-The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares fit with the equation \ref{eq:sf-functional} used as an objective function.
-For this purpose we use the \textit{python} package \textit{lmfit} \citep{newville_matthew_2014_11813} where the equation \ref{eq:Br} and \ref{eq:sf-functional} are use in a chi-square statistic defined as:
-%
-%\begin{equation}\label{eq:chi}
-%  \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
+%\begin{equation}\label{eq:sf-functional}
+%B_{\text{func}}(r) = B(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
 %\end{equation}
-%
-%
-\begin{equation}\label{eq:chi}
-  \chi^2 = \sum_i ^N \frac{[B(r)-B_{\text{func}}(r;r_0, \sigma^2\pos, m, s_0, B_{\text{noise}})]^2}{\varepsilon_i ^2}
-\end{equation}
-%
-where the turbulent parameters, \(r_{0}\)\, \(\sigma^2\pos\) and \(m\), and the observational constraints \(s_0\) and \( B_{\text{noise}}\), are the set of variables to be optimized in the fit.
-This procedure calculate a value \(\chi\) to be minimized scaled by the inverse of the uncertainty \(\varepsilon\) in the data.
-Then we proceed to obtain the confidence intervals we use the minimization procedure \textit{emcee} \citep{2013PASP..125..306F} which is a \textit{python} implementation of the affine-invariant ensemble sampler for Markov chain Monte Carlo (MCMC) by \citet{2010CAMCS...5...65G}.  
 
 \subsubsection{Additional effects omitted from the model structure function}
 \label{sec:limit-model-struct}
@@ -949,124 +926,147 @@ and monotonically decreasing with \(r\).
 At the very smallest scales, the autocorrelation function is predicted to
 scale quadratically with \(r\)
 
+\subsubsection{Model fitting and estimation of confidence intervals}
+\label{sec:model-fit}
+
+The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares fit with the equation \ref{eq:sf-functional} used as an objective function.
+For this purpose we use the \textit{python} package \textit{lmfit} \citep{newville_matthew_2014_11813} which implement a chi-square statistic defined as:
+%
+%\begin{equation}\label{eq:chi}
+%  \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
+%\end{equation}
+%
+%
+\begin{equation}\label{eq:chi}
+  \chi^2 = \sum_i ^N \frac{[B(r)-B_{\text{func}}(r;r_0, \sigma^2\pos, m, s_0, B_{\text{noise}})]^2}{\varepsilon_i ^2}
+\end{equation}
+%
+where the turbulent parameters, \(r_{0}\)\, \(\sigma^2\pos\) and \(m\), and the observational constraints \(s_0\) and \( B_{\text{noise}}\), are the set of variables to be optimized in the fit.
+This procedure calculate a value \(\chi\) to be minimized scaled by the inverse of the uncertainty \(\varepsilon\) in the data using the Levenberg-Marquardt (LM) method.
+Then we proceed to obtain the confidence intervals using the minimization procedure \textit{emcee} \citep{2013PASP..125..306F} which is a implementation of the affine-invariant ensemble sampler for Markov chain Monte Carlo (MCMC) by \citet{2010CAMCS...5...65G}.
+
 \section{Results}\label{sec:results}
 
-In this section we present and describe the second-order structure results. The structure functions are plotted against separation in parsecs and we also show the posteriors of the turbulent parameters using the analysis discussed in section~\ref{sec:methods-apply}.
+In this section we present and describe the second-order structure results. The structure functions are plotted against separation in parsecs and we also show the posteriors of the parameters discussed in the previous section.
 
-\subsection{HII regions second-order structure functions and turbulent parameters}
+\subsection{HII regions second-order structure functions}
 
 %structure functions plots descriptions
 Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
-In the plots the solid circles indicate the points we use in the non-linear regression analysis (see section~\ref{sec:methods-apply}), while the open circles are the points of the structure function that where left out.
-The criteria for the previous considerations is that the structure function at large separations is affected by the inhomogeneties of the velocity field (see section-\ref{sec:limit-model-struct}), hence the reason that large separation values are not considered for the fit of our model. 
+In the plots the solid circles indicate the points we use in the non-linear regression analysis (see section~\ref{sec:model-fit}), while the open circles are the points of the structure function that where left out.
+The criteria for the previous considerations is that the structure function at large separations is affected by the inhomogeneties of the velocity field (see section-\ref{sec:limit-model-struct}), hence the reason that large separation values are not used since they are not consider in our model. 
 In some cases, at the smallest separations we merge a couple of the structure functions points under the assumption that those would be heavily affected by the seeing and the rest would be coincident with the power-law behavior.
 The Figures shows in the orange solid thick line the best fit for the equation \ref{eq:sf-functional} which takes into account observational limitations on the structure function.
 The green dashed line indicate the theoretical model for the structure function using equation \ref{eq:functional}.
 
 Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in dashed and dotted lines the parameters of our model.
 The vertical dashed line indicates the correlation length, \(r_0\), and the horizontal dashed line indicates the true variance of the velocity fields, \(\sigma^2\).
-The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the value of the noise, \(B_{\text{noise}}\).
+The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the noise, \(B_{\text{noise}}\).
+These values were obtained using the LM method.
 For the dashed and dotted lines the overlapping translucent boxes indicate the confidence intervals in 1-sigma (dark shaded area) and 2-sigma (light shaded area) obtained from the MCMC analysis.
 The light shaded areas in the plot show where the separation \(r\) is above half of the box size, \(L\), which is indicated with a vertical dotted line.
-To present our results in the next paragraphs the small scales would refer to the separations \(r < r_0\) and large scales would refer to separations \(r > r_0\).
+%For the discussion of our results in the next paragraphs the small scales would refer to the separations \(r < r_0\) and large scales would refer to separations \(r > r_0\).
 
 Figure~\ref{fig:strucfunc-fit-OrionS}a shows the structure function of the Orion core.
 Valid scales are consider above the separation of \SI{0.002}{pc} (\(s_0\)=\SI{1}{\arcsecond}).
-In this case we merge the first three points.
-From there until separations of \SI{0.003}{pc} all points within this range fall below the true model showing that they are affected by the seeing. 
-The correlation length for the Orion core is \SI{0.07 \pm 0.01}{pc}, it has a \(\sigma^2\pos\) of \SI{12 \pm 1}{km^{2}.s^{-2}} and an index of \num{1.07 \pm 0.02}.
+In this case we merge the first three points of the structure function.
+From \SI{0.002}{pc} until \SI{0.003}{pc} all points fall below the true model showing that they are affected by the seeing. 
+The correlation length for the Orion core is \SI{0.07}{pc}, it has a \(\sigma^2\pos\) of \SI{12}{km^{2}.s^{-2}} and an index of \num{1.07}.
 The structure function of the Orion core behaves accordingly to the tapered case of inhomogeneous fluctuations (see Figure~\ref{fig:model-strucfunc}b).
-At large scales there is a plateau around \SI{22}{km^{2}.s^{-2}} reached at \SI{0.25}{pc}.
-Above separations of \SI{0.3}{pc} the structure function decays reaching a separation of \SI{0.5}{pc} with a value of \SI{7}{km^{2}.s^{-2}}.
+At \SI{0.25}{pc} there is a plateau around \SI{22}{km^{2}.s^{-2}}.
+Above separations of \SI{0.3}{pc} the structure function decays to a value of \SI{7}{km^{2}.s^{-2}} at  \SI{0.5}{pc}.
 
 The Figure~\ref{fig:strucfunc-fit-M8}a shows the structure function of the Lagoon nebula.
 There aren't any points affected by the seeing which has a value of \SI{0.006}{pc} (\(s_0\)=\SI{1}{\arcsecond}).
 In this case we merge the first two points.
 The Lagoon nebula presents a non-uniform behavior below the correlation length but it is possible to see the characteristic ascending values of the structure function.
-The turbulent parameters that fits our model are a \(r_0\) of \SI{1 \pm 0.2}{pc}, a \(\sigma^2\pos\) of \SI{7 \pm 1}{km^{2}.s^{-2}} and an index of \num{1.13 \pm 0.01}.
-At large scales there is an indication of some periodic behavior with a very large amplitude of ascending \(B(r)\) at largest separation.
+The turbulent parameters that fits our model are a \(r_0\) of \SI{1}{pc}, a \(\sigma^2\pos\) of \SI{7}{km^{2}.s^{-2}} and an index of \num{1.17}.
+At large scales there is an indication of some periodic behavior followed by ascending \(B(r)\) values at largest separation.
 The first maximum value of \(B(r)\) in the order of 2\(\sigma^2\pos\) is \(\sim\)\SI{14}{km^{2}.s^{-2}} at a separation of \(\sim\)\SI{2.5}{pc}. 
 Considering an oscillating behavior at \SI{4.5}{pc} a minimum value of \SI{11}{km^{2}.s^{-2}} is reached.
-From this point the structure function keeps going up until it reaches \SI{66}{km^{2}.s^{-2}} around \SI{20}{pc}.
+From this point the structure function ascends until it reaches \SI{66}{km^{2}.s^{-2}} around \SI{20}{pc}.
 
 The Figure~\ref{fig:strucfunc-fit-CarC}a shows the structure function of the Carina nebula.
 The seeing is \SI{0.008}{pc} (\(s_0\)=\SI{1.3}{\arcsecond}) and there are just a couple of points that lie below the true model, indicating that the majority of points isn't affected by the seeing.
 For this region we merge the first two points of the structure function.
 As the Lagoon nebula, Carina also shows a non-uniform behavior below the correlation length.
-The correlation length is \SI{0.56 \pm 0.04}{pc} pc at a \(\sigma^2\pos\) of \SI{18 \pm 1}{km^{2}.s^{-2}}  and an index of \num{1.14 \pm 0.01}.
-At larges scales the structure function of the Carina nebula follows a pattern that closely resembles the homogeneous fluctuation of Figure~\ref{fig:model-strucfunc}a.
+The correlation length is \SI{0.56}{pc} pc at a \(\sigma^2\pos\) of \SI{18}{km^{2}.s^{-2}} and an index of \num{1.14}.
+At larges scales the structure function of the Carina nebula follows a pattern that resembles the homogeneous fluctuation of Figure~\ref{fig:model-strucfunc}a.
 The structure function reaches a plateau around \SI{36}{km^{2}.s^{-2}} at \(\sim\) \SI{2}{pc}.
-When \(r >\)\SI{6}{pc} the structure functions resembles a periodic behavior with a small amplitude.
+When \(r >\)\SI{6}{pc} the structure functions shows a small amplitude periodic pattern around 2\(\sigma^2\pos\).
 
 For Carina and Lagoon nebula, the velocity fields are obtained from the FLAMES multi-fiber instrument (section~\ref{sec:flames-multi-fiber}). 
-We can see from Figure~\ref{fig:velocity-maps} that observations from this instrument do not give uniform maps as the other instruments. 
-Instead the discrete fiber positions are diversely located across the FOV.
+We can see from Figure~\ref{fig:velocity-maps} that observations from this instrument do not give uniform maps as the others. 
+Instead, the discrete fiber positions are diversely located across the FOV.
 This would affect the structure function since the values are not adjacent as the other observations.
 This is reflected in the non uniform \(B(r)\) below  \(r_0\) that we pointed out in the previous paragraphs.
 
 The Figure~\ref{fig:strucfunc-fit-N346}a shows the structure function of NGC 346.
 In this case we merge the first three points of the structure function.
-For this region the points are above the seeing value which is \SI{0.07}{pc} (\(s_0\)=\SI{0.23}{\arcsecond}) and the first ten points lie below the true model.
+The seeing value is \SI{0.07}{pc} (\(s_0\)=\SI{0.23}{\arcsecond}).
+For this region the first ten points lie below the true model.
 At separations above \SI{0.4}{pc} the observed structure functions is coincident with the true model. 
-The correlation length is \SI{2 \pm 0.1}{pc} at a \(\sigma^2\pos\) of \SI{3 \pm 1}{km^{2}.s^{-2}} and an index of \num{0.76 \pm 0.02}.
-For scales above \SI{9}{pc} with a \(B(r)\) value of \SI{70}{km^{2}.s^{-2}} a periodic behavior is seen .
-Starting from a separation of \SI{12}{pc} and a \(B(r)\) value of \SI{65}{km^{2}.s^{-2}} the structure function keeps ascending until it reaches \SI{146}{km^{2}.s^{-2}} at \SI{24}{pc}.  
+The correlation length is \SI{2}{pc} at a \(\sigma^2\pos\) of \SI{35}{km^{2}.s^{-2}} and an index of \num{0.80}.
+For scales above \SI{12}{pc} and a \(B(r)\) value of \SI{65}{km^{2}.s^{-2}} the structure function shows a pattern of ascending values until it reaches \SI{146}{km^{2}.s^{-2}} at \SI{24}{pc}.  
 
 The 30 Doradus structure function is shown in Figure~\ref{fig:strucfunc-fit-Dor}a.
 In this case we merge the first five points of the structure function.
 The seeing value for this regions is \SI{0.16}{pc} (\(s_0\)=\SI{0.7}{\arcsecond}) and just one point of the structure function is below this value.
-Until a separation of \SI{1.7}{pc} the structure function lies below the true model.
-The correlation length is \SI{4 \pm 0.2}{pc} at a \(\sigma^2\pos\) of \SI{300 \pm 9}{km^{2}.s^{-2}} and an index of \num{0.84 \pm 0.04}.
-30 Doradus structure function presents a behavior of tapered fluctuations.  
+Until a separation of \SI{1.7}{pc} is reached, the structure function lies below the true model.
+The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{297 \pm 9}{km^{2}.s^{-2}} and an index of \num{0.85}.
+At large separations 30 Doradus structure function presents a behavior of tapered fluctuations.  
 The maximum \(B(r)\) value is \SI{655}{km^{2}.s^{-2}} at a separation of \SI{21}{pc}. 
 From there \(B(r)\) values descends until they reach \SI{250}{km^{2}.s^{-2}} at \SI{38}{pc}.
 
 In the Figure~\ref{fig:strucfunc-fit-HV}a we show the structure function of Hubble V.
-For the observations coming from the TAURUS-II instrument there wasn't any merging of points.
+For the observations coming from the TAURUS-II instrument there wasn't any merging of points at small scales.
 The value of the seeing for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}).
-All the structure function points lies below the true model which would indicate that the seeing is affecting the observed structure function.
-The correlation length is \SI{3.4 \pm 0.3}{pc} at a \(\sigma^2\pos\) of  \SI{10 \pm 1}{km^{2}.s^{-2}} and an index of \num{0.74 \pm 0.10}.
+All the structure function points lies below the true model.
+The correlation length is \SI{3.5}{pc} at a \(\sigma^2\pos\) of  \SI{10}{km^{2}.s^{-2}} and an index of \num{0.75}.
 The maximum \(B(r)\) value is \SI{18}{km^{2}.s^{-2}} at a separation of \SI{25}{pc}. 
-From there \(B(r)\) values descends until \SI{14}{km^{2}.s^{-2}} at \SI{45}{pc}, then it rises for the next point at \SI{50}{pc} with a value of \SI{15}{km^{2}.s^{-2}} and finally the structure functions descends at \SI{9}{km^{2}.s^{-2}} for a separation of \SI{70}{pc}.
+From there \(B(r)\) values descends until it reaches \SI{14}{km^{2}.s^{-2}} at \SI{45}{pc}, then it rises for the next point at \SI{50}{pc} with a value of \SI{15}{km^{2}.s^{-2}}.
+Finally the structure functions descends at \SI{9}{km^{2}.s^{-2}} for a separation of \SI{70}{pc}.
 
 The Hubble X structure function is shown in Figure~\ref{fig:strucfunc-fit-HX}a.
-The seeing is \SI{0.006}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V the observed structure function lies below the true model.
-The correlation length is \SI{4 \pm 0.4}{pc} at a \(\sigma^2\pos\) of \SI{16 \pm 1}{km^{2}.s^{-2}} and an index of \num{0.88 \pm 0.14}.
-The structure functions presents at large scales the behavior of periodic fluctuations with a small amplitude.
-A plateau is reached around \SI{25}{km^{2}.s^{-2}} at a separation of \SI{14}{pc} and a maximum \(B(r)\) value of \SI{31}{km^{2}.s^{-2}} at a separation of \SI{36}{pc}. 
-From this point the structure functions shows consistent values around \SI{24}{km^{2}.s^{-2}} and finally there is a rise for the last point to \SI{29}{km^{2}.s^{-2}} at a separation of \SI{91}{pc}.
+The seeing is \SI{0.6}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V the observed structure function lies below the true model.
+The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{15}{km^{2}.s^{-2}} and an index of \num{0.93}.
+A plateau is reached around \SI{25}{km^{2}.s^{-2}} at a separation of \SI{14}{pc} and a maximum \(B(r)\) value of \SI{31}{km^{2}.s^{-2}} at a separation of \SI{36}{pc}.
 
 In the Figure~\ref{fig:strucfunc-fit-N595}a we show the structure function of NGC 595.
-The seeing is \SI{0.5}{pc} (\(s_0\)=\SI{0.12}{\arcsecond}) and for this region only the first two points are below the true model. 
-The correlation length is \SI{12 \pm 1}{pc} at a \(\sigma^2\pos\) of \SI{56 \pm 2}{km^{2}.s^{-2}} and an index of \num{1.3 \pm 0.05}.
-At large scales the structure function behave following the tapered fluctuations behavior.
+The seeing is \SI{0.3}{pc} (\(s_0\)=\SI{0.1}{\arcsecond}) and for this region only the first two points are below the true model. 
+The correlation length is \SI{12}{pc} at a \(\sigma^2\pos\) of \SI{54}{km^{2}.s^{-2}} and an index of \num{1.3}.
+At large scales the structure function behaves following the tapered fluctuations pattern.
 A maximum \(B(r)\) value of \SI{104}{km^{2}.s^{-2}} is reached at \SI{33}{pc}. 
 From there the structure functions decays following and inhomogeneous pattern until it reaches \SI{54}{km^{2}.s^{-2}} at a separation of \SI{211}{pc}.  
 
 In the Figure~\ref{fig:strucfunc-fit-N604H}a we show the structure function of NGC 604.
-The seeing is \SI{1.2}{pc} (\(s_0\)=\SI{0.28}{\arcsecond}) and the structure function of this region lies below the true model for most of the separation range.
-The correlation length is \SI{9 \pm 3 }{pc} at a \(\sigma^2\pos\) of \SI{68 \pm 6}{km^{2}.s^{-2}} and has an index of \num{1.3 \pm 0.05}.
+The seeing is \SI{1.7}{pc} (\(s_0\)=\SI{0.42}{\arcsecond}) and the structure function of this region lies below the true model for most of the separation range.
+The correlation length is \SI{10}{pc} at a \(\sigma^2\pos\) of \SI{71}{km^{2}.s^{-2}} and has an index of \num{1}.
 The structure function present clear characteristics of periodic oscillations at large scales.
 A periodic pattern for the structure function appears with a maximum \(B(r)\) value of \SI{143}{km^{2}.s^{-2}} that is reached at \SI{60}{pc}, then the oscillation cause a minimum of \SI{54}{km^{2}.s^{-2}} at \SI{133}{pc} and finally it goes back up again at \SI{211}{pc} to a \(B(r)\) value of \SI{123}{km^{2}.s^{-2}}.
 
 The EON structure function is shown in Figure~\ref{fig:strucfunc-fit-OrionLH}a.
-This observations are heavily affected by the noise which presents a value of \SI{6}{km^{2}.s^{-2}} which is larger that the \(\sigma^2\pos\) \SI{5}{km^{2}.s^{-2}}. 
+This observations are heavily affected by the noise which presents a value of \SI{6}{km^{2}.s^{-2}} which is larger that the \(\sigma^2\pos\) value of \SI{4}{km^{2}.s^{-2}}. 
 
 %corner plots descriptions
 Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} right panels show the corner plots \citep{2017ascl.soft02002F} of the turbulent parameters and observational constraints. 
 These plots shows the one and two dimensional projections of the posterior probability distributions of the parameters used in equation \ref{eq:chi}.
-They also show the marginalized distribution for each parameter independently in the histograms along the diagonal and then the marginalized two dimensional distributions in the other panels making possible to visualize all of the covariances between parameters \citep{2017ascl.soft02002F}.
+They also show the distribution for each parameter independently in the histograms along the diagonal and then the marginalized two dimensional distributions in the other panels making possible to visualize all of the covariances between parameters \citep{2017ascl.soft02002F}.
 The contours in the plots reflect the 95\(\%\), 99\(\%\), 99.5\(\%\) and 99.9\(\%\) confidence intervals.
 
-Table \ref{tab:Res} presents the turbulent parameters results along the obtained observational constraints mentioned in the paragraphs above.
+Table \ref{tab:Res} presents the turbulent parameters and observational constraints values mentioned in the paragraphs above.
+The confidence intervals for these values are up to 2-sigma of the posteriors.
 The second column correspond to the variance \(\sigma^2\pos\) of the velocity field.
 The \(B_{\text{noise}}\) value is shown in the third column which would be the minimum squared velocity difference that could be measure by the instrument.
-The forth column in Table \ref{tab:Res} shows the seeing value in parsecs, \(s_0\), which represent the minimum value of the separation which would valid for the observed structure function. 
+The forth column in Table \ref{tab:Res} shows the rms seeing value in parsecs, \(s_0\), which represent the minimum value of the separation which would valid for the observed structure function. 
 The fifth column shows the correlation value \(r_0\) in parsecs.
 The \(r_0\) range covered in our results for the sample goes from 0.09 to 12 pc.
 The sixth column indicates the size of each observational box in parsecs.
-The index \(m\) is shown in the last column and the range covered by the power-law index in our HII region sample goes from 0.7 to 1.5.
-The interpretation of our results is developed in the next section.
+The index \(m\) is shown in the seventh column.
+The range covered by the power-law index goes from 0.7 to 1.5.
+The eighth column show the ratio \(L / r_0\)
+The last column shows the FWHM seeing in arcsec.
+%The interpretation of our results is developed in the next section.
 
 \newcommand\sffig[1]{%
   \begin{tabular}{@{}ll@{}}
@@ -1190,7 +1190,13 @@ The interpretation of our results is developed in the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \section{Discussion}\label{sec:discussion}
+
+In the next sections we discuss the application and interpretation of the turbulent parameters we obtained in our results.
+We present a resume of the turbulence theory and its validation to \hii{} regions.
+It is also mentioned some physical processes that contribute to stirring the ionized gas and the possibility that they are responsible for the observed velocity fluctuations.
+We present the most important correlations between the turbulent parameters and physical properties of our \hii{} region sample and finally we discuss our results in the context of previous structure functions.
 
 \subsection{Turbulence}\label{sec:turbulence-theory}
 
@@ -1198,14 +1204,14 @@ The interpretation of our results is developed in the next section.
   this material could go in discussion.}
 
 The idea to treat the ionized regions from a fluid mechanic view is intuitive if we consider the continuum hypothesis. 
-We validate this hypothesis using the Knudsen number defined as \(Kn \equiv \lambda / l\), where \(\lambda\) is the mean free path of the medium and \(l\) a characteristic length of the phenomenon we are studying.
-Taking into account a \(\lambda_{\text{HII}}\) of \SI{2.7e-7}{pc} \citep{1941ApJ....93..369S} and a \(l_{\text{HII}}\) of \SI{1}{pc} for ionized regions we obtained \(Kn \approx 10^{-7}\), while in general the continuum approach is valid for \(Kn \ll 1\).
+We validate this hypothesis using the Knudsen number defined as \(\text{Kn} \equiv \lambda / l\), where \(\lambda\) is the mean free path of the medium and \(l\) a characteristic length of the phenomenon we are studying.
+Taking into account a \(\lambda_{\text{HII}}\) of \SI{2.7e-7}{pc} \citep{1941ApJ....93..369S} and a \(l_{\text{HII}}\) of \SI{1}{pc} for ionized regions we obtained \(\text{Kn} \approx 10^{-7}\), while in general the continuum approach is valid for \(\text{Kn}\ll 1\).
 
 A turbulent behavior in the flows is more common in fluid systems than a laminar one.
 These turbulent flows tends to be unsteady, irregular and chaotic, and the turbulent motions are observed in many scales. 
-The turbulent flows are associated with a high Reynolds numbers which is defined as \(Re = l v_{l} / \nu \), where \(v_{l}\) is a characteristic velocity in the fluid system and \(\nu\) is the kinematic viscosity of the medium.
-Experiments have shown that a flow which is laminar become turbulent when increasing the velocity (i.e., increasing the \(Re\)) and a large range of velocity fluctuation appear at all scales.
-A high \(Re\) reflects high ratio of the advection/difussion terms of the Navier-Stokes equations, being interpreted as that the inertial forces taking over the viscous ones. 
+The turbulent flows are associated with a high Reynolds numbers which is defined as \(\text{Re} = l v_{l} / \nu \), where \(v_{l}\) is a characteristic velocity in the fluid system and \(\nu\) is the kinematic viscosity of the medium.
+Experiments have shown that a flow which is laminar become turbulent when increasing the velocity (i.e., increasing the Re) and a large range of velocity fluctuation appear at all scales.
+A high Re reflects high ratio of the advection/difussion terms of the Navier-Stokes equations, being interpreted as that the inertial forces taking over the viscous ones. 
 Hence it is possible to assume that if viscosity is not dominant in a flow, this flow would be turbulent.
 
 As astronomical observation made it possible to measure a large number of points with a high accuracy, it was found that velocities show a non-thermal component reflecting characteristic of turbulent earthly flows.
@@ -1213,9 +1219,9 @@ The existence of turbulent flows in astrophysical objects, ranging in scales fro
 
 The classic turbulence theory assumes a three-dimensional isotropic, incompressible and subsonic flow that can be described using an energy spectrum formed by vortices or eddies of different sizes \citep{kolm1}.
 The concept of the energy spectrum assumes that the energy is cascading down inside the flow from the largest to the smallest scales.
-The different scales in the energy cascade are defined based on their \(Re\).
-In one side of the spectrum there is the energy injection scale, \(L_I\), that is related to the largest vortices, called the integral scales, where \(Re \rightarrow \infty\).
-On the other side of the spectrum there is the dissipation of energy at small scales, \(l_I\), where  \(Re \rightarrow 1\) and it is assumed that small vortices are responsible for the friction that dissipates the energy flux into thermal energy.
+The different scales in the energy cascade are defined based on their Re.
+In one side of the spectrum there is the energy injection scale, \(L_I\), that is related to the largest vortices, called the integral scales, where \(\text{Re} \rightarrow \infty\).
+On the other side of the spectrum there is the dissipation of energy at small scales, \(l_I\), where  \(\text{Re} \rightarrow 1\) and it is assumed that small vortices are responsible for the friction that dissipates the energy flux into thermal energy.
 In between there is the inertial range, \(l_d  << l << L_I\), where in a stationary case the energy transfer is at a constant rate.
 
 The rate of transfer of specific energy \(\epsilon\) (energy per unit mass) in the inertial range is independent of the \(l\) scale having the form \(\epsilon \sim v_l^2 / \tau_l\), where the kinetic energy is of the order of \( v_l^2\) and the life time of a velocity fluctuation is \(\tau_l\), which can be can be put in terms of \(\tau_l \sim l / v_l\). 
@@ -1242,23 +1248,32 @@ Using a statistical law that relates the moments \(M_n\) of order \(n\) with the
 \begin{equation}\label{eq:velocity-moments}
 M_n = \langle \vert \boldsymbol{v}(\boldsymbol{x} + \boldsymbol{r})- \boldsymbol{v}(\boldsymbol{x})\vert^n \rangle \propto (\epsilon r)^{n/3}
 \end{equation}
+%
 the average is over all the positions \(\boldsymbol{x}\) and directions \(\boldsymbol{r}\). 
 The Kolmogorov model predicts that the moment of order 2, the second-order structure function (equation \ref{eq:Br}), follows \(M_2 \propto r^{2/3}\).
 
-\subsection{Interpretation of the turbulent parameters and origins of interstellar turbulence}\label{sec:interpretation-origin}
+\subsection{Origins of interstellar turbulence}\label{sec:origins-turbulence}
 
-In the next sections we discuss the use and interpretation of the turbulent parameters we obtain in the previous section.
-Also, we mentioned some physical processes that contribute to stirring the ionized gas and the possibility that they are responsible for the observed velocity fluctuations.
+In the particular case of GEHR, as supersonic motions dissipate energy by shocks in time scales relatively short compared with the age of the region, it is necessary an energy source to replenish continuously the energy lost. From the observed velocity  dispersion \(\sigma\), and assuming that we have an isotropic distribution of velocities,  we can estimate the 3D velocity dispersion by \(\sigma_\mathrm{3D} = \sqrt{3} \sigma\). The mass of the ionized gas together with the velocity dispersion \(\sigma_\mathrm{3D}\)  are used to estimate the kinetic energy in the GEHRs. As these objects have typically  masses of the ionized gas of \num{\sim e5} M\(_{\sun}\) and velocity dispersion values  of \SI{\sim 20}{km.s^{-1}} \citep{1984ApJ...287..116K}, typical kinetic energy of the ionized gas is \SI{\sim e51}{ergs}. 
+
+In the standard Kolmogorov model, the energy spectrum of turbulence becomes dependent only on \(\epsilon\), the mean dissipation of energy per unit time per unit mass of fluid,  with the inertial forces transferring without losses kinetic energy from larger to smaller turbulent elements within the inertial range. Let \(L_c\) be the characteristic length of the largest eddies, and \(\delta v\) the typical velocity. 
+
+We have then that \(\epsilon = (\delta v)^{3}/L\). In steady-state turbulence, equilibrium exists between the energy input and the energy dissipation rates. 
+Although the present observations indicate that turbulence in \hii{} regions may not follow the Kolmogorov model, with energy input occurring at different scales, so that a  truly inertial range may not exist at all, lets us make a crude estimation of the  amount of energy transferred between scales using this simple model. 
+Assuming the above figures for the mass of the gas and velocity dispersion, \(\delta v = \sigma_\mathrm{3D}\),  and a \(L_c\) of \SI{100}{pc}, we obtain that the energy transfer rate \SI{\sim e37}{erg.s^{-1}}, and  the time scale for energy transfer, \(L/\delta v \), would be of few million years.
+
+There are several energy sources that could provide or contribute  to the energy required: of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc, supernova explosions inject a large amount of kinetic energy.
+At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy and, bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
+
+The lack of precise information on how these mechanism contribute to the emission line broadening make a non-trivial task to determine at what extent they play a role in the interstellar turbulence, contributing to the complexity of the extraction of pure turbulent motions from velocity profiles in nebulae \citep{2011MNRAS.413..705L,arthur2016turbulence}. 
+
+\subsection{Interpretation of the turbulent parameters}\label{sec:interpretation-parameters}
 
 \subsubsection{Correlation length \(r_0\)}
 
 Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
 It is unclear what are the precise mechanisms driving the turbulence, thought a lot of options are candidates.
 The most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
-The main energy sources are, of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc, supernova explosions inject a large amount of kinetic energy.
-At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy and, bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
-The lack of precise information on how these mechanism contribute to the emission line broadening make a non-trivial task to determine at what extent they play a role in the interstellar turbulence, contributing to the complexity of the extraction of pure turbulent motions from velocity profiles in nebulae \citep{2011MNRAS.413..705L,arthur2016turbulence}. 
-
 Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work.
 We can use the kinematic analysis of the regions to investigate how previously identified energy injection mechanisms could be related to the correlation length. 
 
@@ -1279,8 +1294,8 @@ Values of velocity dispersion $>$\SI{20}{km.s^{-1}} are found in low emission ca
 These cavities were identified as expanding shells by \cite{yang1996} with diameters of \(\sim\)\SI{40}{pc} and a expansion velocity above \SI{50}{km.s^{-1}}.
 According to table~\ref{tab:Res} the correlation length for NGC 604 is close to the scale of the bright knots in the region which aren't related to a particular energy injection mechanism.
 
-Although the Orion core and EON, and NGC 604 have different \(r_0\) is not clear if it truly reveal a concrete aspect of the energy input mechanism mentioned above.
-Orion mainly energy input comes from one star, meanwhile NGC 604 has more than 200 OB stars including WR stars. 
+Although the Orion core, the EON, and NGC 604 have different \(r_0\) is not clear if it truly reveal a concrete aspect of the energy input mechanism mentioned above.
+Orion main energy input comes from one star, meanwhile NGC 604 has more than 200 OB stars including WR stars. 
 The Orion core also presents Herbig-Haro objects, which aren't possible to resolve for more distant regions.
 Though the correlation length is particular to each region, and it is correlated mainly with the size (see section~\ref{sec:scaling-relations}), it still needs further studies to reveal the true implication of this value with respect the energy input mechanisms.
 
@@ -1347,7 +1362,7 @@ For the most distant regions the previous analysis would give depths of the orde
 
 \begin{figure}
 \centering 
-\includegraphics[width=3in]{Figures/los-vs-pos}
+\includegraphics[width=3in]{Figures/corr-los-vs-pos}
 \caption{The $\sigma$-$\sigma_{\text{los}}$ plane. The dotted line represents slope equal to unity.}
 \label{fig:los-vs-pos}
 \end{figure}
@@ -1403,14 +1418,14 @@ Due to the above, we chose these set values since they come from an unique sourc
 
 \begin{figure}
 \centering 
-\includegraphics[width=3in]{Figures/svsL}
+\includegraphics[width=3in]{Figures/corr-svsL}
 \caption{The log \(\sigma\pos\) - log $L(H_{\alpha})$ plane derived form our results an data in the literature. A fit with slope of 0.27 $\pm$ 0.1 is shown in solid black line that is the mean of all red lines that reflect the posterior of the Bayessian analysis. }
 \label{fig:sigvsl}
 \end{figure}
 
 \begin{figure}
 \centering 
-\includegraphics[width=3in]{Figures/rvsS}
+\includegraphics[width=3in]{Figures/corr-rvsS}
 \caption{Same as Fig. \ref{fig:rvsR} but for the log \(r_0\) - log \(S\) plane. }
 \label{fig:rvsR}
 \end{figure}
@@ -1494,44 +1509,42 @@ As a comparison for the filtered turbulent parameters they present a correlation
 Other difference in their methodology is that they use the normalized structure function value of 2 to obtain the correlation length.
 Using their unfiltered data the correlation length is \(\sim\) \SI{90}{pc} and using the same criteria as our it is \(\sim\) \SI{40}{pc} and the slope would be shallower. 
 Their velocity centroid \(\sigma\) is 5.92 $\pm$ 0.15 km s\(^{-1}\) while we have 7.48 $\pm$ 1.4 km s\(^{-1}\) which is consistent.
-Due to the different observations and methodologies a comparison between structure functions is not possible.
+Due to the different observations and methodologies a direct comparison between structure functions is not possible.
+
+\subsection{Final remarks}
+
+The observations point out to the existence of spatial correlation between velocities, that could be interpreted as turbulence. 
+Arguments against the existence of true, isotropic turbulence can be raised as, for example: i) the histograms of velocity are not always Gaussian, ii) only a fraction of the integrated emission lines of the \hii{} regions show true Gaussian profiles. 
+The asymmetry in the emission line indicates coherent mass flow motions, 
+and sometimes is considered incompatible with turbulence. However, turbulence is in fact 
+a mixture of coherent and chaotic flows. 
+Only at the regime of the so-called fully developed turbulence the non-linear phenomena dominate completely the movement and the chaotic flow prevail. 
+The problem here is that a straightforward test for any turbulent model is a big challenge, as we are in the presence of many entangled effects. 
+However, the circumstantial evidence in favor of the existence of turbulent motions in \hii{} regions is overwhelming, and many are the potential sources of energy to create and maintain turbulence during the lifetime of an \hii{} region.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 \section{Conclusions}\label{sec:conclusions}
 
-The previous analysis was able to characterize the turbulence by determining a single inertial scale where the ionized gas behavior can be described by means of a power law.
-To determine the inertial scale more precisely than in previous works, a new functional form was proposed for the second-order structure function that considers observational effects such as: seeing, noise and the size of the observational box.
-These effects had not been considered in detail before and have important consequences in obtaining the inertial scale.
+%a single inertial scale where the ionized gas behavior can be described by means of a power law.
 
-The new functional form of the structure function is used as an objective function in a non-linear regression to accurately determine the important parameters related to turbulence which are: the correlation length, the exponent of a power law that fits the results and the real variance of the region.
+Our analysis was able to characterize the velocity fields of a sample of \hii{} regions by determining a set of parameters unique to each velocity field which are: the correlation length, the exponent of a power law that fits the results through a determined range and the true velocity dispersion.
+To achieve this, a new functional form for the second-order structure function was proposed. 
+This new functional considers observational constraints such as the seeing, noise and the size of the observational box, effects that had not been considered before and play an important part in the interpretation of the structure function.
+Our proposed functional form is used as an objective function in a non-linear regression to accurately determine the set of parameters related to turbulence and to the observational constraints.
 
-The structure function used in this work does not reveal the precise characteristic of turbulence, but the statistical results that it provides allow us to determine a distinction between correlated or random velocity fluctuations in the photoionized gas, in which the presence of correlations in the velocity field is a inherent property of turbulence.
-Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a more realistic approach to determine and understand the structure function.
+The observed structure functions calculated in our work does not reveal the precise characteristic of turbulence, but the statistical results that it provides allow us to determine a distinction between correlated or random velocity fluctuations in the photoionized gas, in which the presence of correlations in the velocity field is a inherent property of turbulence.
+Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a more realistic approach to determine and to the understanding the structure function.
 
-Our analysis can be expanded to other HII regions with the possibility of comparing the results between them since the method guarantees homogeneity and the ability to develop a future catalog of these regions in a coherent way.
-It could even be used to investigate the velocity fields of other phases of the interstellar medium.
-The study of turbulence between ionized regions and the molecular clouds that give them birth can be carried out in a concise way, having the correct methods with the intention of advancing the understanding of the kinematic relationships between them.
+Our analysis can be easily be expanded to other \hii{} regions with the possibility of comparing the results between them since our method guarantees homogeneity, providing the possibility to develop a future catalog of \hii{} regions turbulent parameters in a concise way.
+By calculating the structure function of HII regions with different morphologies, ages, stellar content, and dynamics it would be possible to detect the presence and the importance of different sources of mechanical energy, since the structure function would be different from one object to the other as we show in the present investigation. 
 
-%\begin{enumerate}
-%\item For 30 Doradus with an observational box size of 32 pc an index of 0.84$\pm$0.03 is obtained with an inertial scale between 0.1 and 5 pc, and with a variance of 350$\pm$21 km$^2$/s$^2$. 
-    
-%\item For NGC 604 with an observational box size of 173 pc an index of 0.82$\pm$0.20 is obtained with an inertial scale between 2 and 9 pc, and with a variance of 81$\pm$25 km$^2$/s$^2$.
-    
-%\item For NGC 595 with an observational box size of 196 pc an index of 1.3$\pm$0.04 is obtained with an inertial scale between 0.5 and 12 pc, and with a variance of 56$\pm$1.6 km$^2$/s$^2$.
+Our methods could also been use to investigate the velocity fields of other phases of the interstellar medium.
+The study of turbulence between ionized regions and the molecular clouds that give them birth can be carried out with the aid of a correct methodology with the intention of advancing the understanding of the kinematic relationships between them.
 
-%\item For NGC 346 with an observational box size of 20 pc an index of 0.78$\pm$0.02 is obtained with an inertial scale between 0.06 and 2 pc, and with a variance of 38$\pm$1.0 km$^2$/s$^2$.
 
-%\item For Orion with an observational box size of 0.45 pc an index of 1.06$\pm$0.02 is obtained with an inertial scale between 0.002 and 0.09 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
-
-%\item For Carina with an observational box size of 20 pc an index of 1.36$\pm$0.30 is obtained with an inertial scale between 0.008 and 0.6 pc, and with a variance of 17$\pm$1.0 km$^2$/s$^2$.
-
-%\item For Hubble X with an observational box size of 78 pc an index of 0.94$\pm$0.12 is obtained with an inertial scale between 0.5 and 4 pc, and with a variance of 15.5$\pm$1.5 km$^2$/s$^2$.
-
-%\item For Hubble V with an observational box size of 61 pc an index of 0.72$\pm$0.09 is obtained with an inertial scale between 0.5 and 3 pc, and with a variance of 10.6$\pm$0.8 km$^2$/s$^2$.
-
-%\item For Lagoon with an observational box size of 16 pc an index of 1.12$\pm$0.09 is obtained with an inertial scale between 0.005 and 1 pc, and with a variance of 7.2$\pm$0.8 km$^2$/s$^2$.
-
-%\end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
