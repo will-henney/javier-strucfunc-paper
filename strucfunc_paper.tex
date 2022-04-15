@@ -897,31 +897,20 @@ In Appendix~\ref{sec:finite-box-effects} we consider the effects
 on the structure function of the finite size \(L\) of the observational map.
 If the true correlation length \(r_0\) is more than a small fraction of the map size
 (approximately, \(r_0 > 0.1 L\)),
-then the apparent velocity variance \({\sigma'\pos}^2\) measured directly from the data
+then the apparent velocity variance measured directly from the data
 is less than the true \({\sigma\pos}^2\) of the underlying fluctuations
 (see Figure~\ref{fig:finite-box-effect}).
 This is because the observed map is not large enough to sample
 the full range of velocity variations.
-At the same time, the apparent correlation length \(r_0'\) is smaller
+At the same time, the apparent correlation length is smaller
 than the true value.
-
-However, this does not mean that the model structure function needs to be modified;
-equation
-In the limit that \(r_0 \gg L\), then \(r_0'\) becomes independent of 
-
-finding that the apparent 
-
-
-\begin{equation}\label{eq:ffb}
-% \beta(r_0) = 1 - exp[\frac{L_{box}}{3.6r_0}] 
-  \beta(L,r_0) = 1 - \exp \left[ \frac{-L} {3.6 r_0} \right] 
-\end{equation}
-%
-where the \(L\) value is the diagonal length of the observational box.
-
-%\begin{equation}\label{eq:sf-functional}
-%B_{\text{func}}(r) = B(r; \beta r_0, \beta \sigma^2,m) \times S(r; s_0, r_0) + B_{\text{noise}}
-%\end{equation}
+However, this does not mean that the model structure function needs to be modified.
+In the appendix we show that the model fitting is capable of determining the true fluctuation variance
+and true correlation length (both to within 10\%),
+so long as \(L > 3\, r_0\).
+This is a significant improvement over than direct empirical measurement,
+which requires \(L > 10\, r_0\) in order to be accurate
+(compare panels a and b of Figure~\ref{fig:finite-box-effect}).
 
 \subsubsection{Additional effects omitted from the model structure function}
 \label{sec:limit-model-struct}
@@ -940,12 +929,13 @@ Another example is if there were a periodic velocity fluctuation,
 with spatial wavelength \(\lambda\),
 then the autocorrelation function would become negative for \(r \approx \lambda/2, 3 \lambda / 2, \dots\),
 which yields periodic peaks in the structure function.
-Neither of these effects can be captured by our model structure function,
+Both effects are illustrated in Figure~\ref{fig:model-strucfunc}b.
+Neither of them can be captured by our model structure function,
 which assumes that the autocorrelation is strictly positive
 and monotonically decreasing with \(r\).
+Instead, we restrict the model fitting range to scales less than \(L / 2\),
+where the influence of these effects should be minimal.
 
-At the very smallest scales, the autocorrelation function is predicted to
-scale quadratically with \(r\)
 
 \subsubsection{Model fitting and estimation of confidence intervals}
 \label{sec:model-fit}
@@ -1652,15 +1642,33 @@ and it is used in the functional form that fits the observational structure func
     The \(j\)th level of division yields \(N = 4^j\) fields,
     each of linear size \(L \times L\) where \(L = 2^{9 - j}\). 
     (b)~Resultant structure functions.
+    Colored lines show the average \(B(r)\) over all sub-images,
+    while the shaded areas show the standard deviation of \(B(r)\).
   }
   \label{fig:finite-box}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{Figures/fake-finite-box-effect}
+  \begin{tabular}{@{} l @{}}
+    (a)\\
+    \includegraphics[width=\linewidth]{Figures/fake-finite-box-effect}
+    \\[\bigskipamount]
+    (b)\\
+    \includegraphics[width=\linewidth]{Figures/fake-finite-box-fits}
+  \end{tabular}
   \caption{
     Reduction of apparent velocity variance and correlation length
     due to finite box size.
+    (a)~Empirical measurements of \(\sigma^2\) and \(r_0\).
+    Colored dots show mean results from different simulated velocity fields,
+    with varied power law slopes.
+    Colored shading shows the inter-quartile range over the different sub-images.
+    The dashed line is an approximate analytic fit to these results
+    (equation~\eqref{eq:ajustebox}).
+    (b)~Determination of \(\sigma^2\) and \(r_0\) from fitting the model
+    of equation~\eqref{eq:new-correlation-form}.
+    Colored dots are mean results from different simulated velocity fields,
+    while the dashed line is the same as in (a).
   }
   \label{fig:finite-box-effect}
 \end{figure}
