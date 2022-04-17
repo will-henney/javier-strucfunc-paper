@@ -97,7 +97,7 @@
 \newcommand\hii{\ion{H}{2}}
 \newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
 \newcommand\los{\ensuremath{_{\mathrm{los}}}}
-
+\newcommand\noise{\ensuremath{_{\text{noise}}}}
 \newcommand\halpha{H${\alpha}$}
 \newcommand\n{[\ion{N}{II}]$\lambda$6584}
 \newcommand\oi{[\ion{O}{III}]$\lambda$5007}
@@ -753,16 +753,17 @@ with synthetic velocity fields and find that
 a good approximation to the effects of seeing is to multiply
 the model structure function by a factor:
 \begin{equation}\label{eq:ffs}
-   S(r; s_0, r_0) = \frac{
+   S(r) = \frac{
     e^{-s_0 / r_0}
   }{
     1+(2s_0 / r)^{2 / 3}
   } ,
 \end{equation}
-where \(s_0\) is the RMS width of the seeing profile.\footnote{%
+where \(s_0\) is the RMS width of the seeing profile\footnote{%
   Note that the full-width half maximum (FWHM) seeing width is
   \(2 (2 \ln 2)^{1/2} s_0 \approx 2.35 s_0\).
 }
+and \(r_0\) is the correlation length.
 An example is shown by the green line in Figure~\ref{fig:model-strucfunc}a.
 The effect of seeing is to make the structure function 
 bend down away from the idealized power law, 
@@ -779,20 +780,19 @@ If the noise is spatially uncorrelated
 (equal and independent uncertainties in the velocity
 measurement of each pixel),
 then its contribution to the structure function is independent of separation,
-which means it can be represented as a constant term \(B_{\text{noise}}\).
+which means it can be represented as a constant term \(B\noise\).
 
 Combining both the effects of seeing and noise yields the corrected
 model structure function:
-\begin{multline}
-  \tilde{B}
-  \bigl( r; \ r_0, \sigma^2\pos, m, s_0, B_{\text{noise}} \bigr)
-  = \\
+\begin{equation}
+  \tilde{B}(r)
+  = 
   2\sigma^2\pos \left[
     1 - 2^{- \left( r/r_0 \right)^m} 
   \right]
-  \,  S(r; s_0, r_0) + B_{\text{noise}}
+  \,  S(r) + B\noise
 \label{eq:sf-functional}
-\end{multline}
+\end{equation}
 An example of this equation is shown by the red line in Figure~\ref{fig:model-strucfunc}.
 Note that seeing and noise have opposite effects on the slope
 of the structure function at intermediate scales:
@@ -846,26 +846,6 @@ and monotonically decreasing with \(r\).
 We deal with this limitation by not attempting to model scales larger than \(L / 2\),
 where the influence of these effects will be greatest.
 
-
-\subsubsection{Model fitting and estimation of confidence intervals}
-\label{sec:model-fit}
-
-The results obtained with equation \ref{eq:Br} are use in a non-linear least-squares fit with the equation \ref{eq:sf-functional} used as an objective function.
-For this purpose we use the \textit{python} package \textit{lmfit} \citep{newville_matthew_2014_11813} which implement a chi-square statistic defined as:
-%
-%\begin{equation}\label{eq:chi}
-%  \chi^2 = \sum_i ^N \frac{[y_i^{\text{measure}}-y_i^{\text{model}} (\boldsymbol{v})]^2}{\epsilon_i ^2}
-%\end{equation}
-%
-%
-\begin{equation}\label{eq:chi}
-  \chi^2 = \sum_i ^N \frac{[B(r)-B_{\text{func}}(r;r_0, \sigma^2\pos, m, s_0, B_{\text{noise}})]^2}{\varepsilon_i ^2}
-\end{equation}
-%
-where the turbulent parameters, \(r_{0}\)\, \(\sigma^2\pos\) and \(m\), and the observational constraints \(s_0\) and \( B_{\text{noise}}\), are the set of variables to be optimized in the fit.
-This procedure calculate a value \(\chi\) to be minimized scaled by the inverse of the uncertainty \(\varepsilon\) in the data using the Levenberg-Marquardt (LM) method.
-Then we proceed to obtain the confidence intervals using the minimization procedure \textit{emcee} \citep{2013PASP..125..306F} which is a implementation of the affine-invariant ensemble sampler for Markov chain Monte Carlo (MCMC) by \citet{2010CAMCS...5...65G}.
-
 \section{Structure function fits}
 \label{sec:results}
 
@@ -918,12 +898,37 @@ Then we proceed to obtain the confidence intervals using the minimization proced
   \sffigggg{OrionS}{M8}{OrionLH}{CarC}
   \caption{
     Second-order structure functions
-    for the velocity centroid images
+    for velocity centroid images
     of the \ha{} emission line
     from Galactic \hii{} regions.
+    Blue symbols show the observed mean structure function
+    in each radial bin.
   }
   \label{fig:strucfunc-fit-Galactic}
 \end{figure*}
+
+\begin{table}
+  \centering
+  \caption{Bounds of allowed values for parameters in model fits}
+  \label{tab:parameter-ranges}
+  \newlength\partabwidth
+  \setlength\partabwidth{0.7\linewidth}
+  \begin{tabular*}{\partabwidth}{@{\extracolsep{\fill}}l rr}
+    \toprule
+    Parameter & Lower & Upper\\
+    \midrule
+    \(\sigma^2\) & \(0.25\, \max [B]\)& \(2\, \max [B]\)\\
+    \(r_0\) & \(0.1\, L\) & \(2\, L\)\\
+    \(m\) & \(0.5\) & \(2.0\) \\
+    \(s_0\) & \SI{0.1}{arcsec}& \SI{1.5}{arcsec}\\
+    \(B\noise\) & \(0\) & \(3\, \min [B]\) \\
+    \bottomrule
+    \multicolumn{3}{@{}p{\partabwidth}@{}}{
+    Note: \(\max[B]\) and \(\min[B]\) are over all bins in the observed structure function.
+    }
+  \end{tabular*}
+\end{table}
+
 \begin{figure}
   \centering
   \includegraphics[width=\SFwidth]{Figures/corner-emcee-OrionS}
@@ -964,12 +969,61 @@ Then we proceed to obtain the confidence intervals using the minimization proced
 
 
 In order to provide a uniform description of the velocity fluctuations,
-we fit the model structure function described above (equation~\eqref{eq:sf-functional})
-to each of the \hii{} regions in our sample.
+we fit the model structure function
+\(\tilde{B}(r)\) of equation~\eqref{eq:sf-functional}
+to each \hii{} region in our sample.
 Results are shown in Figures~\ref{fig:strucfunc-fit-Galactic}, \ref{fig:strucfunc-fit-MC},
 and \ref{fig:strucfunc-fit-ExtraGal}, arranged in order of increasing distance.
 
-In this section we present and describe the second-order structure results. The structure functions are plotted against separation in parsecs and we also show the posteriors of the parameters discussed in the previous section.
+For the observational values (blue symbols),
+the structure function is the average value of equation~\eqref{eq:Br}
+over all pairs of points that contribute to each radial bin.
+The uncertainty of each bin (blue error bars) is estimated
+as the standard deviation of these values divided by the square root of
+the number of contributing pairs.
+For most sources a fixed bin size of \SI{0.05}{dex} is used,
+but for those observed with multi-fiber spectroscopy
+(Carina and M8, see section~\ref{sec:flames-multi-fiber}),
+where coverage is sparse at small separations,
+adjacent bins were merged to ensure at least 100 pairs contribute to each bin.
+Bins with separation less than \(L/2\) are used to constrain the model fitting (filled symbols),
+while larger separations (open symbols) are not used
+since they are more likely to be affected by a breakdown
+of the homogeneity assumption (see section~\ref{sec:limit-model-struct}).
+
+Non-linear weighted least square fitting of the model is performed
+using the Levenberg-Marquardt algorithm \citep{More:1978a} as implemented in the
+\texttt{lmfit} Python library \citep{newville_matthew_2014_11813}.
+The best-fit model \(\tilde{B}(r)\) is shown (heavy orange solid line),
+together with the corresponding underlying ``true model'' \(B(r)\) (heavy dashed green line),
+which does not include the effects of seeing or noise.
+Note that the true model \(B(r)\) depends on only 3 parameters:
+\(\sigma^2\), \(r_0\), and \(m\),
+whereas \(\tilde{B}(r)\) additionally depends on
+the observational nuisance parameters: \(s_0\) and \(B\noise\).
+The best-fit values of each of these parameters are shown by
+horizontal and vertical lines.
+
+The posterior distributions of model parameters
+that are consistent with the observations for each region are estimated
+using Markov Chain Monte Carlo (MCMC) ensemble sampling \citep{2010CAMCS...5...65G}
+as implemented in the \texttt{emcee} Python library \citep{2013PASP..125..306F}.
+A uniform prior distribution is assumed between upper and lower bounds
+for each parameter, as given in Table~\ref{tab:parameter-ranges}.
+To help ensure convergence of the MCMC algorithm,
+we used chain lengths that exceeded \num{50} times the
+estimated autocorrelation length for each parameter,
+which required \num{50000} to \num{150000} samples,
+depending on the source.
+Thin translucent lines in the figures show structure functions using the parameters of
+a random selection of \num{100} posterior samples from the MCMC chain,
+both for \(\tilde{B}(r)\) orange and \(B(r)\) (green).
+This gives an estimate in the uncertainty about the best-fit model.
+Credibility intervals for the parameters are estimated from percentiles
+of the posterior distribution and are indicated in the figures by shaded gray boxes
+around the best-fit parameter values
+(heavy shading for 68\% interval; light shading for 95\% interval).
+
 
 %structure functions plots descriptions
 Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
@@ -982,7 +1036,7 @@ The green dashed line indicate the theoretical model for the structure function 
 
 Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in dashed and dotted lines the parameters of our model.
 The vertical dashed line indicates the correlation length, \(r_0\), and the horizontal dashed line indicates the true variance of the velocity fields, \(\sigma^2\).
-The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the noise, \(B_{\text{noise}}\).
+The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the noise, \(B\noise\).
 These values were obtained using the LM method.
 For the dashed and dotted lines the overlapping translucent boxes indicate the confidence intervals in 1-sigma (dark shaded area) and 2-sigma (light shaded area) obtained from the MCMC analysis.
 The light shaded areas in the plot show where the separation \(r\) is above half of the box size, \(L\), which is indicated with a vertical dotted line.
@@ -1014,7 +1068,7 @@ A number of fits for the equations \ref{eq:sf-functional} and \ref{eq:functional
 Table \ref{tab:Res} presents the turbulent parameters and observational constraints values mentioned in the paragraphs above.
 The confidence intervals for these values are up to 2-sigma of the posteriors.
 The second column correspond to the variance \(\sigma^2\pos\) of the velocity field.
-The \(B_{\text{noise}}\) value is shown in the third column which would be the minimum squared velocity difference that could be measure by the instrument.
+The \(B\noise\) value is shown in the third column which would be the minimum squared velocity difference that could be measure by the instrument.
 The fourth column in Table \ref{tab:Res} shows the rms seeing value in parsecs, \(s_0\), which represent the minimum value of the separation which would valid for the observed structure function. 
 The fifth column shows the correlation value \(r_0\) in parsecs.
 The \(r_0\) range covered in our results for the sample goes from 0.09 to 12 pc.
