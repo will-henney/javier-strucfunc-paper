@@ -974,6 +974,14 @@ we fit the model structure function
 to each \hii{} region in our sample.
 Results are shown in Figures~\ref{fig:strucfunc-fit-Galactic}, \ref{fig:strucfunc-fit-MC},
 and \ref{fig:strucfunc-fit-ExtraGal}, arranged in order of increasing distance.
+Best-fit values for the model parameters,
+together with 95\% credibility range,
+are given in Table~\ref{tab:Res}.
+
+
+\subsection{Technical details of the model fits}
+\label{sec:techn-deta-model}
+
 
 For the observational values (blue symbols),
 the structure function is the average value of equation~\eqref{eq:Br}
@@ -981,6 +989,7 @@ over all pairs of points that contribute to each radial bin.
 The uncertainty of each bin (blue error bars) is estimated
 as the standard deviation of these values divided by the square root of
 the number of contributing pairs.
+\textit{But this is not true -- we use constant fractional error with adjustments for small and large separations.}
 For most sources a fixed bin size of \SI{0.05}{dex} is used,
 but for those observed with multi-fiber spectroscopy
 (Carina and M8, see section~\ref{sec:flames-multi-fiber}),
@@ -1002,7 +1011,7 @@ Note that the true model \(B(r)\) depends on only 3 parameters:
 whereas \(\tilde{B}(r)\) additionally depends on
 the observational nuisance parameters: \(s_0\) and \(B\noise\).
 The best-fit values of each of these parameters are shown by
-horizontal and vertical lines.
+horizontal and vertical lines in the figure and are summarised in Table~\ref{tab:Res}.
 
 The posterior distributions of model parameters
 that are consistent with the observations for each region are estimated
@@ -1023,6 +1032,16 @@ Credibility intervals for the parameters are estimated from percentiles
 of the posterior distribution and are indicated in the figures by shaded gray boxes
 around the best-fit parameter values
 (heavy shading for 68\% interval; light shading for 95\% interval).
+The 95\% credibility interval for each parameter and for each source
+is also given in Table~\ref{tab:Res}.
+Figure~\ref{fig:corner-example-Orion} gives an example for Orion of
+the pairwise correlations in the posterior distributions of the model parameters,
+plotted using the \texttt{corner} Python library \citep{2017ascl.soft02002F}.
+Corresponding plots for the remaining sources are given in Appendix~\ref{sec:addit-covar-corn}.
+
+\subsection{Results of model fitting}
+\label{sec:results-model-fitt}
+
 
 
 %structure functions plots descriptions
