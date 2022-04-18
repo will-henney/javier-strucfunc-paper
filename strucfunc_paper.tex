@@ -937,7 +937,15 @@ where the influence of these effects will be greatest.
     model parameters of fits to the \ha{} structure function.
     The example shown is for Orion,
     while figures for the remaining regions are given in
-    Appendix~\ref{sec:addit-covar-corn}. 
+    Appendix~\ref{sec:addit-covar-corn}.
+    Plots on the diagonal show the 1-dimensional histogram
+    of the posterior distribution of each parameter
+    (labeled at bottom),
+    as calculated by the MCMC method,
+    assuming a uniform prior distribution
+    within the limits given in Table~\ref{tab:parameter-ranges}.
+    Off-diagonal plots show the 2-dimensional histogram of the
+    joint posterior distribution each pair of parameters.
   }
   \label{fig:corner-example-Orion}
 \end{figure}
@@ -977,11 +985,16 @@ and \ref{fig:strucfunc-fit-ExtraGal}, arranged in order of increasing distance.
 Best-fit values for the model parameters,
 together with 95\% credibility range,
 are given in Table~\ref{tab:Res}.
+After describing the methods used to
+measure the structure function and fit the model (section~\ref{sec:techn-deta-model}),
+we give details of the results in the example case of
+the inner Orion Nebula (\ref{sec:example-results-orion})
+and a broad overview of the results for other regions (\ref{sec:results-model-fitt}).
+Further details of the results for individual regions are
+given in Appendix~\ref{sec:notes-individual-hii}.
 
-
-\subsection{Technical details of the model fits}
+\subsection{Technical details of structure function measurement and fitting}
 \label{sec:techn-deta-model}
-
 
 For the observational values (blue symbols),
 the structure function is the average value of equation~\eqref{eq:Br}
@@ -1039,9 +1052,28 @@ the pairwise correlations in the posterior distributions of the model parameters
 plotted using the \texttt{corner} Python library \citep{2017ascl.soft02002F}.
 Corresponding plots for the remaining sources are given in Appendix~\ref{sec:addit-covar-corn}.
 
-\subsection{Results of model fitting}
-\label{sec:results-model-fitt}
+\subsection{Example results of model fitting to the Orion Nebula}
+\label{sec:example-results-orion}
 
+This dataset is among the highest quality of those in our sample,
+with more than \num{e5} spatial points and a factor of more than \num{500}
+between the smallest and largest separations.
+As a result, the observationally derived structure function (Figure~\ref{fig:strucfunc-fit-Galactic}a)
+is very smooth and the model fit is very well constrained,
+as evidenced by the tight credibility limits on the model parameters.
+The derived correlation length \(r_0 = \SI{0.068}{pc}\) is \num{7} times smaller
+than the box size, which indicates that there should be a moderate finite map effect
+(section \ref{sec:effects-observ-limit-large} and Appendix~\ref{sec:finite-box-effects}),
+but it is well within the range where the model fit can give reliable measurements
+(see Figure~\ref{fig:finite-box-effect}).
+The derived seeing parameter \(s_0 = \SI{0.002}{pc}\) is more than \num{30} times smaller
+than \(r_0\), meaning that the seeing has a negligible effect at the correlation scale and above.
+
+Figure~\ref{fig:corner-example-Orion} shows the covariances
+between parameters in the model fit.
+
+\subsection{Results of model fitting to other sources}
+\label{sec:results-model-fitt}
 
 
 %structure functions plots descriptions
@@ -1637,6 +1669,7 @@ For the northern cluster they find eight luminous stars and no evolved massive s
 More Recently, \citet{2011MNRAS.411..235E} studied 10 WR stars and propose at least 4 RSGs candidates.
 \citet{2012AJ....143...43F} focused on the massive young stellar objects (MYSOs).
 The average ages for the stars, was determined to be from  \num{3} to \SI{5}{Myr} \citep{1996ApJ...456..174H} and with the RSGs as an older population have an age of 12.4\(\pm\)2.1 Myr \citep{2011MNRAS.411..235E}.
+
 This suggest that two episodes of star formation, at least, have taken place in the GEHR.
 
 % and in L$_{X}$=9.3$\times$ 10$^{35}$ erg s$^{-1}$ \citep{2008ApJ...685..919T}.
