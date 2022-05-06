@@ -1052,7 +1052,7 @@ the pairwise correlations in the posterior distributions of the model parameters
 plotted using the \texttt{corner} Python library \citep{2017ascl.soft02002F}.
 Corresponding plots for the remaining sources are given in Appendix~\ref{sec:addit-covar-corn}.
 
-\subsection{Example results of model fitting to the Orion Nebula}
+\subsection{Example results of model fitting to the inner Orion Nebula}
 \label{sec:example-results-orion}
 
 This dataset is among the highest quality of those in our sample,
@@ -1068,14 +1068,22 @@ but it is well within the range where the model fit can give reliable measuremen
 (see Figure~\ref{fig:finite-box-effect}).
 The derived seeing parameter \(s_0 = \SI{0.002}{pc}\) is more than \num{30} times smaller
 than \(r_0\), meaning that the seeing has a negligible effect at the correlation scale and above.
+Figure~\ref{fig:corner-example-Orion}  shows  the covariances  between
+parameters  in the  model fit,
+which in some cases show significant correlations.
+For example, \(\sigma^2\) and \(r_0\) are positively correlated,
+whereas \(m\) and \(s_0\) are negatively correlated. 
 
-Figure~\ref{fig:corner-example-Orion} shows the covariances
-between parameters in the model fit.
-It can be seen that there are some significant correlations between parameters,
-for example, 
 \subsection{Results of model fitting to other sources}
 \label{sec:results-model-fitt}
 
+The structure functions for the remaining Galactic sources
+are shown in Figure~\ref{fig:strucfunc-fit-Galactic}b--d.
+The data quality for these sources is considerably worse than for the inner Orion Nebula. 
+
+
+while those in the Magellanic Clouds are shown in Figure~\ref{fig:strucfunc-fit-MC}
+and those in more distant galaxies in Figure~\ref{fig:strucfunc-fit-ExtraGal}.
 
 %structure functions plots descriptions
 Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
