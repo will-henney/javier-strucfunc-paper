@@ -895,7 +895,7 @@ where the influence of these effects will be greatest.
 
 \begin{figure*}
   \centering
-  \sffigggg{OrionS}{M8}{OrionLH}{CarC}
+  \sffigggg{OrionS}{OrionLH}{M8}{CarC}
   \caption{
     Second-order structure functions
     for velocity centroid images
@@ -918,7 +918,7 @@ where the influence of these effects will be greatest.
     Parameter & Lower & Upper\\
     \midrule
     \(\sigma^2\) & \(0.25\, \max [B]\)& \(2\, \max [B]\)\\
-    \(r_0\) & \(0.1\, L\) & \(2\, L\)\\
+    \(r_0\) & \(0.01\, L\) & \(2\, L\)\\
     \(m\) & \(0.5\) & \(2.0\) \\
     \(s_0\) & \SI{0.1}{arcsec}& \SI{1.5}{arcsec}\\
     \(B\noise\) & \(0\) & \(3\, \min [B]\) \\
@@ -973,7 +973,7 @@ where the influence of these effects will be greatest.
 \end{figure*}
 
 
-\input{SFresults}
+\input{table-results}
 
 
 In order to provide a uniform description of the velocity fluctuations,
@@ -1012,6 +1012,7 @@ Bins with separation less than \(L/2\) are used to constrain the model fitting (
 while larger separations (open symbols) are not used
 since they are more likely to be affected by a breakdown
 of the homogeneity assumption (see section~\ref{sec:limit-model-struct}).
+This \(L/2\) constrain is not used for the regions observed with MUSE.
 
 Non-linear weighted least square fitting of the model is performed
 using the Levenberg-Marquardt algorithm \citep{More:1978a} as implemented in the
@@ -1035,8 +1036,7 @@ for each parameter, as given in Table~\ref{tab:parameter-ranges}.
 To help ensure convergence of the MCMC algorithm,
 we used chain lengths that exceeded \num{50} times the
 estimated autocorrelation length for each parameter,
-which required \num{50000} to \num{150000} samples,
-depending on the source.
+which required \num{50000} samples.
 Thin translucent lines in the figures show structure functions using the parameters of
 a random selection of \num{100} posterior samples from the MCMC chain,
 both for \(\tilde{B}(r)\) orange and \(B(r)\) (green).
@@ -1050,7 +1050,8 @@ is also given in Table~\ref{tab:Res}.
 Figure~\ref{fig:corner-example-Orion} gives an example for Orion of
 the pairwise correlations in the posterior distributions of the model parameters,
 plotted using the \texttt{corner} Python library \citep{2017ascl.soft02002F}.
-Corresponding plots for the remaining sources are given in Appendix~\ref{sec:addit-covar-corn}.
+Corresponding plots for the remaining sources and a table for the fitting parameters are given in Appendix~\ref{sec:addit-covar-corn}.
+
 
 \subsection{Example results of model fitting to the inner Orion Nebula}
 \label{sec:example-results-orion}
@@ -1079,64 +1080,67 @@ whereas \(m\) and \(s_0\) are negatively correlated.
 
 The structure functions for the remaining Galactic sources
 are shown in Figure~\ref{fig:strucfunc-fit-Galactic}b--d.
-The data quality for these sources is considerably worse than for the inner Orion Nebula. 
+The data quality for these sources is considerably worse than for the inner Orion Nebula.
 
+Particularly the EON observations, which are the oldest, the fitting procedure gives a noise value of \SI{5.6}{km^{2}.s^{-2}} larger that the \(\sigma^2\pos\) value of \SI{3}{km^{2}.s^{-2}}.
+The derived correlation length \(r_0 = \SI{0.05}{pc}\) is \num{6} times smaller
+than the box size, which is the minimum value for this ratio of our sample. 
+Hence we can confirm that the finite map has no effect in our results.
+The derived seeing parameter \(s_0 = \SI{0.002}{pc}\), consistent with the Orion core fit, is more than \num{250} times smaller than \(r_0\).
+This large ratio is because the separation of the pixels for the EON observations are at separations above the observational seeing, so these parameter has virtually no effect in our model for the EON case.
+The previous statement can be confirmed with the Fig. \ref{fig:corner-Galactic}b which shows the corner plot for the EON.
+The RMS seeing posterior is flat, meaning that the values in that range doesn't modify the fit.
+
+This behavior is also seen in the Carina nebula and Lagoon nebula.
+The observations for this regions are from the FLAMES multi-fiber instrument (section \ref{sec:flames-multi-fiber} ) in which the fibers separation  (see Figure \ref{fig:velocity-maps}) is above the observational seeing for the regions.
 
 while those in the Magellanic Clouds are shown in Figure~\ref{fig:strucfunc-fit-MC}
 and those in more distant galaxies in Figure~\ref{fig:strucfunc-fit-ExtraGal}.
 
 %structure functions plots descriptions
-Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
-In the plots the solid circles indicate the points we use in the non-linear regression analysis (see section~\ref{sec:model-fit}), while the open circles are the points of the structure function that where left out.
-The criteria for the previous considerations is that the structure function at large separations is affected by the inhomogeneties of the velocity field (see section-\ref{sec:limit-model-struct}).
-The points left our correspond to the largest separations that are not consider in our model. 
-In some cases, at the smallest separations we merge a couple of the structure functions points under the assumption that those would be heavily affected by the seeing.
-The Figures shows in the orange solid thick line the best fit for the equation \ref{eq:sf-functional} which takes into account observational limitations on the structure function.
-The green dashed line indicate the theoretical model for the structure function using equation \ref{eq:functional}.
+%Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
+%In the plots the solid circles indicate the points we use in the non-linear regression analysis (see section~\ref{sec:model-fit}), while the open circles are the points of the structure function that where left out.
+%The criteria for the previous considerations is that the structure function at large separations is affected by the inhomogeneties of the velocity field (see section-\ref{sec:limit-model-struct}).
+%The points left our correspond to the largest separations that are not consider in our model. 
+%In some cases, at the smallest separations we merge a couple of the structure functions points under the assumption that those would be heavily affected by the seeing.
+%The Figures shows in the orange solid thick line the best fit for the equation \ref{eq:sf-functional} which takes into account observational limitations on the structure function.
+%The green dashed line indicate the theoretical model for the structure function using equation \ref{eq:functional}.
 
-Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in dashed and dotted lines the parameters of our model.
-The vertical dashed line indicates the correlation length, \(r_0\), and the horizontal dashed line indicates the true variance of the velocity fields, \(\sigma^2\).
-The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the noise, \(B\noise\).
-These values were obtained using the LM method.
-For the dashed and dotted lines the overlapping translucent boxes indicate the confidence intervals in 1-sigma (dark shaded area) and 2-sigma (light shaded area) obtained from the MCMC analysis.
-The light shaded areas in the plot show where the separation \(r\) is above half of the box size, \(L\), which is indicated with a vertical dotted line.
+%Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in dashed and dotted lines the parameters of our model.
+%The vertical dashed line indicates the correlation length, \(r_0\), and the horizontal dashed line indicates the true variance of the velocity fields, \(\sigma^2\).
+%The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the noise, \(B\noise\).
+%These values were obtained using the LM method.
+%For the dashed and dotted lines the overlapping translucent boxes indicate the confidence intervals in 1-sigma (dark shaded area) and 2-sigma (light shaded area) obtained from the MCMC analysis.
+%The light shaded areas in the plot show where the separation \(r\) is above half of the box size, \(L\), which is indicated with a vertical dotted line.
 
 
-For Carina and Lagoon nebula, the velocity fields are obtained from the FLAMES multi-fiber instrument (section~\ref{sec:flames-multi-fiber}). 
-We can see from Figure~\ref{fig:velocity-maps} that observations from this instrument do not give uniform maps as the others. 
-Instead, the discrete fiber positions are diversely located across the FOV.
-This would affect the structure function since the values are not adjacent as the other observations.
-This is reflected in the non uniform \(B(r)\) below  \(r_0\) that we pointed out in the previous paragraphs.
+%For Carina and Lagoon nebula, the velocity fields are obtained from the FLAMES multi-fiber instrument (section~\ref{sec:flames-multi-fiber}). 
+%We can see from Figure~\ref{fig:velocity-maps} that observations from this instrument do not give uniform maps as the others. 
+%Instead, the discrete fiber positions are diversely located across the FOV.
+%This would affect the structure function since the values are not adjacent as the other observations.
+%This is reflected in the non uniform \(B(r)\) below  \(r_0\) that we pointed out in the previous paragraphs.
 
  
-
-
-
-
-
-
-
-
 %corner plots descriptions
-Figures \ref{fig:corner-example-Orion} show the corner plots \citep{2017ascl.soft02002F} of the turbulent parameters and observational constraints
-(further examples in Appendix~\ref{sec:addit-covar-corn}).
-These plots shows the one and two dimensional projections of the posterior probability distributions of the parameters used in equation \ref{eq:chi}.
-They also show the distribution for each parameter independently in the histograms along the diagonal and then the marginalized two dimensional distributions in the other panels making possible to visualize all of the covariances between parameters \citep{2017ascl.soft02002F}.
-The contours in the plots reflect the 95\(\%\), 99\(\%\), 99.5\(\%\) and 99.9\(\%\) confidence intervals.
-A number of fits for the equations \ref{eq:sf-functional} and \ref{eq:functional} using samples of the posteriors are shown in thin translucent orange and green lines, respectively, showing the possible range of the confidence intervals.
+%Figures \ref{fig:corner-example-Orion} show the corner plots \citep{2017ascl.soft02002F} of the turbulent parameters and observational constraints
+%(further examples in Appendix~\ref{sec:addit-covar-corn}).
+%These plots shows the one and two dimensional projections of the posterior probability distributions of the parameters used in equation \ref{eq:chi}.
+%They also show the distribution for each parameter independently in the histograms along the diagonal and then the marginalized two dimensional distributions in the other panels making possible to visualize all of the covariances between parameters \citep{2017ascl.soft02002F}.
+%The contours in the plots reflect the 95\(\%\), 99\(\%\), 99.5\(\%\) and 99.9\(\%\) confidence intervals.
+%A number of fits for the equations \ref{eq:sf-functional} and \ref{eq:functional} using samples of the posteriors are shown in thin translucent orange and green lines, respectively, showing the possible range of the confidence intervals.
 
-Table \ref{tab:Res} presents the turbulent parameters and observational constraints values mentioned in the paragraphs above.
-The confidence intervals for these values are up to 2-sigma of the posteriors.
-The second column correspond to the variance \(\sigma^2\pos\) of the velocity field.
-The \(B\noise\) value is shown in the third column which would be the minimum squared velocity difference that could be measure by the instrument.
-The fourth column in Table \ref{tab:Res} shows the rms seeing value in parsecs, \(s_0\), which represent the minimum value of the separation which would valid for the observed structure function. 
-The fifth column shows the correlation value \(r_0\) in parsecs.
-The \(r_0\) range covered in our results for the sample goes from 0.09 to 12 pc.
-The sixth column indicates the size of each observational box in parsecs.
-The index \(m\) is shown in the seventh column.
-The range covered by the power-law index goes from 0.7 to 1.5.
-The eighth column show the ratio \(L / r_0\)
-The last column shows the FWHM seeing in arcsec.
+%Table \ref{tab:Res} presents the turbulent parameters and observational constraints values mentioned in the paragraphs above.
+%The confidence intervals for these values are up to 2-sigma of the posteriors.
+%The second column correspond to the variance \(\sigma^2\pos\) of the velocity field.
+%The \(B\noise\) value is shown in the third column which would be the minimum squared velocity difference that could be measure by the instrument.
+%The fourth column in Table \ref{tab:Res} shows the rms seeing value in parsecs, \(s_0\), which represent the minimum value of the separation which would valid for the observed structure function. 
+%The fifth column shows the correlation value \(r_0\) in parsecs.
+%The \(r_0\) range covered in our results for the sample goes from 0.09 to 12 pc.
+%The sixth column indicates the size of each observational box in parsecs.
+%The index \(m\) is shown in the seventh column.
+%The range covered by the power-law index goes from 0.7 to 1.5.
+%The eighth column show the ratio \(L / r_0\)
+%The last column shows the FWHM seeing in arcsec.
 %The interpretation of our results is developed in the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1530,8 +1534,10 @@ JGV acknowledges and thanks CONACyT-Mexico for the PhD research scholarship.
 For each region or pair of regions in our sample,
 we give a more description of its physical properties
 (supplementing section~\ref{sec:regions-milky-way})
-together with additional details of the model fit to the structure function
+together with additional details of the structure function
 (supplementing section~\ref{sec:results}).
+
+%the model fit to
 
 \subsection{Orion Nebula}
 \label{sec:orion-nebula}
@@ -1545,16 +1551,13 @@ The position of Orion near the side of the Orion Molecular Cloud (OMC-1) make it
 Its physical properties and kinematics, along its stellar population are documented in \citet{2001ARA&A..39...99O}.
 
 Figure~\ref{fig:strucfunc-fit-Galactic}a shows the structure function of the Orion core.
-Valid scales are consider above the separation of \SI{0.002}{pc} (\(s_0\)=\SI{1}{\arcsecond}).
 In this case we merge the first three points of the structure function.
-From \SI{0.002}{pc} until \SI{0.003}{pc} all points fall below the true model showing that they are affected by the seeing. 
-The correlation length for the Orion core is \SI{0.07}{pc}, it has a \(\sigma^2\pos\) of \SI{12}{km^{2}.s^{-2}} and an index of \num{1.07}.
+%From \SI{0.002}{pc} until \SI{0.003}{pc} all points fall below the true model showing that they are affected by the seeing. 
+%The correlation length for the Orion core is \SI{0.07}{pc}, it has a \(\sigma^2\pos\) of \SI{12}{km^{2}.s^{-2}} and an index of \num{1.07}.
 The structure function of the Orion core behaves accordingly to the tapered case of inhomogeneous fluctuations (see Figure~\ref{fig:model-strucfunc}b).
 At \SI{0.25}{pc} there is a plateau around \SI{22}{km^{2}.s^{-2}}.
 Above separations of \SI{0.3}{pc} the structure function decays to a value of \SI{7}{km^{2}.s^{-2}} at  \SI{0.5}{pc}.
 
-The EON structure function is shown in Figure~\ref{fig:strucfunc-fit-Galactic}c.
-This observations are heavily affected by the noise which presents a value of \SI{6}{km^{2}.s^{-2}} which is larger that the \(\sigma^2\pos\) value of \SI{4}{km^{2}.s^{-2}}.
 
 \subsection{Lagoon Nebula}
 \label{sec:lagoon-nebula}
@@ -1568,10 +1571,10 @@ A blueshifted, neutral layer is also in very good agreement with predictions of 
 The properties of the nebula are reviewed by \citet{2008hsf2.book..533T}.
 
 The Figure~\ref{fig:strucfunc-fit-Galactic}c shows the structure function of the Lagoon nebula.
-There aren't any points affected by the seeing which has a value of \SI{0.006}{pc} (\(s_0\)=\SI{1}{\arcsecond}).
+%There aren't any points affected by the seeing which has a value of \SI{0.006}{pc} (\(s_0\)=\SI{1}{\arcsecond}).
 In this case we merge the first two points.
 The Lagoon nebula presents a non-uniform behavior below the correlation length but it is possible to see the characteristic ascending values of the structure function.
-The turbulent parameters that fits our model are a \(r_0\) of \SI{1}{pc}, a \(\sigma^2\pos\) of \SI{7}{km^{2}.s^{-2}} and an index of \num{1.17}.
+%The turbulent parameters that fits our model are a \(r_0\) of \SI{1}{pc}, a \(\sigma^2\pos\) of \SI{7}{km^{2}.s^{-2}} and an index of \num{1.17}.
 At large scales there is an indication of some periodic behavior followed by ascending \(B(r)\) values at largest separation.
 A value of\(B(r)\) of order 2\(\sigma^2\pos\) is \(\sim\)\SI{14}{km^{2}.s^{-2}} at a separation of \(\sim\)\SI{2.5}{pc}. 
 Then there is a diminution at \SI{4.5}{pc} down to a value of \SI{11}{km^{2}.s^{-2}}.
@@ -1589,10 +1592,10 @@ As a star formation region, it presents several phenomena related with young sta
 This region can be consider as a bridge between the detailed star-formation regions like Orion, and much more distant regions like 30 Doradus.
 
 (The Figure~\ref{fig:strucfunc-fit-Galactic}d shows the structure function of the Carina nebula.
-The seeing is \SI{0.008}{pc} (\(s_0\)=\SI{1.3}{\arcsecond}) and there are just a couple of points that lie below the true model, indicating that the majority of points isn't affected by the seeing.
+%The seeing is \SI{0.008}{pc} (\(s_0\)=\SI{1.3}{\arcsecond}) and there are just a couple of points that lie below the true model, indicating that the majority of points isn't affected by the seeing.
 For this region we merge the first two points of the structure function.
 As the Lagoon nebula, Carina also shows a non-uniform behavior below the correlation length.
-The correlation length is \SI{0.56}{pc} pc at a \(\sigma^2\pos\) of \SI{18}{km^{2}.s^{-2}} and an index of \num{1.14}.
+%The correlation length is \SI{0.56}{pc} pc at a \(\sigma^2\pos\) of \SI{18}{km^{2}.s^{-2}} and an index of \num{1.14}.
 At larges scales the structure function of the Carina nebula follows a pattern that resembles the homogeneous fluctuation of Figure~\ref{fig:model-strucfunc}a.
 The structure function reaches a plateau around \SI{36}{km^{2}.s^{-2}} at \(\sim\) \SI{2}{pc}.
 When \(r >\)\SI{6}{pc} the structure functions shows a small amplitude periodic pattern around 2\(\sigma^2\pos\).
@@ -1611,9 +1614,9 @@ This nebula is commonly used as a comparison for extragalactic star-forming regi
 
 The 30 Doradus structure function is shown in Figure~\ref{fig:strucfunc-fit-MC}a.
 In this case we merge the first five points of the structure function.
-The seeing value for this regions is \SI{0.16}{pc} (\(s_0\)=\SI{0.7}{\arcsecond}) and just one point of the structure function is below this value.
-Until a separation of \SI{1.7}{pc} is reached, the structure function lies below the true model.
-The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{297 \pm 9}{km^{2}.s^{-2}} and an index of \num{0.85}.
+%The seeing value for this regions is \SI{0.16}{pc} (\(s_0\)=\SI{0.7}{\arcsecond}) and just one %point of the structure function is below this value.
+%Until a separation of \SI{1.7}{pc} is reached, the structure function lies below the true model.
+%The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{297 \pm 9}{km^{2}.s^{-2}} and an index of \num{0.85}.
 At large separations 30 Doradus structure function presents a behavior of tapered fluctuations. The maximum \(B(r)\) value is \SI{655}{km^{2}.s^{-2}} at a separation of \SI{21}{pc}. 
 From there \(B(r)\) values descends until they reach \SI{250}{km^{2}.s^{-2}} at \SI{38}{pc}.
 
@@ -1629,16 +1632,16 @@ Using a Gaussian single-component \citet{2003ApJ...586.1179D} find a corrected F
 
 
 The Figure~\ref{fig:strucfunc-fit-MC}b shows the structure function of NGC 346.
-In this case we merge the first three points of the structure function.
-The seeing value is \SI{0.07}{pc} (\(s_0\)=\SI{0.23}{\arcsecond}).
+%In this case we merge the first three points of the structure function.
+%The seeing value is \SI{0.07}{pc} (\(s_0\)=\SI{0.23}{\arcsecond}).
 For this region the first ten points lie below the true model.
 At separations above \SI{0.4}{pc} the observed structure functions is coincident with the true model. 
-The correlation length is \SI{2}{pc} at a \(\sigma^2\pos\) of \SI{35}{km^{2}.s^{-2}} and an index of \num{0.80}.
+%The correlation length is \SI{2}{pc} at a \(\sigma^2\pos\) of \SI{35}{km^{2}.s^{-2}} and an index of \num{0.80}.
 For scales above \SI{12}{pc} and a \(B(r)\) value of \SI{65}{km^{2}.s^{-2}} the structure function shows a pattern of ascending values until it reaches \SI{146}{km^{2}.s^{-2}} at \SI{24}{pc}.
 
 \subsection{Hubble X and Hubble V in NGC 6822}
 \label{sec:6822-hubble}
-%Note to me: incomplete section. Find more regions info and finish asap.
+%
 The irregular dwarf galaxy, NGC 6822, is located at a distance of 500 kpc \citetext{\SI{1}{\arcsecond} = \SI{2.42}{pc} ; \citealp{2012A&A...540A.135S}} and the brightest HII regions are Hubble X and Hubble V (HX and HV hereafter). %(1'' = 2.4 pc)
 %HV has a characteristic length of 100 pc and HX has a characteristic length of 140 pc \citep{1999PASP..111.1382O}.
 Luminosity \ha{} for HV is \SI{e38.3}{erg.s^{-1}} and for HX is \SI{e38.21}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
@@ -1651,16 +1654,16 @@ HV is located near 'Hodge OB 8' and HX is located near 'Hodge OB13'  \citep{1999
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}a we show the structure function of Hubble V.
 For the observations coming from the TAURUS-II instrument there wasn't any merging of points at small scales.
-The value of the seeing for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}).
-All the structure function points lies below the true model.
-The correlation length is \SI{3.5}{pc} at a \(\sigma^2\pos\) of  \SI{10}{km^{2}.s^{-2}} and an index of \num{0.75}.
+%The value of the seeing for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}).
+%All the structure function points lies below the true model.
+%The correlation length is \SI{3.5}{pc} at a \(\sigma^2\pos\) of  \SI{10}{km^{2}.s^{-2}} and an index of \num{0.75}.
 The maximum \(B(r)\) value is \SI{18}{km^{2}.s^{-2}} at a separation of \SI{25}{pc}. 
 From there \(B(r)\) values descends until it reaches \SI{14}{km^{2}.s^{-2}} at \SI{45}{pc}, then it rises for the next point at \SI{50}{pc} with a value of \SI{15}{km^{2}.s^{-2}}.
 Finally the structure functions descends at \SI{9}{km^{2}.s^{-2}} for a separation of \SI{70}{pc}.
 
 The Hubble X structure function is shown in Figure~\ref{fig:strucfunc-fit-ExtraGal}b.
-The seeing is \SI{0.6}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V the observed structure function lies below the true model.
-The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{15}{km^{2}.s^{-2}} and an index of \num{0.93}.
+%The seeing is \SI{0.6}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V the observed structure function lies below the true model.
+%The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{15}{km^{2}.s^{-2}} and an index of \num{0.93}.
 A plateau is reached around \SI{25}{km^{2}.s^{-2}} at a separation of \SI{14}{pc} and a maximum \(B(r)\) value of \SI{31}{km^{2}.s^{-2}} at a separation of \SI{36}{pc}.
 
 \subsection{NGC~595 and NGC~604 in M33}
@@ -1678,7 +1681,6 @@ For the northern cluster they find eight luminous stars and no evolved massive s
 More Recently, \citet{2011MNRAS.411..235E} studied 10 WR stars and propose at least 4 RSGs candidates.
 \citet{2012AJ....143...43F} focused on the massive young stellar objects (MYSOs).
 The average ages for the stars, was determined to be from  \num{3} to \SI{5}{Myr} \citep{1996ApJ...456..174H} and with the RSGs as an older population have an age of 12.4\(\pm\)2.1 Myr \citep{2011MNRAS.411..235E}.
-
 This suggest that two episodes of star formation, at least, have taken place in the GEHR.
 
 % and in L$_{X}$=9.3$\times$ 10$^{35}$ erg s$^{-1}$ \citep{2008ApJ...685..919T}.
@@ -1695,15 +1697,15 @@ They also confirm the presence of previous cataloged WR stars and detect new can
 They proposed Champagne flows at the periphery of the molecular cloud leading to accelerated ionized material.
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}c we show the structure function of NGC 595.
-The seeing is \SI{0.3}{pc} (\(s_0\)=\SI{0.1}{\arcsecond}) and for this region only the first two points are below the true model. 
-The correlation length is \SI{12}{pc} at a \(\sigma^2\pos\) of \SI{54}{km^{2}.s^{-2}} and an index of \num{1.3}.
+%The seeing is \SI{0.3}{pc} (\(s_0\)=\SI{0.1}{\arcsecond}) and for this region only the first two points are below the true model. 
+%The correlation length is \SI{12}{pc} at a \(\sigma^2\pos\) of \SI{54}{km^{2}.s^{-2}} and an index of \num{1.3}.
 At large scales the structure function behaves following the tapered fluctuations pattern.
 A maximum \(B(r)\) value of \SI{104}{km^{2}.s^{-2}} is reached at \SI{33}{pc}. 
 From there the structure functions decays following a scatter pattern until it reaches \SI{54}{km^{2}.s^{-2}} at a separation of \SI{211}{pc}.
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}d we show the structure function of NGC 604.
-The seeing is \SI{1.7}{pc} (\(s_0\)=\SI{0.42}{\arcsecond}) and the structure function of this region lies below the true model for most of the separation range.
-The correlation length is \SI{10}{pc} at a \(\sigma^2\pos\) of \SI{71}{km^{2}.s^{-2}} and has an index of \num{1}.
+%The seeing is \SI{1.7}{pc} (\(s_0\)=\SI{0.42}{\arcsecond}) and the structure function of this region lies below the true model for most of the separation range.
+%The correlation length is \SI{10}{pc} at a \(\sigma^2\pos\) of \SI{71}{km^{2}.s^{-2}} and has an index of \num{1}.
 The structure function present clear characteristics of periodic oscillations at large scales.
 A periodic pattern for the structure function appears with a maximum \(B(r)\) value of \SI{143}{km^{2}.s^{-2}} that is reached at \SI{60}{pc}, then the oscillation cause a minimum of \SI{54}{km^{2}.s^{-2}} at \SI{133}{pc} and finally it goes back up again at \SI{211}{pc} to a \(B(r)\) value of \SI{123}{km^{2}.s^{-2}}.
 
@@ -1879,7 +1881,7 @@ Supplementary online-only material.
 
 \begin{figure*}
   \centering
-  \sfcfigggg{OrionS}{M8}{OrionLH}{CarC}
+  \sfcfigggg{OrionS}{OrionLH}{M8}{CarC}
   \caption{
     Corner plots of covariances between
     fitted model parameters
@@ -1910,6 +1912,8 @@ Supplementary online-only material.
   }
   \label{fig:corner-ExtraGal}
 \end{figure*}
+
+\input{table-fit-parameters}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
