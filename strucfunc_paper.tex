@@ -1080,22 +1080,57 @@ whereas \(m\) and \(s_0\) are negatively correlated.
 
 The structure functions for the remaining Galactic sources
 are shown in Figure~\ref{fig:strucfunc-fit-Galactic}b--d.
-The data quality for these sources is considerably worse than for the inner Orion Nebula.
+The data quality for these sources is not so high as for the inner Orion Nebula,
+with the result that the model parameters are not so well constrained.
+In particular, the relatively coarse spacing between nearest-neighbor spatial points
+(see sections~\ref{sec:fabry-perot-etalaon} and \ref{sec:flames-multi-fiber})
+means that the seeing has no effect on the observed structure function,
+so that \(s_0\) is indeterminate in the model fits
+(note the flat posterior histograms for \(s_0\) in Fig.~\ref{fig:corner-Galactic}bcd).
+In addition, the effects of noise are also much greater,
+as is apparent from visual inspection of the velocity fields
+(top row of Figure~\ref{fig:velocity-maps}).
+The principal effect of this on the model fits is to increase the uncertainty
+in the power law slope \(m\).
+The most extreme case is the Extended Orion Nebula (Fig.~\ref{fig:strucfunc-fit-Galactic}b--d),
+where noise dominates the structure function at all scales.
 
-%Particularly the EON observations, which are the oldest, the fitting procedure gives a noise value of \SI{5.6}{km^{2}.s^{-2}} larger that the \(\sigma^2\pos\) value of \SI{3}{km^{2}.s^{-2}}.
-For the EON the derived correlation length \(r_0 = \SI{0.05}{pc}\) is \num{6} times smaller
-than the box size, which is the minimum value for this ratio of our sample. 
-Hence we can confirm that the finite map has no effect in our results.
-The derived seeing parameter \(s_0 = \SI{0.002}{pc}\), consistent with the Orion core fit, is more than \num{250} times smaller than \(r_0\).
-This large ratio is because the separation of the pixels for the EON observations are at separations above the observational seeing, so these parameter has virtually no effect in our model for the EON case.
-The previous statement can be confirmed with the Fig. \ref{fig:corner-Galactic}b which shows the corner plot for the EON.
-The RMS seeing posterior is flat, meaning that the values in that range doesn't modify the fit.
 
-This behavior is also seen in the Carina nebula and Lagoon nebula.
-The observations for this regions are from the FLAMES multi-fiber instrument (section \ref{sec:flames-multi-fiber} ) in which the fibers separation  (see Figure \ref{fig:velocity-maps}) is above the observational seeing for the regions.
+% Particularly the EON observations, which are the oldest, the fitting procedure gives a noise value of \SI{5.6}{km^{2}.s^{-2}} larger that the \(\sigma^2\pos\) value of \SI{3}{km^{2}.s^{-2}}.
+% The derived correlation length \(r_0 = \SI{0.05}{pc}\) is \num{6} times smaller
+% than the box size, which is the minimum value for this ratio of our sample. 
+% Hence we can confirm that the finite map has no effect in our results.
+% The derived seeing parameter \(s_0 = \SI{0.002}{pc}\), consistent with the Orion core fit, is more than \num{250} times smaller than \(r_0\).
+% This large ratio is because the separation of the pixels for the EON observations are at separations above the observational seeing, so these parameter has virtually no effect in our model for the EON case.
+% The previous statement can be confirmed with the Fig. \ref{fig:corner-Galactic}b which shows the corner plot for the EON.
+% The RMS seeing posterior is flat, meaning that the values in that range doesn't modify the fit.
 
-while those in the Magellanic Clouds are shown in Figure~\ref{fig:strucfunc-fit-MC}
+% This behavior is also seen in the Carina nebula and Lagoon nebula.
+% The observations for this regions are from the FLAMES multi-fiber instrument (section \ref{sec:flames-multi-fiber} ) in which the fibers separation  (see Figure \ref{fig:velocity-maps}) is above the observational seeing for the regions.
+
+The structure functions for sources in the Magellanic Clouds are shown in Figure~\ref{fig:strucfunc-fit-MC}
 and those in more distant galaxies in Figure~\ref{fig:strucfunc-fit-ExtraGal}.
+The Magellanic cloud sources have generally high data quality due to the
+large number of independent spatial points in the MUSE observations
+(section~\ref{sec:muse-integral-field}).
+The relatively poor spectral resolution means that the \(B(r)\) cannot
+be measured down to such low values as in the inner Orion Nebula,
+but the larger amplitude of the fluctuations in these sources means
+that the fitted model parameters are still tightly constrained.
+
+For the more distant sources, the principal observational limitation is the seeing.
+The derived values of \(s_0\) exceed 10\% of the correlation length,
+leading to large uncertainties in the determination of the power law slope \(m\).
+On the other hand, the values of \(r_0\) and \(\sigma^2\) are still well-constrained.
+
+
+\subsection{Sanity check on derived values of nuisance parameters}
+\label{sec:sanity-check-derived}
+
+
+\subsection{Evidence for inhomogeneity at the largest scales}
+\label{sec:evid-inhom-at}
+
 
 %structure functions plots descriptions
 %Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
