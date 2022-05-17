@@ -1036,7 +1036,7 @@ for each parameter, as given in Table~\ref{tab:parameter-ranges}.
 To help ensure convergence of the MCMC algorithm,
 we used chain lengths that exceeded \num{50} times the
 estimated autocorrelation length for each parameter,
-which required \num{50000} samples.
+which typically required of order \num{50000} samples.
 Thin translucent lines in the figures show structure functions using the parameters of
 a random selection of \num{100} posterior samples from the MCMC chain,
 both for \(\tilde{B}(r)\) orange and \(B(r)\) (green).
@@ -1086,14 +1086,20 @@ In particular, the relatively coarse spacing between nearest-neighbor spatial po
 (see sections~\ref{sec:fabry-perot-etalaon} and \ref{sec:flames-multi-fiber})
 means that the seeing has no effect on the observed structure function,
 so that \(s_0\) is indeterminate in the model fits
-(note the flat posterior histograms for \(s_0\) in Fig.~\ref{fig:corner-Galactic}bcd).
+(note the flat posterior histograms for \(s_0\) in Fig.~\ref{fig:corner-Galactic}c and d).
 In addition, the effects of noise are also much greater,
 as is apparent from visual inspection of the velocity fields
 (top row of Figure~\ref{fig:velocity-maps}).
 The principal effect of this on the model fits is to increase the uncertainty
 in the power law slope \(m\).
-The most extreme case is the Extended Orion Nebula (Fig.~\ref{fig:strucfunc-fit-Galactic}b--d),
+The most extreme case is the Extended Orion Nebula (Fig.~\ref{fig:strucfunc-fit-Galactic}b),
 where noise dominates the structure function at all scales.
+The resultant degeneracy between parameters means that
+is not possible to obtain a satisfactory fit
+if all parameters are allowed to vary,
+so we instead chose to fix the power slope at \(m = 1.0\),
+which is close to the median value obtained for the other sources.
+
 
 
 % Particularly the EON observations, which are the oldest, the fitting procedure gives a noise value of \SI{5.6}{km^{2}.s^{-2}} larger that the \(\sigma^2\pos\) value of \SI{3}{km^{2}.s^{-2}}.
@@ -1119,8 +1125,14 @@ but the larger amplitude of the fluctuations in these sources means
 that the fitted model parameters are still tightly constrained.
 
 For the more distant sources, the principal observational limitation is the seeing.
-The derived values of \(s_0\) exceed 10\% of the correlation length,
-leading to large uncertainties in the determination of the power law slope \(m\).
+In three of the four sources,
+the derived values of \(s_0\) exceed 10\% of the correlation length.
+This implies that the true power law slope \(m\) is less steep than
+would be naively inferred from the observations
+(compare the green and orange curves in Figure~\ref{fig:strucfunc-fit-ExtraGal}),
+but at the same time the degeneracies between parameters
+(Figure~\ref{fig:corner-ExtraGal})
+lead to large uncertainties in the determination \(m\).
 On the other hand, the values of \(r_0\) and \(\sigma^2\) are still well-constrained.
 
 
@@ -1133,7 +1145,7 @@ This is necessary because of the heterogeneous nature of our source datasets
 and the fact that the details of the observational conditions
 are not available to us in all cases.
 However, it is worthwhile to do perform a sanity check on the values that are implied by our model fits.
-To that end, the last column in Table~\ref{tab:Res} gives the FWHM seeing width in arcsec. 
+To that end, the last column in Table~\ref{tab:Res} lists the FWHM seeing width in arcsec for each fit. 
 
 \subsection{Evidence for inhomogeneity at the largest scales}
 \label{sec:evid-inhom-at}
