@@ -1144,8 +1144,25 @@ In the model fitting we allow the nuisance observational parameters
 This is necessary because of the heterogeneous nature of our source datasets
 and the fact that the details of the observational conditions
 are not available to us in all cases.
-However, it is worthwhile to do perform a sanity check on the values that are implied by our model fits.
-To that end, the last column in Table~\ref{tab:Res} lists the FWHM seeing width in arcsec for each fit. 
+However, it is worthwhile to perform a sanity check on the values that are implied by our model fits.
+To that end, the last column in Table~\ref{tab:Res} lists the FWHM seeing width for each fit in units of arcsec.
+Disregarding the 3 sources where only upper limits can be determined,
+the mean and standard deviation are \SI{0.95(30)}{arcsec},
+which is perfectly consistent with expectations for seeing from ground-based observations.
+
+However, there are two outlier values that deserve closer attention.
+NGC~595 has the lowest value of \SI{0.2}{arcsec}, which seems
+unrealistically small, especially given the higher values
+derived for the other sources, such as NGC~604,
+that were obtained with the same instrument.
+On the other hand, the 95\% credibility range extends as high as \SI{0.7}{arcsec},
+which does overlap with the range for NGC~604.
+If one were to take a common compromise seeing of \SI{0.7}{arcsec}
+for both sources (\(s_0 = \SI{1.2}{pc}\)),
+then the anticorrelation between \(m\) and \(s_0\)
+(see Figure~\ref{fig:corner-ExtraGal}a, b)
+would decrease the inferred \(m\) for NGC~595 while increasing it for NGC~604,
+thus making the two slopes more closely similar. 
 
 \subsection{Evidence for inhomogeneity at the largest scales}
 \label{sec:evid-inhom-at}
