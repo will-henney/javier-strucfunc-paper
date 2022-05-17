@@ -1124,9 +1124,16 @@ leading to large uncertainties in the determination of the power law slope \(m\)
 On the other hand, the values of \(r_0\) and \(\sigma^2\) are still well-constrained.
 
 
-\subsection{Sanity check on derived values of nuisance parameters}
+\subsection{On the reasonableness of the derived seeing widths and noise}
 \label{sec:sanity-check-derived}
-
+In the model fitting we allow the nuisance observational parameters
+\(s_0\) and \(B\noise\) to vary freely within a wide range
+(Table~\ref{tab:parameter-ranges}).
+This is necessary because of the heterogeneous nature of our source datasets
+and the fact that the details of the observational conditions
+are not available to us in all cases.
+However, it is worthwhile to do perform a sanity check on the values that are implied by our model fits.
+To that end, the last column in Table~\ref{tab:Res} gives the FWHM seeing width in arcsec. 
 
 \subsection{Evidence for inhomogeneity at the largest scales}
 \label{sec:evid-inhom-at}
@@ -1139,6 +1146,7 @@ such as Carina and Hubble~X,
 \(B(r)\) remains flat at a value of \(\approx 2\sigma^2\),
 which is consistent with uncorrelated homogeneous fluctuations
 at the largest scales.
+
 For other regions,
 such as the Orion Nebula (both inner and outer) and 30~Doradus,
 there is a clear downturn in \(B(r)\) at the largest separations.
@@ -1153,6 +1161,21 @@ since the \(\sigma^2\) derived from the high-resolution dataset of the inner neb
 is roughly twice as large as that derived from the lower resolution
 dataset of the Extended Orion Nebula on scales \(\approx \SI{1}{pc}\)
 (compare panels a and b of Figure~\ref{fig:strucfunc-fit-Galactic}).
+This is further evidence that the amplitude of velocity fluctuations
+increases towards the center of the nebula in this source.
+
+In contrast, other regions,
+such as the Lagoon and NGC~346,
+show \(B(r)\) increasing at the largest separations,
+reaching values significantly larger than \(2\sigma^2\).
+This can be evidence for a large-scale linear velocity gradient
+across the region (see Figure~13 of \citealp{arthur2016turbulence})
+or a periodic fluctuation with \(\lambda > r_0\)
+(see section~\ref{sec:limit-model-struct} above).
+This latter effect may also explain the behavior of NGC~604,
+which shows oscillatory behavior of \(B(r)\),
+similar to the light blue line in Figure~\ref{fig:model-strucfunc}b.
+
 
 %structure functions plots descriptions
 %Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
