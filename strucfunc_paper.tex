@@ -98,6 +98,8 @@
 \newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
 \newcommand\los{\ensuremath{_{\mathrm{los}}}}
 \newcommand\noise{\ensuremath{_{\text{noise}}}}
+\newcommand\obs{\ensuremath{_{\mathrm{obs}}}}
+\newcommand\model{\ensuremath{_{\mathrm{mod}}}}
 \newcommand\halpha{H${\alpha}$}
 \newcommand\n{[\ion{N}{II}]$\lambda$6584}
 \newcommand\oi{[\ion{O}{III}]$\lambda$5007}
@@ -708,21 +710,27 @@ We therefore propose the following idealized 2-parameter model
 for the autocorrelation function:
 %
 \begin{equation}\label{eq:new-correlation-form}
-  C(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} 
+  C\model(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} 
 \end{equation}
 %
 in which \(r_{0}\)\ is the correlation length (see above)
 and \(m\) is the power-law slope at small scales.
-This is constructed so that \(C(r) = 1/2\) at \(r = r_0\),
+This is constructed so that \(C\model(r) = 1/2\) at \(r = r_0\),
 while the exponential form ensures that \(C(r)\) rapidly approaches zero
 for larger separations.
-We use equation \eqref{eq:functional} to determine the structure function
-from this model autocorrelation function.
-The resultant model structure function has the following properties:
+We assume the validity of equation~\eqref{eq:functional} to determine the structure function
+from this model autocorrelation function:
+\begin{equation}
+  \label{eq:model-strucfunc-ideal}
+  B\model(r) = 2\sigma^2\pos \left[
+    1 - 2^{- \left( r/r_0 \right)^m} 
+  \right]
+\end{equation}
+This has the following properties:
 \begin{enumerate}[1.]
- \item Small scales: \(B(r) \propto r^m\) for \(r \ll r_0\);
- \item Correlation scale: \(B(r_0) = \sigma\pos^2\);
- \item Large scales: \(B(r) \to 2 \sigma\pos^2\) for \(r \gg r_0\).
+ \item Small scales: \(B\model(r) \propto r^m\) for \(r \ll r_0\);
+ \item Correlation scale: \(B\model(r_0) = \sigma\pos^2\);
+ \item Large scales: \(B\model(r) \to 2 \sigma\pos^2\) for \(r \gg r_0\).
  \end{enumerate}
 An example is shown by the blue line in Figure~\ref{fig:model-strucfunc}a.
  
@@ -785,13 +793,8 @@ which means it can be represented as a constant term \(B\noise\).
 Combining both the effects of seeing and noise yields the corrected
 model structure function:
 \begin{equation}
-  \tilde{B}(r)
-  = 
-  2\sigma^2\pos \left[
-    1 - 2^{- \left( r/r_0 \right)^m} 
-  \right]
-  \,  S(r) + B\noise
-\label{eq:sf-functional}
+  \tilde{B}\model(r) = B\model(r) \,  S(r) + B\noise
+  \label{eq:sf-functional}
 \end{equation}
 An example of this equation is shown by the red line in Figure~\ref{fig:model-strucfunc}.
 Note that seeing and noise have opposite effects on the slope
@@ -912,19 +915,23 @@ where the influence of these effects will be greatest.
   \caption{Bounds of allowed values for parameters in model fits}
   \label{tab:parameter-ranges}
   \newlength\partabwidth
-  \setlength\partabwidth{0.7\linewidth}
-  \begin{tabular*}{\partabwidth}{@{\extracolsep{\fill}}l rr}
+  \setlength\partabwidth{0.8\linewidth}
+  \begin{tabular*}{\partabwidth}{
+    l @{\extracolsep{\fill}}
+    r 
+    r
+    }
     \toprule
     Parameter & Lower & Upper\\
     \midrule
-    \(\sigma^2\) & \(0.25\, \max [B]\)& \(2\, \max [B]\)\\
+    \(\sigma^2\) & \(0.25\, \max [B\obs]\)& \(2\, \max [B\obs]\)\\
     \(r_0\) & \(0.01\, L\) & \(2\, L\)\\
     \(m\) & \(0.5\) & \(2.0\) \\
     \(s_0\) & \SI{0.1}{arcsec}& \SI{1.5}{arcsec}\\
-    \(B\noise\) & \(0\) & \(3\, \min [B]\) \\
+    \(B\noise\) & \(0\) & \(3\, \min [B\obs]\) \\
     \bottomrule
     \multicolumn{3}{@{}p{\partabwidth}@{}}{
-    Note: \(\max[B]\) and \(\min[B]\) are over all bins in the observed structure function.
+    Note: \(\max[B\obs]\) and \(\min[B\obs]\) are over all bins in the observed structure function with \(r < L/2\).
     }
   \end{tabular*}
 \end{table}
@@ -978,10 +985,10 @@ where the influence of these effects will be greatest.
 
 In order to provide a uniform description of the velocity fluctuations,
 we fit the model structure function
-\(\tilde{B}(r)\) of equation~\eqref{eq:sf-functional}
+\(\tilde{B}\mod(r)\) of equation~\eqref{eq:sf-functional}
 to each \hii{} region in our sample.
 Results are shown in Figures~\ref{fig:strucfunc-fit-Galactic}, \ref{fig:strucfunc-fit-MC},
-and \ref{fig:strucfunc-fit-ExtraGal}, arranged in order of increasing distance.
+and~\ref{fig:strucfunc-fit-ExtraGal}, arranged in order of increasing distance.
 Best-fit values for the model parameters,
 together with 95\% credibility range,
 are given in Table~\ref{tab:Res}.
@@ -996,7 +1003,7 @@ given in Appendix~\ref{sec:notes-individual-hii}.
 \subsection{Technical details of structure function measurement and fitting}
 \label{sec:techn-deta-model}
 
-For the observational values (blue symbols),
+For the observational values (\(B\obs(r)\); blue symbols),
 the structure function is the average value of equation~\eqref{eq:Br}
 over all pairs of points that contribute to each radial bin.
 The uncertainty of each bin (blue error bars) is estimated
@@ -1017,12 +1024,12 @@ of the homogeneity assumption (see section~\ref{sec:limit-model-struct}).
 Non-linear weighted least square fitting of the model is performed
 using the Levenberg-Marquardt algorithm \citep{More:1978a} as implemented in the
 \texttt{lmfit} Python library \citep{newville_matthew_2014_11813}.
-The best-fit model \(\tilde{B}(r)\) is shown (heavy orange solid line),
-together with the corresponding underlying ``true model'' \(B(r)\) (heavy dashed green line),
+The best-fit model \(\tilde{B}\model(r)\) is shown (heavy orange solid line),
+together with the corresponding underlying ``true model'' \(B\model(r)\) (heavy dashed green line),
 which does not include the effects of seeing or noise.
-Note that the true model \(B(r)\) depends on only 3 parameters:
+Note that the true model \(B\model(r)\) depends on only 3 parameters:
 \(\sigma^2\), \(r_0\), and \(m\),
-whereas \(\tilde{B}(r)\) additionally depends on
+whereas \(\tilde{B}\model(r)\) additionally depends on
 the observational nuisance parameters: \(s_0\) and \(B\noise\).
 The best-fit values of each of these parameters are shown by
 horizontal and vertical lines in the figure and are summarised in Table~\ref{tab:Res}.
@@ -1039,7 +1046,7 @@ estimated autocorrelation length for each parameter,
 which typically required of order \num{50000} samples.
 Thin translucent lines in the figures show structure functions using the parameters of
 a random selection of \num{100} posterior samples from the MCMC chain,
-both for \(\tilde{B}(r)\) orange and \(B(r)\) (green).
+both for \(\tilde{B}\model(r)\) orange and \(B\model(r)\) (green).
 This gives an estimate in the uncertainty about the best-fit model.
 Credibility intervals for the parameters are estimated from percentiles
 of the posterior distribution and are indicated in the figures by shaded gray boxes
@@ -1119,7 +1126,7 @@ and those in more distant galaxies in Figure~\ref{fig:strucfunc-fit-ExtraGal}.
 The Magellanic cloud sources have generally high data quality due to the
 large number of independent spatial points in the MUSE observations
 (section~\ref{sec:muse-integral-field}).
-The relatively poor spectral resolution means that the \(B(r)\) cannot
+The relatively poor spectral resolution means that the \(B\obs(r)\) cannot
 be measured down to such low values as in the inner Orion Nebula,
 but the larger amplitude of the fluctuations in these sources means
 that the fitted model parameters are still tightly constrained.
@@ -1165,7 +1172,7 @@ thus making the two slopes more closely similar.
 The inner Orion Nebula has the largest inferred seeing FWHM of \SI{2.4(4)}{arcsec},
 which is at least two times higher than the typical seeing measured during the observations
 \citep{Doi:2004a}.
-However, this can be explained by the fact that the velocity map is constructed
+However, this can be at least partially explained by the fact that the velocity map is constructed
 by interpolating individual longslit observations onto a regular grid
 (section~\ref{sec:longsl-echelle-spect}).
 The seeing-limited resolution will only be achieved along the slits,
@@ -1181,13 +1188,13 @@ we see a variety of different shapes for the structure functions
 of our sample regions. 
 In some cases,
 such as Carina and Hubble~X,
-\(B(r)\) remains flat at a value of \(\approx 2\sigma^2\),
+\(B\obs(r)\) remains flat at a value of \(\approx 2\sigma^2\pos\),
 which is consistent with uncorrelated homogeneous fluctuations
 at the largest scales.
 
 For other regions,
 such as the Orion Nebula (both inner and outer) and 30~Doradus,
-there is a clear downturn in \(B(r)\) at the largest separations.
+there is a clear downturn in \(B\obs(r)\) at the largest separations.
 As discussed above in section~\ref{sec:limit-model-struct},
 this is what would be expected if the velocity fluctuations
 were inhomogeneous, with a larger amplitude in the center of the map
@@ -1195,7 +1202,7 @@ and a smaller amplitude in the outskirts.
 A similar behavior, although not so marked, is shown by
 Hubble~V and NGC~595.
 The Orion Nebula is a particularly interesting case
-since the \(\sigma^2\) derived from the high-resolution dataset of the inner nebula on scales \(\approx \SI{0.1}{pc}\)
+since the \(\sigma^2\pos\) derived from the high-resolution dataset of the inner nebula on scales \(\approx \SI{0.1}{pc}\)
 is roughly twice as large as that derived from the lower resolution
 dataset of the Extended Orion Nebula on scales \(\approx \SI{1}{pc}\)
 (compare panels a and b of Figure~\ref{fig:strucfunc-fit-Galactic}).
@@ -1204,14 +1211,14 @@ increases towards the center of the nebula in this source.
 
 In contrast, other regions,
 such as the Lagoon and NGC~346,
-show \(B(r)\) increasing at the largest separations,
-reaching values significantly larger than \(2\sigma^2\).
+show \(B\obs(r)\) increasing at the largest separations,
+reaching values significantly larger than \(2\sigma^2\pos\).
 This can be evidence for a large-scale linear velocity gradient
 across the region (see Figure~13 of \citealp{arthur2016turbulence})
 or a periodic fluctuation with \(\lambda > r_0\)
 (see section~\ref{sec:limit-model-struct} above).
 This latter effect may also explain the behavior of NGC~604,
-which shows oscillatory behavior of \(B(r)\),
+which shows oscillatory behavior of \(B\obs(r)\),
 similar to the light blue line in Figure~\ref{fig:model-strucfunc}b.
 
 
