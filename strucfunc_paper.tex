@@ -1443,31 +1443,28 @@ For the most distant regions the previous analysis would give depths of the orde
 
 \subsection{Scaling relations between physical properties and turbulent parameters}\label{sec:scaling-relations}
 
-In the section \ref{sec:results} we showed that each \hii{} region of our sample has a turbulent velocity field that can be characterized using the turbulence methods despite the results not being as the Kolmogorov model predicts.
-The turbulent parameters obtained are unique to each velocity field.
-We proceed to develop scaling relations between them and also between the physical properties of each region.
+
+In section \ref{sec:results} we show that each velocity field of our sample can be characterized by parameters that are particular for each \hii{} region.
+We used these parameters to develop scaling relations between them and the physical properties of each region.
 
 %Intro for scaling relations
-Relationship between the physical properties of \hii{} regions, like size and luminosity, and the velocity dispersion have been used as tools for concluding scaling relations for these objects.
-These relations have also been studied in dwarf galaxies and high-redshift star formation regions.
-\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the \hii{} regions as the diameter or the luminosity ($r \sim \sigma ^{\sim 2}$ ; $\text{L}_{\text{H}} \sim \sigma ^{\sim 4}$).
-They conclude that GEHRs follow this relation because they behave as self-gravitatory systems like globular clusters or elliptical galaxies.
-The work of \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
+Correlations between the physical properties of \hii{} regions like size, luminosity, and the velocity dispersion have been used as tools for finding scaling relationships for these objects.
+These kind of relations have also been found in dwarf galaxies and high-redshift star formation regions.
+\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the \hii{} regions as the diameter or the luminosity (\(r \sim \sigma ^{\sim 2}\) ; \(\text{L}_{\text{H}} \sim \sigma ^{\sim 4}\)).
+In later years, \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
 %\citet{1981MNRAS.194..809L}
-
-%Previous research on scaling relations
-\citet{2012MNRAS.422.3339W} have found that clumps and \hii{} regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
+In recent years, \citet{2012MNRAS.422.3339W} have found that clumps and \hii{} regions follow scaling relations over the range of z = 0-2 for \halpha\ size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
 This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
 Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).
 \citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
 %methods for our analysis
-We follow through this analysis using the scaling relation as a research tool between the properties of the sample of HII regions and our results. 
-We use the properties in Table \ref{tab:regions-properties} with the turbulent parameters in Table \ref{tab:Res} as the dependent variable to adjust a fit in the form \(Y = aX +b\). 
-For this procedure we use a hierarchical Bayesian approach using the package \textit{linmix} \citep{2007ApJ...665.1489K}.
+
+We implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library based on \cite{2007ApJ...665.1489K}.
+The physical properties in Table \ref{tab:regions-properties} are the independent variable \(X\) and the turbulent parameters in Table \ref{tab:Res} are the dependent variable \(Y\). 
 The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
-In the Figures \ref{fig:sigvsl} and \ref{fig:rvsR} we show the correlations with a significance level  $p < $0.05.
-In all the figures the slope of the fit shown in solid black line is the mean of all red lines that reflect the posterior of the Bayessian analysis.
+In the Figures \ref{fig:sigvsl} and \ref{fig:rvsR} we show the correlations with a significance level \(p < \num{0.05}\).
+The black solid line shows the input regression line and the red lines show some samples from the posterior distribution.
 
 %Luminosity vs centroid velocity dispersion
 The Figure \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
@@ -1487,6 +1484,7 @@ In this sense these values would represent an upper limit of the size of each re
 Since these objects do not posses a physical edges the size determination is not trivial.
 Due to the above, we chose these set values since they come from an unique source and are foreign to our calculations and observations, which imply that there is no bias in the scaling law we obtain.  
 
+As for the power-law index \(m\) we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property.
 
 \input{Corr}
 
