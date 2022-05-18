@@ -1457,7 +1457,7 @@ For the most distant regions the previous analysis would give depths of the orde
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-los-vs-pos}
-\caption{The $\sigma$-$\sigma_{\text{los}}$ plane. The dotted line represents slope equal to unity and the dashed line represents a slope of two.}
+\caption{The \(\sigma_{\text{pos}}\)-\(\sigma_{\text{los}}\) plane. The dotted line represents slope equal to unity and the dashed line represents a slope of two. The size of the markers represent the distance to each region.}
 \label{fig:los-vs-pos}
 \end{figure}
 
@@ -1479,30 +1479,32 @@ Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\
 \citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
 %methods for our analysis
-
 We implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library based on \cite{2007ApJ...665.1489K}.
-The physical properties in Table \ref{tab:regions-properties} are the independent variable \(X\) and the turbulent parameters in Table \ref{tab:Res} are the dependent variable \(Y\). 
-The results are shown in Table \ref{tab:RestStats} in ascending order for the p-value.
+The physical properties in Table \ref{tab:regions-properties} are the independent variable \(X\) and the turbulent parameters in Table \ref{tab:Res} are the dependent variable \(Y\).
+For the physical properties we consider an uncertainty of the \num{10}\% of the value and for the turbulent parameters we used 1-\(\sigma\). 
+In the case of non-gaussian distribution we choose the highest value for the uncertainty.
+The results are shown in Table \ref{tab:RestStats} in ascending order for the \(p\)-value.
 In the Figures \ref{fig:sigvsl} and \ref{fig:rvsR} we show the correlations with a significance level \(p < \num{0.05}\).
-The black solid line shows the input regression line and the red lines show some samples from the posterior distribution.
+The black solid line shows the regression line and the red thin lines show some samples from the posterior distribution.
 
 %Luminosity vs centroid velocity dispersion
 The Figure \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
 Since this relation is the most common it can be use for comparison with the investigations mentioned at the beginning of this section.
-Our results give us a relation of \(\log \sigma\pos = (0.28 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(10 \pm 4.0)\).
+Our results give us a relation of \(\log \sigma\pos = (0.27 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(10 \pm 4.0)\).
 It is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable.
 In our case if we choose the upper uncertainty and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.4}\). 
-Using the same procedure in \textit{linmix} and changing the variables we obtained \(\log \text{L}(\text{H}_{\alpha}) = (3.1\pm 1.3) \log \sigma\pos -(36 \pm 1)\).
-Both relations are close to the previously proposed \(\text{L}_{\text{H}} \propto \sigma^{4}\) relation.
+Using the same procedure in \texttt{linmix} and changing the variables we obtained \(\log \text{L}(\text{H}_{\alpha}) = (3.4\pm 1.5) \log \sigma\pos -(36 \pm 1)\).
+Both results are close to the previously proposed \(\text{L}_{\text{H}} \propto \sigma^{4}\) relation.
+The references for the \(\text{L}(\text{H}_{\alpha})\) value are given in Appendix~\ref{sec:notes-individual-hii}.
 
 %Size vs correlation length
 The Figure \ref{fig:rvsR} shows the relation of the correlation length \(r_0\) and the size \(S\) of the region. 
-The relationship we found is \(\log r_0 = (0.73 \pm 0.24) \log S - (1.17 \pm 0.5)\).
-The values of the \(S\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
+The relationship we found is \(\log r_0 = (0.93 \pm 0.33) \log S - (1.6 \pm 0.7)\).
+The values of \(S\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
 limits seen from visual inspection of the \ha{} photographs.
 In this sense these values would represent an upper limit of the size of each region.
 Since these objects do not posses a physical edges the size determination is not trivial.
-Due to the above, we chose these set values since they come from an unique source and are foreign to our calculations and observations, which imply that there is no bias in the scaling law we obtain.  
+Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.  
 
 As for the power-law index \(m\) we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property.
 
@@ -1511,14 +1513,14 @@ As for the power-law index \(m\) we can see from table \ref{tab:RestStats} that 
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-svsL}
-\caption{The log \(\sigma\pos\) - log $L(H_{\alpha})$ plane derived form our results an data in the literature. A fit with slope of 0.27 $\pm$ 0.1 is shown in solid black line that is the mean of all red lines that reflect the posterior of the Bayessian analysis. }
+\caption{The log \(\sigma\pos\) - log $L(H_{\alpha})$ plane derived form our results an data in the literature. }
 \label{fig:sigvsl}
 \end{figure}
 
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-rvsS}
-\caption{Same as Fig. \ref{fig:rvsR} but for the log \(r_0\) - log \(S\) plane. }
+\caption{The log \(r_0\) - log \(S\) plane derived form our results an data in the literature. }
 \label{fig:rvsR}
 \end{figure}
 
@@ -1588,10 +1590,9 @@ According to this double cascade, turbulence is being forced at scales of \(\app
 \citet{Medina-Tanco:1997a} mentioned different characteristic scale lengths, the most notorious is the \SI{\sim 10}{pc}, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
 \citet{Melnick:2021x} addresses some issues with TAURUS II data while comparing profiles between the previous instrument TAURUS I where there exist a difference between observations (see section 4.1 on their paper).
 They mentioned that one problem with \citet{Medina-Tanco:1997a} structure function is that they didn't take into account the observational seeing.
-This would invalidate they results and \citet{Melnick:2021x} consider that taking out the structure function values that fall in this range would make the structure function flat at scales \(<\)\SI{10}{pc}.
-Finally they point out, and we agree, the importance of observing NGC 604 at higher spatial resolution, so they rule out \citet{Medina-Tanco:1997a} results. 
+This would invalidate they results and \citet{Melnick:2021x} consider that taking out the structure function values that fall within this range would make the structure function flat at scales \(<\)\SI{10}{pc}, so they rule out \citet{Medina-Tanco:1997a} results.
+Finally they point out, and we agree, the importance of observing NGC 604 at higher spatial resolution. 
 Our Fig. \ref{fig:strucfunc-fit-ExtraGal}d shows in fact that there is a velocity structure in NGC 604. 
-We have prove that a consistent and more precise method in analyzing structure function is key to obtaining trustworthy results.
 None of the previous studies present a power-law index for the structure function to compare our results.
 
 For our NGC 595 \halpha\ emission line results there is no correspondence in the structure function from the previous investigations of \citet{lagrois2009multi} and \citet{lagrois2011}.
@@ -1601,7 +1602,7 @@ One big difference is that \citet{lagrois2011} apply a  filter to the velocity f
 As a comparison for the filtered turbulent parameters they present a correlation length of \SI{43}{pc} and the power-law index they provide is \num{1.55 \pm 0.01}.
 Other difference in their methodology is that they use the normalized structure function value of 2\(\sigma\pos\) to obtain the correlation length.
 %Using their unfiltered data the correlation length is \(\sim\) \SI{90}{pc} and using the same criteria as our it is \(\sim\) \SI{40}{pc} and the slope would be shallower. 
-Their velocity centroid \(\sigma\) is \SI{5.92 \pm 0.15}{km.s^{-1}} while we have \SI{7.48\pm 2}{km. s^{-1}} which fall within the uncertainties.
+Their velocity centroid \(\sigma\) is \SI{5.92 \pm 0.15}{km.s^{-1}} while we have \SI{7.3\pm 2}{km. s^{-1}} which fall within the uncertainties.
 Due to the different observations and methodologies a direct comparison between structure functions is not possible.
 
 \subsection{Final remarks}
