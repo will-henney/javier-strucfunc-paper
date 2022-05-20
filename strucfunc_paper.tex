@@ -1035,7 +1035,6 @@ Bins with separation less than \(L/2\) are used to constrain the model fitting (
 while larger separations (open symbols) are not used
 since they are more likely to be affected by a breakdown
 of the homogeneity assumption (see section~\ref{sec:limit-model-struct}).
-%This \(L/2\) constrain is not used for the regions observed with MUSE.
 
 Non-linear weighted least square fitting of the model is performed
 using the Levenberg-Marquardt algorithm \citep{More:1978a} as implemented in the
@@ -1123,20 +1122,6 @@ if all parameters are allowed to vary,
 so we instead chose to fix the power slope at \(m = 1.0\),
 which is close to the median value obtained for the other sources.
 
-
-
-% Particularly the EON observations, which are the oldest, the fitting procedure gives a noise value of \SI{5.6}{km^{2}.s^{-2}} larger that the \(\sigma^2\pos\) value of \SI{3}{km^{2}.s^{-2}}.
-% The derived correlation length \(r_0 = \SI{0.05}{pc}\) is \num{6} times smaller
-% than the box size, which is the minimum value for this ratio of our sample. 
-% Hence we can confirm that the finite map has no effect in our results.
-% The derived seeing parameter \(s_0 = \SI{0.002}{pc}\), consistent with the Orion core fit, is more than \num{250} times smaller than \(r_0\).
-% This large ratio is because the separation of the pixels for the EON observations are at separations above the observational seeing, so these parameter has virtually no effect in our model for the EON case.
-% The previous statement can be confirmed with the Fig. \ref{fig:corner-Galactic}b which shows the corner plot for the EON.
-% The RMS seeing posterior is flat, meaning that the values in that range doesn't modify the fit.
-
-% This behavior is also seen in the Carina nebula and Lagoon nebula.
-% The observations for this regions are from the FLAMES multi-fiber instrument (section \ref{sec:flames-multi-fiber} ) in which the fibers separation  (see Figure \ref{fig:velocity-maps}) is above the observational seeing for the regions.
-
 The structure functions for sources in the Magellanic Clouds are shown in Figure~\ref{fig:strucfunc-fit-MC}
 and those in more distant galaxies in Figure~\ref{fig:strucfunc-fit-ExtraGal}.
 The Magellanic cloud sources have generally high data quality due to the
@@ -1157,6 +1142,7 @@ but at the same time the degeneracies between parameters
 (Figure~\ref{fig:corner-ExtraGal})
 lead to large uncertainties in the determination \(m\).
 On the other hand, the values of \(r_0\) and \(\sigma^2\) are still well-constrained.
+
 \subsection{On the reasonableness of the derived seeing widths and noise}
 \label{sec:sanity-check-derived}
 In the model fitting we allow the nuisance observational parameters
@@ -1253,54 +1239,14 @@ which shows oscillatory behavior of \(B\obs(r)\),
 similar to the light blue line in Figure~\ref{fig:model-strucfunc}b.
 
 
-%structure functions plots descriptions
-%Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in solid and open blue circles the observational structure function that we compute using equation \ref{eq:Br} on the \ha{} velocity fields of Fig. \ref{fig:velocity-maps}. 
-%In the plots the solid circles indicate the points we use in the non-linear regression analysis (see section~\ref{sec:model-fit}), while the open circles are the points of the structure function that where left out.
-%The criteria for the previous considerations is that the structure function at large separations is affected by the inhomogeneties of the velocity field (see section-\ref{sec:limit-model-struct}).
-%The points left our correspond to the largest separations that are not consider in our model. 
-%In some cases, at the smallest separations we merge a couple of the structure functions points under the assumption that those would be heavily affected by the seeing.
-%The Figures shows in the orange solid thick line the best fit for the equation \ref{eq:sf-functional} which takes into account observational limitations on the structure function.
-%The green dashed line indicate the theoretical model for the structure function using equation \ref{eq:functional}.
-
-%Figures \ref{fig:strucfunc-fit-OrionS}-\ref{fig:strucfunc-fit-OrionLH} left panels show in dashed and dotted lines the parameters of our model.
-%The vertical dashed line indicates the correlation length, \(r_0\), and the horizontal dashed line indicates the true variance of the velocity fields, \(\sigma^2\).
-%The vertical and horizontal dotted lines shows the value of the observational considerations: the rms seeing, \(s_0\) and the noise, \(B\noise\).
-%These values were obtained using the LM method.
-%For the dashed and dotted lines the overlapping translucent boxes indicate the confidence intervals in 1-sigma (dark shaded area) and 2-sigma (light shaded area) obtained from the MCMC analysis.
-%The light shaded areas in the plot show where the separation \(r\) is above half of the box size, \(L\), which is indicated with a vertical dotted line.
-
-
 %For Carina and Lagoon nebula, the velocity fields are obtained from the FLAMES multi-fiber instrument (section~\ref{sec:flames-multi-fiber}). 
 %We can see from Figure~\ref{fig:velocity-maps} that observations from this instrument do not give uniform maps as the others. 
 %Instead, the discrete fiber positions are diversely located across the FOV.
 %This would affect the structure function since the values are not adjacent as the other observations.
 %This is reflected in the non uniform \(B(r)\) below  \(r_0\) that we pointed out in the previous paragraphs.
 
- 
-%corner plots descriptions
-%Figures \ref{fig:corner-example-Orion} show the corner plots \citep{2017ascl.soft02002F} of the turbulent parameters and observational constraints
-%(further examples in Appendix~\ref{sec:addit-covar-corn}).
-%These plots shows the one and two dimensional projections of the posterior probability distributions of the parameters used in equation \ref{eq:chi}.
-%They also show the distribution for each parameter independently in the histograms along the diagonal and then the marginalized two dimensional distributions in the other panels making possible to visualize all of the covariances between parameters \citep{2017ascl.soft02002F}.
-%The contours in the plots reflect the 95\(\%\), 99\(\%\), 99.5\(\%\) and 99.9\(\%\) confidence intervals.
-%A number of fits for the equations \ref{eq:sf-functional} and \ref{eq:functional} using samples of the posteriors are shown in thin translucent orange and green lines, respectively, showing the possible range of the confidence intervals.
-
-%Table \ref{tab:Res} presents the turbulent parameters and observational constraints values mentioned in the paragraphs above.
-%The confidence intervals for these values are up to 2-sigma of the posteriors.
-%The second column correspond to the variance \(\sigma^2\pos\) of the velocity field.
-%The \(B\noise\) value is shown in the third column which would be the minimum squared velocity difference that could be measure by the instrument.
-%The fourth column in Table \ref{tab:Res} shows the rms seeing value in parsecs, \(s_0\), which represent the minimum value of the separation which would valid for the observed structure function. 
-%The fifth column shows the correlation value \(r_0\) in parsecs.
-%The \(r_0\) range covered in our results for the sample goes from 0.09 to 12 pc.
-%The sixth column indicates the size of each observational box in parsecs.
-%The index \(m\) is shown in the seventh column.
-%The range covered by the power-law index goes from 0.7 to 1.5.
-%The eighth column show the ratio \(L / r_0\)
-%The last column shows the FWHM seeing in arcsec.
-%The interpretation of our results is developed in the next section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 \section{Discussion}\label{sec:discussion}
 
@@ -1308,8 +1254,6 @@ In the next sections we discuss the application and interpretation of the turbul
 %We present a resume of the turbulence theory and its validation to \hii{} regions.
 %It is also mentioned some physical processes that contribute to stirring the ionized gas and the possibility that they are responsible for the observed velocity fluctuations.
 We present the most important correlations between the turbulent parameters and physical properties of our \hii{} region sample and finally we discuss our results in the context of previous structure functions.
-
-
 
 %\subsection{Turbulence}\label{sec:turbulence-theory}
 
