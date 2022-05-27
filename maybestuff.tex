@@ -176,3 +176,74 @@ The differences with respect the theoretical value are often used as a diagnosti
 %Also magnetic fields would play a very important role in the dynamics of the gas motions.
 %Despite these differences is clear that the self-similarity motions is a common behavior conserved at scales from parsecs to hundreds of parsecs. 
 %With the advanced of the observational capabilities with more computational power for a better understanding of turbulent motions the gap between theory and observations is hoped to be reduced.
+
+%%%%
+%\subsection{Turbulence}\label{sec:turbulence-theory}
+
+%\textit{Will 2021-12-10: Moving this section to later for now. Maybe
+%  this material could go in discussion.}
+
+%The idea to treat the ionized regions from a fluid mechanic view is intuitive if we consider the continuum hypothesis. 
+%We validate this hypothesis using the Knudsen number defined as \(\text{Kn} \equiv \lambda / l\), where \(\lambda\) is the mean free path of the medium and \(l\) a characteristic length of the phenomenon we are studying.
+%Taking into account a \(\lambda_{\text{HII}}\) of \SI{2.7e-7}{pc} \citep{1941ApJ....93..369S} and a \(l_{\text{HII}}\) of \SI{1}{pc} for ionized regions we obtained \(\text{Kn} \approx 10^{-7}\), while in general the continuum approach is valid for \(\text{Kn}\ll 1\).
+
+%A turbulent behavior in the flows is more common in fluid systems than a laminar one.
+%These turbulent flows tends to be unsteady, irregular and chaotic, and the turbulent motions are observed in many scales. 
+%The turbulent flows are associated with a high Reynolds numbers which is defined as \(\text{Re} = l v_{l} / \nu \), where \(v_{l}\) is a characteristic velocity in the fluid system and \(\nu\) is the kinematic viscosity of the medium.
+%Experiments have shown that a flow which is laminar become turbulent when increasing the velocity (i.e., increasing the Re) and a large range of velocity fluctuation appear at all scales.
+%A high Re reflects high ratio of the advection/difussion terms of the Navier-Stokes equations, being interpreted as that the inertial forces taking over the viscous ones. 
+%Hence it is possible to assume that if viscosity is not dominant in a flow, this flow would be turbulent.
+
+%As astronomical observation made it possible to measure a large number of points with a high accuracy, it was found that velocities show a non-thermal component reflecting characteristic of turbulent earthly flows.
+%The existence of turbulent flows in astrophysical objects, ranging in scales from 10\(^6\) to 10\(^{17}\) m \citep{2010ApJ...710..853C} is thought to be consequence of the high \(Re\), between 10\(^4\) and 10\(^9\) \citep{1949ApJ...110..329C,lagrois2011} that characterized these objects.
+
+%The classic turbulence theory assumes a three-dimensional isotropic, incompressible and subsonic flow that can be described using an energy spectrum formed by vortices or eddies of different sizes \citep{kolm1}.
+%The concept of the energy spectrum assumes that the energy is cascading down inside the flow from the largest to the smallest scales.
+%The different scales in the energy cascade are defined based on their Re.
+%In one side of the spectrum there is the energy injection scale, \(L_I\), that is related to the largest vortices, called the integral scales, where \(\text{Re} \rightarrow \infty\).
+%On the other side of the spectrum there is the dissipation of energy at small scales, \(l_I\), where  \(\text{Re} \rightarrow 1\) and it is assumed that small vortices are responsible for the friction that dissipates the energy flux into thermal energy.
+%In between there is the inertial range, \(l_d  << l << L_I\), where in a stationary case the energy transfer is at a constant rate.
+
+%The rate of transfer of specific energy \(\epsilon\) (energy per unit mass) in the inertial range is independent of the \(l\) scale having the form \(\epsilon \sim v_l^2 / \tau_l\), where the kinetic energy is of the order of \( v_l^2\) and the life time of a velocity fluctuation is \(\tau_l\), which can be can be put in terms of \(\tau_l \sim l / v_l\). 
+%Hence we obtain \( v_l \sim (\epsilon l)^{1/3}\) where \(\epsilon\) is invariant in the cascade.
+
+%The energy cascade is described using the energy spectrum, $E(k) \propto k^{\beta}$ where \(k\) is the wave number for a determined scale \(l\) ($k \equiv l^{-1}$).
+%The total specific energy of a determined $l$ scale is of the order \(\langle v_{l}^{2} \rangle \) and is the energy integral above the associated \(k\), defined as:
+
+%\begin{equation}\label{eq:energy-spectrum}
+% \langle v_{l}^{2} \rangle = \int_{k}^{\infty} E(k)dk
+%\end{equation}
+%
+%If it is assumed that this energy is of the order of $(\epsilon l)^{\frac{2}{3}} \sim (\frac{\epsilon}{k})^{\frac{2}{3}}$ we can differentiate equation \ref{eq:energy-spectrum} and obtained the final form:
+
+%\begin{equation}\label{eq:kolmogorov-law}
+%E(k) \propto \epsilon^\frac{2}{3} k^{-\frac{5}{3}}
+%\end{equation}
+%
+%where \(\beta = -5 / 3\) is the Kolmogorov law.
+%For supersonic turbulence the index is $\beta=-2$ \citep{burg}. 
+
+%Using a statistical law that relates the moments \(M_n\) of order \(n\) with the increments in the velocity field for a separation \(\boldsymbol{r}\) \citep{Leqism}, we have:
+
+%\begin{equation}\label{eq:velocity-moments}
+%M_n = \langle \vert \boldsymbol{v}(\boldsymbol{x} + \boldsymbol{r})- \boldsymbol{v}(\boldsymbol{x})\vert^n \rangle \propto (\epsilon r)^{n/3}
+%\end{equation}
+%
+%the average is over all the positions \(\boldsymbol{x}\) and directions \(\boldsymbol{r}\). 
+%The Kolmogorov model predicts that the moment of order 2, the second-order structure function (equation \ref{eq:Br}), follows \(M_2 \propto r^{2/3}\).
+
+%\subsection{Origins of interstellar turbulence}\label{sec:origins-turbulence}
+
+%In the particular case of GEHR, as supersonic motions dissipate energy by shocks in time scales relatively short compared with the age of the region, it is necessary an energy source to replenish continuously the energy lost. From the observed velocity  dispersion \(\sigma\), and assuming that we have an isotropic distribution of velocities,  we can estimate the 3D velocity dispersion by \(\sigma_\mathrm{3D} = \sqrt{3} \sigma\). The mass of the ionized gas together with the velocity dispersion \(\sigma_\mathrm{3D}\)  are used to estimate the kinetic energy in the GEHRs.
+%As these objects have typically  masses of the ionized gas of \num{\sim e5} M\(_{\sun}\) and velocity dispersion values  of \SI{\sim 20}{km.s^{-1}} \citep{1984ApJ...287..116K}, typical kinetic energy of the ionized gas is \SI{\sim e51}{ergs}. 
+
+%In the standard Kolmogorov model, the energy spectrum of turbulence becomes dependent only on \(\epsilon\), the mean dissipation of energy per unit time per unit mass of fluid,  with the inertial forces transferring without losses kinetic energy from larger to smaller turbulent elements within the inertial range. Let \(L_c\) be the characteristic length of the largest eddies, and \(\delta v\) the typical velocity. 
+
+%We have then that \(\epsilon = (\delta v)^{3}/L\). In steady-state turbulence, equilibrium exists between the energy input and the energy dissipation rates. 
+%Although the present observations indicate that turbulence in \hii{} regions may not follow the Kolmogorov model, with energy input occurring at different scales, so that a  truly inertial range may not exist at all, lets us make a crude estimation of the  amount of energy transferred between scales using this simple model. 
+%Assuming the above figures for the mass of the gas and velocity dispersion, \(\delta v = \sigma_\mathrm{3D}\),  and a \(L_c\) of \SI{100}{pc}, we obtain that the energy transfer rate \SI{\sim e37}{erg.s^{-1}}, and  the time scale for energy transfer, \(L/\delta v \), would be of few million years.
+
+%There are several energy sources that could provide or contribute  to the energy required: of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc, supernova explosions inject a large amount of kinetic energy.
+%At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy and, bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
+
+%The lack of precise information on how these mechanism contribute to the emission line broadening make a non-trivial task to determine at what extent they play a role in the interstellar turbulence, contributing to the complexity of the extraction of pure turbulent motions from velocity profiles in nebulae \citep{2011MNRAS.413..705L,arthur2016turbulence}. 
