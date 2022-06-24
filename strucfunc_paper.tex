@@ -1314,12 +1314,8 @@ SUMMARISE COMPARISONS DESCRIBED IN APPENDIX.
 
 \subsection{Scaling relations between physical properties and turbulent parameters}\label{sec:scaling-relations}
 
-In section \ref{sec:results} we show that each velocity field of our sample can be characterized by parameters that are particular for each \hii{} region.
-We used these parameters to develop scaling relations between them and the physical properties of each region.
-
 %Intro for scaling relations
-Correlations between the physical properties of \hii{} regions like size, luminosity, and the velocity dispersion have been used as tools for finding scaling relationships for these objects.
-These kind of relations have also been found in dwarf galaxies and high-redshift star formation regions.
+Correlations between the physical properties of \hii{} regions like size, luminosity, and the velocity dispersion, have been used as tools for finding scaling relationships for these objects, which have also been found in dwarf galaxies and high-redshift star formation regions.
 \citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the \hii{} regions as the diameter or the luminosity (\(r \sim \sigma ^{\sim 2}\) ; \(\text{L}_{\text{H}} \sim \sigma ^{\sim 4}\)).
 In later years, \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
 %\citet{1981MNRAS.194..809L}
@@ -1329,34 +1325,46 @@ Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\
 \citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
 %methods for our analysis
-We implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library based on \cite{2007ApJ...665.1489K}.
-The physical properties in Table \ref{tab:regions-properties} are the independent variable \(X\) and the turbulent parameters in Table \ref{tab:Res} are the dependent variable \(Y\).
-For the physical properties we consider an uncertainty of the \num{10}\% of the value and for the turbulent parameters we used 1-\(\sigma\). 
+In section \ref{sec:results} we show that each velocity field of our sample can be characterized by parameters that are particular for each \hii{} region.
+We used these parameters to develop scaling relations between them and the physical properties of each region.
+To accomplish this we implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library based on \cite{2007ApJ...665.1489K}.
+We use the physical properties in Table \ref{tab:regions-properties} as the independent variable \(X\) and the turbulent parameters in Table \ref{tab:Res} as the dependent variable \(Y\).
+In the following analysis we left out the EON to avoid redundancy in the fitting.
+For the physical properties we consider an uncertainty of the \num{10}\% of the value and for the turbulent parameters we use the 2-\(\sigma\) intervals. 
 In the case of non-gaussian distribution we choose the highest value for the uncertainty.
-The results are shown in Table \ref{tab:RestStats} in ascending order for the \(p\)-value.
-In the Figures \ref{fig:sigvsl} and \ref{fig:rvsR} we show the correlations with a significance level \(p < \num{0.05}\).
-The black solid line shows the regression line and the red thin lines show some samples from the posterior distribution.
+The main results are shown in Table \ref{tab:RestStats} in ascending order for the \(p\)-value.
+In the Figures \ref{fig:sigvsl} and \ref{fig:rvsR} we show the correlations with a significance level \(p < \num{0.05}\) which corresponds to the first two rows in Table \ref{tab:RestStats}.
+In the Figures the black solid line shows the input regression line and the red thin lines show some samples from the posterior distribution.
 
 %Luminosity vs centroid velocity dispersion
 The Figure \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
 Since this relation is the most common it can be use for comparison with the investigations mentioned at the beginning of this section.
-Our results give us a relation of \(\log \sigma\pos = (0.27 \pm 0.1) \log \text{L}(\text{H}_{\alpha})-(10 \pm 4.0)\).
+Our results give us a relation of \(\log \sigma\pos = (0.26 \pm 0.11) \log \text{L}(\text{H}_{\alpha})-(9.3 \pm 4.3)\).
 It is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable.
-In our case if we choose the upper uncertainty and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.4}\). 
-Using the same procedure in \texttt{linmix} and changing the variables we obtained \(\log \text{L}(\text{H}_{\alpha}) = (3.4\pm 1.5) \log \sigma\pos -(36 \pm 1)\).
-Both results are close to the previously proposed \(\text{L}_{\text{H}} \propto \sigma^{4}\) relation.
+In our case if we choose the upper uncertainty and take the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{2.6}\). 
+Using the same procedure in \textit{linmix} and changing the variables order we obtained \(\log \text{L}(\text{H}_{\alpha}) = (3.9\pm 2.6) \log \sigma\pos -(35.55 \pm 2)\) which is within the uncertainty of the previously proposed \(\text{L}_{\text{H}} \propto \sigma^{4}\) relations.
 The references for the \(\text{L}(\text{H}_{\alpha})\) value are given in Appendix~\ref{sec:notes-individual-hii}.
 
 %Size vs correlation length
 The Figure \ref{fig:rvsR} shows the relation of the correlation length \(r_0\) and the size \(S\) of the region. 
-The relationship we found is \(\log r_0 = (0.93 \pm 0.33) \log S - (1.6 \pm 0.7)\).
+The relationship we found is \(\log r_0 = (0.95 \pm 0.33) \log S - (1.6 \pm 0.7)\).
 The values of \(S\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
-limits seen from visual inspection of the \ha{} photographs.
-In this sense these values would represent an upper limit of the size of each region.
-Since these objects do not posses a physical edges the size determination is not trivial.
+limits seen from visual inspection of \ha{} photographs.
+These values would represent an upper limit of the size of each region.
+Since these objects do not posses physical edges the size determination is not trivial.
 Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.  
 
-As for the power-law index \(m\) we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property.
+%Size vs centroid velocity dispersion
+Other important relation commonly used in the study of the interstellar medium is the diameter (or size) versus velocity dispersion.
+Table \ref{tab:RestStats} shows this result for our sample in row 3. 
+This relation presents a significance level \(p > \num{0.05}\) but there are a couple of things worth mentioning.
+Historically this relation is important following the work of \citet{1981MNRAS.194..809L} where he presents it in the context of molecular cloud complexes of many clouds, individual clouds, and clumps, so that size scales are studied over \(\num{0.1} < L < \SI{100}{pc}\) obtaining \(\sigma = 1.10 L ^{0.38}\). 
+This relation is interpreted in terms of turbulence, particularly the Kolmogorov model which predicts a index of \num{0.33} so that larger regions presents more turbulence, and smaller regions less turbulence.
+It has been argued that this correlation method is not as powerful as using statistical functions \citep{1984ApJ...277..556S} but it is interesting that the index is consistent within different phases of the interstellar medium (see first paragraph of this section).
+On the other hand, we obtain \(\log \sigma\pos = (0.24 \pm 0.17) \log S - (0.24 \pm 0.38)\) which despite the large uncertainty is comparable with previous investigations.
+
+%power-law index
+Finally, as for the power-law index \(m\) we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property, being the least reliable parameter for determining or concluding something about the nature of the physical processes inside the regions.
 
 \input{Corr}
 
@@ -1370,12 +1378,53 @@ As for the power-law index \(m\) we can see from table \ref{tab:RestStats} that 
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-rvsS}
-\caption{The log \(r_0\) - log \(S\) plane derived form our results an data in the literature. }
+\caption{The log \(r_0\) - log \(S\) plane derived form our results an data in the literature. Markers represent the same regions as Fig. \ref{fig:sigvsl}. }
 \label{fig:rvsR}
 \end{figure}
 
+\subsection{Relationship between plane-of-sky and mean line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
 
-\subsubsection{Kinematic relationship between ionized gas, molecular gas, and stars}
+The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that exists an underlying velocity spectrum following an energy cascade.
+But this statistical technique is not unique in measuring the velocity fluctuations in the nebula and does not give information on the processes disturbing the ionized gas.
+Also, as mentioned in \citet{arthur2016turbulence} the possibility if these fluctuations can account for the non-thermal line broadening needs to be evaluated. 
+
+Two parameters which are obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
+These quantities allow us to compare the relation between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L}.
+
+As mentioned in the introduction, the \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as turbulence along the line-of-sigth.
+This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics of the ionized gas and leaves out the broadening due to dust scattering.
+
+In the Figure~\ref{fig:los-vs-pos} we show the mean line-of-sight velocity dispersion versus the plane-of-sky velocity dispersion. 
+\citet{arthur2016turbulence} presents the same diagram for different emission lines of the Orion core nebula showing that the value \(\sigma_{\text{los}}\) is roughly twice as the \(\sigma\pos\) (figure 14 on their work), while the \citet{2011MNRAS.413..705L} diagram, for a sample of small-to-intermediate size \hii{} regions in M33, approach unity (figure 4 on their work). 
+The Figure~\ref{fig:los-vs-pos} shows that for our sample of \hii{} regions the parameters follows a \(\sigma_{\text{los}}\) = \(n \sigma_{\text{pos}}\) relation with \(3 > n > 1\).
+ 
+The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{1984ApJ...277..556S}.
+If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
+With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
+This procedure implies depths of the order 10 to 50 times the correlation length.
+In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency of this interpretation for the Orion core nebula, since evidence has shown that the emitting layer thickness is of the order of \num{0.01} - \SI{0.3}{pc}.
+For the most distant regions of our sample, the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (see section~\ref{sec:power-index}) only NGC 595, which power-law index is \num{1.38}, would comply to this fully three-dimensional structure.
+On the other hand, \citet{arthur2016turbulence} proposed another interpretation in terms of large-scale, order motions and emissivity fluctuations.
+They consider an expanding shell where the mean velocity fluctuations on the plane of the sky are because the relative brightness of the redshifted and blueshifted hemispherers.
+In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\).
+
+As for the \citet{2011MNRAS.413..705L} results, they consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, monotonically increase with the plane-of-sky dispersion.
+In this scenario, the main broadening mechanisms the kinematical disorder along the line-of-sight is related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
+On the plane-of-sky the consequences of those gradients and movements is measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
+Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase monotonically as the amplitudes grows because the non-thermal dynamical processes in the \hii{} regions.
+They characterize this behavior for their \hii{} regions sample by fitting a linear relation of \(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \) to their observed regions.
+
+\begin{figure}
+\centering 
+\includegraphics[width=3in]{Figures/corr-los-vs-pos}
+\caption{
+The \(\sigma_{\text{pos}}\)-\(\langle \sigma_{\text{los}} \rangle\) plane. The diagonal gray solid lines shows the relation \(\sigma_{\text{los}}\) = \(\sigma_{\text{pos}}\) and \(\sigma_{\text{los}}\) = 2\(\sigma_{\text{pos}}\). The dashed line corresponds to the linear fit obtained by \citet{2011MNRAS.413..705L} which correspond to a sample of small-to-intermediate size \hii{} regions in M33.  Markers represent the same regions as Fig. \ref{fig:sigvsl}. 
+}
+\label{fig:los-vs-pos}
+\end{figure}
+
+
+\subsection{Kinematic relationship between ionized gas, molecular gas, and stars}
 \label{sec:kinem-rela-betw}
 
 Naively, the relatively small observed CO velocity dispersion
@@ -1415,35 +1464,6 @@ and \(\eta \sim \csound^2\) is an additive factor due to additional turbulence
 generated by the transonic ionized photoevaporation flows.
 
 \textbf{Estimate these two factors by fitting to the observations}
-
-
-\subsection{Relationship between plane-of-sky and line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
-
-As a justification for the use of the structure function we can consider that any relation between the line width and line-of-sight depth can be interpreted in terms of a correlation between velocity spread and scale size.
-If we have an optically thin spectral line where it will have a width which is related to the total radial velocity dispersion of all fluctuations sampled along the line-of-sight \citep{1984ApJ...277..556S}. 
-The standard deviation of the velocity centroid, \(\sigma\pos\), and the mean non-thermal linewidth, \(\sigma_{\text{los}}\), allow us to compare the relation between the kinematical disorder on the plane-of-the sky and along the line-of-sight  \citep{2011MNRAS.413..705L}.
-Considering the previous statements, the structure function is used as a tool to investigate the projection of a three-dimensional correlation function onto the plane of sky \citep{arthur2016turbulence}.
-
-We can consider as a main broadening mechanisms the kinematical disorder along the LOS related to velocity gradients by the clumpiness on the cloud and turbulent movements.
-On the plane-of-sky the consequences of those gradients and movements is measured in every pixel. 
-The spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
-This reasoning has lead to  propose a relationship between \(\sigma_{\text{los}}\) and \(\sigma\pos\) \citep{2011MNRAS.413..705L}.
-
-In the Figure~\ref{fig:los-vs-pos} that the line-of-sight velocity dispersion is roughly twice the plane-of-sky velocity dispersion.
-In the case of homogeneous turbulent velocity we can consider the effect of \textit{project smearing} \citep{1984ApJ...277..556S}, where the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
-With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
-This procedure implies depths of the order 10 to 50 times the correlation length.
-In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency for Orion since evidence has show that the emitting layer thickness is of the order of \num{0.01} - \SI{0.3}{pc}.
-For the most distant regions the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (section~\ref{sec:power-index}) only NGC 595, which index is \num{1.36} would comply to this three dimensional structure.
-
-
-
-\begin{figure}
-\centering 
-\includegraphics[width=3in]{Figures/corr-los-vs-pos}
-\caption{The \(\sigma_{\text{pos}}\)-\(\sigma_{\text{los}}\) plane. The dotted line represents slope equal to unity and the dashed line represents a slope of two.}
-\label{fig:los-vs-pos}
-\end{figure}
 
 
 
@@ -1515,7 +1535,7 @@ The mean value \(m\) of our sample is \num{\sim 1}.
 Following the equation \ref{eq:projection-smoothing-3d} the \hii{} regions in our sample with \(m >\) 1 would present a depth which is in the order of magnitude comparable to the length of the observed box size \(L\) been closest to this value as \(m\) tends to 1.6. 
 On the other hand, \hii{} regions with values \(m <\) 1 would present a thinner structure as they tend to the value of 0.6.
 This analysis should not be regarded as conclusive about the true structure of the regions and would require further observations with a combination of kinematics analysis to determine the best way to determine the depth of each region.
-As we show in section \ref{sec:sigmapos-vs-sigmalos} the ratio between \(\sigma\pos\) and \(\sigma_{\text{los}}\) can also be used to give an idea of the depth o the region.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
