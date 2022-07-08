@@ -148,17 +148,21 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
 
 % Abstract of the paper
 \begin{abstract}
-  Fluctuations of centroid velocities on the plane of the sky are a powerful tool for studying the turbulent dynamics of emission line regions.
-  To characterize these fluctuations we apply a statistical analysis using the second-order structure function to archival \halpha\ observations of a diverse sample of 9 \hii{} regions.
-  This regions are located in the Milky Way and other Local Group galaxies, and
-  span more than two orders of magnitude in size and luminosity.
-  We propose a new functional form of the structure function that considers observational constraints.
-  This functional is used as an objective function for a chi-square analysis to adjust our results and extract three parameters related to the fluctuations in the velocity field for each region.
-  We obtain the true velocity dispersion \(\sigma\pos\), which spans from 3 to 19 km s\(^{-1}\), the
-  autocorrelation length \(r_0\) covering to 0.09 - 12 pc, and the power-law slope \(m\) of the velocity field, which ranges from 0.7 to 1.5.
-  The velocity dispersion is found to correlate primarily with luminosity and the autocorrelation length correlates primarily with the size of the region.
-  A comparison between \(\sigma\pos\) and \(\sigma_{los}\) shows that this last value is roughly the double for all regions.
-  We found that our proposed functional form describe with more accuracy the inertial range and our methodology guarantees consistency for comparison between the galactic and giant HII regions.
+  Fluctuations of centroid velocities on the plane of the sky, which can be derived from spectroscopic and Fabry-Perot observations, are a powerful tool for studying the turbulent dynamics of emission line regions.
+  With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity, and are located in the Milky Way and other Local Group galaxies.
+  We determine the second-order structure function of the observational centroid velocity \halpha\ two-dimensional map, and the observational structure function is fitted in a non-linear least square regression using a heuristic model for the second-order structure function as an objective function.
+  Finally we establish confidence intervals for the parameters provided by the fitting.
+  The model we use considers: nuisance parameters like the observational seeing (\(s_0\)) and the instrumental noise (\(B_{\text{noise}}\)), and the turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index \(m\).
+  Our results are: \num{0.2}\(< s_0 \text{(FWHM) } <\)\SI{3.0}{arcsec},  \num{0.003}\(< B_{\text{noise}} <\)\SI{6.0}{km^{-2}.s^{-2}}, \num{3} \(< \sigma\pos <\) \SI{19}{km.s^{-1}},   \num{0.09}\(< r_0 <\) \SI{12}{pc} and  \num{0.7} \(< m <\)\num{1.5}. 
+  We also find the relations \(\sigma\pos \propto L(H_\alpha)^{0.28 \pm 0.1}\), and \(r_0 \propto D^{0.95 \pm 0.32}\).
+  A comparison between \(\sigma\pos\) and the mean non-thermal linewidth, \(\langle \sigma_{los} \rangle\), shows that these values increase following a linear monotonically relation.
+%  Since the previous scale-relations results are within the uncertainty of previous investigation we conclude that the parameters obtained from our proposed model represents true kinematic properties of each region.
+ % Obtaining in a reliable method the parameters of an observational structure function in turn can be used to better characterize with certain accuracy the centroid velocities fluctuations which may reflect the turbulent nature of a \hii{} region.
+    %which have a strong influence on the slope that characterize the structure function behavior.
+
+  
+  
+  %our methodology guarantees consistency for comparison between the galactic and giant HII regions.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -284,7 +288,7 @@ the \hii{} regions in our sample.
 We also discuss the implications of our results for the existence of a
 Kolmogorov-type turbulent energy cascade and the nature of the driving mechanism
 for the velocity fluctuations.
-Finally, in section~\ref{sec:conclusions} we summarise our conclusions.
+Finally, in section~\ref{sec:conclusions} we present our conclusions.
 
 %% Previous Javier version of final paragraphs of Intro. I think I
 %% have incorporated most of this in my own version, but more
@@ -458,8 +462,8 @@ where such a masking out is not possible.
 \subsubsection{Fabry-Pérot étalon}
 \label{sec:fabry-perot-etalaon}
 
-We use \citet{1987A&A...176..347H} observations to analyze the Extended Orion Nebula.
-These observations were obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
+We use \citet{1987A&A...176..347H} data to analyze the Extended Orion Nebula.
+Their observational data was obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
 A Fabry-Pérot interferometer was used with a étalon separation of 0.5 mm. 
 A number of fifteen interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula with an exposure time between 10 and 40 minutes. 
 The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.   
@@ -1253,7 +1257,7 @@ similar to the light blue line in Figure~\ref{fig:model-strucfunc}b.
 \section{Discussion}\label{sec:discussion}
 
 In the following sections, the results shown previously are discussed and compared with the structure functions of previous investigations that analyzed \hii{} regions from our sample.
-We present the most important correlations between the turbulent parameters and the physical properties from the \hii{} region sample and finally an interpretation of the turbulent parameters is given.
+We present the most important correlations between the turbulent parameters and the physical properties from the \hii{} region sample.
 
 \subsection{Comparison with previous structure functions}
 \label{sec:comp-with-prev}
