@@ -148,27 +148,26 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
 
 % Abstract of the paper
 \begin{abstract}
-  Fluctuations of centroid velocities on the plane of the sky, which can be derived from spectroscopic and Fabry-Perot observations, are a powerful tool for studying the turbulent dynamics of emission line regions.
-  With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity, and are located in the Milky Way and other Local Group galaxies.
-  We determine the second-order structure function of the observational centroid velocity \halpha\ two-dimensional map, and the observational structure function is fitted in a non-linear least square regression using a heuristic model for the second-order structure function as an objective function.
-  Finally we establish confidence intervals for the parameters provided by the fitting.
-  The model we use considers: nuisance parameters like the observational seeing (\(s_0\)) and the instrumental noise (\(B_{\text{noise}}\)), and the turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index \(m\).
-  Our results are: \num{0.2}\(< s_0 \text{(FWHM) } <\)\SI{3.0}{arcsec},  \num{0.003}\(< B_{\text{noise}} <\)\SI{6.0}{km^{-2}.s^{-2}}, \num{3} \(< \sigma\pos <\) \SI{19}{km.s^{-1}},   \num{0.09}\(< r_0 <\) \SI{12}{pc} and  \num{0.7} \(< m <\)\num{1.5}. 
-  We also find the relations \(\sigma\pos \propto L(H_\alpha)^{0.28 \pm 0.1}\), and \(r_0 \propto D^{0.95 \pm 0.32}\).
-  A comparison between \(\sigma\pos\) and the mean non-thermal linewidth, \(\langle \sigma_{los} \rangle\), shows that these values increase following a linear monotonically relation.
-%  Since the previous scale-relations results are within the uncertainty of previous investigation we conclude that the parameters obtained from our proposed model represents true kinematic properties of each region.
- % Obtaining in a reliable method the parameters of an observational structure function in turn can be used to better characterize with certain accuracy the centroid velocities fluctuations which may reflect the turbulent nature of a \hii{} region.
-    %which have a strong influence on the slope that characterize the structure function behavior.
+  Fluctuations of centroid velocities on the plane of the sky derived from spectroscopic observations are a powerful tool for studying the turbulent dynamics of emission line regions.
+  With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity located in the Milky Way and other Local Group galaxies.
+  We determine the second-order structure function of the centroid velocity two-dimensional map of the \halpha\ emission line.
+  We also proposed a heuristic model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L\)), and the turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)).
+  The observational structure function is fitted using our heuristic model in a non-linear regression analysis which allow us to derive the parameters previously mentioned  with their respective confidence intervals.
+  Our results are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
+  The derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diamater (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
+  We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\), and that the \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\), values increase following a linear monotonically relation.
+  Since the derived  scale-relations are within the uncertainty of previous investigations we conclude that the parameters obtained from our proposed model represents true kinematic properties of each region.
+  The methodology we present guarantees consistency for comparison between the galactic and giant HII regions. 
+%  The second-order structure function has proved to be a useful tool to determine the existence of the correlations between random velocities and distance across the \hii{} regions.
 
   
   
-  %our methodology guarantees consistency for comparison between the galactic and giant HII regions.
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
 % Don't make up new ones.
 \begin{keywords}
-HII regions -- ISM: kinematics and dynamics -- turbulence
+turbulence -- instrumentation: spectrographs -- ISM: HII regions, kinematics and dynamics
 \end{keywords}
 
 
@@ -285,9 +284,9 @@ In section~\ref{sec:discussion} we discuss the relation
 of our results to previous studies and the correlations that we find
 between the structure function parameters and other properties of
 the \hii{} regions in our sample.
-We also discuss the implications of our results for the existence of a
-Kolmogorov-type turbulent energy cascade and the nature of the driving mechanism
-for the velocity fluctuations.
+%We also discuss the implications of our results for the existence of a
+%Kolmogorov-type turbulent energy cascade and the nature of the driving mechanism
+%for the velocity fluctuations.
 Finally, in section~\ref{sec:conclusions} we present our conclusions.
 
 %% Previous Javier version of final paragraphs of Intro. I think I
@@ -383,8 +382,7 @@ Our sample includes three Milky Way regions
 two regions in the Magellanic Clouds (\num{50} to \SI{60}{kpc}),
 and four regions in more distant galaxies of the Local Group
 (\num{500} to \SI{800}{kpc}).
-Further details of the observations and the sources themselves
-are given in the following two sections.
+Further details of the observations are given in the following section.
 
 \subsection{Spectroscopic datasets}
 \label{sec:spectr-datas}
@@ -513,7 +511,7 @@ and extracted the \ha{} profile using tools in the MPDAF python library.\footnot
   \url{https://mpdaf.readthedocs.io/en/latest/}
 } 
 
-\subsubsection{TAURUS-II Fabry-Perot spectroscopy}
+\subsubsection{TAURUS-II Fabry-Perot interferometer}
 \label{sec:taurus-ii-fabry}
 
 The archival data used in this work for the extragalactic giant regions, NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument
@@ -661,7 +659,7 @@ normalized spatial autocovariance or autocorrelation function:
   C(r) = \frac{1}{\sigma^2\pos}\left\langle 
   \bigl[
   V_{c}(\xx_j) \  V_{c}(\xx_i)
-  \bigr]^{2} \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
+  \bigr] \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
 \end{equation}
 If the fluctuations are perfectly spatially homogeneous, then the
 two quantities are related \citep{1984ApJ...277..556S} as
