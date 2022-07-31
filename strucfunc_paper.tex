@@ -1270,8 +1270,9 @@ similar to the light blue line in Figure~\ref{fig:model-strucfunc}b.
 
 \section{Discussion}\label{sec:discussion}
 
-In the following sections, the results shown previously are discussed and compared with the structure functions of previous investigations that analyzed \hii{} regions from our sample.
-We present the most important correlations between the turbulent parameters and the physical properties from the \hii{} region sample.
+In the section \ref{sec:comp-with-prev} we make a comparison of our methods and results with previous research that analyzes structural functions of some \hii{} regions of our sample.
+In the section \ref{sec:scaling-relations} we present the most important scaling relations between the derived turbulent parameters and the physical properties of the \hii{} regions.
+Finally, in the section \ref{power-law-index} we discuss the role of the derived power-law index in the context of turbulence in the ionized gas.
 
 \subsection{Comparison with previous structure functions}
 \label{sec:comp-with-prev}
@@ -1341,28 +1342,28 @@ velocity fluctuations on the largest scales.
 \subsection{Scaling relations between physical properties and turbulent parameters}\label{sec:scaling-relations}
 
 %Intro for scaling relations
-\textit{Maybe this paragraph it not necessary. Just a small intro and if needed previous results can be in a table for comparison. }
-Correlations between the physical properties of \hii{} regions like size, luminosity, and the velocity dispersion, have been used as tools for finding scaling relationships for these objects, which have also been found in dwarf galaxies and high-redshift star formation regions.
-\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the \hii{} regions as the diameter or the luminosity (\(r \sim \sigma ^{\sim 2}\) ; \(\text{L}_{\text{H}} \sim \sigma ^{\sim 4}\)).
-In later years, \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
+%\textit{Maybe this paragraph it not necessary. Just a small intro and if needed previous results can be in a table for comparison. }
+%Correlations between the physical properties of \hii{} regions like size, luminosity, and the velocity dispersion, have been used as tools for finding scaling relationships for these objects, which have also been found in dwarf galaxies and high-redshift star formation regions.
+%\citet{melnick1977,terlevich1981} were the first to shown an empirical relationship between the line width and the integrated properties of the \hii{} regions as the diameter or the luminosity (\(r \sim \sigma ^{\sim 2}\) ; \(\text{L}_{\text{H}} \sim \sigma ^{\sim 4}\)).
+%In later years, \citet{1988A&A...201..199A} confirmed these relationships considering the discrepancies of previous investigations obtaining \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.9}\) and \(r \propto \sigma^{1.84}\).
 %\citet{1981MNRAS.194..809L}
-In recent years, \citet{2012MNRAS.422.3339W} have found that clumps and \hii{} regions follow scaling relations over the range of z = 0-2 for the \halpha\ emission line with the size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
-This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
-Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).
-\citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
+%In recent years, \citet{2012MNRAS.422.3339W} have found that clumps and \hii{} regions follow scaling relations over the range of z = 0-2 for the \halpha\ emission line with the size, velocity dispersion, luminosity and mass, finding \(\sigma \propto r^{0.42}\), \(\text{L}_{\text{H}_{\alpha}} \propto r^{2.72}\) and \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{4.18}\), respectively. 
+%This results imply that the same process are seen at high redshifts and the current epoch in star forming regions.
+%Recently, \citet{Moiseev:2015a} found that the relation in dwarf galaxies is \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{5}\).
+%\citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
 %methods for our analysis
-In section \ref{sec:results} we show that each velocity field of our sample can be characterized by parameters that are particular for each \hii{} region.
-We used these parameters to develop scaling relations between them and the physical properties of each region.
-To accomplish this we implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library based on \cite{2007ApJ...665.1489K}.
-We use the physical properties in Table \ref{tab:regions-properties} as the independent variable \(X\) and the turbulent parameters in Table \ref{tab:Res} as the dependent variable \(Y\).
-In the following analysis we left out the EON to avoid redundancy in the fitting process.
-For the physical properties we consider an uncertainty of \num{10}\% of the values for the size and the mean non-thermal linewidths for 30 Doradus and NGC 346.
-For the turbulent parameters we use the relative error considering the 2-\(\sigma\) intervals. 
-In the case of non-gaussian distribution we choose the highest value for the uncertainty.
-The main results are shown in Table \ref{tab:RestStats} in ascending order for the \(p\)-value.
-In the Figures \ref{fig:sigvsl}, \ref{fig:rvsR} and \ref{fig:los-vs-pos} we show the plots for the correlations with a significance level \(p < \num{0.05}\) which corresponds to the first three rows in Table \ref{tab:RestStats}.
-In the Figures the black solid line is the input regression line which is described by the equation in the plot, and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value.
+In section \ref{sec:results} we show that each \hii{} region of our sample can be characterized with parameters that are particular to each velocity field.
+We used these parameters to estimate the scaling relations between them and the main physical properties of each region.
+To accomplish this we implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library which is based on the procedure of \cite{2007ApJ...665.1489K}.
+The physical properties in Table \ref{tab:regions-properties} are used as the independent variable \(X\) while the derived turbulent parameters of Table \ref{tab:Res} are used as the dependent variable \(Y\).
+In the following analysis we left out the EON to avoid redundancy of the regions.
+For physical properties values where uncertainties are not reported (size and luminosity), we consider an error of \num{10}\% of the value.
+The same criteria is used for the uncertainty values of the mean non-thermal linewidths for 30 Doradus and NGC 346.
+For the turbulent parameters we use the relative error considering the 2-\(\sigma\) interval. 
+Our main correlation results are shown in Table \ref{tab:RestStats} in ascending order for the \(p\)-value.
+In the Figs. \ref{fig:sigvsl}, \ref{fig:rvsR} and \ref{fig:los-vs-pos} we show the plots for the correlations with a significance level \(p < \num{0.05}\) which corresponds to the first three rows in Table \ref{tab:RestStats}.
+In the Figs. the black solid line is the input regression line which is described by the equation shown in the plot and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value.
 
 \input{Corr}
 
@@ -1393,16 +1394,21 @@ Same information as Fig. \ref{fig:sigvsl} but for the \(\sigma_{\text{pos}}\)-\(
 
 \subsubsection{Luminosity vs centroid velocity dispersion}\label{sec:L-vs-sigmapos}
 
-The Figure \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
-Since this relation is common in the literature it can be use to investigate how reliable are our results and can be used as comparison with the previous investigations.
-The fit we obtained give us a relation of \(\log \sigma\pos = (0.27 \pm 0.10) \log \text{L}(\text{H}_{\alpha})-(9.9 \pm 4.0)\).
-Since it is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable we also calculate this relation.
-Taking the inverse of slope we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.6 \pm 1.4}\). 
-Using the same procedure in \textit{linmix} and changing the variables we obtain \(\log \text{L}(\text{H}_{\alpha}) = (2.8\pm 1.0) \log \sigma\pos -(36 \pm 4)\).
-Both results are close to the \(\text{L}_{\text{H}} \propto \sigma^{4}\) theoretical relation.
+The Fig. \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
+This relation is commonly employ in the literature  and can be use to investigate how reliable is our derived velocity dispersion.
+The fit we obtain is \(\log \sigma\pos = (0.27 \pm 0.10) \log \text{L}(\text{H}_{\alpha})-(9.9 \pm 4.0)\).
+Since it is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable we also calculate this relation: taking the inverse of slope in Fig. \ref{fig:sigvsl} we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.6 \pm 1.4}\) and using the same procedure in \textit{linmix} and changing the variables we obtain \(\log \text{L}(\text{H}_{\alpha}) = (2.8\pm 1.0) \log \sigma\pos -(36 \pm 4)\).
 
-The fact that this relationship holds in our results is interesting considering that the \(\sigma\pos\) is obtained using the structure function and the \(\text{L}(\text{H}_{\alpha})\) values comes from different sources unrelated to oour data (see the Appendix~\ref{sec:notes-individual-hii}).
-This means that the proposed model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted a true property of each \hii{} region velocity field .
+The relationship \(\text{L}_{\text{H}} \propto \sigma^{\alpha}\) has been extensively investigated  in the context of giants \hii{} regions obtaining a value for \(\alpha\) of \( \sim 4\)\citep{terlevich1981,1988A&A...201..199A} and \num{2.87 \pm 0.2} \citep{Rozas:2006b}.
+Complementing previous results \citet{2012MNRAS.422.3339W} found that star-forming regions at \(z \sim 1.3\) and local \hii{} regions follow a relation with \(\alpha = 4.18 \pm 0.21\).
+\citet{Moiseev:2015a} found that this relation also holds for dwarf galaxies with a value of \(\alpha \sim 5\).
+\citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
+Recently, \citet{2020ApJ...888..113W} studied the properties of high-\(z\) and local \hii{} galaxies among some GEHRs findig a value of \(\alpha \sim 5\).
+
+There are two main difference between the previous investigations and our results: one is that the velocity dispersion is obtained as the width of the emission line profile integrated over the whole object or as the non-thermal line-width, which is different from the plane of the sky dispersion we are using and that our sample is smaller in the number of data.
+The first problem is addressed in section \ref{sec:sigmapos-vs-sigmalos} where we discuss the relation between the line-of-sight and plane-of-sky velocities.
+But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\text{H}_{\alpha})\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
+This means that the proposed structure function model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted as a true kinematic property of the \hii{} region velocity field.
 
 \subsubsection{Diameter vs correlation length}\label{sec:D-vs-r0}
 
@@ -1411,18 +1417,17 @@ The relationship we found is \(\log r_0 = (0.95 \pm 0.33) \log D - (1.6 \pm 0.7)
 The values of \(D\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
 limits seen from visual inspection of \ha{} photographs.
 These values would represent an upper limit of the size of each region.
-Since these objects do not posses physical edges the size determination is not trivial.
+Since these objects do not posses physical edges the determination of their size is not trivial.
 Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.
 
 Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
-It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions, thought a lot of options are candidates.
-The most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
-There are several energy sources that could provide or contribute  to the energy required: of the order of kpc, the differential rotations of the galaxy that produces shear at large scale, at scales of the order of hundreds of pc, supernova explosions inject a large amount of kinetic energy.
-At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy and, bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
-Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work.
+It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions.
+There are several energy sources that could provide or contribute to the energy required: of the order of kpc we have the differential rotations of the galaxy that produces shear at large scale. 
+At scales of the order of hundreds of pc the supernova explosions inject a large amount of kinetic energy.
+At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy, and bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
+Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
 
-The dependence on \(r_0\) and the diameter can be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms in the regions there some unique combination that drives the input energy in each region. 
-
+The dependence on \(r_0\) and the diameter can be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
 
 \subsubsection{Relationship between plane-of-sky and mean line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
 
@@ -1471,7 +1476,7 @@ On the other hand, we obtain \(\log \sigma\pos = (0.25 \pm 0.17) \log D - (0.2 \
 As we mentioned in section \ref{sec:L-vs-sigmapos} the fact that this relation holds up to previous investigation gives some certainty that the \(\sigma\pos\) value obtained via the proposed model of the structure function is valid. 
 This implying that the structure function, while not an absolute diagnostic, is a powerful tool in the research of \hii{} regions kinematics.
 
-\subsection{Power-law index}
+\subsection{Power-law index}\label{power-law-index}
 
 The power-law index \(m\) shown in the last column of Table \ref{tab:Res} is used for comparison between the observations and the theoretical value of 0.67.
 All our indices are above this theoretical value and this is attributed to the fact that the \hii{} regions do not comply with the assumptions established in the development of the turbulent theory.
