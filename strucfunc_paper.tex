@@ -151,7 +151,7 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
   Fluctuations of centroid velocities on the plane of the sky derived from spectroscopic observations are a powerful tool for studying the turbulent dynamics of emission line regions.
   With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity located in the Milky Way and other Local Group galaxies.
   We determine the second-order structure function of the centroid velocity two-dimensional map of the \halpha\ emission line.
-  We also proposed a heuristic model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L\)), and the turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)).
+  We also proposed a heuristic model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L_{\text{box}}\)), and the turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)).
   The observational structure function is fitted using our heuristic model in a non-linear regression analysis which allow us to derive the parameters previously mentioned  with their respective confidence intervals.
   Our results are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
   The derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diamater (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
@@ -270,11 +270,11 @@ an autocorrelation length \(r_0\).
 This is described in section~\ref{sec:met}.
 We also take into account three observational limitations of the datasets:
 the finite angular resolution, \(s_0\) (set by pixel spacing or atmospheric seeing);
-the finite map size, \(L\);
+the finite map size, \(L_{\text{box}}\);
 and a contribution of spatially uncorrelated noise, \(B_0\),
 to the observed structure function.
 In Appendix~\ref{sec:degr-struct-funct} we use simulated velocity maps to derive
-appropriate functional forms for the effects of \(s_0\), \(L\) and \(B_0\).
+appropriate functional forms for the effects of \(s_0\), \(L_{\text{box}}\) and \(B_0\).
 In our fits, we marginalize over these nuisance parameters to obtain robust
 credibility limits for the parameters of astrophysical interest:
 \(\sigma\pos\), \(r_0\), and \(m\).
@@ -457,14 +457,15 @@ we do not mask out regions affected by known high-velocity outflows.
 This decision was made for consistency with the analysis of more distant regions,
 where such a masking out is not possible.
 
-\subsubsection{Fabry-Pérot étalon}
+\subsubsection{Fabry-Pérot observations}
 \label{sec:fabry-perot-etalaon}
 
-We use \citet{1987A&A...176..347H} data to analyze the Extended Orion Nebula.
-Their observational data was obtained using a 106 cm-Cassegrain telescope at Observatorium Hoher List. 
-A Fabry-Pérot interferometer was used with a étalon separation of 0.5 mm. 
+We use the velocity field presented in \citet{1987A&A...176..347H} to analyze the Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}.
+the brightness following the southwest direction from the Huygens region.
+The observational data was obtained using a Fabry-Pérot interferometer with a étalon separation of 0.5 mm on the 106 cm-Cassegrain telescope at Observatorium Hoher List. 
 A number of fifteen interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula with an exposure time between 10 and 40 minutes. 
-The exposures are overlapped and fall into one square of a grid with a width of 1' centered at \(\theta^{1}\)Ori C.   
+The exposures are overlapped and fall into one square of a grid with a width of \SI{1}{arcmin} centered at \(\theta^{1}\)Ori C.   
+
 
 \subsubsection{FLAMES multi-fiber spectroscopy}
 \label{sec:flames-multi-fiber}
@@ -514,22 +515,15 @@ and extracted the \ha{} profile using tools in the MPDAF python library.\footnot
 \subsubsection{TAURUS-II Fabry-Perot interferometer}
 \label{sec:taurus-ii-fabry}
 
-The archival data used in this work for the extragalactic giant regions, NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument
+The archival data for the extragalactic giant regions (GEHRs), NGC 604, NGC 595, Hubble X and Hubble V was obtained with the Fabry Perot TAURUS-II instrument
 \citep{Gordon:2000v}
-on the \SI{4.2}{m} William Herschel Telescope (WHT) of
-el Roque de los Muchachos Observatory (ORM) in La Palma, Spain
-and was retrieved from the La Palma archive\footnote{\url{http://casu.ast.cam.ac.uk/casuadc/ingarch}}.
-Each velocity image is \(256 \times 256\) pixels on the sky,
-with a spatial scale of \SI{0.26}{arcsec.pixel^{-1}}
-and a spectral resolution of \SI{40}{km.s^{-1}}.
+on the \SI{4.2}{m} William Herschel Telescope (WHT) and was retrieved from the La Palma archive\footnote{\url{http://casu.ast.cam.ac.uk/casuadc/ingarch}}.
+The IPCS-II detector was used with a etalon of \SI{125}{\mu m}.
+Each data cube is \(256 \times 256 \times 100\) with a spatial scale of \SI{0.26}{arcsec.pixel^{-1}} with a total integration time of \SI{3600}{s} (\SI{36}{s} per frame).
+For more details on the observational setup see table~1 of \citet{sabalisck1995supersonic}.
+The reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L} and the emission spectrum was adjusted with a Gaussian fit.
 The NGC~604 observations were previously reported and analyzed in
 \citet{sabalisck1995supersonic}, \citet{Medina-Tanco:1997a} and \citet{Melnick:2021x}.
-
-% \citet{sabalisck1995supersonic} mentioned the main aspects of the observations (1990 July 31).
-% The two-dimensional imaging spectroscopy was captured using an IPCS-II detector and the 125 $\mu$m etalon.
-% The cumulative integration time per frame is 36 s with a seeing value of 1''.
-% The format of the data cube was of 256*256*100 with a spatial scale of 0.26 pixel$^{-1}$.
-% Finally, the reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L}. The NGC 604 TAURUS-II observations were used by \citet{sabalisck1995supersonic}, \citet{tanco1997} and \citet{2019arXiv191203543M}.
 
 
 \subsection{Physical properties of the sample regions}
@@ -541,7 +535,7 @@ The NGC~604 observations were previously reported and analyzed in
 \hii{}    &  \text{Distance,}\ d & \text{Diameter,}\ D & \log L(\ha) &  \langle \sigma\los \rangle \\
   Region    &  [\si{kpc}]          &  [\si{pc}]    &  [\si{erg.s^{-1}}]            &    [\si{km.s^{-1}}]  \\ 
 \midrule
-Orion     & 0.436 \pm 0.02  & 5 \pm 0.5    &    37.18       &    9.9 \pm 1.2\FNa        \\
+Orion     & 0.44 \pm 0.02  & 5 \pm 0.5    &    37.18       &    9.9 \pm 1.2\FNa        \\
 Lagoon    & 1.25 \pm 0.12   & 25 \pm 2.5      &    37.47    &   11.2 \pm 1.6    \\
 Carina    & 2.35 \pm 0.05   & 200 \pm 20      &    38.54    &   18.6 \pm 3.3\FNa      \\
 30 Dor    & 50.0 \pm 0.2    & 370 \pm 37    &    39.46    &     21.7 \pm 2.2    \\
@@ -557,7 +551,7 @@ NGC 604   & 820 \pm 30      & 400 \pm 40      &    39.42    &   17.5 \pm 0.30   
 \end{table} 
 
 Table~\ref{tab:regions-properties} summarizes the properties of the regions in our sample
-with data taken from the literature. Further details on each individual source and references are given in Appendix~\ref{sec:notes-individual-hii}.
+with data taken from the literature. Further details on each individual source and their references are given in Appendix~\ref{sec:notes-individual-hii}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -662,7 +656,7 @@ normalized spatial autocovariance or autocorrelation function:
   \bigr] \right \rangle_{\Abs{\xx_j - \xx_i\!} \ \approx \ r} \ .
 \end{equation}
 If the fluctuations are perfectly spatially homogeneous, then the
-two quantities are related \citep{1984ApJ...277..556S} as
+two quantities are related \citep{1984ApJ...277..556S} as:
 \begin{equation}\label{eq:functional}
   B(r) = 2\sigma^2\pos \bigl[   1 - C(r)\bigr] .
 \end{equation}
@@ -710,7 +704,7 @@ At scales smaller than \(r_0\), the fluctuations often show a power-law behavior
 as a function of \(r\).
 
 In order to capture these two behaviors,
-We therefore propose the following idealized 2-parameter model
+we therefore propose the following idealized 2-parameter model
 for the autocorrelation function:
 %
 \begin{equation}\label{eq:new-correlation-form}
@@ -1137,7 +1131,7 @@ but the larger amplitude of the fluctuations in these sources means
 that the fitted model parameters are still tightly constrained.
 
 For the more distant sources, the principal observational limitation is the seeing.
-In three of the four sources,
+In three of the four sources (NGC 604, Hubble V and Hubble X),
 the derived values of \(s_0\) exceed 10\% of the correlation length.
 This implies that the true power law slope \(m\) is less steep than
 would be naively inferred from the observations
@@ -1405,7 +1399,7 @@ Complementing previous results \citet{2012MNRAS.422.3339W} found that star-formi
 \citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 Recently, \citet{2020ApJ...888..113W} studied the properties of high-\(z\) and local \hii{} galaxies among some GEHRs findig a value of \(\alpha \sim 5\).
 
-There are two main difference between the previous investigations and our results: one is that the velocity dispersion is obtained as the width of the emission line profile integrated over the whole object or as the non-thermal line-width, which is different from the plane of the sky dispersion we are using and that our sample is smaller in the number of data.
+There are two main difference between the previous investigations and our results: one is that the velocity dispersion is obtained as the width of the emission line profile integrated over the whole object or as the non-thermal line-width, which is different from the plane of the sky dispersion we are using and that our sample is considerably smaller in the data points.
 The first problem is addressed in section \ref{sec:sigmapos-vs-sigmalos} where we discuss the relation between the line-of-sight and plane-of-sky velocities.
 But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\text{H}_{\alpha})\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
 This means that the proposed structure function model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted as a true kinematic property of the \hii{} region velocity field.
@@ -1431,21 +1425,23 @@ The dependence on \(r_0\) and the diameter can be interpreted in terms that each
 
 \subsubsection{Relationship between plane-of-sky and mean line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
 
-The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that exists an underlying velocity spectrum following an energy cascade.
-But this statistical technique is not unique in measuring the velocity fluctuations in the nebula and does not give information on the processes disturbing the ionized gas.
-Also, as mentioned in \citet{arthur2016turbulence} the possibility if these fluctuations can account for the non-thermal line broadening needs to be evaluated. 
+The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that there exists an underlying velocity spectrum following an energy cascade.
+But this statistical technique is not unique in measuring the velocity fluctuations in the nebula.
+Two parameters which can be obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
+These quantities allow us to compare the relationship between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L,arthur2016turbulence}.
 
-Two parameters which are obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
-These quantities allow us to compare the relation between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L}.
+The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sigth.
+This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
 
-As mentioned in the introduction, the \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as turbulence along the line-of-sigth.
-This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics of the ionized gas and leaves out the broadening due to dust scattering.
+In the Fig.~\ref{fig:los-vs-pos} we show the mean line-of-sight velocity dispersion versus the plane-of-sky velocity dispersion plane.
+The relationship we obtain is \( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos + (7.7 \pm 2.9)\).
+\citet{arthur2016turbulence} presents the same diagram for different emission lines of the Orion core nebula showing that the value \(\sigma_{\text{los}}\) (after considering the dust scattering) is roughly twice as the \(\sigma\pos\) (figure 14 on their work), while the \citet{2011MNRAS.413..705L} diagram, for a sample of small-to-intermediate size \hii{} regions in M33, approach unity (figure 4 on their work) with a linear relation of \(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \).
 
-In the Figure~\ref{fig:los-vs-pos} we show the mean line-of-sight velocity dispersion versus the plane-of-sky velocity dispersion. 
-\citet{arthur2016turbulence} presents the same diagram for different emission lines of the Orion core nebula showing that the value \(\sigma_{\text{los}}\) (after considering the dust scattering) is roughly twice as the \(\sigma\pos\) (figure 14 on their work), while the \citet{2011MNRAS.413..705L} diagram, for a sample of small-to-intermediate size \hii{} regions in M33, approach unity (figure 4 on their work). 
-The Figure~\ref{fig:los-vs-pos} shows that for our sample of \hii{} regions the fit we obtained follows the result of \citet{2011MNRAS.413..705L}.
-The relationship we found is \( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos - (7.7 \pm 2.9)\).
- 
+As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
+In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
+On the plane-of-sky the consequences of those gradients and movements are measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
+Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase in the same amount as the fluctuations grows \citep{2011MNRAS.413..705L}.
+
 The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{1984ApJ...277..556S}.
 If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
 With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
@@ -1454,45 +1450,56 @@ In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency of t
 %For the most distant regions of our sample, the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (see section~\ref{sec:power-index}) only NGC 595, which power-law index is \num{1.38}, would comply to this fully three-dimensional structure.
 On the other hand, \citet{arthur2016turbulence} proposed another interpretation in terms of large-scale order motions, and emissivity fluctuations.
 They consider an expanding shell where the mean velocity fluctuations on the plane of the sky are because the relative brightness of the redshifted and blueshifted hemispherers.
-In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\).
+In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\) ratio.
 
-As for the \citet{2011MNRAS.413..705L} results, they consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, monotonically increase with the plane-of-sky dispersion.
-In this scenario, the main broadening mechanisms the kinematical disorder along the line-of-sight is related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
-On the plane-of-sky the consequences of those gradients and movements is measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
-Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase monotonically as the amplitudes grows because the non-thermal dynamical processes in the \hii{} regions.
-They characterize this behavior for their \hii{} regions sample by fitting a linear relation of \(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \) to their observed regions.
 
 \subsubsection{Diameter vs centroid velocity dispersion}
 
-Other important relation commonly used in the study of the interstellar medium is the diameter (or size) versus velocity dispersion.
+Other important relationship commonly used in the study of the interstellar medium is the diameter (or size) versus velocity dispersion.
 Table \ref{tab:RestStats} shows this result for our sample in the forth row. 
 This relation presents a significance level \(p > \num{0.05}\) but there are a couple of things worth mentioning.
 Historically this relation is important following the work of \citet{1981MNRAS.194..809L} where he presents it in the context of molecular cloud complexes of many clouds, individual clouds, and clumps, so that size scales are studied over \(\num{0.1} < L < \SI{100}{pc}\) obtaining \(\sigma = 1.10 L ^{0.38}\). 
 
 This relation is interpreted in terms of turbulence, particularly the Kolmogorov model which predicts a index of \num{0.33} so that larger regions presents more turbulence, and smaller regions less turbulence.
-It has been argued that this correlation method is not as powerful as using statistical functions \citep{1984ApJ...277..556S} but it is interesting that the index is consistent within different phases of the interstellar medium (see first paragraph of this section).
-On the other hand, we obtain \(\log \sigma\pos = (0.25 \pm 0.17) \log D - (0.2 \pm 0.38)\) which despite the large uncertainty is comparable with previous investigations within the error.
+It has been argued that this correlation method is not as powerful as using statistical functions \citep{1984ApJ...277..556S} but it is interesting that the index is consistent within different phases of the interstellar medium.
+We obtain \(\log \sigma\pos = (0.25 \pm 0.17) \log D - (0.2 \pm 0.38)\) which is comparable with \citet{1981MNRAS.194..809L} results.
 
 As we mentioned in section \ref{sec:L-vs-sigmapos} the fact that this relation holds up to previous investigation gives some certainty that the \(\sigma\pos\) value obtained via the proposed model of the structure function is valid. 
 This implying that the structure function, while not an absolute diagnostic, is a powerful tool in the research of \hii{} regions kinematics.
 
 \subsection{Power-law index}\label{power-law-index}
 
-The power-law index \(m\) shown in the last column of Table \ref{tab:Res} is used for comparison between the observations and the theoretical value of 0.67.
-All our indices are above this theoretical value and this is attributed to the fact that the \hii{} regions do not comply with the assumptions established in the development of the turbulent theory.
-
-\hii{} regions emerged from a molecular cloud with highly filamentary and clumpy density structure .
-There is a large increase in the temperature because of the photoionization, and the density gradients with the pressure gradients accelerate the flow which occurs on multiple scales consequence of the fractal nature of the molecular cloud \citep{arthur2016turbulence}.
+The power-law index \(m\) shown in the last column of Table \ref{tab:Res} is used for comparison between the observations derived index and the theoretical Kolmogorov value of 0.67.
+All our indices are above this theoretical value and this is attributed to the fact that the \hii{} regions do not comply with the conditions established in the development of the turbulent theory which assumes incompressible, subsonic and homogeneous three-dimensional flow.
+\hii{} regions emerged from a molecular cloud with highly filamentary and clumpy density structure.
+Inside the region there is a large increase in the temperature because of the photoionization, and the density gradients with the pressure gradients accelerate the flow which occurs on multiple scales consequence of the fractal nature of the molecular cloud \citep{arthur2016turbulence}.
 The radiation pressure, stellar winds and region expansion, among other physical processes would create pressure-driven shock waves propagating faster than the speed of sound in the medium.
-This would make the flow compressible and supersonic in \hii{} regions.
+This would make the flow compressible and supersonic in an inhomogenous gas cloud.
 Also, as \hii{} regions are three-dimensional objects our structure function results comes from a projection of this three-dimensional structure to a two-dimensional velocity field.
-But despite the complex nature of \hii{} regions and observational limitations we obtain a common pattern for the structure function and the value of the power-law index falls in a certain limited range of values. 
-The differences in the power-law index with respect the theoretical value are often used as a diagnostic tools to identify properties that are not consider in the assumptions of the turbulence theory.
+But despite the complex nature of \hii{} regions and observational limitations, we obtain a common pattern for the structure function behaviour and the value of the power-law index falls in a certain limited range between \num{0.7} and \num{1.4}. 
 
-As for any relation of the power-law index \(m\) we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property, being the least reliable for determining or concluding something about the nature of the physical processes inside the regions.
+The differences in the power-law index with respect the theoretical value are often used as a diagnostic tools to identify properties that are not consider in the assumptions of the turbulence theory \citetext{See table~1 of \citealp{arthur2016turbulence} and Sec.~1 of \citealp{lagrois2011}}.
+As an example there the so called \textit{projection smoothing} \citep{von1951methode,1987ApJ...317..686O} which is used to study the projection of a three-dimensional structure function on the plane.
+The relationships for the power-law are:
+
+\begin{equation}\label{eq:projection-smoothing-3d}
+m_{2D}= m_{3D} + 1
+\end{equation}
+%
+and  when the astronomical object present a sheet-like distribution of emitters we have the relation:
+%
+\begin{equation}\label{eq:projection-smoothing-2d}
+m_{2D} \sim m_{3D}
+\end{equation}
+
+As a conclusion, if the extension of the HII region is compared with its depth (three-dimensional case) the value of the index is \num{1.6}. 
+While the case where the extension is much greater than its depth (two-dimensional case) the region will have a value of \num{0.6}.
+From Table~\ref{tab:Res} we see that our results fall between these two previous values. 
+
+As for any relation of the power-law index \(m\) and the physical properties of the \hii{} regions we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property, being the least reliable for determining or concluding something about the nature of the physical processes inside the regions.
 On the other hand, the lack of correlation and the presence of this power-law index describing the assumed energy cascade may be interpreted as a universal property of the velocity fluctuations independent of the observed object, which is the main consideration in the turbulence theory.
 
-
+ 
 %\subsection{Kinematic relationship between ionized gas, molecular gas, and stars}
 %\label{sec:kinem-rela-betw}
 
@@ -1606,14 +1613,14 @@ On the other hand, the lack of correlation and the presence of this power-law in
 
 \section{Conclusions}\label{sec:conclusions}
 
-The observations point out to the existence of spatial correlation between velocities, that could be interpreted as turbulence. 
-Arguments against the existence of true, isotropic turbulence can be raised as, for example: i) the histograms of velocity are not always Gaussian, ii) only a fraction of the integrated emission lines of the \hii{} regions show true Gaussian profiles. 
-The asymmetry in the emission line indicates coherent mass flow motions, 
-and sometimes is considered incompatible with turbulence. However, turbulence is in fact 
-a mixture of coherent and chaotic flows. 
-Only at the regime of the so-called fully developed turbulence the non-linear phenomena dominate completely the movement and the chaotic flow prevail. 
-The problem here is that a straightforward test for any turbulent model is a big challenge, as we are in the presence of many entangled effects. 
-However, the circumstantial evidence in favor of the existence of turbulent motions in \hii{} regions is overwhelming, and many are the potential sources of energy to create and maintain turbulence during the lifetime of an \hii{} region.
+%The observations point out to the existence of spatial correlation between velocities, that could be interpreted as turbulence. 
+%Arguments against the existence of true, isotropic turbulence can be raised as, for example: i) the histograms of velocity are not always Gaussian, ii) only a fraction of the integrated emission lines of the \hii{} regions show true Gaussian profiles. 
+%The asymmetry in the emission line indicates coherent mass flow motions, 
+%and sometimes is considered incompatible with turbulence. However, turbulence is in fact 
+%a mixture of coherent and chaotic flows. 
+%Only at the regime of the so-called fully developed turbulence the non-linear phenomena dominate completely the movement and the chaotic flow prevail. 
+%The problem here is that a straightforward test for any turbulent model is a big challenge, as we are in the presence of many entangled effects. 
+%However, the circumstantial evidence in favor of the existence of turbulent motions in \hii{} regions is overwhelming, and many are the potential sources of energy to create and maintain turbulence during the lifetime of an \hii{} region.
 
 Our analysis was able to characterize the velocity fields of a sample of \hii{} regions by determining a set of parameters unique to each velocity field which are: the correlation length, the exponent of a power law that fits the results through a determined range and the true velocity dispersion.
 To achieve this, a new functional form for the second-order structure function was proposed. 
@@ -1663,14 +1670,12 @@ JGV acknowledges and thanks CONACyT-Mexico for the PhD research scholarship.
 \label{sec:degr-struct-funct}
 Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
 
-For a correct analysis on the structure function it is necessary to consider the consequences that the observational box size and the seeing have on the results.
-To quantify the impact of these considerations on the final structure function, we perform a series of experiments using artificial turbulent velocity maps.
-In particular, our interest is to quantify how this observational limitations affect the determination of parameters such as the correlation length, \(r_0\), and the velocity field variance, \(\sigma\pos^2 \). 
-
+To characterize the impact of the observational box size and the atmospheric seeing on the structure function we perform a series of experiments using artificial turbulent velocity maps.
+We quantify how these observational limitations affect the determination of astrophysical interest parameters such as the correlation length \(r_0\) and the velocity field variance \(\sigma\pos^2 \). 
 The artificial velocity maps are created using a modified version of the \textit{make$\_$extend} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K}.
-We create a turbulent velocity field that follows a given power law with and a proposed correlation length, and a variance value indicated as true \(\sigma^2\).
-Using this true \(\sigma^2\) we obtained the true \(r_0\), and these values are used as a reference in the following experiments to quantify the variations.
-The objective is to create a sample of multiple divided maps with different seeing width and size to compute the structure function in each and characterize the variations. 
+The modification add a tapering to the power law so that the generated fields are uncorrelated at large scales.
+The artificial fields follows a given power law with with a correlation length giving a variance value indicated as true \(\sigma^2\).
+Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are used as a reference in the experiments to quantify the variations.
 
 \subsection{Finite box effects}
 \label{sec:finite-box-effects}
@@ -1687,7 +1692,8 @@ The objective is to create a sample of multiple divided maps with different seei
     (a)~Construction of simulated turbulent velocity fields of different sizes
     by repeated division of an initial field of size \(512 \times 512\) pixels.
     The \(j\)th level of division yields \(N = 4^j\) fields,
-    each of linear size \(L \times L\) where \(L = 2^{9 - j}\). 
+    each of linear size \(L \times L\) where \(L = 2^{9 - j}\).
+    The color scale is the same for all maps and it considers \(- 3\) to \(+ 3\) times the standard deviation.
     (b)~Resultant structure functions.
     Colored lines show the average \(B(r)\) over all sub-images,
     while the shaded areas show the standard deviation of \(B(r)\).
@@ -1720,26 +1726,28 @@ The objective is to create a sample of multiple divided maps with different seei
   \label{fig:finite-box-effect}
 \end{figure}
 
-The Figure \ref{fig:finite-box}a shows some of the simulated velocity fields we use to study the variations in the structure function with respect to the size of the observational box.
-Initially we have an original field of \(512 \times 512 \) pixels that are divided \(n\) times and produce \(N = 4^n\) fields, where each one has a linear size \(L \times L \) with \(L = 2^{9 -n}\).
-The structure function is calculated for each division and later we average all the divisions of the corresponding map. 
-The Figure \ref{fig:finite-box}b shows in solid lines the normalized averaged structure functions for the maps in Figure \ref{fig:finite-box}a.
-The number \(N\) of divisions and the length \(L\) are indicated in each structure function.
-The shaded areas show the deviation that each average structure function has due to the different divisions. 
-%\textit{(Note: I modified the Figure adding \(\sigma^2\) and \(r_0\) for each SF since I think it is easier and more directly to grasp the effect of reducing the box size. The figure is more 'noisy' but if it seems like it contribute to nothing we can change it back.)}
+The Fig. \ref{fig:finite-box}a shows some of the artificial velocity fields used to study the variations in the structure function with respect to the size of the observational box.
+Initially we have a velocity field of \(512 \times 512 \) pixels that is divided \(n\) times (with \(n = 1 - 6\)) producing \(N = 4^n\) fields , where each one has a linear size \(L \times L \) with \(L = 2^{9 -n}\).
+The structure function is determined for each division and later we average all the divisions obtaining a characteristic structure function for \(L = 256, 128, 64,\) etc. 
 
-The blue horizontal and vertical dashed lines show the true \(r_{0}\) and the value of \(B(r) / \sigma^2 = 1 \), respectively.
+
+In the Fig. \ref{fig:finite-box}b we show in solid lines the normalized averaged structure functions for the maps in Figure \ref{fig:finite-box}a.
+The number \(N\) of divisions and the length \(L\) are indicated for each structure function.
+The shaded areas show the deviation that each averaged structure function has due to the different divisions. 
+The horizontal and vertical blue dashed lines show the true \(r_{0}\) and the value of \(B(r) / \sigma^2 = 1 \), respectively.
 The colored dotted lines indicate the averages, taking into account all the divisions of each map, of the apparent \(r_ {0}\) and the apparent \(\sigma^2 \).
-From this analysis it is clear that \(r_0\) and \(\sigma^ 2 \) decrease with respect to the true values as the size \(L\) of the observational box decreases. 
+It is clear that \(r_0\) and \(\sigma^ 2 \) decrease with respect to the true values as the size \(L\) of the observational box decreases. 
 This analysis is performed on different maps (no images are shown) given a different power law in the velocity spectrum and different correlation lengths, giving the same results. 
 
-Figure \ref{fig:finite-box-effect}a shows the empirical ratios of the correlation length of each averaged map with respect to the true correlation length (\(\text{apparent } r_ 0 /\text{true } r_0 \) ), as well as the ratio between the averaged variance of each divided map and the true variance (\(\text{apparent } \sigma^2  / \text{true } \sigma^2\)).
+Fig. \ref{fig:finite-box-effect}a shows the empirical ratios of the correlation length of each averaged map with respect to the true correlation length (\(\text{apparent } r_ 0 /\text{true } r_0 \) ) and the ratio between the averaged variance of each divided map and the true variance (\(\text{apparent } \sigma^2  / \text{true } \sigma^2\)).
 We observe that for the values where \(L> 20r_0 \) the change in the ratios is null.
-It is for the values where \( L < 10 r_0 \) where we found a decrease on both ratios.
-On the other hand, Figure \ref{fig:finite-box-effect}b shows the model-derived \(r_0\) and \(\sigma^ 2 \) values using the fitting procedure with the \texttt{lmfit} library.
-In this case we see that the model fitting works much better than the empirical measurement, which gives reliable values so long \(L > 3r_0 \)
-This behavior is fulfilled for all simulated maps with different power law in the velocity spectrum and  indicated with different colored circles in Figure \ref{fig:finite-box-effect}ab.
-The empirical variations of the ratios is described by the  dashed line in Figure \ref{fig:finite-box-effect}ab given by the equation: 
+It is for the values where \( L < 10 r_0 \) where there is a decrease.
+This behavior is fulfilled for all simulated maps with different power law and correlation length in the velocity spectrum indicated with different colored circles in Figure \ref{fig:finite-box-effect}a.
+
+On the other hand, Fig. \ref{fig:finite-box-effect}b shows the model-derived \(r_0\) and \(\sigma^ 2 \) values using the fitting procedure with the \texttt{lmfit} library.
+In this case we see that the model fitting works much better than the empirical measurement, which gives reliable values so long \(L > 3r_0 \).
+
+The empirical variations of the ratios is described by the  dashed line in Fig. \ref{fig:finite-box-effect} a and b, and is given by the equation: 
 
 \begin{equation}\label{eq:ajustebox}
 \beta(r_0) = 1 - exp \left[ \frac{L}{3.6r_0} \right] 
@@ -1775,28 +1783,26 @@ The empirical variations of the ratios is described by the  dashed line in Figur
 \end{figure}
 
 Ground-based astronomical observations are affected by the seeing produced by the atmosphere.
-When calculating the structure function of these observations, this seeing affects the results at small-scale separations due to the smoothing of velocity fluctuations between adjacent pixels.
-To study the consequences of the seeing we calculate the structure function of velocity maps where an artificial Gaussian seeing with different line widths has been introduced.
-The artificial velocity maps are created in the same way as to study the effect of the observational box.
-Seeing in velocity maps is added via the \texttt{astropy} Python library \citep{astropy:2013} using the \textit{Gaussian2DKernel} command. 
+When calculating the structure function of the observational data, the seeing affects the structure function results at small-scale separations due to the smoothing of velocity fluctuations between adjacent pixels.
+To study the effect of the seeing we calculate the structure function of simulated velocity maps where an artificial Gaussian seeing with different line widths has been introduced.
+The artificial velocity maps are created in the same way as in Section~\ref{sec:finite-box-effects}.
+The seeing in velocity maps is added via the \texttt{astropy} Python library \citep{astropy:2013} using the \textit{Gaussian2DKernel} command. 
 
-The rows in Figure \ref{fig:seeing-reduction}a show a synthetic velocity field of 512 \(\times\) 512 divided into four maps of 256 \(\times \) 256.
-The color scale is the same for all maps and it considers \(- 3\) to \(+ 3\) times the standard deviation.
-A Gaussian seeing, \(s_0 \) is applied to each division, with an RMS width ranging from 1 to 32 pixels, shown in the columns of Figure \ref{fig:seeing-reduction}. 
+Fig. \ref{fig:seeing-reduction}a shows column an artificial velocity field of 512 \(\times\) 512  divided into four maps of 256 \(\times \) 256 pixels each which are displayed in each row.
+A Gaussian seeing \(s_0 \) is applied to each division with an RMS width given by \(s_0 = 2^n\) pixels with \(n = 0-5\) shown in the different columns. 
 The structure function is computed in these maps and the averaged considering the same seeing. 
 
-The solid lines in Figure \ref{fig:seeing-reduction}b  show the ratio of the structure function of the averages of the maps with their respective seeing and the map without it: \(B (r, s_0 ) / B (r, s_0 = 0) \).
-The circle symbols indicate the value of 2\(s_0\) while the plus symbols indicate the apparent correlation length of smoothed map.
-The vertical dotted line indicates the true \(r_ {0} \). 
+The solid lines in Figure \ref{fig:seeing-reduction}b show the ratio of the averaged structure function of the maps with their respective seeing to the unsmoothed map: \(B (r, s_0 ) / B (r, s_0 = 0) \).
+The circle symbols indicate the value of 2\(s_0\), the plus symbols indicate the apparent correlation length of the smoothed maps and the vertical dotted line indicates the true \(r_{0}\). 
 
-The dashed lines in Figure \ref{fig:seeing-reduction}b are  empirically fits for each ratio.
+The dashed lines in Figure \ref{fig:seeing-reduction}b are  empirically fits for each ratio and characterizes the decrease in the structure function for each value of seeing.
 To obtain this fit, we start from a convolution of an emission line and Gaussian seeing.
 The emission line has the form \(\text {I}(x, v) = \text{I}_0 \phi [v; \overline {v} (x), \sigma_0]\) and has uniform width and brightness where the only change with respect to position is the velocity centroid.
 The proposed seeing is \(\text{K}(x, s_0)\) of the form \(1 / \sqrt{2 \pi s_0} \exp^ {-x^ 2 / 2s_0 ^ 2} \).
 The convolution \(\text{I}(x, v) \otimes \text{K}(x, s_0) \) is performed to obtain the smoothed map, \(\text {\~I} (x, v) \). 
 
-Then we calculate the average velocity difference of the original map, \(\Delta v \), and the smoothed map, \(\tilde{\Delta v}\), in the points \( x = \{0, \delta \} \).
-This expansion gives a term that modifies the final form of the structure function, \(~B (r)\), where the structure function without the seeing, \(B(r) \), is corrected by the term \(S_0(r; s_0)\) which has the form: 
+Then we calculate the average velocity difference of the original map, \(\Delta v \), and the smoothed map, \(\tilde{\Delta v}\), in the arbitrary points \( x = \{0, \delta \} \).
+The expansion of the convolution at small separations gives a term \(S_0(r; s_0)\) that modifies the structure function which has the form: 
 
 \begin{equation}\label{eq:seeingcon}
 S (r;s_0) = \tanh^2 \left[ \left( \dfrac{r}{2s_0} \right)^2 \right]
@@ -1804,19 +1810,18 @@ S (r;s_0) = \tanh^2 \left[ \left( \dfrac{r}{2s_0} \right)^2 \right]
 
 Subsequently, the equation \ref{eq:seeingcon} is empirically modified and we obtain: 
 
-\begin{equation}\label{eq:seeingemp}
-S(r; s_0, r_0) =  \frac{e^\frac{-s_0}{r_0}}{2} \left(1 + \tanh{a \text{ln} \frac{r}{2s_0}} \right)
-\end{equation}
+%\begin{equation}\label{eq:seeingemp}
+%S(r; s_0, r_0) =  \frac{e^\frac{-s_0}{r_0}}{2} \left(1 + \tanh{a \text{ln} \frac{r}{2s_0}} \right)
+%\end{equation}
 %
-and the final form of the equation \ref{eq:seeingemp} after a mathematical simplification gives: 
+%and the final form of the equation \ref{eq:seeingemp} after a mathematical simplification gives: 
 
 \begin{equation}\label{eq:seeingemp2}
 S(r; s_0, r_0) = \frac{e^\frac{-s_0}{r_0}}{1+(\frac{2s_0}{r})^{2a}}
 \end{equation}
 %
-which describes the fit (dashed lines) in Figure \ref{fig:seeing-reduction}b. 
-
-The equation \ref{eq:seeingemp2} is used to correct the observational structure function, \(B(r)\). 
+which describes the dashed lines in Figure \ref{fig:seeing-reduction}b. 
+The equation \ref{eq:seeingemp2} is used to correct the observational structure function in equation \eqref{eq:sf-functional}. 
 
 \section{\boldmath Notes on individual \hii{} regions}
 \label{sec:notes-individual-hii}
@@ -1836,8 +1841,8 @@ and comparison with previous results from the literature
 The Orion Nebula (M42) is the prototype of a galactic HII region located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc} ; \citealp{2008AJ....136.1566O}}.
 The O7 V star \(\theta^{1}\) Ori C is the most luminous and hottest star \citep{2006A&A...448..351S} with an ionizing flux \(Q_0\) of  \SI{e49.12}{photons.s^{-1}}. 
 With other 3 B-type stars they form the Trapezium cluster.
-The bright region that surrounds these massive ionizing stars is called the the Huygens region (Orion core henceforth).
-In the southwest direction of the Huygens region there is a drop in the brightness as one approach a much larger region called Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}
+The bright region that surrounds these massive ionizing stars is called the the Huygens region.
+%In the southwest direction of the Huygens region there is a drop in the brightness as one approach a much larger region called Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}
 The position of Orion near the side of the Orion Molecular Cloud (OMC-1) make it an ongoing star formation with a large population of young star, some of which are the sources of stellar jets and Herbig-Haro objects \citep{1993ApJ...410..696O}.
 Its physical properties and kinematics, along its stellar population are documented in \citet{2001ARA&A..39...99O}.
 
