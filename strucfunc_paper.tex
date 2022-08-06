@@ -1325,7 +1325,7 @@ determining the slope.
 % Since this is the first time a model of this type is applied to a sample of HII regions, our results are bounded to be different from previous investigations, including the investigations that have the same observations as \citet{arthur2016turbulence} and \citet{Medina-Tanco:1997a,Melnick:2021x}. 
 
 Detailed comparisons with previous results are given
-in section~\ref{sec:notes-individual-hii}.
+in Appendix~\ref{sec:notes-individual-hii}.
 In summary, we agree with previous studies in cases where there
 is a good match in the exact area covered and in the angular resolution.
 In other cases, large discrepancies are found,
@@ -1347,17 +1347,58 @@ velocity fluctuations on the largest scales.
 %\citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity and the velocity dispersion for new data of 36 giant HII regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
 
 %methods for our analysis
-In section \ref{sec:results} we show that each \hii{} region of our sample can be characterized with parameters that are particular to each velocity field.
-We used these parameters to estimate the scaling relations between them and the main physical properties of each region.
-To accomplish this we implement a hierarchical Bayesian model for fitting a straight line using the \texttt{linmix} Python library which is based on the procedure of \cite{2007ApJ...665.1489K}.
-The physical properties in Table \ref{tab:regions-properties} are used as the independent variable \(X\) while the derived turbulent parameters of Table \ref{tab:Res} are used as the dependent variable \(Y\).
-In the following analysis we left out the EON to avoid redundancy of the regions.
-For physical properties values where uncertainties are not reported (size and luminosity), we consider an error of \num{10}\% of the value.
+We look for correlations and scaling relations 
+between the physical parameters of the \hii{} regions
+and the parameters of the fluctuating velocity fields
+that we derived in section~\ref{sec:results}.
+To accomplish this we implement a hierarchical Bayesian model for linear regression using the \texttt{linmix} Python library, which is based on the procedure of \cite{2007ApJ...665.1489K}.
+Thus we fit relations of the form
+\(Y = a X + b\)
+where \(X = \log_{10} x\) and \(Y = \log_{10} y\)
+with \(x, y \in \{d, D, L(\ha), \sigma\pos, r_0, m\}\)
+(taken from the physical properties in Table~\ref{tab:regions-properties}
+and the derived turbulent parameters of Table~\ref{tab:Res}).
+Note that, unlike with an Ordinary Least Squares method,
+the \citeauthor{2007ApJ...665.1489K} method
+uses an errors-in-variables model that is symmetric in \(X\) and \(Y\).
+Thus the fitted relation between the underlying variables
+is of the power-law form: \(y = 10^b\, x^a\).
+Since the main focus of this paper is the turbulent velocity field,
+we restrict consideration to correlations that include
+one of the three structure function parameters,
+\(\sigma\pos\), \(r_0\), or \(m\), as the  \(y\) variable. 
+Additionally, we fit a strictly linear relationship between
+the plane-of-sky and line-of-sight velocity dispersions:
+\(X = \sigma\pos\), \(Y = \sigma\los\).
+The reason for not taking the logarithm in this instance is
+both to facilitate comparison with previous studies
+and to allow for a zero-point offset in the relation.
+
+In the following analysis we omit the EON region since the
+model fits were relatively poorly constrained by the observations.
+For physical properties where uncertainties are not reported (size and luminosity), we assume an error of \num{10}\% of the value.
 The same criteria is used for the uncertainty values of the mean non-thermal linewidths for 30 Doradus and NGC 346.
-For the turbulent parameters we use the relative error considering the 2-\(\sigma\) interval. 
-Our main correlation results are shown in Table \ref{tab:RestStats} in ascending order for the \(p\)-value.
-In the Figs. \ref{fig:sigvsl}, \ref{fig:rvsR} and \ref{fig:los-vs-pos} we show the plots for the correlations with a significance level \(p < \num{0.05}\) which corresponds to the first three rows in Table \ref{tab:RestStats}.
-In the Figs. the black solid line is the input regression line which is described by the equation shown in the plot and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value.
+For the turbulent parameters we use the relative error
+from our model fits, considering the 2-\(\sigma\) interval. 
+
+Results for the most significant correlations,
+as measured by the Pearson correlation coefficient \(r\),
+are given in Table~\ref{tab:RestStats} in descending order of \(r^2\).
+We find three cases of highly significant correlations
+with significance level \(p < 0.01\),
+which are illustrated in
+Figures~\ref{fig:sigvsl}--\ref{fig:los-vs-pos}:
+\(r_0\)  versus \(D_{\hii}\), \(\sigma\pos\) versus \(L(\ha)\),
+and \(\sigma\los\) versus \(\sigma\pos\).
+Each of these is discussed in turn in the following sections.
+The remaining correlations
+are at best marginally significant (\(p > 0.05\)),
+including all correlations of the power law slope \(m\)
+with any other parameter.
+
+
+% In the Figs. \ref{fig:sigvsl}, \ref{fig:rvsR} and \ref{fig:los-vs-pos} we show the plots for the correlations with a significance level \(p < \num{0.05}\) which corresponds to the first three rows in Table \ref{tab:RestStats}.
+% In the Figs. the black solid line is the input regression line which is described by the equation shown in the plot and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value.
 
 \input{Corr}
 
