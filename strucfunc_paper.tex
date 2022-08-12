@@ -1358,16 +1358,17 @@ where \(X = \log_{10} x\) and \(Y = \log_{10} y\)
 with \(x, y \in \{d, D, L(\ha), \sigma\pos, r_0, m\}\)
 (taken from the physical properties in Table~\ref{tab:regions-properties}
 and the derived turbulent parameters of Table~\ref{tab:Res}).
+Thus the fitted relation between the original variables
+is of the power-law form: \(y = 10^b\, x^a\).
 Note that, unlike with an Ordinary Least Squares method,
 the \citeauthor{2007ApJ...665.1489K} method
-uses an errors-in-variables model that is symmetric in \(X\) and \(Y\).
-Thus the fitted relation between the underlying variables
-is of the power-law form: \(y = 10^b\, x^a\).
+uses an errors-in-variables model that allows for
+measurement uncertainty in both \(X\) and \(Y\).
 Since the main focus of this paper is the turbulent velocity field,
 we restrict consideration to correlations that include
 one of the three structure function parameters,
 \(\sigma\pos\), \(r_0\), or \(m\), as the  \(y\) variable. 
-Additionally, we fit a strictly linear relationship between
+In addition, we fit a strictly linear relationship between
 the plane-of-sky and line-of-sight velocity dispersions:
 \(X = \sigma\pos\), \(Y = \sigma\los\).
 The reason for not taking the logarithm in this instance is
@@ -1405,7 +1406,17 @@ with any other parameter.
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-svsL}
-\caption{The log \(\sigma\pos\) - log $L(H_{\alpha})$ plane derived form our results an data in the literature. The markers indicates galactic (triangles), Magellanic (squares) and extragalactic (circles) regions. The black solid line is the input regression line which is described by the equation in the plot, and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value. }
+\caption{
+  The relationship between plane-of-sky velocity dispersion,
+  \(\log_{10} \sigma\pos\),
+  and \hii{} region luminosity,
+  \(\log_{10} L(\ha)\),
+  derived from our results.
+  The markers indicates Galactic (triangles),
+  Magellanic (squares) and extragalactic (circles) regions.
+  The black solid line is the median linear regression,
+  with thin red lines showing 400 random samples from the posterior
+  distribution to indicate the uncertainty in the regression.}
 \label{fig:sigvsl}
 \end{figure}
 
@@ -1413,8 +1424,11 @@ with any other parameter.
 \centering 
 \includegraphics[width=3in]{Figures/corr-rvsS}
 \caption{
-Same information as Fig. \ref{fig:sigvsl} but for the log \(r_0\) - log \(S\) plane derived form our results an data in the literature. 
-}
+  As Figure~\ref{fig:sigvsl} but for the relationship between
+  correlation length of velocity fluctuations,
+  \(\log_{10} r_0\),
+  and  \hii{} region diameter,
+  \(\log_{10} D_{\hii}\).}
 \label{fig:rvsR}
 \end{figure}
 
@@ -1422,7 +1436,14 @@ Same information as Fig. \ref{fig:sigvsl} but for the log \(r_0\) - log \(S\) pl
 \centering 
 \includegraphics[width=3in]{Figures/corr-los-vs-pos}
 \caption{
-Same information as Fig. \ref{fig:sigvsl} but for the \(\sigma_{\text{pos}}\)-\(\langle \sigma_{\text{los}} \rangle\) plane. The dashed line corresponds to the linear fit obtained by \citet{2011MNRAS.413..705L} which correspond to a sample of small-to-intermediate size \hii{} regions in M33. 
+  As Figure~\ref{fig:sigvsl} but for the relationship between
+  line-of-sight non-thermal velocity dispersion,
+  \(\sigma\los\),
+  and plane-of-sky velocity dispersion,
+  \(\sigma\pos\).
+  The dashed line shows the the linear fit obtained by
+  \citet{2011MNRAS.413..705L} for a sample of
+  small-to-intermediate size \hii{} regions in the M33 galaxy. 
 }
 \label{fig:los-vs-pos}
 \end{figure}
