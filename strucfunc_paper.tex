@@ -681,8 +681,7 @@ which we will take advantage of below.
    (a)~Idealized structure function (blue line)
    for the parameters \(m = 1\) and \(r_0 = \SI{64}{pixels}\).
    Red and green lines show the effects of observational limitations
-   at small scales (seeing and noise)
-   and at large scales (finite-map effects).
+   at small scales due to seeing and noise.
    (b)~Examples of inhomogeneous effects at large scales,
    which are not included in the model structure function.
  }
@@ -1402,21 +1401,40 @@ with any other parameter.
 % In the Figs. the black solid line is the input regression line which is described by the equation shown in the plot and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value.
 
 \input{Corr}
+\begin{figure}
+\centering 
+\includegraphics[width=3in]{Figures/corr-los-vs-pos}
+\caption{
+  The relationship between 
+  line-of-sight non-thermal velocity dispersion,
+  \(\sigma\los\),
+  and plane-of-sky dispersion of velocity centroids,
+  \(\sigma\pos\)
+  derived from our results.
+  Symbols indicate Galactic (triangles),
+  Magellanic (squares) and extragalactic (circles) regions.
+  The black solid line is the median linear regression,
+  with thin red lines showing 400 random samples from the posterior
+  distribution to indicate the uncertainty in the regression.  
+  The dashed line shows the the linear fit obtained by
+  \citet{2011MNRAS.413..705L} for a sample of
+  small-to-intermediate size \hii{} regions in the M33 galaxy. 
+}
+\label{fig:los-vs-pos}
+\end{figure}
 
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-svsL}
 \caption{
-  The relationship between plane-of-sky velocity dispersion,
+  The relationship between
+  plane-of-sky dispersion of velocity centroids,
   \(\log_{10} \sigma\pos\),
   and \hii{} region luminosity,
   \(\log_{10} L(\ha)\),
   derived from our results.
-  The markers indicates Galactic (triangles),
-  Magellanic (squares) and extragalactic (circles) regions.
-  The black solid line is the median linear regression,
-  with thin red lines showing 400 random samples from the posterior
-  distribution to indicate the uncertainty in the regression.}
+  Symbols and line types are as in Figure~\ref{fig:sigvsl}. 
+}
 \label{fig:sigvsl}
 \end{figure}
 
@@ -1424,29 +1442,46 @@ with any other parameter.
 \centering 
 \includegraphics[width=3in]{Figures/corr-rvsS}
 \caption{
-  As Figure~\ref{fig:sigvsl} but for the relationship between
+  The relationship between
   correlation length of velocity fluctuations,
   \(\log_{10} r_0\),
   and  \hii{} region diameter,
-  \(\log_{10} D_{\hii}\).}
+  \(\log_{10} D_{\hii}\)
+  derived from our results.
+  Symbols and line types are as in Figure~\ref{fig:sigvsl}. 
+}
 \label{fig:rvsR}
 \end{figure}
 
-\begin{figure}
-\centering 
-\includegraphics[width=3in]{Figures/corr-los-vs-pos}
-\caption{
-  As Figure~\ref{fig:sigvsl} but for the relationship between
-  line-of-sight non-thermal velocity dispersion,
-  \(\sigma\los\),
-  and plane-of-sky velocity dispersion,
-  \(\sigma\pos\).
-  The dashed line shows the the linear fit obtained by
-  \citet{2011MNRAS.413..705L} for a sample of
-  small-to-intermediate size \hii{} regions in the M33 galaxy. 
-}
-\label{fig:los-vs-pos}
-\end{figure}
+\subsubsection{Relationship between plane-of-sky and mean line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
+
+The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that there exists an underlying velocity spectrum following an energy cascade.
+But this statistical technique is not unique in measuring the velocity fluctuations in the nebula.
+Two parameters which can be obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
+These quantities allow us to compare the relationship between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L,arthur2016turbulence}.
+
+The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sigth.
+This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
+
+In the Fig.~\ref{fig:los-vs-pos} we show the mean line-of-sight velocity dispersion versus the plane-of-sky velocity dispersion plane.
+The relationship we obtain is \( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos + (7.7 \pm 2.9)\).
+\citet{arthur2016turbulence} presents the same diagram for different emission lines of the Orion core nebula showing that the value \(\sigma_{\text{los}}\) (after considering the dust scattering) is roughly twice as the \(\sigma\pos\) (figure 14 on their work), while the \citet{2011MNRAS.413..705L} diagram, for a sample of small-to-intermediate size \hii{} regions in M33, approach unity (figure 4 on their work) with a linear relation of \(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \).
+
+As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
+In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
+On the plane-of-sky the consequences of those gradients and movements are measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
+Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase in the same amount as the fluctuations grows \citep{2011MNRAS.413..705L}.
+
+The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{1984ApJ...277..556S}.
+If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
+With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
+This procedure implies depths of the order 10 to 50 times the correlation length.
+In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency of this interpretation for the Orion core nebula, since evidence has shown that the emitting layer thickness is of the order of \num{0.01} - \SI{0.3}{pc}.
+%For the most distant regions of our sample, the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (see section~\ref{sec:power-index}) only NGC 595, which power-law index is \num{1.38}, would comply to this fully three-dimensional structure.
+On the other hand, \citet{arthur2016turbulence} proposed another interpretation in terms of large-scale order motions, and emissivity fluctuations.
+They consider an expanding shell where the mean velocity fluctuations on the plane of the sky are because the relative brightness of the redshifted and blueshifted hemispherers.
+In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\) ratio.
+
 
 \subsubsection{Luminosity vs centroid velocity dispersion}\label{sec:L-vs-sigmapos}
 
@@ -1484,35 +1519,6 @@ At scales of several tens of pc the expansion of \hii{} regions and stellar wind
 Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
 
 The dependence on \(r_0\) and the diameter can be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
-
-\subsubsection{Relationship between plane-of-sky and mean line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
-
-The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that there exists an underlying velocity spectrum following an energy cascade.
-But this statistical technique is not unique in measuring the velocity fluctuations in the nebula.
-Two parameters which can be obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
-These quantities allow us to compare the relationship between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L,arthur2016turbulence}.
-
-The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sigth.
-This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
-
-In the Fig.~\ref{fig:los-vs-pos} we show the mean line-of-sight velocity dispersion versus the plane-of-sky velocity dispersion plane.
-The relationship we obtain is \( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos + (7.7 \pm 2.9)\).
-\citet{arthur2016turbulence} presents the same diagram for different emission lines of the Orion core nebula showing that the value \(\sigma_{\text{los}}\) (after considering the dust scattering) is roughly twice as the \(\sigma\pos\) (figure 14 on their work), while the \citet{2011MNRAS.413..705L} diagram, for a sample of small-to-intermediate size \hii{} regions in M33, approach unity (figure 4 on their work) with a linear relation of \(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \).
-
-As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
-In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
-On the plane-of-sky the consequences of those gradients and movements are measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
-Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase in the same amount as the fluctuations grows \citep{2011MNRAS.413..705L}.
-
-The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{1984ApJ...277..556S}.
-If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
-With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
-This procedure implies depths of the order 10 to 50 times the correlation length.
-In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency of this interpretation for the Orion core nebula, since evidence has shown that the emitting layer thickness is of the order of \num{0.01} - \SI{0.3}{pc}.
-%For the most distant regions of our sample, the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (see section~\ref{sec:power-index}) only NGC 595, which power-law index is \num{1.38}, would comply to this fully three-dimensional structure.
-On the other hand, \citet{arthur2016turbulence} proposed another interpretation in terms of large-scale order motions, and emissivity fluctuations.
-They consider an expanding shell where the mean velocity fluctuations on the plane of the sky are because the relative brightness of the redshifted and blueshifted hemispherers.
-In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\) ratio.
 
 
 \subsubsection{Diameter vs centroid velocity dispersion}
