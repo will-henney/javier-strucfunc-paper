@@ -1332,7 +1332,7 @@ which are probably to a combination of methodological differences
 and real variations due to the inhomogeneity of the
 velocity fluctuations on the largest scales.
 
-\subsection{Scaling relations between physical properties and turbulent parameters}\label{sec:scaling-relations}
+\subsection{Scaling relations for turbulence parameters}\label{sec:scaling-relations}
 
 %Intro for scaling relations
 %\textit{Maybe this paragraph it not necessary. Just a small intro and if needed previous results can be in a table for comparison. }
@@ -1453,7 +1453,43 @@ with any other parameter.
 \label{fig:rvsR}
 \end{figure}
 
-\subsubsection{Relationship between plane-of-sky and mean line-of-sight velocity dispersion}\label{sec:sigmapos-vs-sigmalos}
+\subsubsection{Plane-of-sky vs line-of-sight
+  velocity dispersions}
+\label{sec:sigmapos-vs-sigmalos}
+
+In the Figure~\ref{fig:los-vs-pos} we show the
+mean non-thermal line-of-sight velocity dispersion
+\(\langle\sigma\los\rangle\)
+(obtained from the spectral line profiles)
+versus the plane-of-sky dispersion of mean velocities
+\(\sigma\pos\)
+(obtained from our structure function fits).
+The relationship we obtain is
+\( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos + (7.7 \pm 2.9)\),
+which can be compared with previous results
+using different types of samples.
+
+\citet{2011MNRAS.413..705L} surveyed
+a sample of small-to-intermediate size \hii{} regions in M33,
+finding
+\(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \)
+for their sub-sample with higher resolution observations
+(21 sources).
+This is shown as the dashed line in Figure~\ref{fig:los-vs-pos},
+which can be seen to be almost identical to our own result. 
+Both fits are consistent with a slope of unity and an offset of
+\(\SI{8}{km.s^{-1}}\).
+
+\citet{arthur2016turbulence} calculate the relationship
+between \(\langle\sigma\los\rangle\) and \(\sigma\pos\) for different optical emission lines
+([\ion{S}{2}], [\ion{N}{2}], \ha, [\ion{O}{3}])
+in the Orion Nebula, finding \(\langle\sigma\los \approx 2 \sigma\pos\rangle\),
+which is shown by the MISSING line in Figure~\ref{fig:los-vs-pos}.
+Although this line is a fair representation of the low-\(\sigma\)
+points in our sample, it fails badly for highest dispersion source,
+30~Doradus.
+
+A clear outlier from the general trend 
 
 The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that there exists an underlying velocity spectrum following an energy cascade.
 But this statistical technique is not unique in measuring the velocity fluctuations in the nebula.
@@ -1463,9 +1499,8 @@ These quantities allow us to compare the relationship between the kinematical di
 The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sigth.
 This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
 
-In the Fig.~\ref{fig:los-vs-pos} we show the mean line-of-sight velocity dispersion versus the plane-of-sky velocity dispersion plane.
-The relationship we obtain is \( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos + (7.7 \pm 2.9)\).
-\citet{arthur2016turbulence} presents the same diagram for different emission lines of the Orion core nebula showing that the value \(\sigma_{\text{los}}\) (after considering the dust scattering) is roughly twice as the \(\sigma\pos\) (figure 14 on their work), while the \citet{2011MNRAS.413..705L} diagram, for a sample of small-to-intermediate size \hii{} regions in M33, approach unity (figure 4 on their work) with a linear relation of \(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \).
+At least three different 
+
 
 As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
 In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
