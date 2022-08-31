@@ -1323,7 +1323,7 @@ determining the slope.
 % In Section \ref{sec:methods-apply} we mentioned the model we propose for the structure function.
 % Since this is the first time a model of this type is applied to a sample of HII regions, our results are bounded to be different from previous investigations, including the investigations that have the same observations as \citet{arthur2016turbulence} and \citet{Medina-Tanco:1997a,Melnick:2021x}. 
 
-Detailed comparisons with previous results are given
+Specific comparisons for individual sources are given
 in Appendix~\ref{sec:notes-individual-hii}.
 In summary, we agree with previous studies in cases where there
 is a good match in the exact area covered and in the angular resolution.
@@ -1387,9 +1387,9 @@ are given in Table~\ref{tab:RestStats} in descending order of \(r^2\).
 We find three cases of highly significant correlations
 with significance level \(p < 0.01\),
 which are illustrated in
-Figures~\ref{fig:sigvsl}--\ref{fig:los-vs-pos}:
-\(r_0\)  versus \(D_{\hii}\), \(\sigma\pos\) versus \(L(\ha)\),
-and \(\sigma\los\) versus \(\sigma\pos\).
+Figures~\ref{fig:los-vs-pos}--\ref{fig:rvsR}:
+\(\sigma\los\) versus \(\sigma\pos\), \(\sigma\pos\) versus \(L(\ha)\),
+and \(r_0\)  versus \(D_{\hii}\).
 Each of these is discussed in turn in the following sections.
 The remaining correlations
 are at best marginally significant (\(p > 0.05\)),
@@ -1457,7 +1457,7 @@ with any other parameter.
   velocity dispersions}
 \label{sec:sigmapos-vs-sigmalos}
 
-In the Figure~\ref{fig:los-vs-pos} we show the
+In Figure~\ref{fig:los-vs-pos} we show the
 mean non-thermal line-of-sight velocity dispersion
 \(\langle\sigma\los\rangle\)
 (obtained from the spectral line profiles)
@@ -1484,30 +1484,81 @@ Both fits are consistent with a slope of unity and an offset of
 between \(\langle\sigma\los\rangle\) and \(\sigma\pos\) for different optical emission lines
 ([\ion{S}{2}], [\ion{N}{2}], \ha, [\ion{O}{3}])
 in the Orion Nebula, finding \(\langle\sigma\los \approx 2 \sigma\pos\rangle\),
-which is shown by the MISSING line in Figure~\ref{fig:los-vs-pos}.
+which is shown by the dotted line in Figure~\ref{fig:los-vs-pos}.
 Although this line is a fair representation of the low-\(\sigma\)
 points in our sample, it fails badly for highest dispersion source,
 30~Doradus.
 
-A clear outlier from the general trend 
+% The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that there exists an underlying velocity spectrum following an energy cascade.
+% But this statistical technique is not unique in measuring the velocity fluctuations in the nebula.
+% Two parameters which can be obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
+% These quantities allow us to compare the relationship between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L,arthur2016turbulence}.
 
-The second-order structure function measures the velocity fluctuations in the \hii{} regions under the assumption that there exists an underlying velocity spectrum following an energy cascade.
-But this statistical technique is not unique in measuring the velocity fluctuations in the nebula.
-Two parameters which can be obtained from the velocity profile also measure the velocity fluctuations in the \hii{} regions: the standard deviation of the velocity centroids, \(\sigma\pos\), and the mean non-thermal linewidth, \(\langle \sigma_{\text{los}} \rangle\).
-These quantities allow us to compare the relationship between the kinematical disorder on the plane-of-the-sky and along the line-of-sight \citep{2011MNRAS.413..705L,arthur2016turbulence}.
+% The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sight.
+% This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
 
-The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sigth.
-This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
+\newcommand\LL{\mathcal{L}}
+At least three different explanations for the relation
+between \(\sigma\pos\) and \(\sigma\los\) have been proposed previously.
+The classic interpretation in terms of homogeneous turbulence
+is that \(\sigma\pos\) is reduced with respect to the ``true''
+internal velocity dispersion
+due to averaging over multiple independent turbulent cells
+along the line of sight,
+a process known as \textit{projection smearing}
+\citep{von1951methode, 1984ApJ...277..556S}.
+Assuming that \(\sigma\los\) measures the true dispersion,
+then one would expect to find \(\sigma\pos / \sigma\los = (\LL /H)^{1/2}\),
+where \(H\) is the line-of-sight depth of the emitting gas
+and \(\LL \equiv \int_0^\infty C(r)\, dr\) is the integral length scale of
+the fluctuations \citep{Pope:2000p}.
+% los/pos = sqrt(N) where N = H / L is # of independent cells
+% L is integral length scale: L = 1.44 r0 for m = 1
+% So H / r0 = 1.44 (los/pos)^2
+Using our model for the autocorrelation function from
+equation~\eqref{eq:new-correlation-form} and assuming \(m = 1\),
+one finds \(\LL = r_0 / \ln 2 \approx 1.44 r_0\),
+and thus \(H / r_0 \approx 1.44 (\sigma\los / \sigma\pos)^2\).
+From the results of Figure~\ref{fig:los-vs-pos} we therefore find
+\(H / r_0 \approx 6\) for the lower dispersion sources,
+falling to \(H / r_0 \approx 2\) for the higher dispersion sources.
 
-At least three different 
+\newcommand\vexp{\ensuremath{v_{\text{exp}}}}
+An alternative interpretation,
+as discussed in \citep{2011MNRAS.413..705L},
+is that \(\sigma\los\) includes a contribution due to
+ordered large-scale velocity gradients
+(for instance, radial expansion)
+in addition to the turbulence,
+whereas \(\sigma\pos\) includes only the turbulent motions. 
+% Constant v_exp : sig_los = sqrt(sig_pos**2 + v_exp**2)
+Assuming a constant value \vexp{} for the ordered contribution,
+one would predict \(\sigma\los = (\sigma\pos^2 + \vexp^2)^{1/2}\),
+which is shown by the dot-dashed line in Figure~\ref{fig:los-vs-pos}
+for the case \(\vexp \approx \SI{8}{km.s^{-1}}\).
+It can seen that such a relationship reproduces the 
+observationally derived values equally as well as the linear fit.
+On the other hand, we can rule out the possibility that
+\vexp{} might increase in proportion to the turbulent velocity dispersion
+since that would predict that \(\sigma\los \propto \sigma\pos\),
+which is inconsistent with the observations as discussed above.
 
+However, as pointed out by \citet{arthur2016turbulence},
+the previous analysis is oversimplified since the presence
+of density fluctuations (or, more generally, emissivity fluctuations)
+means that the plane-of-sky dispersion of centroids is also affected
+by ordered large-scale velocity gradients along the line of sight.
+These leads to a third potential explanation of the
+\(\sigma\pos\)--\(\sigma\los\) relationship.
+In the limit that the direct effects of velocity fluctuations are
+negligible, the prediction is that \(\sigma\pos / \sigma\los \approx \)
 
 As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
 In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
 On the plane-of-sky the consequences of those gradients and movements are measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
 Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase in the same amount as the fluctuations grows \citep{2011MNRAS.413..705L}.
 
-The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{1984ApJ...277..556S}.
+The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{von1951methode, 1984ApJ...277..556S}.
 If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
 With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
 This procedure implies depths of the order 10 to 50 times the correlation length.
