@@ -1387,20 +1387,44 @@ are given in Table~\ref{tab:RestStats} in descending order of \(r^2\).
 We find three cases of highly significant correlations
 with significance level \(p < 0.01\),
 which are illustrated in
-Figures~\ref{fig:los-vs-pos}--\ref{fig:rvsR}:
-\(\sigma\los\) versus \(\sigma\pos\), \(\sigma\pos\) versus \(L(\ha)\),
-and \(r_0\)  versus \(D_{\hii}\).
+Figures~\ref{fig:first-correlation}--\ref{fig:last-correlation}:
+\(r_0\)  versus \(D_{\hii}\), \(\sigma\los\) versus \(\sigma\pos\),
+and \(\sigma\pos\) versus \(L(\ha)\).
 Each of these is discussed in turn in the following sections.
 The remaining correlations
 are at best marginally significant (\(p > 0.05\)),
 including all correlations of the power law slope \(m\)
-with any other parameter.
+with any other parameter,
+but this is itself interesting and is
+also given its own section below.
 
 
 % In the Figs. \ref{fig:sigvsl}, \ref{fig:rvsR} and \ref{fig:los-vs-pos} we show the plots for the correlations with a significance level \(p < \num{0.05}\) which corresponds to the first three rows in Table \ref{tab:RestStats}.
 % In the Figs. the black solid line is the input regression line which is described by the equation shown in the plot and the red thin lines are a random sample (\num{ \sim 400}) from the posterior distribution within one standard deviation from the slope and the \(Y\)-intercept value.
 
 \input{Corr}
+
+
+\begin{figure}
+\centering 
+\includegraphics[width=3in]{Figures/corr-rvsS}
+\caption{
+  The relationship between
+  correlation length of velocity fluctuations,
+  \(\log_{10} r_0\),
+  and  \hii{} region diameter,
+  \(\log_{10} D_{\hii}\)
+  derived from our results.
+  Symbols indicate Galactic (triangles),
+  Magellanic (squares) and extragalactic (circles) regions.
+}
+\label{fig:rvsR}
+% We have TWO labels to make it easier to re-order the figures without
+% worrying about changing the references in the text.  Just make sure
+% to move the following label to the correct figure.
+\label{fig:first-correlation}
+\end{figure}
+
 \begin{figure}
 \centering 
 \includegraphics[width=3in]{Figures/corr-los-vs-pos}
@@ -1433,25 +1457,49 @@ with any other parameter.
   and \hii{} region luminosity,
   \(\log_{10} L(\ha)\),
   derived from our results.
-  Symbols and line types are as in Figure~\ref{fig:sigvsl}. 
+  Symbols indicate Galactic (triangles),
+  Magellanic (squares) and extragalactic (circles) regions.
 }
 \label{fig:sigvsl}
+% We have TWO labels to make it easier to re-order the figures without
+% worrying about changing the references in the text.  Just make sure
+% to move the following label to the correct figure.
+\label{fig:last-correlation}
 \end{figure}
 
-\begin{figure}
-\centering 
-\includegraphics[width=3in]{Figures/corr-rvsS}
-\caption{
-  The relationship between
-  correlation length of velocity fluctuations,
-  \(\log_{10} r_0\),
-  and  \hii{} region diameter,
-  \(\log_{10} D_{\hii}\)
-  derived from our results.
-  Symbols and line types are as in Figure~\ref{fig:sigvsl}. 
-}
-\label{fig:rvsR}
-\end{figure}
+
+\subsubsection{Diameter vs correlation length}\label{sec:D-vs-r0}
+
+Figure~\ref{fig:rvsR} shows the relation between the
+correlation length \(r_0\) of the velocity fluctuations
+and the diameter \(D_{\hii}\) of the \hii{} region. 
+The relationship we find is
+\(\log r_0 = (0.95 \pm 0.33) \log D_{\hii} - (1.6 \pm 0.7)\),
+which is very close to linear,
+implying that the correlation length is a fixed fraction
+\( r_0 /  \log D_{\hii} = \)
+.
+The values of \(D\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
+limits seen from visual inspection of \ha{} photographs.
+These values would represent an upper limit of the size of each region.
+Since these objects do not posses physical edges the determination of their size is not trivial.
+Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.
+
+Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
+It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions.
+There are several energy sources that could provide or contribute to the energy required: of the order of kpc we have the differential rotations of the galaxy that produces shear at large scale. 
+At scales of the order of hundreds of pc the supernova explosions inject a large amount of kinetic energy.
+At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy, and bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
+Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
+
+The dependence on \(r_0\) and the diameter can be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
+
+\subsubsection{The constancy of the power law slope}
+\label{sec:constancy-power-law}
+
+
+
+
 
 \subsubsection{Plane-of-sky vs line-of-sight
   velocity dispersions}
@@ -1565,39 +1613,69 @@ with respect to the mean emissivity \(E_0\).
   Panels a--g show histograms (blue) of the probability density function (PDF)
   of the \ha{} surface brightness of \hii{} regions in our sample.
   Smooth lines (orange) show fitted log-normal distributions.
+  In order to suppress fluctuations on scales
+  smaller than the correlation length,
   Surface brightness maps were rebinned by averaging
-  into pixels of size \(0.5 r_0\) before calculating the PDF to suppress
-  fluctuations at scales smaller than the correlation length.
-  Panel h plots the ratio of velocity dispersions (see Figure~\ref{fig:los-vs-pos})
-  against the RMS fractional brightness fluctuations calculated from the PDFs.
+  into pixels of size \(0.5 r_0\) before calculating the PDF.
+  In panel~h is plotted for each source of the previous panels
+  the ratio of velocity dispersions
+  (see Figure~\ref{fig:los-vs-pos})
+  as a function of the
+  RMS fractional brightness fluctuations calculated from the PDFs.
 }
 \label{fig:brightness-pdfs}
 \end{figure}
 
 
-In order to empirically disentangle the relative importance
-of these three mechanisms, we require high quality measurements
+In order to disentangle the relative importance
+of these three mechanisms, it is necessary to consider
+additional factors.
+For instance, in Figure~\ref{fig:brightness-pdfs} we test
+the plausibility of the third explanation given above
+by comparing the ratio  \(\sigma\pos / \sigma\los \)
+with the RMS fractional variation in
+\ha{} surface brightness,
+\( \sigma_{S/S_0} = \langle \delta S^2 \rangle^{1/2} / S_0\).
+We calculate the latter from fitting a log-normal
+function to the probability distribution function
+of the surface brightness map after filtering out fluctuations
+on scales smaller than the velocity correlation length.
+The volumetric emissivity fluctuations are predicted to be
+proportional to the brightness fluctuations \citep{arthur2016turbulence}:
+\(\sigma_{E/E_0} = \sigma_{S/S_0} / R^{1/2}\) where \(R\)
+is the 2D-to-3D variance ratio \citep{Brunt:2010b}.
+For an emissivity power spectrum \(P(k) \sim k^{-3}\)
+and assuming a ratio of map size to correlation length
+of \(L / r_0 = 10\) (typical value from Table~\ref{tab:Res}),
+we find \(R \approx 0.2\) and hence \(\sigma_{E/E_0} \approx 2 \sigma_{S/S_0}\).
+% For P(k) ~ k^-3 we have R = 0.5 (1 - 1/x) / ln(x)
+% where x = L / r0 if we have suppressed variations on scales < r0
+% So with x = 10 (typical value) we have R = 0.2
+% For k = 4 we have R = 0.25 (1 - 1/x^2) / (1 - 1/x) = 0.275
+% For k = 2 we have R = 0.5 ln(x) / x = 0.115
+% 
+From panel 
+we require high quality measurements
 of a much larger sample of \hii{} regions
 than have so far been obtained.
 In the meantime
 is most important
 
 
-We therefore have an embarrassment of 
-As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
-In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
-On the plane-of-sky the consequences of those gradients and movements are measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
-Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase in the same amount as the fluctuations grows \citep{2011MNRAS.413..705L}.
+% As for the interpretation, it is possible to consider that large fluctuations of the turbulent velocities, which are spread over the entire ionized extent of the nebula, increase monotonically with the plane-of-sky dispersion.
+% In this scenario, the main broadening mechanisms causing kinematical disorder along the line-of-sight are related to the velocity gradients of the clumpiness in the cloud and turbulent movements.
+% On the plane-of-sky the consequences of those gradients and movements are measured in every pixel, consequently the spatial variations on the velocity field would depend on the targeted pixel, at the same time depending on the motions inside the cloud.
+% Thus the \(\sigma\pos\) and \(\langle \sigma_{\text{los}} \rangle\) parameters increase in the same amount as the fluctuations grows \citep{2011MNRAS.413..705L}.
 
-The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{von1951methode, 1984ApJ...277..556S}.
-If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
-With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
-This procedure implies depths of the order 10 to 50 times the correlation length.
-In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency of this interpretation for the Orion core nebula, since evidence has shown that the emitting layer thickness is of the order of \num{0.01} - \SI{0.3}{pc}.
-%For the most distant regions of our sample, the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (see section~\ref{sec:power-index}) only NGC 595, which power-law index is \num{1.38}, would comply to this fully three-dimensional structure.
-On the other hand, \citet{arthur2016turbulence} proposed another interpretation in terms of large-scale order motions, and emissivity fluctuations.
-They consider an expanding shell where the mean velocity fluctuations on the plane of the sky are because the relative brightness of the redshifted and blueshifted hemispherers.
-In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\) ratio.
+% The case of the reduction in the \(\sigma\pos\) can be interpreted by the effect of \textit{project smearing} \citep{von1951methode, 1984ApJ...277..556S}.
+% If we consider the case of homogeneous turbulent velocity, the projection from three to two dimensions over the line-of-sight depth \(H\), reduces the plane-of-sky amplitude for the condition \(r_{0} < H\).
+% With a value of \(\sigma\pos / \sigma_{\text{los}}\) = 0.5 we obtain \(r_{0} / H \sim\) 0.02 - 0.1.
+% This procedure implies depths of the order 10 to 50 times the correlation length.
+% In the lower limit \citet{arthur2016turbulence} mentioned the inconsistency of this interpretation for the Orion core nebula, since evidence has shown that the emitting layer thickness is of the order of \num{0.01} - \SI{0.3}{pc}.
+% %For the most distant regions of our sample, the previous analysis would give depths of the order of magnitude of the observational box, but considering the analysis using the power-law index (see section~\ref{sec:power-index}) only NGC 595, which power-law index is \num{1.38}, would comply to this fully three-dimensional structure.
+% On the other hand, \citet{arthur2016turbulence} proposed another interpretation in terms of large-scale order motions, and emissivity fluctuations.
+% They consider an expanding shell where the mean velocity fluctuations on the plane of the sky are because the relative brightness of the redshifted and blueshifted hemispherers.
+% In this case, the rms fractional variation in the emissivity on the scale diameter is found to be in the order of \(\sigma\pos / \sigma_{\text{los}}\) ratio.
 
 
 \subsubsection{Luminosity vs centroid velocity dispersion}\label{sec:L-vs-sigmapos}
@@ -1618,24 +1696,6 @@ The first problem is addressed in section \ref{sec:sigmapos-vs-sigmalos} where w
 But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\text{H}_{\alpha})\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
 This means that the proposed structure function model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted as a true kinematic property of the \hii{} region velocity field.
 
-\subsubsection{Diameter vs correlation length}\label{sec:D-vs-r0}
-
-The Figure \ref{fig:rvsR} shows the relation of the correlation length \(r_0\) and the diameter \(D\) of the region. 
-The relationship we found is \(\log r_0 = (0.95 \pm 0.33) \log D - (1.6 \pm 0.7)\).
-The values of \(D\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
-limits seen from visual inspection of \ha{} photographs.
-These values would represent an upper limit of the size of each region.
-Since these objects do not posses physical edges the determination of their size is not trivial.
-Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.
-
-Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
-It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions.
-There are several energy sources that could provide or contribute to the energy required: of the order of kpc we have the differential rotations of the galaxy that produces shear at large scale. 
-At scales of the order of hundreds of pc the supernova explosions inject a large amount of kinetic energy.
-At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy, and bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
-Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
-
-The dependence on \(r_0\) and the diameter can be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
 
 
 \subsubsection{Diameter vs centroid velocity dispersion}
