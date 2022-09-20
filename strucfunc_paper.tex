@@ -740,7 +740,35 @@ However, we find that equation~\eqref{eq:new-correlation-form}
 provides a much improved fit to the observed structure functions
 of our sample regions (see following section). 
 
-
+\newcommand\LL{\mathcal{L}}
+Slightly different definitions of the correlation length
+are found in the literature.
+For instance the definition of \citet{Jaupart:2022i}
+in two dimensions is
+\begin{equation}
+  \label{eq:2}
+  \ell_c^2 = \frac{1}{4} \int C(r) \, d^2 r
+  = \frac{\pi}{2} \int_0^\infty r C(r) \, d r
+\end{equation}
+while the ``integral length scale'' \citep{Pope:2000p} is defined
+as
+\begin{equation}
+  \label{eq:3}
+  \LL \equiv \int_0^\infty C(r)\, dr .
+\end{equation}
+For our model structure function, these evaluate to
+\begin{equation}
+  \label{eq:4}
+  \LL = \frac{\Gamma(1/m)}{m\, (\ln 2)^{1/m}} \, r_0
+\end{equation}
+and
+\begin{equation}
+  \label{eq:4}
+   \ell_c^2 = \frac{\pi\,  \Gamma(2/m)}{2m\, (\ln 2)^{1/m}} \, r_0^2
+\end{equation}
+where \(\Gamma\) is the usual Gamma function.
+For example, if \(m = 1\) these become \(\LL \approx 1.443 r_0\)
+and \(\ell_c \approx 1.808 r_0\). 
 % The term \(r_{0}\)\ is the correlation length where the value of separation \(r\) reach the value of \(\sigma^2\) in the structure function and $m$ is the power-law index that fits the inertial scale.
 % In an idealized case at scales larger than \(r_{0}\)\ the structure function flattens as it tends towards the asymptotic value of 2\(\sigma^2\) \citep{arthur2016turbulence}.
 % This substitutes the previously \(C(r) = 1/[1+(r/r_{0})^{m}]\) from \citet{1966igd..book.....K} and
@@ -1479,6 +1507,15 @@ implying that the correlation length is a fixed fraction
 of the diameter:
 \( r_0 /  \log D_{\hii} = 0.02 \pm 0.01\).
 
+\textit{Plan for this section 2022-09-20:
+  \begin{enumerate}[1]
+  \item Relation with box size -- show that correlation length is comfortably smaller and is not well correlated with L 
+  \item Statistical homogeneity, fact that r0 much less than D is good, but we really need to consider the scale over which conditions vary,  which presumably is smaller than D,  but hopefully still larger than r0. Discuss whether it might therefore be fruitful to map out variations in r0 on medium scales, as was done in some paper. 
+  \item Fact that Jaupart also find that r0/D is about 1\%, and that they say that this has nothing to do with the injection scale. 
+  \end{enumerate}
+}
+
+
 The values of \(D\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
 limits seen from visual inspection of \ha{} photographs.
 These values would represent an upper limit of the size of each region.
@@ -1545,7 +1582,6 @@ points in our sample, it fails badly for highest dispersion source,
 % The \( \sigma_{\text{los}} \) parameter is estimated by correcting the observed linewidth for the contribution of broadening mechanism, equation \eqref{eq:sigma-los}, leaving just the random motions which are interpreted as random motions along the line-of-sight.
 % This method is a simplification of the problem since it assume a Gaussian profile fit, which does not consider other components that could arise from different kinematics processes of the ionized gas and leaves out the broadening due to dust scattering \citep{castaneda1988,1998ApJ...503..760H}.
 
-\newcommand\LL{\mathcal{L}}
 At least three different explanations for the relation
 between \(\sigma\pos\) and \(\sigma\los\) have been proposed previously.
 The classic interpretation in terms of homogeneous turbulence
