@@ -149,18 +149,18 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
 % Abstract of the paper
 \begin{abstract}
   Fluctuations of centroid velocities on the plane of the sky derived from spectroscopic observations are a powerful tool for studying the turbulent dynamics of emission line regions.
-  With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity located in the Milky Way and other Local Group galaxies.
-  We determine the second-order structure function of the centroid velocity two-dimensional map of the \halpha\ emission line.
-  We also proposed a heuristic model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L_{\text{box}}\)), and the turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)).
-  The observational structure function is fitted using our heuristic model in a non-linear regression analysis which allow us to derive the parameters previously mentioned  with their respective confidence intervals.
-  Our results are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
-  The derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diamater (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
-  We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\), and that the \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\), values increase following a linear monotonically relation.
+  With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity, and are located in the Milky Way and other Local Group galaxies.
+  For the statistical analysis we obtain the second-order structure function of the observed \halpha\ centroid velocity field.
+  We proposed a heuristic model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L_{\text{box}}\)).
+  The turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)) are also considered in our heuristic model.
+  The observational structure function is fitted using our heuristic model in a non-linear regression analysis which allow us to derive the parameters representing each velocity field.
+  The results for the 9 \hii{} regions are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
+  Later, the derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diamater (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
+  We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\). 
+  Finally, the \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\) relation increase following a linear relation.
   Since the derived  scale-relations are within the uncertainty of previous investigations we conclude that the parameters obtained from our proposed model represents true kinematic properties of each region.
-  The methodology we present guarantees consistency for comparison between the galactic and giant HII regions. 
-%  The second-order structure function has proved to be a useful tool to determine the existence of the correlations between random velocities and distance across the \hii{} regions.
+  The methodology we present guarantees consistency for comparison between the galactic and giant extragalactic HII regions. 
 
-  
   
 \end{abstract}
 
@@ -188,6 +188,7 @@ injected by the newly-formed stars.
 Rather than manifesting a simple pattern such as expansion, infall, or rotation,
 the motions are frequently disordered or ``turbulent''
 and must be characterised by statistical techniques.
+
 In relatively low luminosity regions, such as the nearby Orion Nebula,
 the disordered motions are approximately transonic,
 with typical velocities of order \num{5} to \SI{10}{km.s^{-1}}
@@ -261,8 +262,7 @@ ranging in size from \SI{0.5}{pc} to \SI{200}{pc}
 and in \ha{} luminosity from \SI{e37}{erg.s^{-1}} to  \SI{e39}{erg.s^{-1}}.
 The observations and the physical characteristics of our sample
 are described in section~\ref{sec:HIIsample}.
-
-We apply a uniform methodology to the analysis of the structure function
+For studying the turbulence we apply a uniform methodology to the analysis of the structure function
 by fitting a simple functional form that consists of a power law of slope \(m\)
 at small separations,
 transitioning to a constant value at separations larger than
@@ -279,7 +279,6 @@ In our fits, we marginalize over these nuisance parameters to obtain robust
 credibility limits for the parameters of astrophysical interest:
 \(\sigma\pos\), \(r_0\), and \(m\).
 The results of these fits are presented in section~\ref{sec:results}.
-
 In section~\ref{sec:discussion} we discuss the relation
 of our results to previous studies and the correlations that we find
 between the structure function parameters and other properties of
@@ -461,7 +460,7 @@ where such a masking out is not possible.
 \label{sec:fabry-perot-etalaon}
 
 We use the velocity field presented in \citet{1987A&A...176..347H} to analyze the Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}.
-the brightness following the southwest direction from the Huygens region.
+The EON is an extended region in southwest direction from the Huygens region which presents a diminution in the brightness.
 The observational data was obtained using a Fabry-Pérot interferometer with a étalon separation of 0.5 mm on the 106 cm-Cassegrain telescope at Observatorium Hoher List. 
 A number of fifteen interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula with an exposure time between 10 and 40 minutes. 
 The exposures are overlapped and fall into one square of a grid with a width of \SI{1}{arcmin} centered at \(\theta^{1}\)Ori C.   
@@ -537,7 +536,7 @@ The NGC~604 observations were previously reported and analyzed in
 \midrule
 Orion     & 0.44 \pm 0.02  & 5 \pm 0.5    &    37.18       &    9.9 \pm 1.2\FNa        \\
 Lagoon    & 1.25 \pm 0.12   & 25 \pm 2.5      &    37.47    &   11.2 \pm 1.6    \\
-Carina    & 2.35 \pm 0.05   & 200 \pm 20      &    38.54    &   18.6 \pm 3.3\FNa      \\
+Carina    & 2.35 \pm 0.05   & 200 \pm 20      &    39.01    &   18.6 \pm 3.3\FNa      \\
 30 Dor    & 50.0 \pm 0.2    & 370 \pm 37    &    39.46    &     21.7 \pm 2.2    \\
 NGC 346   & 62 \pm 1        & 220 \pm 22      &    38.77    &    9.6 \pm 1.0     \\
 Hubble X  & 490 \pm 40      & 160 \pm 16      &    38.21    &   10.0 \pm 0.02\\
