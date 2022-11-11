@@ -125,9 +125,7 @@
 % If you need two or more lines of authors, add an extra line using \newauthor
 \author[J. García Vázquez et al.]{
 J. García Vázquez$^{1}$\thanks{E-mail: jgarciav1600@alumno.ipn.mx}
-%J. Zsargo,$^{1}$
 and W. J. Henney$^{2}$
-%and H. O. Castañeda$^{1}$
 \\
 % List of institutions
 $^{1}$Escuela Superior de Física y Matemáticas, Instituto Politécnico Nacional, Ciudad de México, México.\\
@@ -138,7 +136,7 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autonom
 \date{Accepted XXX. Received YYY; in original form ZZZ}
 
 % Enter the current year, for the copyright statements etc.
-\pubyear{2021}
+\pubyear{2023}
 
 % Don't change these lines
 \begin{document}
@@ -520,7 +518,7 @@ on the \SI{4.2}{m} William Herschel Telescope (WHT) and was retrieved from the L
 The IPCS-II detector was used with a etalon of \SI{125}{\mu m}.
 Each data cube is \(256 \times 256 \times 100\) with a spatial scale of \SI{0.26}{arcsec.pixel^{-1}} with a total integration time of \SI{3600}{s} (\SI{36}{s} per frame).
 For more details on the observational setup see table~1 of \citet{sabalisck1995supersonic}.
-The reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L} and the emission spectrum was adjusted with a Gaussian fit.
+The reduction and analysis was done with the packages TAUCAL y TAUFITS \citep{1992ASPC...25..445L} and the emission spectrum was adjusted with a single Gaussian fit.
 The NGC~604 observations were previously reported and analyzed in
 \citet{sabalisck1995supersonic}, \citet{Medina-Tanco:1997a} and \citet{Melnick:2021x}.
 
@@ -529,7 +527,7 @@ The NGC~604 observations were previously reported and analyzed in
 \label{sec:regions-milky-way}
 
 \begin{table}
-\begin{center}\caption{Summary of properties of our \hii{} region sample. Diameters taken from Table 2 of \citet{1984ApJ...287..116K}. Mean non-thermal linewidth values, \(\langle \sigma\los \rangle\), shown here are corrected considering equation \eqref{eq:sigma-los} which takes into account \(\sigma_{\mathrm{fs}}\). Non-corrected \(\langle \sigma\los \rangle\) values and other properties references are mentioned in the text. }
+\begin{center}\caption{Summary of properties of our \hii{} region sample. Diameters taken from Table 2 of \citet{1984ApJ...287..116K}. Mean non-thermal linewidth values (\(\langle \sigma\los \rangle\)) shown here are corrected considering equation \eqref{eq:sigma-los} which takes into account \(\sigma_{\mathrm{fs}}\). Non-corrected \(\langle \sigma\los \rangle\) values and other properties references are mentioned in the text. }
 \begin{tabular}{cCCCC}\toprule
 \hii{}    &  \text{Distance,}\ d & \text{Diameter,}\ D_{\hii} & \log L(\ha) &  \langle \sigma\los \rangle \\
   Region    &  [\si{kpc}]          &  [\si{pc}]    &  [\si{erg.s^{-1}}]            &    [\si{km.s^{-1}}]  \\ 
@@ -764,7 +762,7 @@ For our model structure function, these evaluate to
 and
 \begin{equation}
   \label{eq:4}
-   \ell_c^2 = \frac{\pi\,  \Gamma(2/m)}{2m\, (\ln 2)^{1/m}} \, r_0^2
+   \ell_c^2 = \frac{\pi\,  \Gamma(2/m)}{2m\, (\ln 2)^{2/m}} \, r_0^2
 \end{equation}
 where \(\Gamma\) is the usual Gamma function.
 For example, if \(m = 1\) these become \(\LL \approx 1.443 r_0\)
@@ -1085,7 +1083,7 @@ estimated autocorrelation length for each parameter,
 which typically required of order \num{50000} samples.
 Thin translucent lines in the figures show structure functions using the parameters of
 a random selection of \num{100} posterior samples from the MCMC chain,
-both for \(\tilde{B}\model(r)\) orange and \(B\model(r)\) (green).
+both for \(\tilde{B}\model(r)\) (orange) and \(B\model(r)\) (green).
 This gives an estimate in the uncertainty about the best-fit model.
 Credibility intervals for the parameters are estimated from percentiles
 of the posterior distribution and are indicated in the figures by shaded gray boxes
@@ -1290,7 +1288,7 @@ similar to the light blue line in Figure~\ref{fig:model-strucfunc}b.
 
 \section{Discussion}\label{sec:discussion}
 
-In the section \ref{sec:comp-with-prev} we make a comparison of our methods and results with previous research that analyzes structural functions of some \hii{} regions of our sample.
+In the section \ref{sec:comp-with-prev} we make a comparison of our methods and results with previous research that analyzes structure functions of some \hii{} regions of our sample.
 In the section \ref{sec:scaling-relations} we present the most important scaling relations between the derived turbulent parameters and the physical properties of the \hii{} regions.
 Finally, in the section \ref{power-law-index} we discuss the role of the derived power-law index in the context of turbulence in the ionized gas.
 
@@ -1516,7 +1514,7 @@ of the diameter:
 }
 
 
-The values of \(D\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
+The values of \(D_{\hii}\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
 limits seen from visual inspection of \ha{} photographs.
 These values would represent an upper limit of the size of each region.
 Since these objects do not posses physical edges the determination of their size is not trivial.
@@ -1529,14 +1527,10 @@ At scales of the order of hundreds of pc the supernova explosions inject a large
 At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy, and bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
 Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
 
-The dependence on \(r_0\) and the diameter can be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
+%The dependence on \(r_0\) and the diameter may be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
 
 \subsubsection{The constancy of the power law slope}
 \label{sec:constancy-power-law}
-
-
-
-
 
 \subsubsection{Plane-of-sky vs line-of-sight
   velocity dispersions}
