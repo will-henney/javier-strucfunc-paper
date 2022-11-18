@@ -681,6 +681,9 @@ which we will take advantage of below.
    at small scales due to seeing and noise.
    (b)~Examples of inhomogeneous effects at large scales,
    which are not included in the model structure function.
+   Note how hard it is to detect by eye the difference between these
+   fields and the one shown in panel~a, despite the important changes
+   in the large-scale end of the structure function.
  }
  \label{fig:model-strucfunc}
 \end{figure*}
@@ -1376,7 +1379,7 @@ between the physical parameters of the \hii{} regions
 and the parameters of the fluctuating velocity fields
 that we derived in section~\ref{sec:results}.
 To accomplish this we implement a hierarchical Bayesian model for linear regression using the \texttt{linmix} Python library, which is based on the procedure of \cite{2007ApJ...665.1489K}.
-Thus we fit relations of the form
+We fit relations of the form
 \(Y = a X + b\)
 where \(X = \log_{10} x\) and \(Y = \log_{10} y\)
 with \(x, y \in \{d, D, L(\ha), \sigma\pos, r_0, m\}\)
@@ -1501,25 +1504,72 @@ and the diameter \(D_{\hii}\) of the \hii{} region.
 The relationship we find is
 \(\log r_0 = (0.95 \pm 0.33) \log D_{\hii} - (1.6 \pm 0.7)\),
 which is very close to linear,
-implying that the correlation length is a fixed fraction
+implying that the correlation length is a constant fraction
 of the diameter:
-\( r_0 /  \log D_{\hii} = 0.02 \pm 0.01\).
+\( r_0 /  D_{\hii} = 0.02 \pm 0.01\).
 
-\textit{Plan for this section 2022-09-20:
-  \begin{enumerate}[1]
-  \item Relation with box size -- show that correlation length is comfortably smaller and is not well correlated with L 
-  \item Statistical homogeneity, fact that r0 much less than D is good, but we really need to consider the scale over which conditions vary,  which presumably is smaller than D,  but hopefully still larger than r0. Discuss whether it might therefore be fruitful to map out variations in r0 on medium scales, as was done in some paper. 
-  \item Fact that Jaupart also find that r0/D is about 1\%, and that they say that this has nothing to do with the injection scale. 
-  \end{enumerate}
-}
+However, \(r_0\) is also well correlated with
+the observed map size, \(L\),
+so it is important to check that the correlation lengths that we
+measure are true properties of the regions,
+and are not just artifacts of the finite map sizes.
+In Appendix~\ref{sec:finite-box-effects} we show that \(L\)
+has a significant effect on the naive apparent \(r_0\) when \(r_0 > 0.1 L\),
+but that an accurate \(r_0\) can still be recovered from model fitting
+so long as \(r_0 < 0.33 L\).
+From our results (Table~\ref{tab:Res}) we find that \(r_0 \approx (0.08 \pm 0.01) L\),
+which is comfortably small enough that the measured correlation lengths should
+be reliable.
+A clear indication that the derived \(r_0\) is not real would
+be a structure function that never flattens off, but rather keeps
+rising at all scales.
+We do not see such a behavior in any of our regions.
+The most similar is the Lagoon Nebula
+(Figure~\ref{fig:strucfunc-fit-Galactic}c),
+where the structure function does flatten at intermediate scales,
+but then rises again for separations of order \(L\).
+It may be that there is a second, outer correlation scale in this region,
+which we fail to measure because the observed map is to small.
+
+The small value of \( r_0 /   D_{\hii}\) that we obtain means that it
+would be feasible to study the spatial variation of the turbulence parameters
+within a given region. This is because parts of the nebula that are separated
+by a distance \(\gg r_0\) are essentially independent.
+In principle,  the variation of \(\sigma\pos\) could be
+measured in  a ``macro-pixels'' of size \(2 r_0\),
+but a minimum size of  \( 3 r_0\) is necessary to reliably determine \(r_0\)
+itself (Appendix~\ref{sec:finite-box-effects}),
+and it is quite possible that \(r_0\) might vary
+across the face of the nebulae.
+The best that could be done with the current \(L \times L\) velocity maps
+would therefore be about \(3\times3\) pixels, but this could be increased to
+about \(15\times15\) pixels if the entire \(D_{\hii} \times D_{\hii}\) region were mapped.
+
+% \textit{Plan for this section 2022-09-20:
+%   \begin{enumerate}[1]
+%   \item Relation with box size -- show that correlation length is comfortably smaller and is not well correlated with L 
+%   \item Statistical homogeneity, fact that r0 much less than D is good, but we really need to consider the scale over which conditions vary,  which presumably is smaller than D,  but hopefully still larger than r0. Discuss whether it might therefore be fruitful to map out variations in r0 on medium scales, as was done in some paper. 
+%   \item Fact that Jaupart also find that r0/D is about 1\%, and that they say that this has nothing to do with the injection scale. 
+%   \end{enumerate}
+% }
 
 
-The values of \(D_{\hii}\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
-limits seen from visual inspection of \ha{} photographs.
-These values would represent an upper limit of the size of each region.
-Since these objects do not posses physical edges the determination of their size is not trivial.
-Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.
+% The values of \(D_{\hii}\) are taken from \citet{1984ApJ...287..116K} and correspond to the outer
+% limits seen from visual inspection of \ha{} photographs.
+% These values would represent an upper limit of the size of each region.
+% Since these objects do not posses physical edges the determination of their size is not trivial.
+% Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.
 
+Recent work on self-gravitating turbulence in molecular clouds
+such as Polaris and Orion~B
+\citep{Jaupart:2022i} has also found correlation lengths
+that are small compared with the size of the clouds,
+with results that are quantitatively similar to our own:
+\(r_0 / D \sim 0.01\), although it should be noted that these studies
+consider the column density fields, rather than velocities.
+\citep{Jaupart:2021a} XXX FINSH THIS
+
+However
 Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
 It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions.
 There are several energy sources that could provide or contribute to the energy required: of the order of kpc we have the differential rotations of the galaxy that produces shear at large scale. 
