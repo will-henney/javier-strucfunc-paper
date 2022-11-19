@@ -741,7 +741,7 @@ However, we find that equation~\eqref{eq:new-correlation-form}
 provides a much improved fit to the observed structure functions
 of our sample regions (see following section). 
 
-\newcommand\LL{\mathcal{L}}
+\newcommand\LL{\ensuremath{\mathcal{L}}}
 Slightly different definitions of the correlation length
 are found in the literature.
 For instance the definition of \citet{Jaupart:2022i}
@@ -1560,24 +1560,51 @@ about \(15\times15\) pixels if the entire \(D_{\hii} \times D_{\hii}\) region we
 % Since these objects do not posses physical edges the determination of their size is not trivial.
 % Due to the above, we chose these set values since they are from an unique source and are foreign to our calculations and observations, which reduced the bias in the scaling law we obtain.
 
-Recent work on self-gravitating turbulence in molecular clouds
-such as Polaris and Orion~B
-\citep{Jaupart:2022i} has also found correlation lengths
-that are small compared with the size of the clouds,
-with results that are quantitatively similar to our own:
-\(r_0 / D \sim 0.01\), although it should be noted that these studies
-consider the column density fields, rather than velocities.
-\citep{Jaupart:2021a} XXX FINSH THIS
 
-However
-Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
-It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions.
-There are several energy sources that could provide or contribute to the energy required: of the order of kpc we have the differential rotations of the galaxy that produces shear at large scale. 
-At scales of the order of hundreds of pc the supernova explosions inject a large amount of kinetic energy.
-At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy, and bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
-Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
+The energy injection or driving scale of turbulence,
+\(\ell_E\), is commonly identified
+with the ``outer scale'' of the fluctuations 
+\citep{Haverkorn:2004r, 2010ApJ...710..853C}. 
+The outer scale has been given diverse definitions \citep{Klipp:2014a}
+but most commonly is either the integral scale \LL{},
+or the scale at which the structure function becomes flat.
+These are both of the same order as the correlation length \(r_0\) as we define it,
+see section~\ref{sec:methods-apply},
+but are typically larger by a factor of 1.5 to 2
+(for example, equation~\eqref{eq:4} for the integral scale).
+However, high resolution numerical simulations
+of driven isothermal turbulence \citep{Federrath:2021r}
+show a somewhat larger gap of a factor of 4 between the correlation length
+and the driving scale.  
+In either case, our results imply that the turbulence
+in \hii{} regions is driven on relatively small scales,
+between 2\% and 5\%  of the diameter of the \hii{} region.
 
-%The dependence on \(r_0\) and the diameter may be interpreted in terms that each region presents a characteristic energy injection mechanism (or combination) and despite the presence of the different mechanisms there is some unique combination that drives the input energy in each region. 
+
+% However, \citep{Jaupart:2021a} point out that for supersonic turbulence
+% the correlation length and the integral scale can be much smaller than
+% the energy injection scale.
+% By analysing high resolution simulations of driven self-gravitating turbulence with Mach number \(M\)
+% \cite{},
+% they find that \(r_0 \sim \ell_E / M^2\).
+
+% Recent work on self-gravitating turbulence in molecular clouds
+% such as Polaris and Orion~B
+% \citep{Jaupart:2022i} has also found correlation lengths
+% that are small compared with the size of the clouds,
+% with results that are quantitatively similar to our own:
+% \(r_0 / D \sim 0.01\), although it should be noted that these studies
+% consider the column density fields, rather than velocities.
+
+
+% However
+% Ideally the correlation length \(r_0\) should represent the scale of dominant energy injection.
+% It is unclear what are the precise mechanisms driving the turbulence in \hii{} regions.
+% There are several energy sources that could provide or contribute to the energy required: of the order of kpc we have the differential rotations of the galaxy that produces shear at large scale. 
+% At scales of the order of hundreds of pc the supernova explosions inject a large amount of kinetic energy.
+% At scales of several tens of pc the expansion of \hii{} regions and stellar winds are a source of energy, and bipolar flows, shocks, jets and champagne flows inject energy at small scales about one tenth of a pc.
+% Many of these mechanisms, at some extent, affect all the \hii{} regions studied in this work, so the most probable scenario is that the velocity fluctuations are consequence of the combination of various mechanism.
+
 
 \subsubsection{The constancy of the power law slope}
 \label{sec:constancy-power-law}
@@ -2075,7 +2102,7 @@ In this case we see that the model fitting works much better than the empirical 
 The empirical variations of the ratios is described by the  dashed line in Fig. \ref{fig:finite-box-effect} a and b, and is given by the equation: 
 
 \begin{equation}\label{eq:ajustebox}
-\beta(r_0) = 1 - exp \left[ \frac{L}{3.6r_0} \right] 
+\beta(r_0) = 1 - \exp \left[ \frac{L}{3.6r_0} \right] 
 \end{equation}
 
 \subsection{Effects of seeing}
