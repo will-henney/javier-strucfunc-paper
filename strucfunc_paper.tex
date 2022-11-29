@@ -1610,9 +1610,66 @@ shows no significant correlation with any other parameter
 with a weighted mean value of \(m = 1.01\).
 The dispersion in fitted \(m\) values is 1.6 times higher than expected
 on the basis of the confidence limits for the individual regions,
-implying that there may be a real intrinsic dispersion of 0.17 in the slopes.
+implying that there may be a real intrinsic dispersion of \(\pm 0.17\) in the slopes.
 However, a \(\chi^2\) test shows that this is only marginally significant
-(\(p = 0.11\)), so we cannot reject the idea that all the slopes are identical. 
+(\(p = 0.11\)), so we cannot rule out that all the slopes are identical.
+
+\newcommand\DDD{\ensuremath{_{\mathrm{3D}}}}
+For incompressible Kolmogorov turbulence,
+the predicted slope of the three-dimensional structure function is \(m\DDD = 2/3\),
+but intermittency and compressibility \citep{Schmidt:2008a}
+can increase this to \(m\DDD \approx 0.8\) in the subsonic regime,
+and up to \(m\DDD = 1\) in the supersonic regime.
+Comparison with our measurements is complicated by projection smoothing,
+which mean that \(m\DDD\) is only
+observed directly for separations larger than the line-of-sight depth
+of the emitting regions.
+For smaller separations, one potentially observes a steeper slope:
+\(m = m\DDD + 1 + \delta\kappa\),
+where \(\delta\kappa\) represents the effects of emissivity fluctuations
+along the line of sight \citep{Brunt:2004a},
+and varies from \(\delta\kappa = 0\) in the incompressible limit
+to \(\delta\kappa = -1\) in the case of strongly driven supersonic turbulence.
+
+It is therefore not surprising that we see no significant correlation
+between \(m\) and \(\sigma^2\pos\) 
+(\(p = 0.33\), Table~\ref{tab:RestStats}).
+Although theoretically one might expect a positive correlation of \(m\DDD\)
+with the amplitude of the velocity fluctuations
+due to the transition from subsonic
+to supersonic turbulence \citep{Galtier:2011a},
+this will be offset by a decrease in \(\delta\kappa\) 
+if the amplitude of the density fluctuations
+(and hence emissivity fluctuations) increases along
+with the velocity fluctuations.
+
+In figure 
+
+We also find no clear evidence for a broken power-law in any of our
+structure functions, as has been suggested in previous studies.
+Although in some regions we do observe a steepening at the smallest scales
+(for example Figures~\ref{fig:strucfunc-fit-Galactic}a, \ref{fig:strucfunc-fit-MC}ab),
+this can be accounted for in our model fits by
+the spatial smoothing caused by atmospheric seeing.
+This has a noticeable effect on the structure function at scales of
+up to 5 times the FWHM of the seeing (Appendix~\ref{sec:effects-seeing-struc}).
+There is a hint in the highest quality datasets that there may also be
+a real steepening of the structure function at small scales
+(see section~\ref{sec:sanity-check-derived}),
+but higher spatial resolution observations are required in order to study this. 
+
+Theoretically, one might expect a positive correlation of the slope with the
+amplitude of the velocity fluctuations, due to the transition from subsonic
+to supersonic turbulence \citep{Galtier:2011a}.
+However, the predicted change of slope is rather small,
+\(\delta m \approx 0.2\)
+\citep{Federrath:2021r},
+and only one of our sources (30~Dor) is clearly in the supersonic regime,
+so it is perhaps not surprising that we do not find a significant correlation
+(\(p = 0.33\), Table~\ref{tab:RestStats}).
+This is further complicated by the effect of projection along the line of sight
+
+Theoretically, one might expect
 
 \subsubsection{Plane-of-sky vs line-of-sight
   velocity dispersions}
