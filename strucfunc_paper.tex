@@ -2243,7 +2243,7 @@ and comparison with previous results from the literature
 \label{sec:orion-nebula}
 
 The Orion Nebula (M42) is the prototype of a galactic \hii{} region located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc} ; \citealp{2008AJ....136.1566O}}.
-The O7 V star \(\theta^{1}\) Ori C is the most luminous and hottest star with an ionizing flux \(Q_0\) of  \SI{e49.12}{photons.s^{-1}} \citep{2006A&A...448..351S} or \SI{e37.18}{erg.s^{-1}}. 
+The O7 V star \(\theta^{1}\) Ori C is the most luminous and hottest star with an ionizing flux \(Q_0\) of \SI{e49.12}{photons.s^{-1}} \citep{2006A&A...448..351S} which translates to luminosity in \ha{} of \SI{e37.18}{erg.s^{-1}}. 
 With other 3 B-type stars they form the Trapezium cluster.
 The bright region that surrounds these massive ionizing stars is called the Huygens region.
 %In the southwest direction of the Huygens region there is a drop in the brightness as one approach a much larger region called Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}
@@ -2253,19 +2253,21 @@ Its physical properties and kinematics, along its stellar population are documen
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-orion}
 
-%Figure~\ref{fig:strucfunc-fit-Galactic}a shows the structure function of the Orion core.
-%In this case we merge the first three points of the structure function.
-%A detailed description of the model fit is given in
-%section~\ref{sec:example-results-orion} and will
-%not be repeated here.
-At the largest scales, which are not used in the model fitting,
-one sees a downturn in the structure function from
-\SI{22}{km^{2}.s^{-2}} for \(r < \SI{0.3}{pc}\) to
-\SI{7}{km^{2}.s^{-2}} at \(r  \SI{0.5}{pc}\).
-%This is similar to the behavior expected for tapered fluctuations
-%(see section~\ref{sec:limit-model-struct} and Figure~\ref{fig:model-strucfunc}b)
-%in which the velocity dispersion is higher in the center of the map
-%than in the periphery.
+\
+
+\textit{Orion core}
+
+\
+Figure~\ref{fig:strucfunc-fit-Galactic}a shows the structure function of the Orion core.
+A detailed description of the model fit is given in section~\ref{sec:example-results-orion} and will not be repeated here.
+Using the observed structure function and by simple linear interpolation the value of \(\sigma\pos^2 = \SI{9}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{0.05}{pc} \) (as comparison to the derived values from our model which are \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) and \(r_0 = \SI{0.07}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{0.13}{pc} \) (this \(r\) value would be analog to the total decorrelation length \(\tau_0\), see section~\ref{sec:comp-with-prev}). 
+The maximum \(B(r)\) value correspond to \SI{23}{km^{2}.s^{-2}} at \(r = \SI{0.30}{pc}\).
+From this value the \(B(r)\) values decrease and it is possible to observe a downturn in the structure function from to \SI{7}{km^{2}.s^{-2}} at \(r =  \SI{0.5}{pc}\). 
+This 'hook' behavior is described by the tapered fluctuations (see section~\ref{sec:limit-model-struct}).
+If we consider the first valid point of \(B(r)\) to be above the derived value of \(s_0\), which corresponds to \SI{0.3}{km^{2}.s^{-2}} at \(r = \SI{0.003}{pc} \) and use a linear relation to calculate the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.66} and \num{0.89}, respectively, while our derived value is \num{1}.
+
+\textit{EON}
 
 Figure~\ref{fig:strucfunc-fit-Galactic}b shows the structure function of the Extended Orion Nebula, which is ten times larger than the core in linear size,
 but observed at a much lower angular resolution
@@ -2282,6 +2284,7 @@ that would be naively derived from the observations
 (compare green and orange lines in Figure~\ref{fig:strucfunc-fit-Galactic}b).
 
 %The seeing width is much smaller than the angular scale of the observations
+
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-orion}
 
@@ -2297,26 +2300,26 @@ Although the work of \citet{arthur2016turbulence} follows a different methodolog
 \label{sec:lagoon-nebula}
 
 The Lagoon Nebula (M8, NGC6523) is located at a distance of 1 250 pc \citetext{\SI{1}{\arcsecond} = \SI{0.006}{pc} ; \citealp{2005A&A...430..941P}}.
-It has a luminosity in \ha{} of \SI{e37.47}{erg.s^{-1}} \citep{1984ApJ...287..116K}.
+It contains the young stellar cluster NGC6530 and the region is illuminated by different massive stars of spectral types O and B, the hottest being 9 Sgr, type O4V \citep{Damiani:2017b}.
+Optically, the brightest part of the nebula is called 'Hourglass nebula' which surrounds and obscures the O7 star Herschel 36 \citep{1986AJ.....91..870W}.
+These stars gives an ionizing flux \(Q_0\) of \SI{e49.41}{photons.s^{-1}} (2 times higher compared to the Orion Nebula) and the luminosity in \ha{} of \SI{e37.47}{erg.s^{-1}} \citep{1984ApJ...287..116K}.
 The mean non-thermal linewidth in \ha{} is \SI{11.7 \pm 1.6}{km.s^{-1}} \citep{1973ApJ...183..851B}.
-%It contains the young stellar cluster NGC6530 and the region is illuminated by different massive stars of spectral types O and B, the hottest being 9 Sgr, type O4V \citep{Damiani:2017b}.
-Optically, the brightest part of the nebula is called 'Hourglass nebula' which surrounds and obscures the O7 star Herschel 36 \citep{1986AJ.....91..870W}. 
-%The velocity field shows several expanding shells, related to the stellar population, and the massive %protostar M8East-IR \citep{1984ApJ...278..170S} indicating that recent star formation. 
-%A blueshifted, neutral layer is also in very good agreement with predictions of champagne-flow models of blister \hii{} regions \citep{Damiani:2017b}. 
-%The properties of the nebula are reviewed by \citet{2008hsf2.book..533T}.
+The velocity field shows several expanding shells, related to the stellar population, and the massive protostar M8East-IR \citep{1984ApJ...278..170S} indicating that recent star formation. 
+A blueshifted, neutral layer is also in very good agreement with predictions of champagne-flow models of blister \hii{} regions \citep{Damiani:2017b}. 
+The properties of the nebula are reviewed by \citet{2008hsf2.book..533T}.
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-lagoon}
 
+We follow the same procedure we use to describe the observed structure function of the Orion Nebula for the rest of the regions.
 The Figure~\ref{fig:strucfunc-fit-Galactic}c shows the structure function of the Lagoon nebula.
-%There aren't any points affected by the seeing which has a value of \SI{0.006}{pc} (\(s_0\)=\SI{1}{\arcsecond}).
-%In this case we merge the first two points.
-%The Lagoon nebula presents a non-uniform behavior below the correlation length but it is possible to see the characteristic ascending values of the structure function.
-%The turbulent parameters that fits our model are a \(r_0\) of \SI{1}{pc}, a \(\sigma^2\pos\) of \SI{7}{km^{2}.s^{-2}} and an index of \num{1.17}.
-At large scales there is an indication of some periodic behavior followed by ascending \(B(r)\) values at largest separation.
-A value of\(B(r)\) of order 2\(\sigma^2\pos\) is \(\sim\)\SI{14}{km^{2}.s^{-2}} at a separation of \(\sim\)\SI{2.5}{pc}. 
-Then there is a diminution at \SI{4.5}{pc} down to a value of \SI{11}{km^{2}.s^{-2}}.
-From this point the structure function ascends until it reaches \SI{66}{km^{2}.s^{-2}} around \SI{20}{pc}.
+This region presents a non-uniform behavior below the derived correlation length but still it is possible to see the characteristic ascending values of the structure function.
+The value of the observed \(\sigma\pos^2 = \SI{8}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{1}{pc} \) (in this case there is a good agreement with the derived values from our model which are \(\sigma\pos^2 = \SI{7}{km^{2}.s^{-2}}\) and \(r_0 = \SI{1}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{2.5}{pc} \).
+From this point the structure function shows a 'reversed hook' behavior, which mean that there is a decrease in \(B(r)\) values up until \(r_0 = \SI{4}{pc} \)) for a value of \SI{11}{km^{2}.s^{-2}}, which from this point the structure function ascends until it reaches \SI{66}{km^{2}.s^{-2}} around \SI{20}{pc}.
+This may be because our observations doesn't cover and outer correlation region (see sections~\ref{sec:D-vs-r0}) or an indication of some periodic behavior (see sections~\ref{sec:limit-model-struct}).
+There aren't any points affected by the seeing (RMS) which has a value of \SI{0.01}{pc} (\(s_0\)=\SI{3.5}{\arcsecond}).
+If we consider the first point of this \(B(r)\) to be valid, which corresponds to \SI{0.55}{km^{2}.s^{-2}} at \(r = \SI{0.05}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.89} and \num{0.86}, respectively, while our derived value is \num{1.26}.
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-lagoon}
@@ -2347,23 +2350,28 @@ albeit to a more extreme degree.
 \label{sec:carina-nebula}
 
 The Carina nebula is a large star-forming complex located at a distance of 2 350 pc \citetext{\SI{1}{\arcsecond} = \SI{0.01}{pc} ; \citealp{2006ApJ...644.1151S}}.
-Using the \ha{} luminosity as a diagnostic of the ionizing flux \(Q_0\) \citet{2007MNRAS.379.1279S} measured a value of \SI{e50.47}{photons.s^{-1}}.
-%Young clusters like Trumpler 14 and 16, and Collinder 228 form the Car OB1 association, one of the largest OB associations on the Galaxy.
-%This OB association has more than 65 stars earlier than B0, and several Wolf-Rayet (WR) stars.
-The most luminous star is the blue variable $\eta$ Car.
-%As a star formation region, it presents several phenomena related with young stars as evaporating protoplanetary discs, erosion of large dust pillars and the triggering of a second generation of embedded stars and Herbig-Haro objects, to mention some \citetext{see \citealp{2008hsf2.book..138S} and reference therein}. 
-%This region can be consider as a bridge between the detailed star-formation regions like Orion, and much more distant regions like 30 Doradus.
+It contains young clusters like Trumpler 14 and 16, and Collinder 228 from the Car OB1 association, one of the largest OB associations in the Galaxy.
+This OB association has more than 65 stars earlier than B0, and several Wolf-Rayet (WR) stars and the most luminous star is the blue variable $\eta$ Car.
+The ionizing flux \(Q_0\) is \SI{e50.95}{photons.s^{-1}} \citep{2008hsf2.book..138S} (60 times higher compared to the Orion Nebula) and the luminosity in \ha{} of \SI{e39.01}{erg.s^{-1}}.
+As a star formation region, it presents several phenomena related with young stars as evaporating protoplanetary discs, erosion of large dust pillars and the triggering of a second generation of embedded stars and Herbig-Haro objects, to mention some \citetext{see \citealp{2008hsf2.book..138S} and reference therein}. 
+This region can be consider as a bridge between the detailed star-formation regions like Orion, and much more distant regions like 30 Doradus.
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-carina}
 
-(The Figure~\ref{fig:strucfunc-fit-Galactic}d shows the structure function of the Carina nebula.
-%For this region we merge the first two points of the structure function.
-%As the Lagoon nebula, Carina also shows a non-uniform behavior below the correlation length.
-%The correlation length is \SI{0.56}{pc} pc at a \(\sigma^2\pos\) of \SI{18}{km^{2}.s^{-2}} and an index of \num{1.14}.
-At larges scales the structure function of the Carina nebula follows a pattern that resembles the homogeneous fluctuation of Figure~\ref{fig:model-strucfunc}a.
-The structure function reaches a plateau around \SI{36}{km^{2}.s^{-2}} at \(\sim\) \SI{2}{pc}.
-When \(r >\)\SI{6}{pc} the structure functions shows a small amplitude periodic pattern around 2\(\sigma^2\pos\).
+The Figure~\ref{fig:strucfunc-fit-Galactic}d shows the structure function of the Carina nebula.
+As the Lagoon nebula, the structure function of Carina also shows a non-uniform and a more disperse behavior below the correlation length.
+The value of the observed \(\sigma\pos^2 = \SI{18}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{0.5}{pc} \) (in this case there is a good agreement with the derived values from our model which are \(\sigma\pos^2 = \SI{18}{km^{2}.s^{-2}}\) and \(r_0 = \SI{0.5}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{1.6}{pc} \).
+Above this separation, at larges scales, the structure function of the Carina nebula follows a pattern that resembles the homogeneous fluctuation of Figure~\ref{fig:model-strucfunc}a.
+Also, it can be argue that at large scales the behavior does not reflect purely the homogeneous fluctuations. 
+It seems that there are two  oscillating pattern at large scales.
+The first one, from \(r = \SI{1.7}{pc} \) to \SI{6}{pc} which has an spatial wavelength of \SI{\sim 2}{pc} and a dispersion of \SI{1}{km^{2}.s^{-2}}.
+The second one when \(r >\)\SI{6}{pc} until \SI{7}{pc} with a dispersion of \SI{3.5}{km^{2}.s^{-2}}.
+This fluctuations are around the value of 2\(\sigma^2\pos\) so it is possible that the dispersion is artificial because of the multi-fiber observations (see section~\ref{sec:flames-multi-fiber}).
+There aren't any points affected by the seeing (RMS) which has a value of \SI{0.015}{pc} (\(s_0\)=\SI{3.4}{\arcsecond}).
+If we consider the first point of this \(B(r)\) to be valid, which corresponds to \SI{4}{km^{2}.s^{-2}} at \(r = \SI{0.01}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.38} and \num{0.43}, respectively, while our derived value is \num{1.16}.
+
 
 
 \subsubsection{Comparison with previous studies}
@@ -2376,29 +2384,29 @@ We have found no previous studies of Carina's structure function in the literatu
 
 The 30 Doradus (Tarantula Nebula) nebula is located at a distance of \SI{49.9}{kpc} \citetext{\SI{1}{\arcsecond} = \SI{0.24}{pc} ; \citealp{2013Natur.495...76P}}.
 It is a luminous star-forming region in the LMC (Large Magellanic Cloud) and is the most luminous complex in the Local Group \citep{1984ApJ...287..116K}.
-The central ionized region spans for \SI{40}{pc} and host the massive, dense star cluster R136 %\citep{1991IAUS..148..145W}. %Note: check the bibliographic format
-The ionizing output \(Q_0\) of R136 is \SI{e51.4}{photons.s^{-1}} \citep{2020MNRAS.499.1918B}.
+The central ionized region spans for \SI{40}{pc} and host the massive dense star cluster R136
+with ionizing output \(Q_0\) of is \SI{e51.40}{photons.s^{-1}} \citep{2020MNRAS.499.1918B} and the luminosity in \ha{} of \SI{e39.46}{erg.s^{-1}} (194 times higher compared to the Orion Nebula).
+%\citep{1991IAUS..148..145W}. %Note: check the bibliographic format
 The mean non-thermal linewidth in \ha{} is \SI{22}{km.s^{-1}} \citep{2013A&A...555A..60T}.
-It host the active star forming region NGC 2070 \citep{2013AJ....145...98W} where the star-formation rate has recently peaked \citep{2015ApJ...811...76C}. 
-%NGC 2070 host a population of OB and WR stars \citep{2011A&A...530A.108E}.
+It host the active star forming region NGC 2070 \citep{2013AJ....145...98W} where the star-formation rate has recently peaked \citep{2015ApJ...811...76C} and host a population of OB and WR stars \citep{2011A&A...530A.108E}.
 This nebula is commonly used as a comparison for extragalactic star-forming regions.
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-30dor}
 
-The 30 Doradus structure function is shown in Figure~\ref{fig:strucfunc-fit-MC}a.
-%In this case we merge the first five points of the structure function.
-%The seeing value for this regions is \SI{0.16}{pc} (\(s_0\)=\SI{0.7}{\arcsecond}) and just one %point of the structure function is below this value.
-%Until a separation of \SI{1.7}{pc} is reached, the structure function lies below the true model.
-%The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{297 \pm 9}{km^{2}.s^{-2}} and an index of \num{0.85}.
-At large separations 30 Doradus structure function presents a behavior of tapered fluctuations. The maximum \(B(r)\) value is \SI{655}{km^{2}.s^{-2}} at a separation of \SI{21}{pc}. 
-From there \(B(r)\) values descends until they reach \SI{250}{km^{2}.s^{-2}} at \SI{38}{pc}.
+The 30~Doradus structure function is shown in Figure~\ref{fig:strucfunc-fit-MC}a.
+The value of the observed \(\sigma\pos^2 = \SI{252}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{3}{pc} \) (the derived values from our model are \(\sigma\pos^2 = \SI{7}{km^{297}.s^{-2}}\) and \(r_0 = \SI{4}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{13}{pc} \).
+The maximum \(B(r)\) value correspond to \SI{654}{km^{2}.s^{-2}} at \(r = \SI{21}{pc}\).
+From this value the \(B(r)\) values decrease and it is possible to observe a downturn in the structure function from to \SI{250}{km^{2}.s^{-2}} at \(r =  \SI{38}{pc}\) following the tapered fluctuations behavior.
+The seeing (RMS) value derived for this regions is \SI{0.16}{pc} (\(s_0\)=\SI{1.5}{\arcsecond}) and just one point of the structure function is below this value.
+Considering the first point above this \(s_0\) value to be valid, which corresponds to \SI{15}{km^{2}.s^{-2}} at \(r = \SI{0.2}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.04} and \num{0.84}, respectively, while our derived value is \num{0.85}.
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-30dor}
 
 The first attempt at characterizing turbulence in a giant extragalactic \hii{} region, GEHR, was done by \citet{1961MNRAS.122....1F} with the 30~Doradus complex, finding no indication of turbulent motions between scale of \num{10} and \SI{100}{pc}.
-\citet{Melnick:2021x} also investigated the structure function in 30 Doradus finding on their results that the structure function is entirely flat on scales from \num{3} to \SI{200}{pc}.
+\citet{Melnick:2021x} also investigated the structure function in 30~Doradus finding on their results that the structure function is entirely flat on scales from \num{3} to \SI{200}{pc}.
 The above does not coincide with our results, since we establish the existence of correlations up to the maximum value of the structure function that occurs at \SI{20}{pc}, separation where a value of 2\(\sigma\pos^2\) is reached.
 The VLT FLAMES/GIRAFFE observations of \citet{Melnick:2021x} may not have had the resolution to resolve the correlations at small separations, however an inspection of its velocity map (figure 7 in their work) shows that the velocity distribution it is far from completely random.
 This is the first time turbulence is characterized in 30~Doradus using the structure function.
@@ -2409,21 +2417,22 @@ This is the first time turbulence is characterized in 30~Doradus using the struc
 
 NGC 346 is the most active star-formation region in the SMC (Small Magellanic Cloud) located at a distance of 62 kpc \citetext{\SI{1}{\arcsecond} = \SI{0.30}{pc} ; \citealp{2001ApJ...562..303D}}. 
 It has more than 30 O stars that ionize N66, the largest \hii{} region \citep{2011ApJ...740...10D}.
-N66 has an \ha{} luminosity of \SI{e38.77}{erg.s^{-1}}, almost 60 times higher compared to the Orion Nebula \citep{2010A&A...517A..39H,1984ApJ...287..116K}.
-%\citet{2008ApJ...688.1050G} propose an expanding \hii{} region or bubble blown by the winds of the massive progenitor as a mechanism that shapes the recent star formation in this region, in addition to the photoionization from the OB stars. 
-%This mechanism is similar to shell-like \hii{} regions, with a central cluster in a cavity, and with ongoing star formation triggered around their periphery.
+N66 has an ionizing output \(Q_0\) of \SI{e50.71}{photons.s^{-1}} (40 times higher compared to the Orion Nebula) and has a \ha{} luminosity of \SI{e38.77}{erg.s^{-1}} \citep{2010A&A...517A..39H,1984ApJ...287..116K}.
 Using a Gaussian single-component \citet{2003ApJ...586.1179D} find a corrected FWHM bulk turbulence of \SI{23.8}{km.s^{-1}}. 
+\citet{2008ApJ...688.1050G} propose an expanding \hii{} region or bubble blown by the winds of the massive progenitor as a mechanism that shapes the recent star formation in this region, in addition to the photoionization from the OB stars. 
+This mechanism is similar to shell-like \hii{} regions, with a central cluster in a cavity, and with ongoing star formation triggered around their periphery.
+
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-346}
 
 The Figure~\ref{fig:strucfunc-fit-MC}b shows the structure function of NGC 346.
-%In this case we merge the first three points of the structure function.
-%The seeing value is \SI{0.07}{pc} (\(s_0\)=\SI{0.23}{\arcsecond}).
-%For this region the first ten points lie below the true model.
-At separations above \SI{0.4}{pc} the observed structure functions is coincident with the true model. 
-%The correlation length is \SI{2}{pc} at a \(\sigma^2\pos\) of \SI{35}{km^{2}.s^{-2}} and an index of \num{0.80}.
-For scales above \SI{12}{pc} and a \(B(r)\) value of \SI{65}{km^{2}.s^{-2}} the structure function shows a pattern of ascending values until it reaches \SI{146}{km^{2}.s^{-2}} at \SI{24}{pc}.
+The value of the observed \(\sigma\pos^2 = \SI{30}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{2.3}{pc} \) (in this case there is a good agreement with the derived values from our model which are \(\sigma\pos^2 = \SI{33}{km^{2}.s^{-2}}\) and \(r_0 = \SI{2.4}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{10}{pc} \), though, at this scale the \(B(r)\) value is just below the \(2\sigma\pos^2\), but the structure function seems to plateau at those values.
+Above this scales the structure function shows a periodic pattern with a spatial wavelength of \SI{\sim 10}{pc} and a dispersion of \(\SI{6}{km^{2}.s^{-2}}\).
+Unlike the Carina nebula, this oscillating pattern is below the \(2\sigma\pos^2\) value.
+The seeing value is \SI{0.11}{pc} (\(s_0\)=\SI{0.9}{\arcsecond}) and just one point of the structure functions lies below this value.
+Considering the first point above this \(s_0\) value to be valid, which corresponds to \SI{2.5}{km^{2}.s^{-2}} at \(r = \SI{0.2}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.01} and \num{0.81}, respectively, while our derived value is \num{0.95}.
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-346}
@@ -2433,29 +2442,40 @@ We have found no previous studies of NGC~346's structure function in the literat
 \subsection{Hubble X and Hubble V in NGC 6822}
 \label{sec:6822-hubble}
 %
-The irregular dwarf galaxy, NGC 6822, is located at a distance of 500 kpc \citetext{\SI{1}{\arcsecond} = \SI{2.42}{pc} ; \citealp{2012A&A...540A.135S}} and the brightest \hii{} regions are Hubble X and Hubble V.
-Luminosity IN \ha{} for Hubble V is \SI{e38.3}{erg.s^{-1}} and for Hubble X is \SI{e38.21}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
-The mean non-thermal linewidth in \ha{} is \SI{10.5 \pm 0.02}{km.s^{-1}} for HX and \SI{10.3 \pm 0.03}{km.s^{-1}} \citep{1986A&A...160..374H}.
-Two recognized OB associations are identified within these \hii{} regions \citep{1991ApJ...379..621H,1992AJ....104.1374W}.
-%HV is located near 'Hodge OB 8' and HX is located near 'Hodge OB13'  \citep{1999PASP..111.1382O}.
-%\citet{1993PASJ...45..693T} realize a study on the kinematics of HX and HV. 
+The irregular dwarf galaxy, NGC 6822, is located at a distance of 500 kpc \citetext{\SI{1}{\arcsecond} = \SI{2.42}{pc} ; \citealp{2012A&A...540A.135S}} and host the \hii{} regions Hubble X and Hubble V which are the brightest regions in the galaxy.
+
+Hubble V is located near the 'Hodge OB 8' OB association with a number of \num{\sim 36} young stellar objects \citep{2021MNRAS.507.5106K} and its core is powered by an O3 V star \citep{1999PASP..111.1382O}.
+It has an ionizing output \(Q_0\) of \SI{e50.23}{photons.s^{-1}} (13 times higher compared to the Orion Nebula) and has a \ha{} luminosity of \SI{e38.30}{erg.s^{-1}}\citep{2002MNRAS.329..481B}.
+The mean non-thermal linewidth in \ha{} \SI{10.3 \pm 0.03}{km.s^{-1}} \citep{1986A&A...160..374H}.
+
+Hubble X is located near the 'Hodge OB 13' OB association with a number of \num{\sim 29} young stellar objects \citep{2021MNRAS.507.5106K} and its core is powered by and O4 V star \citep{1999PASP..111.1382O}.
+It has an ionizing output \(Q_0\) of \SI{e50.14}{photons.s^{-1}} (10 times higher compared to the Orion Nebula) and has a \ha{} luminosity of \SI{e38.21}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
+The mean non-thermal linewidth in \ha{} is \SI{10.5 \pm 0.02}{km.s^{-1}}  \citep{1986A&A...160..374H}.
+\citet{1993PASJ...45..693T} realize a study on the kinematics of both regions. 
+
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-hubbles}
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}a we show the structure function of Hubble V.
-%For the observations coming from the TAURUS-II instrument there wasn't any merging of points at small scales.
-%The value of the seeing for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}).
-%All the structure function points lies below the true model.
-%The correlation length is \SI{3.5}{pc} at a \(\sigma^2\pos\) of  \SI{10}{km^{2}.s^{-2}} and an index of \num{0.75}.
+The value of the observed \(\sigma\pos^2 = \SI{8}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{3}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{10}{km^{2}.s^{-2}}\) and \(r_0 = \SI{3.6}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{31}{pc} \).
 The maximum \(B(r)\) value is \SI{18}{km^{2}.s^{-2}} at a separation of \SI{25}{pc}. 
-From there \(B(r)\) values descends until it reaches \SI{14}{km^{2}.s^{-2}} at \SI{45}{pc}, then it rises for the next point at \SI{50}{pc} with a value of \SI{15}{km^{2}.s^{-2}}.
-Finally the structure functions descends at \SI{9}{km^{2}.s^{-2}} for a separation of \SI{70}{pc}.
+%The value of the seeing for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}).
+From this value the \(B(r)\) values decrease and we observe a downturn in the structure function to \SI{9}{km^{2}.s^{-2}} at \(r =  \SI{70}{pc}\) following the tapered fluctuations behavior.
+But unlike the Orion core or 30~Dor the downturn is not as smooth, since it presents a small variation at \(r = \SI{\sim 40}{pc} \) 
+The seeing (RMS) value derived for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}) and just one point of the structure function fall in the confidence interval..
+Considering the first point above this \(s_0\) value to be valid, which corresponds to \SI{2.2}{km^{2}.s^{-2}} at \(r = \SI{0.89}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.06} and \num{0.55}, respectively, while our derived value is \num{0.81}.
 
 The Hubble X structure function is shown in Figure~\ref{fig:strucfunc-fit-ExtraGal}b.
-%The seeing is \SI{0.6}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V the observed structure function lies below the true model.
-%The correlation length is \SI{4}{pc} at a \(\sigma^2\pos\) of \SI{15}{km^{2}.s^{-2}} and an index of \num{0.93}.
-A plateau is reached around \SI{25}{km^{2}.s^{-2}} at a separation of \SI{14}{pc} and a maximum \(B(r)\) value of \SI{31}{km^{2}.s^{-2}} at a separation of \SI{36}{pc}.
+The value of the observed \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{4}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{15}{km^{2}.s^{-2}}\) and \(r_0 = \SI{4}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{15}{pc} \).
+The maximum \(B(r)\) value of \SI{31}{km^{2}.s^{-2}} is reached at a separation of \SI{36}{pc}.
+From scales \(> \SI{15}{pc}\) we see that the structure functions fluctuates around \(2\sigma\pos^2\) with a spatial wavelength of \(\sim \SI{30}{pc}\) with a dispersion of \SI{2.3}{km^{2}.s^{-2}}.
+Since these large scales values fluctuates around \(2\sigma\pos^2\) is also possible that the structure function follows a purely homogeneous fluctuations behavior, just not as marked as it is shown in section~\ref{sec:limit-model-struct}. 
+The seeing is \SI{0.6}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V there is just one point of the structure function that falls in the \(s_0\) confidence interval.
+Considering the first point above this \(s_0\) value to be valid, which corresponds to \SI{2.6}{km^{2}.s^{-2}} at \(r = \SI{0.86}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.04} and \num{0.80}, respectively, while our derived value is \num{1.02}.
+
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-carina}
@@ -2469,47 +2489,59 @@ of Hubble~V or~X in the literature.
 M33 is the third largest galaxy in the Local Group located at the distance of 820 kpc \citetext{\SI{1}{\arcsecond} = \SI{4.07}{pc} ; \citealp{2015KamKinematics}} and is of morphological type SA(s)cd.
 The two brightest \hii{} regions in the galaxy are NGC 604 and NGC 595.
 
-NGC 604 is the second brightest \hii{} region in the Local Group after 30~Dor in the Large Magellanic Cloud and is forty times larger ($\sim $ 400 pc) and 6,000 times brighter than Orion in our Milky Way galaxy.
-It is the brightest giant \hii{} region in the M33 galaxy and is visually dominated by a big loop, big shells and different size filaments.
-It has a luminosity in \ha{} of \SI{e39.42}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
-The mean non-thermal linewidth in \ha{} is \SI{17.8 \pm 0.3}{km.s^{-1}} \citep{1986A&A...160..374H}.
+NGC 604 is the second brightest \hii{} region in the Local Group after 30~Dor.
 Using photometry from the HST \citet{1996ApJ...456..174H} identified that the stars are separated into a primary cluster within NGC 604, and a secondary to the north of the region.
-%In the primary there are \(\sim\)200 OB stars, candidate to red supergiants (RSGs) and the presence of WR stars.
-%For the northern cluster they find eight luminous stars and no evolved massive stars.
-%More Recently, \citet{2011MNRAS.411..235E} studied 10 WR stars and propose at least 4 RSGs candidates.
-%\citet{2012AJ....143...43F} focused on the massive young stellar objects (MYSOs).
+In the primary there are \(\sim\)200 OB stars, candidate to red supergiants (RSGs) and the presence of WR stars.
+For the northern cluster they find eight luminous stars and no evolved massive stars.
+More Recently, \citet{2011MNRAS.411..235E} studied 10 WR stars and propose at least 4 RSGs candidates.
+\citet{2012AJ....143...43F} focused on the massive young stellar objects (MYSOs).
+The ionizing output \(Q_0\) is \SI{e51.35}{photons.s^{-1}} (175 times higher compared to the Orion Nebula) and has a \ha{} of \SI{e39.42}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
+The mean non-thermal linewidth in \ha{} is \SI{17.8 \pm 0.3}{km.s^{-1}} \citep{1986A&A...160..374H}.
+It is the brightest giant \hii{} region in the M33 galaxy and is visually dominated by a predominant big loop, many expanding shells and different size filaments.
+
+
 %The average ages for the stars, was determined to be from  \num{3} to \SI{5}{Myr} \citep{1996ApJ...456..174H} and with the RSGs as an older population have an age of 12.4\(\pm\)2.1 Myr \citep{2011MNRAS.411..235E}.
 %This suggest that two episodes of star formation, at least, have taken place in the GEHR.
-
 % and in L$_{X}$=9.3$\times$ 10$^{35}$ erg s$^{-1}$ \citep{2008ApJ...685..919T}.
 %\citet{2012ApJ...761....3M} derive an average age of 4$\pm$1 Myr and a total stellar mass of 1.6$^{+1.6}_{-1.0} \times$ 10$^{5}$M$_{\odot}$ for the region.
 
-NGC 595 is the second brightest giant \hii{} region in the M33 galaxy and has an \ha{} shell morphology that is related to the stellar winds of the several massive stars located in its interior.
-It has a luminosity in \ha{} of \SI{e38.95}{erg.s^{-1}}\citep{2002MNRAS.329..481B}.
-The mean non-thermal linewidth in \ha{} is \SI{16.8 \pm 0.1}{km.s^{-1}} \citep{lagrois2009multi}.
-\citet{1993AJ....105.1400D} use optical photometry to propose 11 WR stars. 
+NGC 595 is the second brightest giant \hii{} region in the M33 galaxy.
 Using HST/WFPC-2 images \citet{1996AJ....111.1128M} found approximately 250 stars of the OB type, 13 Supergiants and 10 WR, confirming previous candidates.
+\citet{1993AJ....105.1400D} use optical photometry to propose 11 WR stars. 
+The ionizing output \(Q_0\) is \SI{e50.88}{photons.s^{-1}} (60 times higher compared to the Orion Nebula) and has a luminosity in \ha{} of \SI{e38.95}{erg.s^{-1}}\citep{2002MNRAS.329..481B}.
+The mean non-thermal linewidth in \ha{} is \SI{16.8 \pm 0.1}{km.s^{-1}} \citep{lagrois2009multi}.
+\citet{lagrois2011} present a kinematic study of the regions using optical emission lines and and radio 21 cm line observations and find that \ha{} shell morphology that is related to the stellar winds of the several massive stars located in its interior.
+They proposed Champagne flows at the periphery of the molecular cloud leading to accelerated ionized material.
+
 %They derived and age of 4.5\(\pm\)1.0 Myr consistent with \citet{1993AJ....105.1400D}.
 %\citet{2010MNRAS.402.1635R} used Integral Field Spectroscopy (IFS) to present a resolved study of the physical properties of the ionized gas and the ionized structure.
 %They also confirm the presence of previous cataloged WR stars and detect new candidates, and propose classical emission-line ratios as metallicity calibrators.
-%\citet{lagrois2011} present a kinematic study of the regions using optical emission lines and and radio 21 cm line observations.
-%They proposed Champagne flows at the periphery of the molecular cloud leading to accelerated ionized material.
+
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-m33}
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}c we show the structure function of NGC 595.
-%The seeing is \SI{0.3}{pc} (\(s_0\)=\SI{0.1}{\arcsecond}) and for this region only the first two points are below the true model. 
-%The correlation length is \SI{12}{pc} at a \(\sigma^2\pos\) of \SI{54}{km^{2}.s^{-2}} and an index of \num{1.3}.
-At large scales the structure function behaves following the tapered fluctuations pattern.
-A maximum \(B(r)\) value of \SI{104}{km^{2}.s^{-2}} is reached at \SI{33}{pc}. 
-From there the structure functions decays following a scatter pattern until it reaches \SI{54}{km^{2}.s^{-2}} at a separation of \SI{211}{pc}.
+The value of the observed \(\sigma\pos^2 = \SI{44}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{10}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{53}{km^{2}.s^{-2}}\) and \(r_0 = \SI{11}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{21}{pc} \).
+The maximum \(B(r)\) value is \SI{104}{km^{2}.s^{-2}} at a separation of \SI{30}{pc}. 
+For NGC 595 we see that the structure function plateau at this maximum \(B(r)\) value, which implies that the observed \(\sigma\pos^2\) is affected by the observational constraints.
+Until \(r_0 \sim \SI{55}{pc} \) the structure functions remains closely to the 'true' \(2\sigma\pos^2\), for the largest scale there is a decrease between  \(\SI{55}{pc} < r < \SI{110}{pc} \) where the structure function plateaus at the 'observed' \(2\sigma\pos^2\). 
+Above \SI{110}{pc} we see a very disperse downturn  until \SI{54}{km^{2}.s^{-2}} at a separation of \SI{211}{pc}.
+The seeing (RMS) is \SI{2.1}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}) and there are no points below this value.
+Considering the first point to be valid, which corresponds to \SI{2.5}{km^{2}.s^{-2}} at \(r = \SI{1.05}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.27} and \num{1.18}, respectively, while our derived value is \num{1.38}.
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}d we show the structure function of NGC 604.
-%The seeing is \SI{1.7}{pc} (\(s_0\)=\SI{0.42}{\arcsecond}) and the structure function of this region lies below the true model for most of the separation range.
-%The correlation length is \SI{10}{pc} at a \(\sigma^2\pos\) of \SI{71}{km^{2}.s^{-2}} and has an index of \num{1}.
-The structure function present clear characteristics of periodic oscillations at large scales.
-A periodic pattern for the structure function appears with a maximum \(B(r)\) value of \SI{143}{km^{2}.s^{-2}} that is reached at \SI{60}{pc}, then the oscillation cause a minimum of \SI{54}{km^{2}.s^{-2}} at \SI{133}{pc} and finally it goes back up again at \SI{211}{pc} to a \(B(r)\) value of \SI{123}{km^{2}.s^{-2}}.
+The value of the observed \(\sigma\pos^2 = \SI{55}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{10}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{86}{km^{2}.s^{-2}}\) and \(r_0 = \SI{12}{pc} \)).
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{30}{pc} \).
+The maximum \(B(r)\) value is \SI{143}{km^{2}.s^{-2}} at a separation of \SI{55}{pc}. 
+NGC 604 structure function presents clear pattern of periodic oscillations between  \(\SI{30}{pc} < r < \SI{211}{pc} \).
+The spatial wavelength is \SI{ \sim 50}{pc}. 
+The minimum value of this periodic pattern is \SI{54}{km^{2}.s^{-2}} at \SI{135}{pc} 
+and finally it goes back up again at \SI{211}{pc} to a \(B(r)\) value of \SI{123}{km^{2}.s^{-2}}.
+The seeing is \SI{2.1}{pc} (\(s_0\)=\SI{1.2}{\arcsecond}) and the first three points structure function are below these value, which means that the seeing is heavily affecting this observations.
+This also is shown by the big difference bee tween the 'true model' (green dahed line) and our 'model' (solid orange lines).
+onsidering the first point above this \(s_0\) value to be valid, which corresponds to \SI{10}{km^{2}.s^{-2}} at \(r = \SI{3}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.40} and \num{1.03}, respectively, while our derived value is \num{1.2}.
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-m33}
