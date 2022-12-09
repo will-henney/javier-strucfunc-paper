@@ -79,6 +79,7 @@
   detect-weight = true,
 }
 
+\usepackage{upgreek}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
@@ -106,12 +107,14 @@
 \newcommand\s{[\ion{S}{II}]$\lambda$6737}
 \newcommand\kms{$^{-1}$}
 
-\newcommand\ha{\ensuremath{\text{H}\alpha}}
+\newcommand\ha{\ensuremath{\text{H}\upalpha}}
+\newcommand\hb{\ensuremath{\text{H}\upbeta}}
 \newcommand\Wav[1]{\ensuremath{\lambda #1}}
 % Chemical formulae
 \newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
 \newcommand\csound{\ensuremath{c_{\text{s}}}}
 \newcommand\FNa{\textsuperscript{a}}
+\newcommand\Mach{\ensuremath{\mathcal{M}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -461,7 +464,7 @@ We use the velocity field presented in \citet{1987A&A...176..347H} to analyze th
 The EON is an extended region in southwest direction from the Huygens region which presents a diminution in the brightness.
 The observational data was obtained using a Fabry-Pérot interferometer with a étalon separation of 0.5 mm on the 106 cm-Cassegrain telescope at Observatorium Hoher List. 
 A number of fifteen interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula with an exposure time between 10 and 40 minutes. 
-The exposures are overlapped and fall into one square of a grid with a width of \SI{1}{arcmin} centered at \(\theta^{1}\)Ori C.   
+The exposures are overlapped and fall into one square of a grid with a width of \SI{1}{arcmin} centered at \(\uptheta^{1}\)Ori C.   
 
 
 \subsubsection{FLAMES multi-fiber spectroscopy}
@@ -1620,17 +1623,32 @@ the predicted slope of the three-dimensional structure function is \(m\DDD = 2/3
 but intermittency and compressibility \citep{Schmidt:2008a}
 can increase this to \(m\DDD \approx 0.8\) in the subsonic regime,
 and up to \(m\DDD = 1\) in the supersonic regime.
-Comparison with our measurements is complicated by projection smoothing,
-which mean that \(m\DDD\) is only
+Comparison with our measurements is complicated by projection smoothing
+\citep{1984ApJ...277..556S},
+which implies that \(m\DDD\) is only
 observed directly for separations larger than the line-of-sight depth
 of the emitting regions.
 For smaller separations, one potentially observes a steeper slope:
 \(m = m\DDD + 1 + \delta\kappa\),
-where \(\delta\kappa\) represents the effects of emissivity fluctuations
+where \(\delta\kappa\) represents the effects of emissivity fluctuations\footnote{%
+  Note that literature on turbulence in molecular clouds discuss fluctuations of \emph{density}
+  since they are mainly concerned with emission lines
+  whose emissivity is approximately linearly proportional to density.
+  In the case of photoionized regions, the emissivity of important lines such as \ha{}
+  is proportional to \emph{density-squared},
+  so in adopting the results of \citet{Brunt:2004a} we substitute emission measure
+  (or its proxy, \ha{} surface brightness)
+  in place of column density. 
+}
 along the line of sight \citep{Brunt:2004a},
 and varies from \(\delta\kappa = 0\) in the incompressible limit
 to \(\delta\kappa = -1\) in the case of strongly driven supersonic turbulence.
+In this latter case, the effects of projection smoothing and emissivity fluctuations
+cancel out, leading once more to \(m \approx m\DDD\).
 
+The \hii{} regions of our sample span the transonic regime,
+from subsonic velocity fluctuations in the Galactic sources
+to supersonic fluctuations in the more luminous extragalactic sources. 
 It is therefore not surprising that we see no significant correlation
 between \(m\) and \(\sigma^2\pos\) 
 (\(p = 0.33\), Table~\ref{tab:RestStats}).
@@ -1643,10 +1661,51 @@ if the amplitude of the density fluctuations
 (and hence emissivity fluctuations) increases along
 with the velocity fluctuations.
 
-In figure 
+Evidence for just such an increase is shown in Figure~\ref{fig:brightness-pdfs}g,
+which shows how the fractional width of the probability distribution of
+large-scale \ha{} surface brightness fluctuations
+varies with the RMS turbulent Mach number, \Mach{},
+of the three-dimensional velocity fluctuations.
+The Mach number is estimated by assuming that the plane-of-sky velocity dispersion is
+a good estimate of the turbulent fluctuations in one dimension
+and that the turbulence is isotropic, yielding:
+\(\Mach = \sqrt{3} \sigma\pos / \csound\),
+where an ionized sound speed of \(\csound = \SI{11}{km.s^{-1}}\)
+is assumed for all sources.
+\newcommand\longsig[1]{\ensuremath{\langle \delta #1^2 \rangle^{1/2} / #1_0}}
+\newcommand\shortsig[1]{\ensuremath{\sigma_{#1/#1_0}}}
+The RMS fractional width of density fluctuations in a turbulent medium,
+\(\shortsig{\rho} \equiv \longsig{\rho}\),
+is predicted to depend linearly on the Mach number as
+\(\shortsig{\rho} = b \Mach\),
+where \(b\) depends on the nature of the turbulent driving \citep{Federrath:2010z},
+varying between \(b = 1/3\) for solenoidal driving and \(b = 1\) for compressive driving.
+This is shown by gray shading\footnote{%
+  In the figure, it is assumed that the relative fluctuations in surface brightness
+  and density are equal, which is a result of the
+  cancellation between two effects. First, that the volumetric \ha{} emissivity \(E\)
+  is proportional to density squared, so that \(\shortsig{E} = 2 \shortsig{\rho}\). 
+  Second, that fluctuations in surface brightness \(S\) are related to those in emissivity
+  by \(\shortsig{S} = R^{1/2} \shortsig{E}\), where \(R\)
+  is the 2D-to-3D variance ratio \citep{Brunt:2010b}.
+  For an emissivity power spectrum \(P(k) \sim k^{-3}\)
+  and assuming a ratio of map size to correlation length
+  of \(L / r_0 = 10\) (typical value from Table~\ref{tab:Res}),
+  we find \(R \approx 0.2\) and hence \(\shortsig{S} \approx \shortsig{\rho}\). 
+}
+in Figure~\ref{fig:brightness-pdfs}h,
+where it can be seen that many of the sources with subsonic velocity dispersions
+(\(\Mach < 1\)) fall to the right of the theoretical prediction,
+implying that other factors in addition to turbulence are responsible for
+producing the fluctuations in density and surface brightness in these regions
+(see also section 4.5 of \citealp{arthur2016turbulence}).
+For our highest luminosity source of 30~Dor on the other hand,
+the velocity dispersion is clearly supersonic (\(\Mach \approx 2.7\))
+and, although the surface brightness fluctuations are also larger than in the other sources,
+they are consistent with being caused by turbulence-induced density fluctuations.
 
-We also find no clear evidence for a broken power-law in any of our
-structure functions, as has been suggested in previous studies.
+We find no clear evidence for a broken power-law in any of our
+structure functions, as has been claimed in previous studies.
 Although in some regions we do observe a steepening at the smallest scales
 (for example Figures~\ref{fig:strucfunc-fit-Galactic}a, \ref{fig:strucfunc-fit-MC}ab),
 this can be accounted for in our model fits by
@@ -1658,18 +1717,17 @@ a real steepening of the structure function at small scales
 (see section~\ref{sec:sanity-check-derived}),
 but higher spatial resolution observations are required in order to study this. 
 
-Theoretically, one might expect a positive correlation of the slope with the
-amplitude of the velocity fluctuations, due to the transition from subsonic
-to supersonic turbulence \citep{Galtier:2011a}.
-However, the predicted change of slope is rather small,
-\(\delta m \approx 0.2\)
-\citep{Federrath:2021r},
-and only one of our sources (30~Dor) is clearly in the supersonic regime,
-so it is perhaps not surprising that we do not find a significant correlation
-(\(p = 0.33\), Table~\ref{tab:RestStats}).
-This is further complicated by the effect of projection along the line of sight
+% Theoretically, one might expect a positive correlation of the slope with the
+% amplitude of the velocity fluctuations, due to the transition from subsonic
+% to supersonic turbulence \citep{Galtier:2011a}.
+% However, the predicted change of slope is rather small,
+% \(\delta m \approx 0.2\)
+% \citep{Federrath:2021r},
+% and only one of our sources (30~Dor) is clearly in the supersonic regime,
+% so it is perhaps not surprising that we do not find a significant correlation
+% (\(p = 0.33\), Table~\ref{tab:RestStats}).
+% This is further complicated by the effect of projection along the line of sight
 
-Theoretically, one might expect
 
 \subsubsection{Plane-of-sky vs line-of-sight
   velocity dispersions}
@@ -1776,12 +1834,12 @@ with respect to the mean emissivity \(E_0\).
   Smooth lines (orange) show fitted log-normal distributions.
   In order to suppress fluctuations on scales
   smaller than the correlation length,
-  Surface brightness maps were rebinned by averaging
+  surface brightness maps were rebinned by averaging
   into pixels of size \(0.5 r_0\) before calculating the PDF.
-  In panel~h is plotted for each source of the previous panels
-  the ratio of velocity dispersions
-  (see Figure~\ref{fig:los-vs-pos})
-  as a function of the
+  Also shown are the RMS Mach number of three-dimensional
+  velocity fluctuations (panel~h)
+  and the ratio of plane-of-sky to line-of-sight velocity dispersions (panel~i),
+  each plotted as a function of the
   RMS fractional brightness fluctuations calculated from the PDFs.
 }
 \label{fig:brightness-pdfs}
@@ -1846,15 +1904,15 @@ This relation is commonly employ in the literature  and can be use to investigat
 The fit we obtain is \(\log \sigma\pos = (0.27 \pm 0.10) \log \text{L}(\text{H}_{\alpha})-(9.9 \pm 4.0)\).
 Since it is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable we also calculate this relation: taking the inverse of slope in Fig. \ref{fig:sigvsl} we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.6 \pm 1.4}\) and using the same procedure in \textit{linmix} and changing the variables we obtain \(\log \text{L}(\text{H}_{\alpha}) = (2.8\pm 1.0) \log \sigma\pos -(36 \pm 4)\).
 
-The relationship \(\text{L}_{\text{H}} \propto \sigma^{\alpha}\) has been extensively investigated  in the context of giants \hii{} regions obtaining a value for \(\alpha\) of \( \sim 4\)\citep{terlevich1981,1988A&A...201..199A} and \num{2.87 \pm 0.2} \citep{Rozas:2006b}.
+The relationship \(\text{L}_{\ha} \propto \sigma^{\alpha}\) has been extensively investigated  in the context of giants \hii{} regions obtaining a value for \(\alpha\) of \( \sim 4\)\citep{terlevich1981,1988A&A...201..199A} and \num{2.87 \pm 0.2} \citep{Rozas:2006b}.
 Complementing previous results \citet{2012MNRAS.422.3339W} found that star-forming regions at \(z \sim 1.3\) and local \hii{} regions follow a relation with \(\alpha = 4.18 \pm 0.21\).
 \citet{Moiseev:2015a} found that this relation also holds for dwarf galaxies with a value of \(\alpha \sim 5\).
-\citet{2018MNRAS.474.1250F} presented the relationship between integrated H$_{\beta}$ line luminosity for new data of 36 giant \hii{} regions obtaining \(\text{L}_{\text{H}_{\beta}} \propto \sigma^{5.02 \pm 0.21}\).
+\citet{2018MNRAS.474.1250F} presented the relationship between integrated \hb{} line luminosity for new data of 36 giant \hii{} regions obtaining \(\text{L}_{\hb} \propto \sigma^{5.02 \pm 0.21}\).
 Recently, \citet{2020ApJ...888..113W} studied the properties of high-\(z\) and local \hii{} galaxies among some GEHRs finding a value of \(\alpha \sim 5\).
 
 There are two main difference between the previous investigations and our results: one is that the velocity dispersion is obtained as the width of the emission line profile integrated over the whole object or as the non-thermal line-width, which is different from the plane of the sky dispersion we are using and that our sample is considerably smaller in the data points.
 The first problem is addressed in section \ref{sec:sigmapos-vs-sigmalos} where we discuss the relation between the line-of-sight and plane-of-sky velocities.
-But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\text{H}_{\alpha})\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
+But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\ha)\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
 This means that the proposed structure function model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted as a true kinematic property of the \hii{} region velocity field.
 
 
@@ -2243,7 +2301,7 @@ and comparison with previous results from the literature
 \label{sec:orion-nebula}
 
 The Orion Nebula (M42) is the prototype of a galactic \hii{} region located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc} ; \citealp{2008AJ....136.1566O}}.
-The O7 V star \(\theta^{1}\) Ori C is the most luminous and hottest star with an ionizing flux \(Q_0\) of \SI{e49.12}{photons.s^{-1}} \citep{2006A&A...448..351S} which translates to luminosity in \ha{} of \SI{e37.18}{erg.s^{-1}}. 
+The O7 V star \(\uptheta^{1}\) Ori C is the most luminous and hottest star with an ionizing flux \(Q_0\) of \SI{e49.12}{photons.s^{-1}} \citep{2006A&A...448..351S} which translates to luminosity in \ha{} of \SI{e37.18}{erg.s^{-1}}. 
 With other 3 B-type stars they form the Trapezium cluster.
 The bright region that surrounds these massive ionizing stars is called the Huygens region.
 %In the southwest direction of the Huygens region there is a drop in the brightness as one approach a much larger region called Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}
