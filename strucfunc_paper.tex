@@ -2301,6 +2301,81 @@ S(r; s_0, r_0) = \frac{e^\frac{-s_0}{r_0}}{1+(\frac{2s_0}{r})^{2a}}
 which describes the dashed lines in Figure \ref{fig:seeing-reduction}b. 
 The equation \ref{eq:seeingemp2} is used to correct the observational structure function in equation \eqref{eq:sf-functional}. 
 
+\section{Apparent velocity fluctuations from emissivity fluctuations}
+\label{sec:appar-veloc-fluct}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{Figures/bright-to-vel-fluct-annotated}
+  \caption{
+    Toy model of emissivity variations in an ordered velocity field,
+    showing co-variation of fractional dispersion of
+    emissivity, \(\sigma_E\), and surface brightness, \(\sigma_S\),
+    together with plane-of-sky dispersion in mean velocity,
+    \(\sigma\pos\),
+    and the mean RMS line width, \(\sigma\los\),
+    both in units of the inter-layer velocity difference \(\beta\).
+  }
+  \label{fig:bright-to-vel-fluct}
+\end{figure}
+
+In this appendix we describe a simple toy model to illustrate
+how fluctuations of emissivity,
+combined with an ordered velocity gradient along the line of sight,
+can give rise to apparent fluctuations on the plane of the sky
+of the mean velocity.
+The model is illustrated in the inset of Figure~\ref{fig:bright-to-vel-fluct}.
+It consists of two overlapping emission layers, A and B,
+with velocities along the line of sight \(v_A = 0\) and \(v_B = \beta\), respectively,
+which are observed along two lines of sight (LOS), 1 and 2.
+The emissivity of layer A is \(E_{A1} = E_{A2} = 1\) for both LOS,
+while the emissivity of layer B is \(E_{B1} = \alpha\) for LOS~1
+and \(E_{B2} = \alpha^{-1}\) for LOS~2, where \(\alpha\) is a positive constant.
+Both layers are assumed to have unit depth along line line of sight,
+such that the surface brightness for the two LOS are given by
+\(S_1 = 1 + \alpha\) and \(S_2 = 1 + \alpha^{-1}\).
+
+
+It then follows that the fractional standard deviation of the emissivity
+and surface brightness are given by:
+\begin{align}
+  \label{eq:toy}
+  \sigma_E &=
+  \frac{
+    \bigl[ 3\bigl(\alpha + \alpha^{-1}\bigr)^2 - 4\bigl(1 + \alpha + \alpha^{-1}\bigr)\bigr]^{1/2}
+  }{
+    2 + \alpha + \alpha^{-1}
+  }
+  \\
+  \sigma_S &=   \frac{\vert\alpha - 1\vert}{1 + \alpha} ,
+\end{align}
+while the RMS line width and standard deviation of the mean velocities on the plane of the sky
+are given by
+\begin{align}
+  \label{eq:toy}
+  \sigma\pos &=\frac{\vert\alpha - 1\vert \beta}{2 (1 + \alpha)}
+  \\
+  \sigma\los &=   \frac{\alpha^{1/2}\beta}{1 + \alpha}.
+\end{align}
+These are all shown in Figure~\ref{fig:bright-to-vel-fluct} as a function
+of the emissivity contrast \(\alpha\).
+It can be seen that \(\sigma_E\), \(\sigma_S\), and \(\sigma\pos/\beta\) all increase with \(\alpha\),
+reaching asymptotic values of \(\sqrt{3}\), \(1\), and \(0.5\),
+respectively as \(\alpha \to \infty\).\footnote{%
+  To reach higher relative brightness dispersion \(\sigma_S > 1\) would require
+  including more than two lines of sight in the model.
+}
+The line width \(\sigma\los/\beta\) behaves in the opposite sense, falling from
+a maximum value of \(0.5\) when \(\alpha = 0\) towards zero as \(\alpha \to \infty\),
+a result of the emission becoming increasingly dominated by one
+or the other of the two layers for high emissivity contrast.
+The dashed line shows the effect of including a small velocity gradient
+within each layer that contributes an additional width of \(\beta/4\),
+which is assumed to add in quadrature with \(\sigma\los\).
+
+The predictions of this model are compared with observations in
+panel~i of Figure~\ref{fig:brightness-pdfs}. 
+
 \section{\boldmath Notes on individual \hii{} regions}
 \label{sec:notes-individual-hii}
 For each region or pair of regions in our sample,
@@ -2639,62 +2714,6 @@ Other difference in their methodology is that they use the normalized structure 
 %Using their unfiltered data the correlation length is \(\sim\) \SI{90}{pc} and using the same criteria as our it is \(\sim\) \SI{40}{pc} and the slope would be shallower. 
 Their velocity centroid \(\sigma\) is \SI{5.92 \pm 0.15}{km.s^{-1}} while we have \SI{7.3\pm 2}{km. s^{-1}} which fall within the uncertainties.
 Due to the different observations and methodologies a direct comparison between structure functions is not possible.
-
-\section{Apparent velocity fluctuations from emissivity fluctuations}
-\label{sec:appar-veloc-fluct}
-
-\begin{figure}
-  \centering
-  \includegraphics[width=\linewidth]{Figures/bright-to-vel-fluct-annotated}
-  \caption{
-    Toy model of emissivity variations in an ordered velocity field,
-    showing co-variation in fractional fluctuations of
-    emissivity, \(\sigma_E\),  and surface brightness, \(\sigma_S\)
-    together with fluctuations in the plane of sky of the mean velocity,
-    \(\sigma\pos\),
-    and the mean RMS line width, \(\sigma\los\).
-  }
-  \label{fig:bright-to-vel-fluct}
-\end{figure}
-
-In this appendix we describe a simple toy model to illustrate
-how fluctuations of emissivity,
-combined with an ordered velocity gradient along the line of sight,
-can give rise to apparent fluctuations on the plane of the sky
-of the mean velocity.
-The model is illustrated in the inset of Figure~\ref{fig:bright-to-vel-fluct}.
-It consists of two overlapping emission layers, A and B,
-with velocities along the line of sight \(v_A = 0\) and \(v_B = \beta\), respectively,
-which are observed along two lines of sight (LOS), 1 and 2.
-The emissivity of layer A is \(E_{A1} = E_{A2} = 1\) for both LOS,
-while the emissivity of layer B is \(E_{B1} = \alpha\) for LOS~1
-and \(E_{B2} = \alpha^{-1}\) for LOS~2, where \(\alpha\) is a positive constant.
-Both layers are assumed to have unit depth along line line of sight,
-such that the surface brightness for the two LOS are given by
-\(S_1 = 1 + \alpha\) and \(S_2 = 1 + \alpha^{-1}\).
-
-
-It then follows that the fractional standard deviation of the emissivity
-and surface brightness are given by:
-\begin{align}
-  \label{eq:toy}
-  \sigma_E &=
-  \frac{
-    \biggl[ 3\bigl(\alpha + \alpha^{-1}\bigr)^2 - 4\bigl(1 + \alpha + \alpha^{-1}\bigr)\biggr]^{1/2}
-  }{
-    2 + \alpha + \alpha^{-1}
-  }
-  \\
-  \sigma_S &=   \frac{\vert\alpha - 1\vert}{1 + \alpha} ,
-\end{align}
-while the RMS line width and standard deviation of the mean velocities on the plane of the sky
-are given by
-\begin{align}
-  \label{eq:toy}
-  \sigma\pos &=\frac{\vert\alpha - 1\vert}{2 (1 + \alpha)}
-  \\
-  \sigma\los &=   \frac{\alpha^{1/2}}{1 + \alpha}.
-\end{align}
 
 
 \section{Additional covariance corner plots for model fits}
