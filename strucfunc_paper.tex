@@ -1680,7 +1680,7 @@ is predicted to depend linearly on the Mach number as
 \(\shortsig{\rho} = b \Mach\),
 where \(b\) depends on the nature of the turbulent driving \citep{Federrath:2010z},
 varying between \(b = 1/3\) for solenoidal driving and \(b = 1\) for compressive driving.
-This is shown by gray shading\footnote{%
+This is shown by gray shading\footnote{\label{fn:brightness-fluctuations}%
   In the figure, it is assumed that the relative fluctuations in surface brightness
   and density are equal, which is a result of the
   cancellation between two effects. First, that the volumetric \ha{} emissivity \(E\)
@@ -1691,7 +1691,11 @@ This is shown by gray shading\footnote{%
   For an emissivity power spectrum \(P(k) \sim k^{-3}\)
   and assuming a ratio of map size to correlation length
   of \(L / r_0 = 10\) (typical value from Table~\ref{tab:Res}),
-  we find \(R \approx 0.2\) and hence \(\shortsig{S} \approx \shortsig{\rho}\). 
+  we find \(R \approx 0.2\) and hence \(\shortsig{S} \approx \shortsig{\rho}\).
+  We calculate \shortsig{S} by fitting a log-normal
+  function to the probability distribution function
+  of the surface brightness map after filtering out fluctuations
+  on scales smaller than the velocity correlation length.
 }
 in Figure~\ref{fig:brightness-pdfs}h,
 where it can be seen that many of the sources with subsonic velocity dispersions
@@ -1767,28 +1771,33 @@ points in our sample, it fails badly for highest dispersion source,
 
 At least three different explanations for the relation
 between \(\sigma\pos\) and \(\sigma\los\) have been proposed previously.
-The classic interpretation in terms of homogeneous turbulence
+The classic interpretation 
+in terms of homogeneous incompressible turbulence \citep{von1951methode}
 is that \(\sigma\pos\) is reduced with respect to the ``true''
 internal velocity dispersion
 due to averaging over multiple independent turbulent cells
 along the line of sight,
-a process known as \textit{projection smearing}
-\citep{von1951methode, 1984ApJ...277..556S}.
+which is another manifestation of projection smearing, 
+as discussed above in section \ref{sec:constancy-power-law}.
 Assuming that \(\sigma\los\) measures the true dispersion,
 then one would expect to find \(\sigma\pos / \sigma\los = (\LL /H)^{1/2}\),
 where \(H\) is the line-of-sight depth of the emitting gas
-and \(\LL \equiv \int_0^\infty C(r)\, dr\) is the integral length scale of
-the fluctuations \citep{Pope:2000p}.
+and \(\LL\) is the integral length scale of
+the fluctuations defined in section~\ref{sec:methods-apply},
 % los/pos = sqrt(N) where N = H / L is # of independent cells
 % L is integral length scale: L = 1.44 r0 for m = 1
 % So H / r0 = 1.44 (los/pos)^2
-Using our model for the autocorrelation function from
-equation~\eqref{eq:new-correlation-form} and assuming \(m = 1\),
-one finds \(\LL = r_0 / \ln 2 \approx 1.44 r_0\),
-and thus \(H / r_0 \approx 1.44 (\sigma\los / \sigma\pos)^2\).
-From the results of Figure~\ref{fig:los-vs-pos} we therefore find
+which yields \(H / r_0 \approx 1.44 (\sigma\los / \sigma\pos)^2\).
+From the results of Figure~\ref{fig:los-vs-pos} we would therefore find
 \(H / r_0 \approx 6\) for the lower dispersion sources,
 falling to \(H / r_0 \approx 2\) for the higher dispersion sources.
+However, such an analysis ignores the effect of density fluctuations,
+which would tend to reduce the effectiveness of projection smoothing
+compared with the incompressible case (see discussion of \(\delta\kappa\) above),
+so it is unclear if the results remain valid
+for the sources with supersonic velocity dispersion.
+
+
 
 \newcommand\vexp{\ensuremath{v_{\text{exp}}}}
 An alternative interpretation,
@@ -1799,7 +1808,8 @@ ordered large-scale velocity gradients
 in addition to the turbulence,
 whereas \(\sigma\pos\) includes only the turbulent motions. 
 % Constant v_exp : sig_los = sqrt(sig_pos**2 + v_exp**2)
-Assuming a constant value \vexp{} for the ordered contribution,
+Assuming a constant value \vexp{} for the ordered contribution
+and that projection smoothing is negligible,
 one would predict \(\sigma\los = (\sigma\pos^2 + \vexp^2)^{1/2}\),
 which is shown by the dot-dashed line in Figure~\ref{fig:los-vs-pos}
 for the case \(\vexp \approx \SI{8}{km.s^{-1}}\).
@@ -1816,12 +1826,16 @@ of density fluctuations (or, more generally, emissivity fluctuations)
 means that the plane-of-sky dispersion of centroids \(\sigma\pos\)
 is \emph{not} independent of the 
 ordered large-scale velocity gradients along the line of sight.
+Indeed, the neglect of any projection smoothing for the turbulent contribution
+in the \citeauthor{2011MNRAS.413..705L} analysis is equivalent to
+assuming \(\delta\kappa = -1\), which \emph{requires} substantial density fluctuations. 
 This leads to a third potential explanation of the
 \(\sigma\pos\)--\(\sigma\los\) relationship.
 In the limit that the direct contribution of
-turbulent velocity fluctuations to \(\sigma\pos\) is negligible,
-the prediction is that \(\sigma\pos / \sigma\los \approx \sigma_{E/E_0}\)
-where \( \sigma_{E/E_0} = \langle \delta E^2 \rangle^{1/2} / E_0\) is the RMS fractional
+turbulent velocity fluctuations is negligible
+and that \(\sigma\los\) is entirely due to expansion along the line of sight,
+then the prediction is that \(\sigma\pos / \sigma\los \approx \shortsig{E} / (1 + \shortsig{E})\)
+where \( \shortsig{E} = \longsig{E}\) is the RMS fractional
 variation in emissivity \(\delta E\) (on scales \(\ge r_0\))
 with respect to the mean emissivity \(E_0\). 
 
@@ -2625,6 +2639,63 @@ Other difference in their methodology is that they use the normalized structure 
 %Using their unfiltered data the correlation length is \(\sim\) \SI{90}{pc} and using the same criteria as our it is \(\sim\) \SI{40}{pc} and the slope would be shallower. 
 Their velocity centroid \(\sigma\) is \SI{5.92 \pm 0.15}{km.s^{-1}} while we have \SI{7.3\pm 2}{km. s^{-1}} which fall within the uncertainties.
 Due to the different observations and methodologies a direct comparison between structure functions is not possible.
+
+\section{Apparent velocity fluctuations from emissivity fluctuations}
+\label{sec:appar-veloc-fluct}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\linewidth]{Figures/bright-to-vel-fluct-annotated}
+  \caption{
+    Toy model of emissivity variations in an ordered velocity field,
+    showing co-variation in fractional fluctuations of
+    emissivity, \(\sigma_E\),  and surface brightness, \(\sigma_S\)
+    together with fluctuations in the plane of sky of the mean velocity,
+    \(\sigma\pos\),
+    and the mean RMS line width, \(\sigma\los\).
+  }
+  \label{fig:bright-to-vel-fluct}
+\end{figure}
+
+In this appendix we describe a simple toy model to illustrate
+how fluctuations of emissivity,
+combined with an ordered velocity gradient along the line of sight,
+can give rise to apparent fluctuations on the plane of the sky
+of the mean velocity.
+The model is illustrated in the inset of Figure~\ref{fig:bright-to-vel-fluct}.
+It consists of two overlapping emission layers, A and B,
+with velocities along the line of sight \(v_A = 0\) and \(v_B = \beta\), respectively,
+which are observed along two lines of sight (LOS), 1 and 2.
+The emissivity of layer A is \(E_{A1} = E_{A2} = 1\) for both LOS,
+while the emissivity of layer B is \(E_{B1} = \alpha\) for LOS~1
+and \(E_{B2} = \alpha^{-1}\) for LOS~2, where \(\alpha\) is a positive constant.
+Both layers are assumed to have unit depth along line line of sight,
+such that the surface brightness for the two LOS are given by
+\(S_1 = 1 + \alpha\) and \(S_2 = 1 + \alpha^{-1}\).
+
+
+It then follows that the fractional standard deviation of the emissivity
+and surface brightness are given by:
+\begin{align}
+  \label{eq:toy}
+  \sigma_E &=
+  \frac{
+    \biggl[ 3\bigl(\alpha + \alpha^{-1}\bigr)^2 - 4\bigl(1 + \alpha + \alpha^{-1}\bigr)\biggr]^{1/2}
+  }{
+    2 + \alpha + \alpha^{-1}
+  }
+  \\
+  \sigma_S &=   \frac{\vert\alpha - 1\vert}{1 + \alpha} ,
+\end{align}
+while the RMS line width and standard deviation of the mean velocities on the plane of the sky
+are given by
+\begin{align}
+  \label{eq:toy}
+  \sigma\pos &=\frac{\vert\alpha - 1\vert}{2 (1 + \alpha)}
+  \\
+  \sigma\los &=   \frac{\alpha^{1/2}}{1 + \alpha}.
+\end{align}
+
 
 \section{Additional covariance corner plots for model fits}
 \label{sec:addit-covar-corn}
