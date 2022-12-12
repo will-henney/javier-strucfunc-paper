@@ -1899,69 +1899,106 @@ but the contribution is probably minor in both cases.
 
 \subsubsection{Luminosity vs centroid velocity dispersion}\label{sec:L-vs-sigmapos}
 
-The Fig. \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
-This relation is commonly employ in the literature  and can be use to investigate how reliable is our derived velocity dispersion.
-The fit we obtain is \(\log \sigma\pos = (0.27 \pm 0.10) \log \text{L}(\text{H}_{\alpha})-(9.9 \pm 4.0)\).
-Since it is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable we also calculate this relation: taking the inverse of slope in Fig. \ref{fig:sigvsl} we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.6 \pm 1.4}\) and using the same procedure in \textit{linmix} and changing the variables we obtain \(\log \text{L}(\text{H}_{\alpha}) = (2.8\pm 1.0) \log \sigma\pos -(36 \pm 4)\).
+Figure~\ref{fig:sigvsl} shows the observed relation between \ha{} luminosity
+and plane-of-sky dispersion of velocity centroids for our sample,
+for which we obtain the power-law fit
+\(\log \sigma\pos = (0.25 \pm 0.10) \log L(\ha) - (9.9 \pm 4.0)\). 
+It is common to study the \(L\)--\(\sigma\) relationship,
+not only in individual \hii{} regions, but also in \hii{} galaxies,
+both in the local universe and at high redshift
+\citep{terlevich1981, Chavez:2014a}.
+In such studies, the velocity dispersion is invariably derived from the
+line widths (\(\sigma\los\)) since the spatially resolved observations
+necessary for measuring \(\sigma\pos\) are not available.
+A reliable empirical \(L\)--\(\sigma\) relationship allows the use of bright photoionized
+regions as standard candles in order to constrain cosmological parameters
+\citep{Chavez:2012a, 2020ApJ...888..113W, Gonzalez-Moran:2021d}.
+The luminosities of the regions used in these cosmological studies range from
+that of our own brightest source up to 100 times more luminous
+(\(L(\ha) = \num{e40}\) to \SI{e42}{erg.s^{-1}}),
+although other studies cover intermediate luminosity regions
+that bridge the two ranges \citep{moiseev2012, Yu:2019a}.
 
-The relationship \(\text{L}_{\ha} \propto \sigma^{\alpha}\) has been extensively investigated  in the context of giants \hii{} regions obtaining a value for \(\alpha\) of \( \sim 4\)\citep{terlevich1981,1988A&A...201..199A} and \num{2.87 \pm 0.2} \citep{Rozas:2006b}.
-Complementing previous results \citet{2012MNRAS.422.3339W} found that star-forming regions at \(z \sim 1.3\) and local \hii{} regions follow a relation with \(\alpha = 4.18 \pm 0.21\).
-\citet{Moiseev:2015a} found that this relation also holds for dwarf galaxies with a value of \(\alpha \sim 5\).
-\citet{2018MNRAS.474.1250F} presented the relationship between integrated \hb{} line luminosity for new data of 36 giant \hii{} regions obtaining \(\text{L}_{\hb} \propto \sigma^{5.02 \pm 0.21}\).
-Recently, \citet{2020ApJ...888..113W} studied the properties of high-\(z\) and local \hii{} galaxies among some GEHRs finding a value of \(\alpha \sim 5\).
+Expressed in the customary form \(L \sim  \sigma^\alpha\), our result corresponds to
+\(\alpha = 4.0 \pm 1.6\), which is smaller than the value of \(\alpha \approx 5\) that is typically found
+for more luminous regions
+\citep{Moiseev:2015a, 2020ApJ...888..113W}
+but not significantly so, given the uncertainty.
+Studies that rely on \(\sigma\los\) generally find that
+\(\sigma\) becomes insensitive to luminosity below about \(L(\ha) = \SI{e40}{erg.s^{-1}}\),
+reaching a constant value of \(\sigma = \SI{15}{km.s^{-1}}\) \citep{Moiseev:2015a, Yu:2019a}.
+On the other hand,
+by using \(\sigma\pos\) instead of \(\sigma\los\),
+we succeed in extending the same power-law relation
+down to \(L(\ha) = \SI{2e37}{erg.s^{-1}}\) and \(\sigma = \SI{3}{km.s^{-1}}\).
+Given our analysis of the previous section, one possible explanation for this
+is that \(\sigma\pos\) is a better measure of the disordered turbulent motions within
+the \hii{} regions, whereas \(\sigma\los\) is also affected by large-scale ordered motions,
+which are always at least as large as the ionized sound speed.
 
-There are two main difference between the previous investigations and our results: one is that the velocity dispersion is obtained as the width of the emission line profile integrated over the whole object or as the non-thermal line-width, which is different from the plane of the sky dispersion we are using and that our sample is considerably smaller in the data points.
-The first problem is addressed in section \ref{sec:sigmapos-vs-sigmalos} where we discuss the relation between the line-of-sight and plane-of-sky velocities.
-But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\ha)\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
-This means that the proposed structure function model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted as a true kinematic property of the \hii{} region velocity field.
+% The Fig. \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
+% This relation is commonly employ in the literature  and can be use to investigate how reliable is our derived velocity dispersion.
+% The fit we obtain is \(\log \sigma\pos = (0.27 \pm 0.10) \log \text{L}(\text{H}_{\alpha})-(9.9 \pm 4.0)\).
+% Since it is customary in the literature to present \(\text{L} (\text{H}_{\alpha})\) as the dependent variable we also calculate this relation: taking the inverse of slope in Fig. \ref{fig:sigvsl} we have \(\text{L}_{\text{H}_{\alpha}} \propto \sigma^{3.6 \pm 1.4}\) and using the same procedure in \textit{linmix} and changing the variables we obtain \(\log \text{L}(\text{H}_{\alpha}) = (2.8\pm 1.0) \log \sigma\pos -(36 \pm 4)\).
+
+% The relationship \(\text{L}_{\ha} \propto \sigma^{\alpha}\) has been extensively investigated  in the context of giants \hii{} regions obtaining a value for \(\alpha\) of \( \sim 4\)\citep{terlevich1981,1988A&A...201..199A} and \num{2.87 \pm 0.2} \citep{Rozas:2006b}.
+% Complementing previous results \citet{2012MNRAS.422.3339W} found that star-forming regions at \(z \sim 1.3\) and local \hii{} regions follow a relation with \(\alpha = 4.18 \pm 0.21\).
+% \citet{Moiseev:2015a} found that this relation also holds for dwarf galaxies with a value of \(\alpha \sim 5\).
+% \citet{2018MNRAS.474.1250F} presented the relationship between integrated \hb{} line luminosity for new data of 36 giant \hii{} regions obtaining \(\text{L}_{\hb} \propto \sigma^{5.02 \pm 0.21}\).
+% Recently, \citet{2020ApJ...888..113W} studied the properties of high-\(z\) and local \hii{} galaxies among some GEHRs finding a value of \(\alpha \sim 5\).
+
+% There are two main difference between the previous investigations and our results: one is that the velocity dispersion is obtained as the width of the emission line profile integrated over the whole object or as the non-thermal line-width, which is different from the plane of the sky dispersion we are using and that our sample is considerably smaller in the data points.
+% The first problem is addressed in section \ref{sec:sigmapos-vs-sigmalos} where we discuss the relation between the line-of-sight and plane-of-sky velocities.
+% But despite these problems, the fact that this relationship holds in our results (within the errors) is interesting considering that the \(\sigma\pos\) is derived from the structure function, while the \(\text{L}(\ha)\) values comes from different sources unrelated to our data (see the Appendix~\ref{sec:notes-individual-hii}).
+% This means that the proposed structure function model describes within certain accuracy the velocity field fluctuations and that the parameters obtained can be interpreted as a true kinematic property of the \hii{} region velocity field.
 
 
 
-\subsubsection{Diameter vs centroid velocity dispersion}
+% \subsubsection{Diameter vs centroid velocity dispersion}
 
-Other important relationship commonly used in the study of the interstellar medium is the diameter (or size) versus velocity dispersion.
-Table \ref{tab:RestStats} shows this result for our sample in the forth row. 
-This relation presents a significance level \(p > \num{0.05}\) but there are a couple of things worth mentioning.
-Historically this relation is important following the work of \citet{1981MNRAS.194..809L} where he presents it in the context of molecular cloud complexes of many clouds, individual clouds, and clumps, so that size scales are studied over \(\num{0.1} < L < \SI{100}{pc}\) obtaining \(\sigma = 1.10 L ^{0.38}\). 
+% Other important relationship commonly used in the study of the interstellar medium is the diameter (or size) versus velocity dispersion.
+% Table \ref{tab:RestStats} shows this result for our sample in the forth row. 
+% This relation presents a significance level \(p > \num{0.05}\) but there are a couple of things worth mentioning.
+% Historically this relation is important following the work of \citet{1981MNRAS.194..809L} where he presents it in the context of molecular cloud complexes of many clouds, individual clouds, and clumps, so that size scales are studied over \(\num{0.1} < L < \SI{100}{pc}\) obtaining \(\sigma = 1.10 L ^{0.38}\). 
 
-This relation is interpreted in terms of turbulence, particularly the Kolmogorov model which predicts a index of \num{0.33} so that larger regions presents more turbulence, and smaller regions less turbulence.
-It has been argued that this correlation method is not as powerful as using statistical functions \citep{1984ApJ...277..556S} but it is interesting that the index is consistent within different phases of the interstellar medium.
-We obtain \(\log \sigma\pos = (0.25 \pm 0.17) \log D - (0.2 \pm 0.38)\) which is comparable with \citet{1981MNRAS.194..809L} results.
+% This relation is interpreted in terms of turbulence, particularly the Kolmogorov model which predicts a index of \num{0.33} so that larger regions presents more turbulence, and smaller regions less turbulence.
+% It has been argued that this correlation method is not as powerful as using statistical functions \citep{1984ApJ...277..556S} but it is interesting that the index is consistent within different phases of the interstellar medium.
+% We obtain \(\log \sigma\pos = (0.25 \pm 0.17) \log D - (0.2 \pm 0.38)\) which is comparable with \citet{1981MNRAS.194..809L} results.
 
-As we mentioned in section \ref{sec:L-vs-sigmapos} the fact that this relation holds up to previous investigation gives some certainty that the \(\sigma\pos\) value obtained via the proposed model of the structure function is valid. 
-This implying that the structure function, while not an absolute diagnostic, is a powerful tool in the research of \hii{} regions kinematics.
+% As we mentioned in section \ref{sec:L-vs-sigmapos} the fact that this relation holds up to previous investigation gives some certainty that the \(\sigma\pos\) value obtained via the proposed model of the structure function is valid. 
+% This implying that the structure function, while not an absolute diagnostic, is a powerful tool in the research of \hii{} regions kinematics.
 
-\subsection{Power-law index}\label{power-law-index}
+% \subsection{Power-law index}\label{power-law-index}
 
-The power-law index \(m\) shown in the last column of Table \ref{tab:Res} is used for comparison between the observations derived index and the theoretical Kolmogorov value of 0.67.
-All our indices are above this theoretical value and this is attributed to the fact that the \hii{} regions do not comply with the conditions established in the development of the turbulent theory which assumes incompressible, subsonic and homogeneous three-dimensional flow.
-\hii{} regions emerged from a molecular cloud with highly filamentary and clumpy density structure.
-Inside the region there is a large increase in the temperature because of the photoionization, and the density gradients with the pressure gradients accelerate the flow which occurs on multiple scales consequence of the fractal nature of the molecular cloud \citep{arthur2016turbulence}.
-The radiation pressure, stellar winds and region expansion, among other physical processes would create pressure-driven shock waves propagating faster than the speed of sound in the medium.
-This would make the flow compressible and supersonic in an inhomogeneous gas cloud.
-Also, as \hii{} regions are three-dimensional objects our structure function results comes from a projection of this three-dimensional structure to a two-dimensional velocity field.
-But despite the complex nature of \hii{} regions and observational limitations, we obtain a common pattern for the structure function behaviour and the value of the power-law index falls in a certain limited range between \num{0.7} and \num{1.4}. 
+% The power-law index \(m\) shown in the last column of Table \ref{tab:Res} is used for comparison between the observations derived index and the theoretical Kolmogorov value of 0.67.
+% All our indices are above this theoretical value and this is attributed to the fact that the \hii{} regions do not comply with the conditions established in the development of the turbulent theory which assumes incompressible, subsonic and homogeneous three-dimensional flow.
+% \hii{} regions emerged from a molecular cloud with highly filamentary and clumpy density structure.
+% Inside the region there is a large increase in the temperature because of the photoionization, and the density gradients with the pressure gradients accelerate the flow which occurs on multiple scales consequence of the fractal nature of the molecular cloud \citep{arthur2016turbulence}.
+% The radiation pressure, stellar winds and region expansion, among other physical processes would create pressure-driven shock waves propagating faster than the speed of sound in the medium.
+% This would make the flow compressible and supersonic in an inhomogeneous gas cloud.
+% Also, as \hii{} regions are three-dimensional objects our structure function results comes from a projection of this three-dimensional structure to a two-dimensional velocity field.
+% But despite the complex nature of \hii{} regions and observational limitations, we obtain a common pattern for the structure function behaviour and the value of the power-law index falls in a certain limited range between \num{0.7} and \num{1.4}. 
 
-The differences in the power-law index with respect the theoretical value are often used as a diagnostic tools to identify properties that are not consider in the assumptions of the turbulence theory \citetext{See table~1 of \citealp{arthur2016turbulence} and Sec.~1 of \citealp{lagrois2011}}.
-As an example there the so called \textit{projection smoothing} \citep{von1951methode,1987ApJ...317..686O} which is used to study the projection of a three-dimensional structure function on the plane.
-The relationships for the power-law are:
+% The differences in the power-law index with respect the theoretical value are often used as a diagnostic tools to identify properties that are not consider in the assumptions of the turbulence theory \citetext{See table~1 of \citealp{arthur2016turbulence} and Sec.~1 of \citealp{lagrois2011}}.
+% As an example there the so called \textit{projection smoothing} \citep{von1951methode,1987ApJ...317..686O} which is used to study the projection of a three-dimensional structure function on the plane.
+% The relationships for the power-law are:
 
-\begin{equation}\label{eq:projection-smoothing-3d}
-m_{2D}= m_{3D} + 1
-\end{equation}
-%
-and  when the astronomical object present a sheet-like distribution of emitters we have the relation:
-%
-\begin{equation}\label{eq:projection-smoothing-2d}
-m_{2D} \sim m_{3D}
-\end{equation}
+% \begin{equation}\label{eq:projection-smoothing-3d}
+% m_{2D}= m_{3D} + 1
+% \end{equation}
+% %
+% and  when the astronomical object present a sheet-like distribution of emitters we have the relation:
+% %
+% \begin{equation}\label{eq:projection-smoothing-2d}
+% m_{2D} \sim m_{3D}
+% \end{equation}
 
-As a conclusion, if the extension of the \hii{} region is compared with its depth (three-dimensional case) the value of the index is \num{1.6}. 
-While the case where the extension is much greater than its depth (two-dimensional case) the region will have a value of \num{0.6}.
-From Table~\ref{tab:Res} we see that our results fall between these two previous values. 
+% As a conclusion, if the extension of the \hii{} region is compared with its depth (three-dimensional case) the value of the index is \num{1.6}. 
+% While the case where the extension is much greater than its depth (two-dimensional case) the region will have a value of \num{0.6}.
+% From Table~\ref{tab:Res} we see that our results fall between these two previous values. 
 
-As for any relation of the power-law index \(m\) and the physical properties of the \hii{} regions we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property, being the least reliable for determining or concluding something about the nature of the physical processes inside the regions.
-On the other hand, the lack of correlation and the presence of this power-law index describing the assumed energy cascade may be interpreted as a universal property of the velocity fluctuations independent of the observed object, which is the main consideration in the turbulence theory.
+% As for any relation of the power-law index \(m\) and the physical properties of the \hii{} regions we can see from table \ref{tab:RestStats} that this parameter does not correlate with any other parameter or physical property, being the least reliable for determining or concluding something about the nature of the physical processes inside the regions.
+% On the other hand, the lack of correlation and the presence of this power-law index describing the assumed energy cascade may be interpreted as a universal property of the velocity fluctuations independent of the observed object, which is the main consideration in the turbulence theory.
 
  
 %\subsection{Kinematic relationship between ionized gas, molecular gas, and stars}
