@@ -1830,7 +1830,7 @@ one would predict \(\sigma\los = (\sigma\pos^2 + \vexp^2)^{1/2}\),
 which is shown by the dot-dashed line in Figure~\ref{fig:los-vs-pos}
 for the case \(\vexp \approx \SI{8}{km.s^{-1}}\).
 It can seen that such a relationship reproduces the 
-observationally derived values equally as well as the linear fit.
+observationally derived values almost as well as the linear fit.
 On the other hand, we can rule out the possibility that
 \vexp{} might increase in proportion to the turbulent velocity dispersion
 since that would predict that \(\sigma\los \propto \sigma\pos\),
@@ -1840,7 +1840,7 @@ However, as pointed out by \citet{arthur2016turbulence},
 the previous analysis is oversimplified since the presence
 of density fluctuations (or, more generally, emissivity fluctuations)
 means that the plane-of-sky dispersion of centroids \(\sigma\pos\)
-is \emph{not} independent of the 
+is not independent of the 
 ordered large-scale velocity gradients along the line of sight.
 Indeed, the neglect of any projection smoothing for the turbulent contribution
 in the \citeauthor{2011MNRAS.413..705L} analysis is equivalent to
@@ -1867,7 +1867,7 @@ is poor, with the model substantially overestimating the magnitude of
 plane-of-sky fluctuations as compared with the line-of-sight widths.
 This is evidence that the combination of a velocity gradient with
 emissivity fluctuations is insufficient on its own,
-and there must therefore be an additional disordered velocity component
+and that we require an additional disordered velocity component
 in order to explain our observations.
 
 In summary, our results are most consistent with a combination
@@ -1933,7 +1933,8 @@ we succeed in extending the same power-law relation
 down to \(L(\ha) = \SI{2e37}{erg.s^{-1}}\) and \(\sigma = \SI{3}{km.s^{-1}}\).
 Given our analysis of the previous section, one possible explanation for this
 is that \(\sigma\pos\) is a better measure of the disordered turbulent motions within
-the \hii{} regions, whereas \(\sigma\los\) is also affected by large-scale ordered motions,
+the \hii{} regions than \(\sigma\los\) since the latter
+is contaminated by large-scale ordered motions,
 which are always at least as large as the ionized sound speed.
 
 % The Fig. \ref{fig:sigvsl} shows the log \(\sigma\pos\)-log \(\text{L}(\text{H}_{\alpha})\) plane.
@@ -2114,28 +2115,56 @@ which are always at least as large as the ionized sound speed.
 
 \section{Conclusions}\label{sec:conclusions}
 
-%The observations point out to the existence of spatial correlation between velocities, that could be interpreted as turbulence. 
-%Arguments against the existence of true, isotropic turbulence can be raised as, for example: i) the histograms of velocity are not always Gaussian, ii) only a fraction of the integrated emission lines of the \hii{} regions show true Gaussian profiles. 
-%The asymmetry in the emission line indicates coherent mass flow motions, 
-%and sometimes is considered incompatible with turbulence. However, turbulence is in fact 
-%a mixture of coherent and chaotic flows. 
-%Only at the regime of the so-called fully developed turbulence the non-linear phenomena dominate completely the movement and the chaotic flow prevail. 
-%The problem here is that a straightforward test for any turbulent model is a big challenge, as we are in the presence of many entangled effects. 
-%However, the circumstantial evidence in favor of the existence of turbulent motions in \hii{} regions is overwhelming, and many are the potential sources of energy to create and maintain turbulence during the lifetime of an \hii{} region.
+We have used the second-order structure function of velocity centroids
+on the plane of the sky to carry out a systematic study of the turbulent kinematics
+in a sample of 9 \hii{} regions spanning a wide range of luminosities and sizes.
+Our principal findings are as follows:
+\begin{enumerate}[1.]
+\item The velocity fluctuations range from subsonic (Mach number \(\Mach \approx 0.5\))
+  in the case of low-luminosity Galactic regions, such as the Orion Nebula,
+  up to supersonic (\(\Mach \approx 2.5\)) in the case of giant extragalactic regions
+  such as 30~Doradus in the Large Magellanic Cloud. 
+\item The correlation length of the velocity fluctuations is always a small fraction
+  (roughly 2\%) of the \hii{} region diameter, implying that turbulent energy
+  is injected on scales smaller than about 10\% of the size of each region.
+\item The power law slope of the structure function at scales smaller than
+  the correlation length is \(m \approx 1 \pm 0.2\) for all regions,
+  with no significant correlation with size, luminosity, or velocity amplitude.
+  This can be explained as due to a fortuitous cancellation
+  between, on the one hand, a steepening underlying velocity spectrum and,
+  on the other hand, a reduced role for projection smoothing as the turbulent fluctuations
+  pass from the subsonic to the supersonic regime. 
+\item The non-thermal component of the emission line widths (\(\sigma\los\)) is found
+  to be proportional to the amplitude of the plane-of-sky velocity centroid fluctuations
+  (\(\sigma\pos\)) with a slope of unity, but an offset such that
+  \(\sigma\los \approx \SI{10}{km.s^{-1}}\) when \(\sigma\pos = 0\).
+  This can be explained if \(\sigma\los\) is affected by ordered velocity fields,
+  such as radial expansion, which leave no imprint on \(\sigma\pos\),
+  implying that \(\sigma\pos\) is a better diagnostic of turbulent fluctuations than
+  \(\sigma\los\), even though it is more challenging to measure.
+\item On scales larger than the correlation length, a variety of behaviors are seen.
+  Some regions, such as Carina and Hubble~X show uncorrelated homogeneous fluctuations
+  at the largest scales, whereas others, such as Orion and 30~Doradus show evidence
+  for large-scale gradients in the amplitude of the velocity fluctuations
+  with more vigorous turbulence in the core of the nebula than in the outskirts.
+  In other regions, such as the Lagoon Nebula and NGC~346, there is evidence
+  for quasi-periodic oscillations on scales similar to the size
+  of the mapped region. 
+\end{enumerate}
 
-Our analysis was able to characterize the velocity fields of a sample of \hii{} regions by determining a set of parameters unique to each velocity field which are: the correlation length, the exponent of a power law that fits the results through a determined range and the true velocity dispersion.
-To achieve this, a new functional form for the second-order structure function was proposed. 
-This new functional considers observational constraints such as the seeing, noise and the size of the observational box, effects that had not been considered before and play an important part in the interpretation of the structure function.
-Our proposed functional form is used as an objective function in a non-linear regression to accurately determine the set of parameters related to turbulence and to the observational constraints.
+% Our analysis was able to characterize the velocity fields of a sample of \hii{} regions by determining a set of parameters unique to each velocity field which are: the correlation length, the exponent of a power law that fits the results through a determined range and the true velocity dispersion.
+% To achieve this, a new functional form for the second-order structure function was proposed. 
+% This new functional considers observational constraints such as the seeing, noise and the size of the observational box, effects that had not been considered before and play an important part in the interpretation of the structure function.
+% Our proposed functional form is used as an objective function in a non-linear regression to accurately determine the set of parameters related to turbulence and to the observational constraints.
 
-The observed structure functions calculated in our work does not reveal the precise characteristic of turbulence, but the statistical results that it provides allow us to determine a distinction between correlated or random velocity fluctuations in the photoionized gas, in which the presence of correlations in the velocity field is a inherent property of turbulence.
-Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a more realistic approach to determine and to the understanding the structure function.
+% The observed structure functions calculated in our work does not reveal the precise characteristic of turbulence, but the statistical results that it provides allow us to determine a distinction between correlated or random velocity fluctuations in the photoionized gas, in which the presence of correlations in the velocity field is a inherent property of turbulence.
+% Although this work is not conclusive about the nature of photoionized gas turbulence and a precise description of the origin and implications of these turbulent motions is out of the scope of our investigation, we believe that the tools presented here (see section~\ref{sec:methods-apply}) guarantee a more realistic approach to determine and to the understanding the structure function.
 
-Our analysis can be easily be expanded to other \hii{} regions with the possibility of comparing the results between them since our method guarantees homogeneity, providing the possibility to develop a future catalog of \hii{} regions turbulent parameters in a concise way.
-By calculating the structure function of \hii{} regions with different morphologies, ages, stellar content, and dynamics it would be possible to detect the presence and the importance of different sources of mechanical energy, since the structure function would be different from one object to the other as we show in the present investigation. 
+% Our analysis can be easily be expanded to other \hii{} regions with the possibility of comparing the results between them since our method guarantees homogeneity, providing the possibility to develop a future catalog of \hii{} regions turbulent parameters in a concise way.
+% By calculating the structure function of \hii{} regions with different morphologies, ages, stellar content, and dynamics it would be possible to detect the presence and the importance of different sources of mechanical energy, since the structure function would be different from one object to the other as we show in the present investigation. 
 
-Our methods could also been use to investigate the velocity fields of other phases of the interstellar medium.
-The study of turbulence between ionized regions and the molecular clouds that give them birth can be carried out with the aid of a correct methodology with the intention of advancing the understanding of the kinematic relationships between them.
+% Our methods could also been use to investigate the velocity fields of other phases of the interstellar medium.
+% The study of turbulence between ionized regions and the molecular clouds that give them birth can be carried out with the aid of a correct methodology with the intention of advancing the understanding of the kinematic relationships between them.
 
 
 
