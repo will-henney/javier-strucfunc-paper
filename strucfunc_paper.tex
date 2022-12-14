@@ -1381,7 +1381,7 @@ To accomplish this we implement a hierarchical Bayesian model for linear regress
 We fit relations of the form
 \(Y = a X + b\)
 where \(X = \log_{10} x\) and \(Y = \log_{10} y\)
-with \(x, y \in \{d, D, L(\ha), \sigma\pos, r_0, m\}\)
+with \(x, y \in \{d, D_{\hii}, L(\ha), \sigma\pos, r_0, m\}\)
 (taken from the physical properties in Table~\ref{tab:regions-properties}
 and the derived turbulent parameters of Table~\ref{tab:Res}).
 Thus the fitted relation between the original variables
@@ -1610,7 +1610,7 @@ between 2\% and 5\%  of the diameter of the \hii{} region.
 The slope \(m\) of the power-law portion of the structure function
 shows no significant correlation with any other parameter
 (see Table~\ref{tab:RestStats}),
-with a weighted mean value of \(m = 1.01\).
+with a weighted mean value of \(m = 1.03\).
 The dispersion in fitted \(m\) values is 1.6 times higher than expected
 on the basis of the confidence limits for the individual regions,
 implying that there may be a real intrinsic dispersion of \(\pm 0.17\) in the slopes.
@@ -1765,7 +1765,7 @@ versus the plane-of-sky dispersion of mean velocities
 \(\sigma\pos\)
 (obtained from our structure function fits).
 The relationship we obtain is
-\( \langle \sigma\los \rangle = (1.03 \pm 0.46) \sigma\pos + (7.7 \pm 2.9)\),
+\( \langle \sigma\los \rangle = (1.04 \pm 0.44) \sigma\pos + (7.3 \pm 2.9)\),
 which can be compared with previous results
 using different types of samples.
 \citet{2011MNRAS.413..705L} surveyed
@@ -1827,9 +1827,9 @@ whereas \(\sigma\pos\) includes only the turbulent motions.
 Assuming a constant value \vexp{} for the ordered contribution
 and that projection smoothing is negligible,
 one would predict \(\sigma\los = (\sigma\pos^2 + \vexp^2)^{1/2}\),
-which is shown by the dot-dashed line in Figure~\ref{fig:los-vs-pos}
-for the case \(\vexp \approx \SI{8}{km.s^{-1}}\).
-It can seen that such a relationship reproduces the 
+which is shown by the blue shaded-area in Figure~\ref{fig:los-vs-pos}
+with an upper limit of \SI{12}{km.s^{-1}} and lower limit of \SI{8}{km.s^{-1}} for \(\vexp\).
+It can be seen that such a relationship reproduces the 
 observationally derived values almost as well as the linear fit.
 On the other hand, we can rule out the possibility that
 \vexp{} might increase in proportion to the turbulent velocity dispersion
@@ -2216,7 +2216,7 @@ Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are use
     \includegraphics[width=\linewidth]{Figures/fake-finite-box-images}
     \\[\bigskipamount]
     (b)\\
-    \includegraphics[width=\linewidth]{Figures/fake-finite-box-strucfunc2}
+    \includegraphics[width=\linewidth]{Figures/fake-finite-box-strucfunc}
   \end{tabular}
   \caption{Effects of finite box size on the structure function.
     (a)~Construction of simulated turbulent velocity fields of different sizes
@@ -2481,6 +2481,8 @@ In turn, this implies that the true \(\sigma^2\pos = \SI{5}{km^2.s^{-2}}\),
 which is lower than the \SI{7}{km^2.s^{-2}}
 that would be naively derived from the observations
 (compare green and orange lines in Figure~\ref{fig:strucfunc-fit-Galactic}b).
+The derived correlation length is \SI{0.5}{pc} which is above the \SI{0.3}{pc} required to determine the true correlation length but below the \SI{0.9}{pc} which guarantees that the fit can reliable determine \(r_0\). 
+The structure function at large scales resembles the tapered behavior of inhomogeneous fluctuations just like the core.
 
 %The seeing width is much smaller than the angular scale of the observations
 
@@ -2492,7 +2494,7 @@ They observed a tendency that higher ionization lines presents higher  dispersio
 Their results just consider one Gaussian component. 
 The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [OIII] emission lines and for [SII] they found \(m \sim 0.8 \pm 0.1\). 
 The correlation length for all lines is \SI{\approx 0.05}{pc}, value obtained when the structure function is equal to \(\sigma\pos^2\).
-For the same \halpha\ observation we obtained a value of \num{1.07} and a correlation length of \SI{0.068}{pc}. 
+For the same \halpha\ observations, but considering high-velocity objects, we obtained a value of \num{1.07} and a correlation length of \SI{0.068}{pc}. 
 Although the work of \citet{arthur2016turbulence} follows a different methodology, the values of \(r_0\) and \(\sigma\pos^2\) fall within the margin of error of our own results.
 
 \subsection{Lagoon Nebula}
@@ -2526,11 +2528,8 @@ The structure function of the Lagoon Nebula was previously
 studied by \citet{Chakraborty:1999a} using the [\ion{O}{3}] \Wav{5007} line,
 finding an approximate power law behavior (\(m = 0.46\))
 on scales of \num{0.01} to \SI{0.2}{pc}.
-No flattening of the structure function at the largest scales
-was seen,
-but that is to be expected due to the finite box effect
-(see Appendix~\ref{sec:finite-box-effects})
-given that we determine the correlation length to be \(r_0 \approx   \SI{1}{pc}\) for this nebula,
+No flattening of the structure function at the largest scales was seen, but that is to be expected due to the finite box effect (see Appendix~\ref{sec:finite-box-effects}).
+Given that we determine the correlation length to be \(r_0 \approx \SI{1}{pc}\) for this nebula,
 which is several times larger than the region mapped by \citet{Chakraborty:1999a}.
 On the other hand, the magnitude of the velocity dispersion found by these authors greatly exceeds our own measurements.
 For instance, they find \(B(r) = \SI{278}{km^2.s^{-2}}\) at \SI{0.2}{pc}, whereas we find \(B(r) \approx \SI{2}{km^2.s^{-2}}\) at the same scale, which corresponds to a discrepancy of more than a factor of a hundred in \(\sigma^2\pos\).
