@@ -2198,14 +2198,27 @@ JGV acknowledges and thanks CONACyT-Mexico for the PhD research scholarship.
 
 \section{Degradation of the structure function due to observational limitations}
 \label{sec:degr-struct-funct}
-Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
+% Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
 
-To characterize the impact of the observational box size and the atmospheric seeing on the structure function we perform a series of experiments using artificial turbulent velocity maps.
-We quantify how these observational limitations affect the determination of astrophysical interest parameters such as the correlation length \(r_0\) and the velocity field variance \(\sigma\pos^2 \). 
-The artificial velocity maps are created using a modified version of the \textit{make$\_$extend} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K}.
-The modification add a tapering to the power law so that the generated fields are uncorrelated at large scales.
-The artificial fields follows a given power law with a correlation length giving a variance value indicated as true \(\sigma^2\).
-Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are used as a reference in the experiments to quantify the variations.
+To characterize the impact of the finite map size
+and the atmospheric seeing on the structure function we perform a series of experiments using artificial turbulent velocity maps.
+We quantify how these observational limitations affect the determination of
+the structure function parameters, such as
+the correlation length \(r_0\) and the velocity field variance \(\sigma\pos^2\). 
+The artificial velocity maps are created using a modified version of the \texttt{make\textunderscore{}extend} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K},
+which creates a two-dimensional fractional Brownian Motion field
+\citep{Miville-Deschenes:2003a}
+based on a power-law energy spectrum in wavenumber \(k\) 
+with random phases. 
+Our modification multiplies the energy spectrum by a
+low-wavenumber exponential taper:
+\(e^{-1 / 2 \pi r_0 k}\).
+As a result, the generated fields become uncorrelated at scales larger than \(r_0\)
+and the resulting structure function closely approximates our model form
+(section~\ref{sec:methods-apply}). 
+
+% The artificial fields follows a given power law with a correlation length giving a variance value indicated as true \(\sigma^2\).
+% Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are used as a reference in the experiments to quantify the variations.
 
 \subsection{Finite box effects}
 \label{sec:finite-box-effects}
@@ -2247,7 +2260,7 @@ Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are use
     with different power law slopes.
     Colored shading shows the inter-quartile range over the different sub-images.
     The dashed line is an approximate analytic fit to these results
-    (equation~\eqref{eq:ajustebox}).
+    (\(1 - e^{L / 3.6r_0}\)).
     (b)~Determination of \(\sigma^2\) and \(r_0\) from fitting the model
     of equation~\eqref{eq:new-correlation-form}.
     Colored dots are mean results from different simulated velocity fields,
@@ -2256,32 +2269,56 @@ Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are use
   \label{fig:finite-box-effect}
 \end{figure}
 
-The Fig. \ref{fig:finite-box}a shows some of the artificial velocity fields used to study the variations in the structure function with respect to the size of the observational box.
-Initially we have a velocity field of \(512 \times 512 \) pixels that is divided \(n\) times (with \(n = 1 - 6\)) producing \(N = 4^n\) fields , where each one has a linear size \(L \times L \) with \(L = 2^{9 -n}\).
-The structure function is determined for each division and later we average all the divisions obtaining a characteristic structure function for \(L = 256, 128, 64,\) etc. 
+Figure~\ref{fig:finite-box}a shows how we test for finite map effects by taking
+a simulated velocity field of size \(512 \times 512\) pixels and iteratively
+dividing the full map into \(2 \times 2\) tiles.
+On the \(j\)th iteration we have \(N = 4^j\) tiles,
+each of size \(L \times L \) pixels with \(L = 2^{9 - j}\).
+The figure shows the result for \(j = 1\), 2, 3, and 4, in which the full map
+was generated with a correlation length \(r_0 = 16\)~pixels.
+We then calculate the individual structure function for each tile and
+find the mean and standard deviation for each level of subdivision,
+showing the results in Figure~\ref{fig:finite-box}b.
+It can be seen that the mean structure functions for each level
+of subdivision (shown by colored dots and solid lines)
+overlap very closely with one another, apart from deviations
+due to edge effects when \(r > L/2\).
+On the other hand, there is considerable dispersion between
+individual tiles (shown by light colored shading) for the cases
+where \(L < r_0\).
 
+We next empirically measure the velocity variance and
+apparent correlation length for each tile.
+The velocity variance \(\sigma^2\) is found by
+directly averaging over the pixels in the tile using equation~\eqref{eq:sig-pos},
+while the apparent correlation length \(r_0\)
+is found as the separation \(r\) for which \(B(r) = \sigma^2\),
+using the tile's own empirically measured structure function and variance.
+In Figure~\ref{fig:finite-box-effect}a we show how these
+quantities deviate from the ``true'' values
+(as measured on the full \(512 \times 512\) map)
+as a function of the tile size \(L\).
+It can be seen that the true values are successfully recovered
+so long as the map size is more than ten times the correlation length,
+but the apparent values of \(r_0\) and \(\sigma^2\) are smaller than the true values
+when \(L < 10 r_0\), increasingly so as \(L\) becomes smaller.
+This can be intuitively understood as due to the fact that a tile that
+is small compared with the correlation length will
+fail to sample the full range of velocity fluctuations,
+leading to an underestimate of \(\sigma^2\).
+Then the fact that \(B(r)\) increases with \(r\) in the power law regime
+means there will be a concomitant underestimate of \(r_0\).
 
-In the Fig. \ref{fig:finite-box}b we show in solid lines the normalized averaged structure functions for the maps in Figure \ref{fig:finite-box}a.
-The number \(N\) of divisions and the length \(L\) are indicated for each structure function.
-The shaded areas show the deviation that each averaged structure function has due to the different divisions. 
-The horizontal and vertical blue dashed lines show the true \(r_{0}\) and the value of \(B(r) / \sigma^2 = 1 \), respectively.
-The colored dotted lines indicate the averages, taking into account all the divisions of each map, of the apparent \(r_ {0}\) and the apparent \(\sigma^2 \).
-It is clear that \(r_0\) and \(\sigma^ 2 \) decrease with respect to the true values as the size \(L\) of the observational box decreases. 
-This analysis is performed on different maps (no images are shown) given a different power law in the velocity spectrum and different correlation lengths, giving the same results. 
-
-Fig. \ref{fig:finite-box-effect}a shows the empirical ratios of the correlation length of each averaged map with respect to the true correlation length (\(\text{apparent } r_ 0 /\text{true } r_0 \) ) and the ratio between the averaged variance of each divided map and the true variance (\(\text{apparent } \sigma^2  / \text{true } \sigma^2\)).
-We observe that for the values where \(L> 20r_0 \) the change in the ratios is null.
-It is for the values where \( L < 10 r_0 \) where there is a decrease.
-This behavior is fulfilled for all simulated maps with different power law and correlation length in the velocity spectrum indicated with different colored circles in Figure \ref{fig:finite-box-effect}a.
-
-On the other hand, Fig. \ref{fig:finite-box-effect}b shows the model-derived \(r_0\) and \(\sigma^ 2 \) values using the fitting procedure with the \texttt{lmfit} library.
-In this case we see that the model fitting works much better than the empirical measurement, which gives reliable values so long \(L > 3r_0 \).
-
-The empirical variations of the ratios is described by the  dashed line in Fig. \ref{fig:finite-box-effect} a and b, and is given by the equation: 
-
-\begin{equation}\label{eq:ajustebox}
-\beta(r_0) = 1 - \exp \left[ \frac{L}{3.6r_0} \right] 
-\end{equation}
+However, it is possible to do a considerably better job
+of recovering the true \(\sigma^2\) and \(r_0\) by fitting our
+heuristic model structure function of equation~\eqref{eq:model-strucfunc-ideal}.
+This is shown in Figure~\ref{fig:finite-box-effect}b, where it can be seen
+that the true parameters are reliably recovered so long as \(L > 3 r_0\),
+which is a roughly \SI{0.5}{dex} improvement over the purely empirical method.
+In order for the model fitting to work, the tile size must be large enough
+that the structure function begins to show some flattening at the largest scales,
+which is why the results are still inaccurate for the smallest values of \(L\)
+that sample only the rising power-law portion of \(B(r)\). 
 
 \subsection{Effects of seeing}
 \label{sec:effects-seeing-struc}
