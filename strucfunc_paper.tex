@@ -151,16 +151,19 @@ $^{2}$Instituto de Radioastronomía y Astrofísica, Universidad Nacional Autóno
 \begin{abstract}
   Fluctuations of centroid velocities on the plane of the sky derived from spectroscopic observations are a powerful tool for studying the turbulent dynamics of emission line regions.
   With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity, and are located in the Milky Way and other Local Group galaxies.
-  For the statistical analysis we obtain the second-order structure function of the observed \halpha\ centroid velocity field.
-  We proposed a heuristic model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L_{\text{box}}\)).
-  The turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)) are also considered in our heuristic model.
-  The observational structure function is fitted using our heuristic model in a non-linear regression analysis which allow us to derive the parameters representing each velocity field.
+  In the statistical analysis we obtain the second-order structure function of the observed \halpha\ centroid velocity field.
+  We proposed a model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L\)).
+  The turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)) are also considered in our model.
+  We fit our model to the observational structure function using a non-linear regression analysis which allow us to derive the parameters representing each velocity field.
   The results for the 9 \hii{} regions are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
-  Later, the derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diameter (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
-  We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\). 
-  Finally, the \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\) relation increase following a linear relation.
-  Since the derived  scale-relations are within the uncertainty of previous investigations we conclude that the parameters obtained from our proposed model represents true kinematic properties of each region.
-  The methodology we present guarantees consistency for comparison between the galactic and giant extragalactic \hii{} regions. 
+  The derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diameter (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
+  We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\).
+  The \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\) increase following a linear relation.
+  From the previous relations we found that the for our sample the \Mach{} number ranges from \( 0.5 - 2.5\) and that for ionized regions the energy is injected on scales smaller than 10\% of the size of each region.
+  We explain the derived power law slope by considering the effect of projection smearing and emissivity fluctuations.
+  We show that for ionized regions, the latter one, can be related to density fluctuations and use its diagnostic no determine the presence of turbulence induced-density.
+ 
+ 
 
   
 \end{abstract}
@@ -2539,12 +2542,16 @@ The structure function at large scales resembles the tapered behavior of inhomog
 \label{sec:comparison-orion}
 
 \citet{arthur2016turbulence} carried out a complete analysis by calculating the structure function of different emission lines in the inner Orion Nebula.
-They observed a tendency that higher ionization lines presents higher  dispersion and the steepness of the structure function slope. 
-Their results just consider one Gaussian component. 
-The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [OIII] emission lines and for [SII] they found \(m \sim 0.8 \pm 0.1\). 
-The correlation length for all lines is \SI{\approx 0.05}{pc}, value obtained when the structure function is equal to \(\sigma\pos^2\).
-For the same \halpha\ observations, but considering high-velocity objects, we obtained a value of \num{1.07} and a correlation length of \SI{0.068}{pc}. 
-Although the work of \citet{arthur2016turbulence} follows a different methodology, the values of \(r_0\) and \(\sigma\pos^2\) fall within the margin of error of our own results.
+On their work, they only consider one Gaussian component fit.
+They find tendency that higher ionization lines presents higher  dispersion and the steepness of the structure function slope. 
+They also make a comparison with previous work (see table~5 on their paper) founding a a broad agreement in results and the dependence between ionization energy and slope and dispersion value.
+The work by \citet{arthur2016turbulence} is the only one that has calculated the structure function for the \ha{} emission line, for this reason it will be the only one that we use for comparison.
+The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [OIII] emission lines and for [SII] and [NII] they found \(m \sim 0.8 \pm 0.1\). 
+The correlation length for all lines is \SI{\sim 0.05}{pc}, value obtained when the structure function is equal to \(\sigma\pos^2= \SI{9.37}{km^{2 }.s^{-2}}\)..
+For the same \halpha\ observations, but considering high-velocity objects, we obtained a value of \num{1.07 \pm 0.03}, a correlation length of \SI{0.068 \pm 0.004}{pc} and \(\sigma\pos^2 = \SI{13 \pm 1}{ km^{2}.s^{-2}}\). 
+The difference with respect to this last value is due to the fact that \citet{arthur2016turbulence} masked areas with high values of centroid velocity (see figure~2 on their paper).
+Since there are the same observations there is a good agreement in the structure function.
+
 
 \subsection{Lagoon Nebula}
 \label{sec:lagoon-nebula}
@@ -2573,13 +2580,15 @@ If we consider the first point of this \(B(r)\) to be valid, which corresponds t
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-lagoon}
-The structure function of the Lagoon Nebula was previously
-studied by \citet{Chakraborty:1999a} using the [\ion{O}{3}] \Wav{5007} line,
-finding an approximate power law behavior (\(m = 0.46\))
-on scales of \num{0.01} to \SI{0.2}{pc}.
-No flattening of the structure function at the largest scales was seen, but that is to be expected due to the finite box effect (see Appendix~\ref{sec:finite-box-effects}).
-Given that we determine the correlation length to be \(r_0 \approx \SI{1}{pc}\) for this nebula,
-which is several times larger than the region mapped by \citet{Chakraborty:1999a}.
+The Lagoon Nebula was previously studied by \citet{Chakraborty:1999a} using the [\ion{O}{3}] \Wav{5007} line.
+The structure function was computed on an area of \num{1} \(\times\) \SI{1}{arcmin^2} centered at Herschel 36.
+Compared to our data (from \num{0.1} and \SI{10}{pc}), this covers the small scales between \num{0.012} and \SI{0.3}{pc}.
+\citet{Chakraborty:1999a} findings are a power law behavior of \(m = 0.46\)
+for all its range.
+They mentioned the nebular gas physical conditions and the presence of gradients as responsible for the discrepancy of the theoretical 2/3 value.
+No flattening of the structure function at the largest scales was seen, but that is to be expected due to the finite box effect (see Appendix~\ref{sec:finite-box-effects}), but argue the possibility that the turbulent energy input is at more than one spacial scale.
+With the aid of the 2D-autocorrelation function (using \(1/e\)) they found a characteristic turbulent scale of \SI{0.12}{pc}.
+We found \(r_0 = \SI{1 \pm 0.1}{pc}\) for this nebula, which is several times larger than the region mapped by \citet{Chakraborty:1999a}.
 On the other hand, the magnitude of the velocity dispersion found by these authors greatly exceeds our own measurements.
 For instance, they find \(B(r) = \SI{278}{km^2.s^{-2}}\) at \SI{0.2}{pc}, whereas we find \(B(r) \approx \SI{2}{km^2.s^{-2}}\) at the same scale, which corresponds to a discrepancy of more than a factor of a hundred in \(\sigma^2\pos\).
 This may be due in part to the fact that \citet{Chakraborty:1999a}
@@ -2590,8 +2599,8 @@ In the case of the Orion Nebula we found that the velocity dispersion
 of the central region was larger than that of the extended nebula
 and this could be an example of a similar phenomenon,
 albeit to a more extreme degree.
-
-
+\citet{Chakraborty:1999a} mentioned a good agreement between \citet{1986ApJ...304..767O}  which show different HII regions structure functions slopes between \(m = 0.18 - 0.45\) and \citet{1987ApJ...317..676O} which cover an area around 9 Sgr in M8.
+The first investigation in the Lagoon nebula structure function is from \citet{1970A&A.....8..486L} which claims that a value of \(m = 2/3\) satisfies their observations agreeing with the Kolmogorov Law.
 
 \subsection{Carina Nebula}
 \label{sec:carina-nebula}
@@ -2652,11 +2661,16 @@ Considering the first point above this \(s_0\) value to be valid, which correspo
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-30dor}
 
-The first attempt at characterizing turbulence in a giant extragalactic \hii{} region, GEHR, was done by \citet{1961MNRAS.122....1F} with the 30~Doradus complex, finding no indication of turbulent motions between scale of \num{10} and \SI{100}{pc}.
 \citet{Melnick:2021x} also investigated the structure function in 30~Doradus finding on their results that the structure function is entirely flat on scales from \num{3} to \SI{200}{pc}.
 The above does not coincide with our results, since we establish the existence of correlations up to the maximum value of the structure function that occurs at \SI{20}{pc}, separation where a value of 2\(\sigma\pos^2\) is reached.
 The VLT FLAMES/GIRAFFE observations of \citet{Melnick:2021x} may not have had the resolution to resolve the correlations at small separations, however an inspection of its velocity map (figure 7 in their work) shows that the velocity distribution it is far from completely random.
-This is the first time turbulence is characterized in 30~Doradus using the structure function.
+\citet{Melnick:2021x} \(\sigma\pos\) values range from \num{11.6} to \SI{18.2}{km.s^{-1}} for a diverse type of fits (see figure~15 on their paper).
+The first attempt at characterizing turbulence in a giant extragalactic \hii{} region, GEHR, was done by \citet{1961MNRAS.122....1F} with the 30~Doradus complex, finding no indication of turbulent motions between spatial scales of \num{10} and \SI{100}{pc}.
+The \citet{1961MNRAS.122....1F} is in broad agreement with the \citet{Melnick:2021x} results in which they consider profiles classified as singles.
+Our structure function falls between the two previous results: 
+From a spatial scale of \SI{5}{pc} up to \SI{40}{pc} (which covers small-to-intermediate scale for previous investigations and large scales for us) and from \(B(r)\) between \num{250} to \SI{600}{km^{2}.s^{-2}}.
+
+%This is the first time turbulence is characterized in 30~Doradus using the structure function.
 
 
 \subsection{NGC 346}
@@ -2793,8 +2807,9 @@ onsidering the first point above this \(s_0\) value to be valid, which correspon
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-m33}
 
-For NGC 604 there is good agreement in our structure function results and previous studies because where are using the same TAURUS-II data as \citet{Melnick:2021x} and \citet{Medina-Tanco:1997a}.
-Despite this general agreement the interpretations in each study is different.
+For NGC 604 there is good agreement in our structure function results and previous studies.
+This mainly because where are using the same TAURUS-II data as \citet{Melnick:2021x} and \citet{Medina-Tanco:1997a}.
+Despite this general agreement, the interpretations in each study is different.
 \citet{Medina-Tanco:1997a} conclude about a double regime acting on the kinetic energy spectrum.
 According to this double cascade, turbulence is being forced at scales of \(\approx\) \SI{10}{pc} while and energy cascade has developed down to the smallest scales and other, as an inverse cascade, extends up to scale of \(\approx\) \SI{70}{pc}.
 \citet{Medina-Tanco:1997a} mentioned different characteristic scale lengths, the most notorious is the \SI{\sim 10}{pc}, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
