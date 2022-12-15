@@ -2223,8 +2223,8 @@ the correlation length \(r_0\) and the velocity field variance \(\sigma\pos^2\).
 The synthetic velocity maps are created using a modified version of the \texttt{make\textunderscore{}extend} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K},
 which creates a two-dimensional fractional Brownian Motion field
 \citep{Miville-Deschenes:2003a}
-based on a power-law energy spectrum in wavenumber \(k\) 
-with random phases. 
+based on a power-law energy spectrum in wavenumber \(k\), \(E(k) \propto k^{-n}\),
+where \(n = m + 2\) and with random phases. 
 Our modification multiplies the energy spectrum by a
 low-wavenumber exponential taper:
 \(e^{-1 / 2 \pi r_0 k}\).
@@ -2349,8 +2349,8 @@ that sample only the rising power-law portion of \(B(r)\).
     \includegraphics[width=\linewidth]{Figures/fake-seeing-nonp-reduction}
   \end{tabular}
   \caption{Effects of seeing on the structure function.
-    (a)~Each row shows a different simulated random velocity field on a \(256^2\) grid
-    (see text for details).
+    (a)~Each row shows a different simulated random velocity field
+    on a \(256^2\) grid (see text for details).
     The left column shows the original field,
     while the remaining columns show the effects of smoothing by a gaussian kernel
     with RMS width \(s_0\) from 1 to 32 pixels.
@@ -2380,55 +2380,36 @@ synthetic velocity maps described above.
 
 Figure~\ref{fig:seeing-reduction}a illustrates how four different
 synthetic velocity fields of size \(256\times256\) pixels
-and correlation length \(r_0 = \SI{15.1}{pixels}\)
+and correlation length \(r_0 = \SI{16}{pixels}\)
 are affected by progressively broader gaussian seeing,
 with RMS width \(s_0 = 1\) to \SI{32}{pixels}.
 We calculate the structure function \(B(r)\) for each map and show
 in Figure~\ref{fig:seeing-reduction}b the average ratio between
 \(B(r)\) and the value in the absence of seeing,
 with different colors representing different values of \(s_0\).
+Results are shown for a power-law slope of \(m = 1.2\)
+but we find very similar behaviour for other values of \(m\) within the range
+seen in our observations.
 For small values of \(s_0\), the principle effect is seen at
-small separations, 
+the smallest separations but the structure function is noticeably depressed
+for separations as large as \(r = 10 s_0\).
+As \(s_0\) increases to become comparable with \(r_0\),
+even the largest separations are significantly affected.
+At the same time the apparent correlation length begins to increase,
+as indicated by the plus symbols in the figure.
 
-
-To study the effect of the seeing we calculate the structure function of simulated velocity maps where an artificial Gaussian seeing with different line widths has been introduced.
-The artificial velocity maps are created in the same way as in Section~\ref{sec:finite-box-effects}.
-The seeing in velocity maps is added via the \texttt{astropy} Python library \citep{astropy:2013} using the \textit{Gaussian2DKernel} command. 
-
-Fig. \ref{fig:seeing-reduction}a shows column an artificial velocity field of 512 \(\times\) 512  divided into four maps of 256 \(\times \) 256 pixels each which are displayed in each row.
-A Gaussian seeing \(s_0 \) is applied to each division with an RMS width given by \(s_0 = 2^n\) pixels with \(n = 0-5\) shown in the different columns. 
-The structure function is computed in these maps and the averaged considering the same seeing. 
-
-The solid lines in Figure \ref{fig:seeing-reduction}b show the ratio of the averaged structure function of the maps with their respective seeing to the unsmoothed map: \(B (r, s_0 ) / B (r, s_0 = 0) \).
-The circle symbols indicate the value of 2\(s_0\), the plus symbols indicate the apparent correlation length of the smoothed maps and the vertical dotted line indicates the true \(r_{0}\). 
-
-The dashed lines in Figure \ref{fig:seeing-reduction}b are  empirically fits for each ratio and characterizes the decrease in the structure function for each value of seeing.
-To obtain this fit, we start from a convolution of an emission line and Gaussian seeing.
-The emission line has the form \(\text {I}(x, v) = \text{I}_0 \phi [v; \overline {v} (x), \sigma_0]\) and has uniform width and brightness where the only change with respect to position is the velocity centroid.
-The proposed seeing is \(\text{K}(x, s_0)\) of the form \(1 / \sqrt{2 \pi s_0} \exp^ {-x^ 2 / 2s_0 ^ 2} \).
-The convolution \(\text{I}(x, v) \otimes \text{K}(x, s_0) \) is performed to obtain the smoothed map, \(\text {\~I} (x, v) \). 
-
-Then we calculate the average velocity difference of the original map, \(\Delta v \), and the smoothed map, \(\tilde{\Delta v}\), in the arbitrary points \( x = \{0, \delta \} \).
-The expansion of the convolution at small separations gives a term \(S_0(r; s_0)\) that modifies the structure function which has the form: 
-
-\begin{equation}\label{eq:seeingcon}
-S (r;s_0) = \tanh^2 \left[ \left( \dfrac{r}{2s_0} \right)^2 \right]
-\end{equation}
-
-Subsequently, the equation \ref{eq:seeingcon} is empirically modified and we obtain: 
-
-%\begin{equation}\label{eq:seeingemp}
-%S(r; s_0, r_0) =  \frac{e^\frac{-s_0}{r_0}}{2} \left(1 + \tanh{a \text{ln} \frac{r}{2s_0}} \right)
-%\end{equation}
-%
-%and the final form of the equation \ref{eq:seeingemp} after a mathematical simplification gives: 
-
+We find that the following simple analytic function reproduces
+these results to within better than 10\%:
 \begin{equation}\label{eq:seeingemp2}
-S(r; s_0, r_0) = \frac{e^\frac{-s_0}{r_0}}{1+(\frac{2s_0}{r})^{2a}}
+S(r; s_0, r_0) = \frac{e^{-s_0 / r_0}}{1+(2s_0 / r)^{2a}} ,
 \end{equation}
-%
-which describes the dashed lines in Figure \ref{fig:seeing-reduction}b. 
-The equation \ref{eq:seeingemp2} is used to correct the observational structure function in equation \eqref{eq:sf-functional}. 
+which is shown by dashed lines in Figure \ref{fig:seeing-reduction}b.
+The optimum value of the index \(a\) in this equation varies slightly
+with the power law slope \(m\) of the true structure function,
+but a compromise value of \(a = 0.75\) works tolerably well for \(m = 0.7\) to \(1.3\).
+We therefore use this equation to represent the seeing
+in our structure function fits (section~\ref{sec:results}),
+with \(s_0\) as an additional free parameter for the models.
 
 \section{Apparent velocity fluctuations from emissivity fluctuations}
 \label{sec:appar-veloc-fluct}
