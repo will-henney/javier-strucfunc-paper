@@ -156,23 +156,50 @@ Morelia, Michoacán, México C.P. 58089\\
 
 % Abstract of the paper
 \begin{abstract}
-  Fluctuations of centroid velocities on the plane of the sky derived from spectroscopic observations are a powerful tool for studying the turbulent dynamics of emission line regions.
-  With the aim to characterize these velocities fluctuations we conduct a statistical analysis on a diverse sample of 9 \hii{} regions that spans more than two orders of magnitude in size and luminosity, and are located in the Milky Way and other Local Group galaxies.
-  In the statistical analysis we obtain the second-order structure function of the observed \halpha\ centroid velocity field.
-  We proposed a model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L\)).
-  The turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)) are also considered in our model.
-  We fit our model to the observational structure function using a non-linear regression analysis which allow us to derive the parameters representing each velocity field.
-  The results for the 9 \hii{} regions are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
-  The derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diameter (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
-  We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\).
-  The \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\) increase following a linear relation.
-  From the previous relations we found that the for our sample the \Mach{} number ranges from \( 0.5 - 2.5\) and that for ionized regions the energy is injected on scales smaller than 10\% of the size of each region.
-  We explain the derived power law slope by considering the effect of projection smearing and emissivity fluctuations.
-  We show that for ionized regions, the latter one, can be related to density fluctuations and use it as a diagnostic to determine the presence of turbulence-induced density fluctuations.
- 
- 
-
-  
+  % Context
+  Radial velocity fluctuations on the plane of the sky
+  are a powerful tool for studying the turbulent dynamics of emission line regions.
+  % What we did
+  We conduct a systematic statistical analysis
+  of the observed \halpha\ centroid velocity field for
+  a diverse sample of 9 \hii{} regions,
+  spanning two orders of magnitude in size and luminosity,
+  that are located in the Milky Way and other Local Group galaxies
+  % How we did it
+  By fitting a simple analytic model to the second-order spatial structure function
+  of the velocity fluctuations, we extract three fundamental parameters:
+  the plane-of-sky velocity dispersion,
+  the correlation length,
+  and the power law slope.
+  We determine the credibility limits for these parameters in each region,
+  taking into account the observational limitations of noise,
+  atmospheric seeing, and the finite map size.
+  % What we found
+  The plane-of-sky velocity dispersion is found to be a better diagnostic
+  of turbulent motions than the line width, especially for lower
+  luminosity regions where the turbulence is subsonic.
+  The correlation length of velocity fluctuations is found to
+  be always roughly 2\% of the \hii{} region diameter,
+  implying that turbulence is driven on relatively small scales.
+  No evidence is found for a steepening of the power law slope of the structure function
+  in the transition from subsonic to supersonic turbulence,
+  which may be due to the countervailing effect of projection smoothing.
+  Ionized density fluctuations are too large to be explained by the action
+  of the turbulence in most cases, with the exception of the highest
+  luminosity sources.
+  A variety of behaviors are seen on scales larger than the correlation length,
+  with only a minority of sources showing evidence for homogeneity on the largest scales.
+  % In the statistical analysis we obtain the second-order structure function of the observed \halpha\ centroid velocity field.
+  % We proposed a model for the structure function which takes into account observational constraints like the seeing (\(s_0\)), instrumental noise (\(B_{\text{noise}}\)) and size of the field of view (\(L\)).
+  % The turbulent velocity field parameters like the velocity dispersion of the centroid velocity (\(\sigma\pos\)), the autocorrelation length (\(r_0\)) and a power-law index (\(m\)) are also considered in our model.
+  % We fit our model to the observational structure function using a non-linear regression analysis which allow us to derive the parameters representing each velocity field.
+  % The results for the 9 \hii{} regions are: \(\num{0.2} < s_0 \text{(FWHM)} < \SI{3.0}{arcsec}\), \(\num{0.003} < B_{\text{noise}} < \SI{6.0}{km^{-2}.s^{-2}}\),  \(\num{3} < \sigma\pos < \SI{19}{km.s^{-1}}\), \(\num{0.07} < r_0 < \SI{12}{pc}\) and \(\num{0.7}< m < \num{1.5}\). 
+  % The derived parameters are used to determine scaling relations between the physical properties of the regions like \halpha\ luminosity (\(L(H_{\alpha})\)), diameter (\(D\)) and the mean non-thermal linewidth (\(\langle \sigma_{los} \rangle\)).
+  % We find that these relations are \(\sigma\pos \propto L(H_{\alpha})^{0.28 \pm 0.10}\) and \(r_0 \propto D^{0.95 \pm 0.32}\).
+  % The \(\sigma\pos\) and \(\langle \sigma_{los} \rangle\) increase following a linear relation.
+  % From the previous relations we found that the for our sample the \Mach{} number ranges from \( 0.5 - 2.5\) and that for ionized regions the energy is injected on scales smaller than 10\% of the size of each region.
+  % We explain the derived power law slope by considering the effect of projection smearing and emissivity fluctuations.
+  % We show that for ionized regions, the latter one, can be related to density fluctuations and use it as a diagnostic to determine the presence of turbulence-induced density fluctuations. 
 \end{abstract}
 
 % Select between one and six entries from the list of approved keywords.
@@ -1063,7 +1090,6 @@ over all pairs of points that contribute to each radial bin.
 The uncertainty of each bin (blue error bars) is estimated
 as the standard deviation of these values divided by the square root of
 the number of contributing pairs.
-\textit{But this is not true -- we use constant fractional error with adjustments for small and large separations.}
 For most sources a fixed bin size of \SI{0.05}{dex} is used,
 but for those observed with multi-fiber spectroscopy
 (Carina and M8, see section~\ref{sec:flames-multi-fiber}),
