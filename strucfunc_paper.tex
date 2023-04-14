@@ -81,6 +81,8 @@
   detect-weight = true,
 }
 
+%\usepackage{orcidlink}
+
 \usepackage{upgreek}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -311,9 +313,6 @@ In section~\ref{sec:discussion} we discuss the relation
 of our results to previous studies and the correlations that we find
 between the structure function parameters and other properties of
 the \hii{} regions in our sample.
-%We also discuss the implications of our results for the existence of a
-%Kolmogorov-type turbulent energy cascade and the nature of the driving mechanism
-%for the velocity fluctuations.
 Finally, in section~\ref{sec:conclusions} we present our conclusions.
 
 %% Previous Javier version of final paragraphs of Intro. I think I
@@ -1973,19 +1972,6 @@ which are always at least as large as the ionized sound speed.
 
 
 
-% \subsubsection{Diameter vs centroid velocity dispersion}
-
-% Other important relationship commonly used in the study of the interstellar medium is the diameter (or size) versus velocity dispersion.
-% Table \ref{tab:RestStats} shows this result for our sample in the forth row. 
-% This relation presents a significance level \(p > \num{0.05}\) but there are a couple of things worth mentioning.
-% Historically this relation is important following the work of \citet{1981MNRAS.194..809L} where he presents it in the context of molecular cloud complexes of many clouds, individual clouds, and clumps, so that size scales are studied over \(\num{0.1} < L < \SI{100}{pc}\) obtaining \(\sigma = 1.10 L ^{0.38}\). 
-
-% This relation is interpreted in terms of turbulence, particularly the Kolmogorov model which predicts a index of \num{0.33} so that larger regions presents more turbulence, and smaller regions less turbulence.
-% It has been argued that this correlation method is not as powerful as using statistical functions \citep{1984ApJ...277..556S} but it is interesting that the index is consistent within different phases of the interstellar medium.
-% We obtain \(\log \sigma\pos = (0.25 \pm 0.17) \log D - (0.2 \pm 0.38)\) which is comparable with \citet{1981MNRAS.194..809L} results.
-
-% As we mentioned in section \ref{sec:L-vs-sigmapos} the fact that this relation holds up to previous investigation gives some certainty that the \(\sigma\pos\) value obtained via the proposed model of the structure function is valid. 
-% This implying that the structure function, while not an absolute diagnostic, is a powerful tool in the research of \hii{} regions kinematics.
 
 % \subsection{Power-law index}\label{power-law-index}
 
@@ -2247,7 +2233,7 @@ from the github repository \url{https://github.com/JavGVastro/PhD.Paper}.
 
 \appendix
 
-\section{Degradation of the structure function due to observational limitations}
+\textcolor{red}{\section{Degradation of the structure function due to observational limitations}}
 \label{sec:degr-struct-funct}
 % Studied in context of \(\Delta\)-variance by \citet{Bensch:2001l}.
 
@@ -2256,34 +2242,38 @@ and the atmospheric seeing on the structure function we perform a series of expe
 We quantify how these observational limitations affect the determination of
 the structure function parameters, such as
 the correlation length \(r_0\) and the velocity field variance \(\sigma\pos^2\). 
-The synthetic velocity maps are created using a modified version of the \texttt{make\textunderscore{}extend} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K},
-which creates a two-dimensional fractional Brownian Motion field
+The synthetic velocity maps are created using a modified version of the \textcolor{red}{\texttt{make\textunderscore{}3dfield}} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K},
+which creates a \textcolor{red}{three-dimensional} fractional Brownian Motion field
 \citep{Miville-Deschenes:2003a}
 based on a power-law energy spectrum in wavenumber \(k\), \(E(k) \propto k^{-n}\),
-where \(n = m + 2\) and with random phases. 
+where \textcolor{red}{\(n = m + 3\)} and with random phases. 
 Our modification multiplies the energy spectrum by a
 low-wavenumber exponential taper:
 \(e^{-1 / 2 \pi r_0 k}\).
 As a result, the generated fields become uncorrelated at scales larger than \(r_0\)
 and the resulting structure function closely approximates our model form
 (section~\ref{sec:methods-apply}).
+
+\textcolor{red}{Then we proceed to create a 2D map from collapsing the 3D velocity field so we can take account of projection effects.
+We do this by obtaining the 1st-moment map of a PPV (position-position velocity) cube created using the \texttt{make\textunderscore{}ppv} command from \texttt{turbustat}.
+To create the PPV cube it was also necessary to create a 3D density field.
+The same \texttt{make\textunderscore{}3dfield} command was used to create  (along with the same parameters of the velocity field) a fluctuating density field.
+The density fluctuations are interpreted as emissivity fluctuations following as mentioned in section~\ref{sec:constancy-power-law}.}
+
 The maps generated by \texttt{turbustat} are spatially periodic,
 but we make them non-periodic by always dividing the full map into at least
 four tiles, which are each analyzed separately. 
 
-% The artificial fields follows a given power law with a correlation length giving a variance value indicated as true \(\sigma^2\).
-% Using this true \(\sigma^2\) we obtain the true \(r_0\) and these values are used as a reference in the experiments to quantify the variations.
-
-\subsection{Finite box effects}
+\textcolor{red}{\subsection{Finite box effects}}
 \label{sec:finite-box-effects}
 
 \begin{figure}
   \begin{tabular}{@{} l @{}}
     (a)\\
-    \includegraphics[width=\linewidth]{Figures/fake-finite-box-images}
+    \includegraphics[width=\linewidth]{Figures/fake-3d-finite-box-images-ems-fluct_sigE_1}
     \\[\bigskipamount]
     (b)\\
-    \includegraphics[width=\linewidth]{Figures/fake-finite-box-strucfunc}
+    \includegraphics[width=\linewidth]{Figures/fake-3d-finite-box-strucfunc-ems-fluct_sigE_1}
   \end{tabular}
   \caption{Effects of finite box size on the structure function.
     (a)~Construction of simulated turbulent velocity fields of different sizes
@@ -2301,10 +2291,10 @@ four tiles, which are each analyzed separately.
 \begin{figure}
   \begin{tabular}{@{} l @{}}
     (a)\\
-    \includegraphics[width=0.95\linewidth]{Figures/fake-finite-box-effect}
+    \includegraphics[width=0.95\linewidth]{Figures/fake-3d-finite-box-effect-ems-fluct_sigE_1}
     \\[\bigskipamount]
     (b)\\
-    \includegraphics[width=0.95\linewidth]{Figures/fake-finite-box-fits}
+    \includegraphics[width=0.95\linewidth]{Figures/fake-finite-box-fits-ems-fluct_sigE_1}
   \end{tabular}
   \caption{
     Reduction of apparent velocity variance and correlation length
@@ -2314,7 +2304,7 @@ four tiles, which are each analyzed separately.
     with different power law slopes.
     Colored shading shows the inter-quartile range over the different sub-images.
     The dashed line is an approximate analytic fit to these results
-    (\(1 - e^{L / 3.6r_0}\)).
+    (\textcolor{red}{\(1 - e^{L / 4.0r_0}\)}).
     (b)~Determination of \(\sigma^2\) and \(r_0\) from fitting the model
     of equation~\eqref{eq:new-correlation-form}.
     Colored dots are mean results from different simulated velocity fields,
@@ -2323,16 +2313,16 @@ four tiles, which are each analyzed separately.
   \label{fig:finite-box-effect}
 \end{figure}
 
-Figure~\ref{fig:finite-box}a shows how we test for finite map effects by taking
-a simulated velocity field of size \(512 \times 512\) pixels and iteratively
+\textcolor{red}{Figure~\ref{fig:finite-box}a} shows how we test for finite map effects by taking
+a simulated \textcolor{red}{1st moment map of} size \(512 \times 512\) pixels and iteratively
 dividing the full map into \(2 \times 2\) tiles.
 On the \(j\)th iteration we have \(N = 4^j\) tiles,
 each of size \(L \times L \) pixels with \(L = 2^{9 - j}\).
 The figure shows the result for \(j = 1\), 2, 3, and 4, in which the full map
-was generated with a correlation length \(r_0 = 16\)~pixels.
+was generated with a correlation length \textcolor{red}{\(r_0 = 32\)~pixels}.
 We then calculate the individual structure function for each tile and
 find the mean and standard deviation for each level of subdivision,
-showing the results in Figure~\ref{fig:finite-box}b.
+showing the results in \textcolor{red}{Figure~\ref{fig:finite-box}b}.
 It can be seen that the mean structure functions for each level
 of subdivision (shown by colored dots and solid lines)
 overlap very closely with one another, apart from deviations
@@ -2348,7 +2338,7 @@ directly averaging over the pixels in the tile using equation~\eqref{eq:sig-pos}
 while the apparent correlation length \(r_0\)
 is found as the separation \(r\) for which \(B(r) = \sigma^2\),
 using the tile's own empirically measured structure function and variance.
-In Figure~\ref{fig:finite-box-effect}a we show how these
+In \textcolor{red}{Figure~\ref{fig:finite-box-effect}a} we show how these
 quantities deviate from the ``true'' values
 (as measured on the full \(512 \times 512\) map)
 as a function of the tile size \(L\).
@@ -2366,23 +2356,23 @@ means there will be a concomitant underestimate of \(r_0\).
 However, it is possible to do a considerably better job
 of recovering the true \(\sigma^2\) and \(r_0\) by fitting our
 heuristic model structure function of equation~\eqref{eq:model-strucfunc-ideal}.
-This is shown in Figure~\ref{fig:finite-box-effect}b, where it can be seen
-that the true parameters are reliably recovered so long as \(L > 3 r_0\),
+This is shown in \textcolor{red}{Figure~\ref{fig:finite-box-effect}b}, where it can be seen
+that the true parameters are reliably recovered so long as \textcolor{red}{\(L > 5 r_0\)},
 which is a roughly \SI{0.5}{dex} improvement over the purely empirical method.
 In order for the model fitting to work, the tile size must be large enough
 that the structure function begins to show some flattening at the largest scales,
 which is why the results are still inaccurate for the smallest values of \(L\)
 that sample only the rising power-law portion of \(B(r)\). 
 
-\subsection{Effects of seeing}
+\textcolor{red}{\subsection{Effects of seeing}}
 \label{sec:effects-seeing-struc}
 
 \begin{figure}
   \begin{tabular}{@{} l @{}}
     (a)\\
-    \includegraphics[width=\linewidth]{Figures/fake-seeing-nonp-thumbnails}\\
+    \includegraphics[width=\linewidth]{Figures/fake-3d-seeing-nonp-ems-fluct-thumbnails_sigE_1}\\
     (b)\\
-    \includegraphics[width=\linewidth]{Figures/fake-seeing-nonp-reduction}
+    \includegraphics[width=\linewidth]{Figures/fake-seeing-nonp-3d-ems-fluc_m4-reduction_sigE_1}
   \end{tabular}
   \caption{Effects of seeing on the structure function.
     (a)~Each row shows a different simulated random velocity field
@@ -2395,7 +2385,7 @@ that sample only the rising power-law portion of \(B(r)\).
     (b)~Relative change in the second-order structure function due to the gaussian smoothing.
     Solid lines with symbols show the average over the 4 maps of
     \(B(r, s_0) / B(r, s_0 = 0)\) as a function of separation \(r\),
-    with a separation of \(2 s_0\) indicated by a large filled circle on each curve.
+    with a separation of \textcolor{red}{\(2.6 s_0\)} indicated by a large filled circle on each curve.
     Dashed lines shows the empirical fit discussed in the text.
     The dotted line shows the correlation length of the original fields,
     while colored plus symbols show the apparent correlation length of the smoothed fields.
@@ -2414,16 +2404,16 @@ but an exact analytic treatment is difficult.
 We therefore prefer to empirically study the effect of seeing using the
 synthetic velocity maps described above.
 
-Figure~\ref{fig:seeing-reduction}a illustrates how four different
-synthetic velocity fields of size \(256\times256\) pixels
-and correlation length \(r_0 = \SI{16}{pixels}\)
+\textcolor{red}{Figure~\ref{fig:seeing-reduction}a} illustrates how four different
+synthetic \textcolor{red}{1st-moment maps of} size \(256\times256\) pixels
+and correlation length \textcolor{red}{\(r_0 = \SI{32}{pixels}\)}
 are affected by progressively broader gaussian seeing,
 with RMS width \(s_0 = 1\) to \SI{32}{pixels}.
 We calculate the structure function \(B(r)\) for each map and show
 in Figure~\ref{fig:seeing-reduction}b the average ratio between
 \(B(r)\) and the value in the absence of seeing,
 with different colors representing different values of \(s_0\).
-Results are shown for a power-law slope of \(m = 1.2\)
+Results are shown for a power-law slope of \textcolor{red}{\(m = 1.0\)}
 but we find very similar behaviour for other values of \(m\) within the range
 seen in our observations.
 For small values of \(s_0\), the principle effect is seen at
@@ -2436,10 +2426,22 @@ as indicated by the plus symbols in the figure.
 
 We find that the following simple analytic function reproduces
 these results to within better than 10\%:
+
+%\begin{equation}\label{eq:seeingemp2}
+%S(r; s_0, r_0) = \frac{e^{-s_0 / r_0}}{1+(2s_0 / r)^{2a}} ,
+%\end{equation}
+
+\textcolor{red}{
 \begin{equation}\label{eq:seeingemp2}
-S(r; s_0, r_0) = \frac{e^{-s_0 / r_0}}{1+(2s_0 / r)^{2a}} ,
+S(r; s_0, r_0) = 
+  \left [
+\left (1+\frac{1.25 s_0}{r_0} \right) 
+\left(1+ \left (\frac{2.6 s_0}{r} \right) ^{2a} \right)
+  \right ]^{-1} ,
 \end{equation}
-which is shown by dashed lines in Figure \ref{fig:seeing-reduction}b.
+}
+
+which is shown by dashed lines in \textcolor{red}{Figure \ref{fig:seeing-reduction}b}.
 The optimum value of the index \(a\) in this equation varies slightly
 with the power law slope \(m\) of the true structure function,
 but a compromise value of \(a = 0.75\) works tolerably well for \(m = 0.7\) to \(1.3\).
@@ -2823,7 +2825,7 @@ In the Figure~\ref{fig:strucfunc-fit-ExtraGal}c we show the structure function o
 The value of the observed \(\sigma\pos^2 = \SI{44}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{10}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{53}{km^{2}.s^{-2}}\) and \(r_0 = \SI{11}{pc} \)).
 The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{21}{pc} \).
 The maximum \(B(r)\) value is \SI{104}{km^{2}.s^{-2}} at a separation of \SI{30}{pc}. 
-For NGC 595 we see that the structure function plateau at this maximum \(B(r)\) value, which implies that the observed \(\sigma\pos^2\) is affected by the observational constraints.
+%For NGC 595 we see that the structure function plateau at this maximum \(B(r)\) value, which implies that the observed \(\sigma\pos^2\) is affected by the observational constraints.
 Until \(r_0 \sim \SI{55}{pc} \) the structure functions remains closely to the 'true' \(2\sigma\pos^2\), for the largest scale there is a decrease between  \(\SI{55}{pc} < r < \SI{110}{pc} \) where the structure function plateaus at the 'observed' \(2\sigma\pos^2\). 
 Above \SI{110}{pc} we see a very disperse downturn  until \SI{54}{km^{2}.s^{-2}} at a separation of \SI{211}{pc}.
 The seeing (RMS) is \SI{2.1}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}) and there are no points below this value.
