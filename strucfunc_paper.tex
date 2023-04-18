@@ -2567,12 +2567,13 @@ and comparison with previous results from the literature
 \label{sec:orion-nebula}
 
 The Orion Nebula (M42) is the prototype of a galactic \hii{} region located at a distance of 440 pc \citetext{\SI{1}{\arcsecond} = \SI{0.002}{pc}; \citealp{2008AJ....136.1566O}}.
-The O7 V star \(\uptheta^{1}\) Ori C is the most luminous and hottest star with an ionizing flux \(Q_0\) of \SI{e49.12}{photons.s^{-1}} \citep{2006A&A...448..351S} which translates to luminosity in \ha{} of \SI{e37.18}{erg.s^{-1}}. 
+The O7 V star \(\uptheta^{1}\) Ori C is the most luminous and hottest star with an ionizing flux \(Q_0\) of \SI{e49.12}{photons.s^{-1}} \citep{2006A&A...448..351S} which translates to luminosity in \ha{} of \SI{e37.18}{erg.s^{-1}}.
 With other 3 B-type stars they form the Trapezium cluster.
 The bright region that surrounds these massive ionizing stars is called the Huygens region.
 %In the southwest direction of the Huygens region there is a drop in the brightness as one approach a much larger region called Extended Orion Nebula \citetext{EON henceforth;  \citealp{2008Sci...319..309G}}
-The position of the Orion Nebula near the side of the Orion Molecular Cloud (OMC-1) make it an ongoing star formation with a large population of young star, some of which are the sources of stellar jets and Herbig-Haro objects \citep{1993ApJ...410..696O}.
-Its physical properties and kinematics, along its stellar population is documented in \citet{2001ARA&A..39...99O}.
+The position of the Orion Nebula on the near side of the Orion Molecular Cloud (OMC-1) makes it an ongoing site of star formation with a large population of young stars,
+some of which are sources of stellar jets and Herbig-Haro objects \citep{1993ApJ...410..696O}.
+Its physical properties and kinematics, along with its stellar population is documented in \citet{2001ARA&A..39...99O}.
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-orion}
@@ -2582,11 +2583,13 @@ Its physical properties and kinematics, along its stellar population is document
 Figure~\ref{fig:strucfunc-fit-Galactic}a shows the structure function of the Orion core.
 A detailed description of the model fit is given in section~\ref{sec:example-results-orion} and will not be repeated here.
 Using the observed structure function and by simple linear interpolation the value of \(\sigma\pos^2 = \SI{9}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{0.05}{pc} \) (as comparison to the derived values from our model which are \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) and \(r_0 = \SI{0.07}{pc} \)).
-The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{0.13}{pc} \) (this \(r\) value would be analog to the total decorrelation length \(\tau_0\), see section~\ref{sec:comp-with-prev}). 
-The maximum \(B(r)\) value correspond to \SI{23}{km^{2}.s^{-2}} at \(r = \SI{0.30}{pc}\).
-From this value the \(B(r)\) values decrease and it is possible to observe a downturn in the structure function from to \SI{7}{km^{2}.s^{-2}} at \(r =  \SI{0.5}{pc}\). 
-This 'hook' behavior is described by the tapered fluctuations (see section~\ref{sec:limit-model-struct}).
-If we consider the first valid point of \(B(r)\) to be above the derived value of \(s_0\), which corresponds to \SI{0.3}{km^{2}.s^{-2}} at \(r = \SI{0.003}{pc} \) and use a linear relation to calculate the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.66} and \num{0.89}, respectively, while our derived value is \num{1}.
+The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{0.13}{pc} \),
+which corresponds to the total decorrelation length \(\tau_0\), see section~\ref{sec:comp-with-prev}). 
+The maximum \(B(r)\) value is \SI{23}{km^{2}.s^{-2}} at \(r = \SI{0.30}{pc}\),
+beyond which the structure function declines to \SI{7}{km^{2}.s^{-2}} at \(r =  \SI{0.5}{pc}\). 
+This ``hook'' behavior can be explained by a radial gradient in the
+amplitude of the velocity fluctuations (see section~\ref{sec:limit-model-struct}).
+% If we consider the first valid point of \(B(r)\) to be above the derived value of \(s_0\), which corresponds to \SI{0.3}{km^{2}.s^{-2}} at \(r = \SI{0.003}{pc} \) and use a linear relation to calculate the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.66} and \num{0.89}, respectively, while our derived value is \num{1}.
 
 \paragraph*{EON}
 
@@ -2596,32 +2599,42 @@ but observed at a much lower angular resolution
 The data for this region are the lowest quality of all the regions in
 our sample, and there are too many degeneracies between the parameters
 to achieve a credible fit using the full model.
-We therefore fix the power slope to \(m = 1\),
-which implies that noise makes a significant contribution at all scales
+We therefore fix the power slope at \(m = 1\),
+which implies that noise must make a significant contribution at all scales
 in order to reproduce the observed flat structure function.
-In turn, this implies that the true \(\sigma^2\pos = \SI{5}{km^2.s^{-2}}\),
+In turn, this implies that a true \(\sigma^2\pos = \SI{5}{km^2.s^{-2}}\),
 which is lower than the \SI{7}{km^2.s^{-2}}
 that would be naively derived from the observations
 (compare green and orange lines in Figure~\ref{fig:strucfunc-fit-Galactic}b).
-The derived correlation length is \SI{0.5}{pc} which is above the \SI{0.3}{pc} required to determine the true correlation length but below the \SI{0.9}{pc} which guarantees that the fit can reliable determine \(r_0\). 
-The structure function at large scales resembles the tapered behavior of inhomogeneous fluctuations just like the core.
+% The derived correlation length is \SI{0.5}{pc} which is above the \SI{0.3}{pc} required to determine the true correlation length but below the \SI{0.9}{pc} which guarantees that the fit can reliable determine \(r_0\).
+Comparing the extended nebula with the core for the size scales where they overlap
+(\num{0.1} to \SI{0.5}{pc}), one sees that \(B(r)\) is roughly four times smaller
+in the EON than in the core for the same value of \(r\).
+This is further evidence for a decline in the fluctuation amplitude with radius,
+as mentioned above.
+Also consistent with this is a hook-like downturn in \(B(r)\) for \(r > 2 pc\)
+for the EON region.
+The fact that the derived \(r_0\) is larger for the EON region than the core
+(\SI{0.5}{pc} versus \SI{0.07}{pc}) means that the correlation length is also inhomogeneous,
+tending to increase from the center to the outskirts of the nebula. 
 
 %The seeing width is much smaller than the angular scale of the observations
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-orion}
 
-\citet{arthur2016turbulence} carried out a complete analysis by calculating the structure function of different emission lines in the inner Orion Nebula.
-On their work, they only consider one Gaussian component fit.
-They find tendency that higher ionization lines presents higher  dispersion and the steepness of the structure function slope. 
-They also make a comparison with previous work (see table~5 on their paper) founding a a broad agreement in results and the dependence between ionization energy and slope and dispersion value.
+\citet{arthur2016turbulence} calculated the structure function of different emission lines in the inner Orion Nebula with varying degrees of ionization. 
+They found that higher ionization lines show a larger velocity dispersion
+and a steeper structure function slope. 
+They also make a comparison with previous work (see Table~5 on their paper), finding a broad agreement in results and the dependence between ionization energy and slope and dispersion value.
 The work by \citet{arthur2016turbulence} is the only one that has calculated the structure function for the \ha{} emission line, for this reason it will be the only one that we use for comparison.
-The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [OIII] emission lines and for [SII] and [NII] they found \(m \sim 0.8 \pm 0.1\). 
+The power-law index obtained by \citet{arthur2016turbulence} are \(m \sim 1.2 \pm 0.1\) for \halpha\ and [\ion{O}{3}] emission lines and for [\ion{S}{2}] and [\ion{N}{2}] they found \(m \sim 0.8 \pm 0.1\). 
 The correlation length for all lines is \SI{\sim 0.05}{pc}, value obtained when the structure function is equal to \(\sigma\pos^2= \SI{9.37}{km^{2 }.s^{-2}}\).
 For the same \halpha\ observations, but considering high-velocity objects, we obtained a value of \num{1.07 \pm 0.03}, a correlation length of \SI{0.068 \pm 0.004}{pc} and \(\sigma\pos^2 = \SI{13 \pm 1}{ km^{2}.s^{-2}}\). 
-The difference with respect to this last value is due to the fact that \citet{arthur2016turbulence} masked areas with high values of centroid velocity (see figure~2 on their paper).
-Since there are the same observations there is a good agreement in the structure function.
-
+The difference with respect to this last value is due to the fact that \citet{arthur2016turbulence} masked areas with high values of centroid velocity (see Figure~2 on their paper).
+Since they are based on the same observational data,
+the differences of order 30\% between their results and our own
+are entirely due to the different methodologies employed. 
 
 \subsection{Lagoon Nebula}
 \label{sec:lagoon-nebula}
