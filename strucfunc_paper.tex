@@ -123,6 +123,49 @@
 \newcommand\shortsig[1]{\ensuremath{\sigma_{#1/#1_0}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength\SFwidth
+\setlength\SFwidth{0.45\textwidth}
+\newcommand\SFtwograph[2]{%
+  \includegraphics[width=\SFwidth]{Figures/sf-emcee-#1}
+  &  \includegraphics[width=\SFwidth]{Figures/sf-emcee-#2}
+}
+\newcommand\SFtwocorner[2]{%
+  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#1}
+  &  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#2}
+}
+
+
+\newcommand\sffigg[2]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwograph{#1}{#2}
+  \end{tabular}%
+}
+\newcommand\sffigggg[4]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwograph{#1}{#2}\\
+    (c)& (d)\\
+    \SFtwograph{#3}{#4}\\
+  \end{tabular}%
+}
+\newcommand\sfcfig[1]{%
+  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#1}%
+}  
+\newcommand\sfcfigg[2]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwocorner{#1}{#2}
+  \end{tabular}%
+}
+\newcommand\sfcfigggg[4]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwocorner{#1}{#2}\\
+    (c)& (d)\\
+    \SFtwocorner{#3}{#4}\\
+  \end{tabular}%
+}
 
 %%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
 
@@ -921,49 +964,7 @@ where the influence of these effects will be greatest.
 \section{Structure function fits}
 \label{sec:results}
 
-\newlength\SFwidth
-\setlength\SFwidth{0.45\textwidth}
-\newcommand\SFtwograph[2]{%
-  \includegraphics[width=\SFwidth]{Figures/sf-emcee-#1}
-  &  \includegraphics[width=\SFwidth]{Figures/sf-emcee-#2}
-}
-\newcommand\SFtwocorner[2]{%
-  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#1}
-  &  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#2}
-}
 
-
-\newcommand\sffigg[2]{%
-  \begin{tabular}{@{}ll@{}}
-    (a)& (b)\\
-    \SFtwograph{#1}{#2}
-  \end{tabular}%
-}
-\newcommand\sffigggg[4]{%
-  \begin{tabular}{@{}ll@{}}
-    (a)& (b)\\
-    \SFtwograph{#1}{#2}\\
-    (c)& (d)\\
-    \SFtwograph{#3}{#4}\\
-  \end{tabular}%
-}
-\newcommand\sfcfig[1]{%
-  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#1}%
-}  
-\newcommand\sfcfigg[2]{%
-  \begin{tabular}{@{}ll@{}}
-    (a)& (b)\\
-    \SFtwocorner{#1}{#2}
-  \end{tabular}%
-}
-\newcommand\sfcfigggg[4]{%
-  \begin{tabular}{@{}ll@{}}
-    (a)& (b)\\
-    \SFtwocorner{#1}{#2}\\
-    (c)& (d)\\
-    \SFtwocorner{#3}{#4}\\
-  \end{tabular}%
-}
 
 \begin{figure*}
   \centering
@@ -2895,49 +2896,13 @@ None of the previous studies obtained a power-law index or correlation length fo
 
 \section{Additional covariance corner plots for model fits}
 \label{sec:addit-covar-corn}
-Supplementary online-only material.
-%\clearpage
-
-\begin{figure*}
-  \centering
-  \sfcfigggg{OrionS}{OrionLH}{M8}{CarC}
-  \caption{
-    Corner plots of covariances between
-    fitted model parameters
-    of \ha{} structure function
-    for Galactic \hii{} regions.
-  }
-  \label{fig:corner-Galactic}
-\end{figure*}
-
-
-\begin{figure*}
-  \centering
-  \sfcfigg{N346}{Dor}
-  \caption{
-    Same as figure~\ref{fig:corner-Galactic}
-    except for Magellanic Cloud \hii{} regions. 
-  }
-  \label{fig:corner-MC}
-\end{figure*}
-
-\begin{figure*}
-  \centering
-  \sfcfigggg{HV}{HX}{N595}{N604H}
-  \caption{
-    Same as figure~\ref{fig:corner-Galactic}
-    except for \hii{} regions in more distant
-    Local Group Galaxies.
-  }
-  \label{fig:corner-ExtraGal}
-\end{figure*}
-
-\input{table-fit-parameters}
-
+Supplementary material
+\href{https://github.com/will-henney/javier-strucfunc-paper/blob/main/supplementary_material_strucfunc_paper.pdf}
+{available online}.
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
 % Don't change these lines
 \bsp	% typesetting comment
 \label{lastpage}

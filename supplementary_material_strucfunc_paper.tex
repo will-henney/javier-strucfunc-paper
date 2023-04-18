@@ -1,0 +1,234 @@
+% mnras_template.tex 
+%
+% LaTeX template for creating an MNRAS paper
+%
+% v3.0 released 14 May 2015
+% (version numbers match those of mnras.cls)
+%
+% Copyright (C) Royal Astronomical Society 2015
+% Authors:
+% Keith T. Smith (Royal Astronomical Society)
+
+% Change log
+%
+% v3.0 May 2015
+%    Renamed to match the new package name
+%    Version number matches mnras.cls
+%    A few minor tweaksto wording
+% v1.0 September 2013
+%    Beta testing only - never publicly released
+%    First version: a simple (ish) template for creating an MNRAS paper
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic setup. Most papers should leave these options alone.
+\documentclass[fleqn,usenatbib, useAMS, a4paper, onecolumn]{mnras}
+
+
+\usepackage{savesym}
+\savesymbol{tablenum}
+\usepackage{siunitx}
+\restoresymbol{SIX}{tablenum}
+
+
+% MNRAS is set in Times font. If you don't have this installed (most LaTeX
+% installations will e fine) or prefer the old Computer Modern fonts, comment
+% out the following line
+\usepackage{newtxtext}
+\usepackage[varg,varvw,smallerops]{newtxmath}
+% Depending on your LaTeX fonts installation, you might get better results with one of these:
+%\usepackage{mathptmx}
+%\usepackage{txfonts}
+
+% Use vector fonts, so it zooms properly in on-screen viewing software
+% Don't change these lines unless you know what you are doing
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+
+
+%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
+
+% Only include extra packages if you really need them. Common packages are:
+\usepackage{graphicx}	% Including figure files
+\let\Bbbk\relax
+\usepackage{amsmath}	% Advanced maths commands
+\usepackage{amssymb}	% Extra maths symbols
+\usepackage{multicol}
+\usepackage{enumerate}          % Better lists
+\usepackage{xcolor}
+
+\usepackage[spanish,es-minimal,english]{babel}
+
+%% Package set-up
+\usepackage{booktabs}
+\usepackage{array}   % for \newcolumntype macro
+\newcolumntype{L}{>{$}l<{$}} % math-mode version of lrc column types
+\newcolumntype{R}{>{$}r<{$}} 
+\newcolumntype{C}{>{$}c<{$}}
+
+% Use more muted colors for links
+\hypersetup{colorlinks=True, linkcolor=blue!50!black, citecolor=black,
+  urlcolor=blue!50!black}
+
+% Tweaks to siunitx configuration
+\sisetup{
+  % explicit""+" is useful for velocities
+  retain-explicit-plus = true,
+  % prefer 10^6 over 1 x 10^6
+  retain-unity-mantissa = false,
+  % Use x +/- e instead of x(e)  
+  separate-uncertainty = true,
+  % Make sure to pick up bold font when used in section heading for instance
+  detect-weight = true,
+}
+
+%\usepackage{orcidlink}
+
+\usepackage{upgreek}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
+
+% Please keep new commands to a minimum, and use \newcommand not \def to avoid
+% overwriting existing commands. Example:
+%\newcommand{\pcm}{\,cm$^{-2}$}	% per cm-squared
+
+% A better \ion command that works in more circumstances
+\newcommand\ION[2]{#1\,\scalebox{0.9}[0.8]{\uppercase{#2}}}
+
+\newcounter{ionstage}
+\renewcommand{\ion}[2]{\setcounter{ionstage}{#2}% 
+  \ensuremath{\mathrm{#1\,\scriptstyle\Roman{ionstage}}}}
+  
+\newcommand\hii{\ion{H}{2}}
+\newcommand\pos{\ensuremath{_{\mathrm{pos}}}}
+\newcommand\los{\ensuremath{_{\mathrm{los}}}}
+\newcommand\noise{\ensuremath{_{\text{noise}}}}
+\newcommand\obs{\ensuremath{_{\mathrm{obs}}}}
+\newcommand\model{\ensuremath{_{\mathrm{mod}}}}
+\newcommand\halpha{H${\alpha}$}
+\newcommand\n{[\ion{N}{II}]$\lambda$6584}
+\newcommand\oi{[\ion{O}{III}]$\lambda$5007}
+\newcommand\s{[\ion{S}{II}]$\lambda$6737}
+\newcommand\kms{$^{-1}$}
+
+\newcommand\ha{\ensuremath{\text{H}\upalpha}}
+\newcommand\hb{\ensuremath{\text{H}\upbeta}}
+\newcommand\Wav[1]{\ensuremath{\lambda #1}}
+% Chemical formulae
+\newcommand*\chem[1]{\ensuremath{\mathrm{#1}}}
+\newcommand\csound{\ensuremath{c_{\text{s}}}}
+\newcommand\FNa{\textsuperscript{a}}
+\newcommand\Mach{\ensuremath{\mathcal{M}}}
+\newcommand\longsig[1]{\ensuremath{\langle \delta #1^2 \rangle^{1/2} / #1_0}}
+\newcommand\shortsig[1]{\ensuremath{\sigma_{#1/#1_0}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newlength\SFwidth
+\setlength\SFwidth{0.45\textwidth}
+\newcommand\SFtwograph[2]{%
+  \includegraphics[width=\SFwidth]{Figures/sf-emcee-#1}
+  &  \includegraphics[width=\SFwidth]{Figures/sf-emcee-#2}
+}
+\newcommand\SFtwocorner[2]{%
+  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#1}
+  &  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#2}
+}
+
+
+\newcommand\sffigg[2]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwograph{#1}{#2}
+  \end{tabular}%
+}
+\newcommand\sffigggg[4]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwograph{#1}{#2}\\
+    (c)& (d)\\
+    \SFtwograph{#3}{#4}\\
+  \end{tabular}%
+}
+\newcommand\sfcfig[1]{%
+  \includegraphics[width=\SFwidth]{Figures/corner-emcee-#1}%
+}  
+\newcommand\sfcfigg[2]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwocorner{#1}{#2}
+  \end{tabular}%
+}
+\newcommand\sfcfigggg[4]{%
+  \begin{tabular}{@{}ll@{}}
+    (a)& (b)\\
+    \SFtwocorner{#1}{#2}\\
+    (c)& (d)\\
+    \SFtwocorner{#3}{#4}\\
+  \end{tabular}%
+}
+%%%%%%%%%%%%%%%%%%% TITLE PAGE %%%%%%%%%%%%%%%%%%%
+
+% Title of the paper, and the short title which is used in the headers.
+% Keep the title short and informative.
+\title[Turbulence in H II regions]{SUPPLEMENTARY MATERIAL\\
+  Turbulence in compact to giant H~II regions}
+
+% The list of authors, and the short list which is used in the headers.
+% If you need two or more lines of authors, add an extra line using \newauthor
+\author[J. García Vázquez et al.]{
+  J. García Vázquez$^{1}$\thanks{
+    E-mail: \href{mailto:jgarciav1600@alumno.ipn.mx}{jgarciav1600@alumno.ipn.mx}
+  },
+  William J. Henney$^{2}$
+  and H. O. Castañeda$^{1}$\thanks{Deceased.}
+\\
+% List of institutions
+$^{1}$Escuela Superior de Física y Matemáticas, Instituto Politécnico Nacional, U.P. Adolfo López Mateos, Zacatenco, Ciudad de México, México C.P. 07738\\
+$^{2}$Instituto de Radioastronomía y Astrofísica,
+Universidad Nacional Autónoma de México,
+Antigua Carretera a Pátzcuaro \#8701,\\
+Ex-Hda. San José de la Huerta, 
+Morelia, Michoacán, México C.P. 58089\\
+}
+
+% These dates will be filled out by the publisher
+\date{Accepted XXX. Received YYY; in original form ZZZ}
+
+% Enter the current year, for the copyright statements etc.
+\pubyear{2023}
+
+% Don't change these lines
+\begin{document}
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+\maketitle
+
+% % Abstract of the paper
+% \begin{abstract}
+%   Appendix D.
+% \end{abstract}
+
+% % Select between one and six entries from the list of approved keywords.
+% % Don't make up new ones.
+% \begin{keywords}
+% HII regions -- ISM: kinematics and dynamics -- turbulence 
+% \end{keywords}
+
+
+\definecolor{WillCommentColor}{rgb}{0.6,0.11,0.4}
+\newcommand\WILL[1]{\textbf{\color{WillCommentColor}#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\appendix
+\addtocounter{section}{3}
+\input{sf_appendix_D}
+% Don't change these lines
+\bsp	% typesetting comment
+\label{lastpage}
+\end{document}
+
+% End of mnras_template.tex
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
