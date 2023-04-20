@@ -862,8 +862,8 @@ the model structure function by a factor:
 \begin{equation}\label{eq:ffs}
   \color{red}
   S(r) =
-  \left[ \frac{1}{1 + a_1 s_0 / r_0} \right]
-  \left[ \frac{1}{1 + (a_2 s_0 / r)^{a_3}} \right]
+  \left[ \frac{1}{1 + 1.25 s_0 / r_0} \right]
+  \left[ \frac{1}{1 + (2.6 s_0 / r)^{1.5}} \right]
   ,
   %  S(r) = \frac{
   %   e^{-s_0 / r_0}
@@ -876,14 +876,6 @@ where \(s_0\) is the RMS width of the seeing profile\footnote{%
   \(2 (2 \ln 2)^{1/2} s_0 \approx 2.35 s_0\).
 },
 and \(r_0\) is the correlation length.
-\textcolor{red}{%
-  The exact values of the constants \(a_1\), \(a_2\), \(a_3\)
-  are found to depend slightly on the power law slope \(m\)
-  and the magnitude of the emissivity fluctuations \(\shortsig{E}\)
-  (see Appendix~\ref{sec:degr-struct-funct}).
-  We adopt the compromise values \(a_1 = 1.25\),
-  \(a_2 = 2.6\), and \(a_3 = 1.5\), which fit the numerical results to
-  within 20\% for \(0.8 < m < 1.2\) and \(0.5 < \shortsig{E} < 2.0\).}
 An example is shown by the green line in Figure~\ref{fig:model-strucfunc}a.
 The effect of seeing is to make the structure function 
 bend down away from the idealized power law, 
@@ -2464,11 +2456,18 @@ these results to within better than 10\%:
 \begin{equation}\label{eq:seeingemp2}\color{red}
 S(r; s_0, r_0) = 
   \left [
-\left (1+\frac{1.25 s_0}{r_0} \right) 
-\left(1+ \left (\frac{2.6 s_0}{r} \right) ^{2a} \right)
+\left (1+a_1\frac{s_0}{r_0} \right) 
+\left(1+ \left (a_2 \frac{ s_0}{r} \right) ^{a_3} \right)
   \right ]^{-1} ,
 \end{equation}
 which is shown by dashed lines in \textcolor{red}{Figure \ref{fig:seeing-reduction}b}.
+\textcolor{red}{%
+  The exact values of the constants \(a_1\), \(a_2\), \(a_3\)
+  are found to depend slightly on the power law slope \(m\)
+  and the magnitude of the emissivity fluctuations \(\shortsig{E}\).
+  We adopt the compromise values \(a_1 = 1.25\),
+  \(a_2 = 2.6\), and \(a_3 = 1.5\), which fit the numerical results to
+  within 20\% for \(0.8 < m < 1.2\) and \(0.5 < \shortsig{E} < 2.0\).}
 The optimum value of the index \(a\) in this equation varies slightly
 with the power law slope \(m\) of the true structure function,
 but a compromise value of \(a = 0.75\) works tolerably well for \(m = 0.7\) to \(1.3\).
