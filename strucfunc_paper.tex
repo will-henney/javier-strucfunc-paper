@@ -535,7 +535,7 @@ We use the velocity field presented in \citet{1987A&A...176..347H} to analyze th
 The EON is an extended region in southwest direction from the Huygens region which presents a diminution in the brightness.
 The observational data was obtained using a Fabry-Pérot interferometer with a étalon separation of 0.5 mm on the 106 cm-Cassegrain telescope at Observatorium Hoher List. 
 A number of fifteen interferograms have been taken with different pointing directions of the telescope's optical axis in the nebula with an exposure time between 10 and 40 minutes. 
-The exposures are overlapped and fall into one square of a grid with a width of \SI{1}{arcmin} centered at \(\uptheta^{1}\)Ori C.   
+The exposures are overlapped and fall into one square of a grid with a width of \SI{1}{arcmin} centered at \(\uptheta^{1}\)Ori~C.   
 
 
 \subsubsection{FLAMES multi-fiber spectroscopy}
@@ -2582,13 +2582,30 @@ Its physical properties and kinematics, along with its stellar population is doc
 
 Figure~\ref{fig:strucfunc-fit-Galactic}a shows the structure function of the Orion core.
 A detailed description of the model fit is given in section~\ref{sec:example-results-orion} and will not be repeated here.
-Using the observed structure function and by simple linear interpolation the value of \(\sigma\pos^2 = \SI{9}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{0.05}{pc} \) (as comparison to the derived values from our model which are \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) and \(r_0 = \SI{0.07}{pc} \)).
-The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{0.13}{pc} \),
-which corresponds to the total decorrelation length \(\tau_0\), see section~\ref{sec:comp-with-prev}). 
-The maximum \(B(r)\) value is \SI{23}{km^{2}.s^{-2}} at \(r = \SI{0.30}{pc}\),
+% The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{0.13}{pc} \),
+% which corresponds to the total decorrelation length \(\tau_0\), see section~\ref{sec:comp-with-prev}). 
+At scales larger than the correlation length,
+a maximum \(B(r)\) value of \SI{23}{km^{2}.s^{-2}} is seen at \(r = \SI{0.30}{pc}\),
 beyond which the structure function declines to \SI{7}{km^{2}.s^{-2}} at \(r =  \SI{0.5}{pc}\). 
 This ``hook'' behavior can be explained by a radial gradient in the
 amplitude of the velocity fluctuations (see section~\ref{sec:limit-model-struct}).
+
+An alternative approach to determine the velocity variance and correlation length
+is to empirically measure \(\sigma\pos^2\) from the observations and then to use linear
+interpolation on the measured structure function to find the point where \(B(r_0) = \sigma\pos^2\).
+This yields \(\sigma\pos^2 = \SI{9}{km^{2}.s^{-2}}\) and \(r_0 = \SI{0.05}{pc} \),
+as compared to the model-derived values of \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) and \(r_0 = \SI{0.07}{pc} \)).
+The main reason for the discrepancy is the finite box effect
+discussed in section~\ref{sec:finite-box-effects} above, where it is shown
+that for homogeneous fluctuations it is necessary to sample a map of size \(L > 10 r_0\)
+in order to empirically determine \(\sigma\pos^2\).
+In the case of the Orion core observations, \(L = 7 r_0\),
+so the fluctuations are not fully sampled, leading
+to the empirical \(\sigma\pos^2\) being an underestimate.
+However, given the evidence for a radial gradient in the amplitude of the velocity fluctuations,
+it could be argued that the finite box effect is not so important as it would be for homogeneous fluctuations
+and it is instead the model-derived value of \(\sigma\pos^2\) that is an overestimate.
+
 % If we consider the first valid point of \(B(r)\) to be above the derived value of \(s_0\), which corresponds to \SI{0.3}{km^{2}.s^{-2}} at \(r = \SI{0.003}{pc} \) and use a linear relation to calculate the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.66} and \num{0.89}, respectively, while our derived value is \num{1}.
 
 \paragraph*{EON}
@@ -2612,7 +2629,7 @@ Comparing the extended nebula with the core for the size scales where they overl
 in the EON than in the core for the same value of \(r\).
 This is further evidence for a decline in the fluctuation amplitude with radius,
 as mentioned above.
-Also consistent with this is a hook-like downturn in \(B(r)\) for \(r > 2 pc\)
+Also consistent with this is a hook-like downturn in \(B(r)\) for \(r > \SI{2}{pc}\)
 for the EON region.
 The fact that the derived \(r_0\) is larger for the EON region than the core
 (\SI{0.5}{pc} versus \SI{0.07}{pc}) means that the correlation length is also inhomogeneous,
@@ -2646,51 +2663,84 @@ they masked out the locations of known high-velocity Herbig-Haro flows, whereas 
 \subsection{Lagoon Nebula}
 \label{sec:lagoon-nebula}
 
-The Lagoon Nebula (M8, NGC6523) is located at a distance of 1250 pc \citetext{\SI{1}{\arcsecond} = \SI{0.006}{pc} ; \citealp{2005A&A...430..941P}}.
-It contains the young stellar cluster NGC6530 and the region is illuminated by different massive stars of spectral types O and B, the hottest being 9 Sgr, type O4V \citep{Damiani:2017b}.
-Optically, the brightest part of the nebula is called 'Hourglass nebula' which surrounds and obscures the O7 star Herschel 36 \citep{1986AJ.....91..870W}.
-These stars gives an ionizing flux \(Q_0\) of \SI{e49.41}{photons.s^{-1}} (2 times higher compared to the Orion Nebula) and the luminosity in \ha{} of \SI{e37.47}{erg.s^{-1}} \citep{1984ApJ...287..116K}.
+The Lagoon Nebula (M8, NGC~6523) is located at a distance of \SI{1250}{pc}  \citetext{\SI{1}{\arcsecond} = \SI{0.006}{pc} ; \citealp{2005A&A...430..941P}}.
+It contains the young stellar cluster NGC~6530 and the region is illuminated by different massive stars of spectral types O and B, the hottest being 9~Sgr, type O4V \citep{Damiani:2017b}.
+The optically brightest part of the nebula is denoted the ``Hourglass nebula'',
+which is illuminated by the O7 star Herschel~36 \citep{1986AJ.....91..870W}.
+These stars gives an ionizing flux \(Q_0 = \SI{e49.41}{photons.s^{-1}}\) (2 times higher than in the Orion Nebula) and the luminosity in \ha{} is \SI{e37.47}{erg.s^{-1}} \citep{1984ApJ...287..116K}.
 The mean non-thermal linewidth in \ha{} is \SI{11.7 \pm 1.6}{km.s^{-1}} \citep{1973ApJ...183..851B}.
-The velocity field shows several expanding shells, related to the stellar population, and the massive protostar M8East-IR \citep{1984ApJ...278..170S} indicating that recent star formation. 
-A blueshifted, neutral layer is also in very good agreement with predictions of champagne-flow models of blister \hii{} regions \citep{Damiani:2017b}. 
+Molecular gas and ongoing star formation are present in the region around
+Herschel~36 \citep{Arias:2006e, Tiwari:2018a} and the lower-luminosity region
+M8~East \citep{1984ApJ...278..170S, Tiwari:2020a}.
+% The velocity field shows several expanding shells, related to the stellar population, and the massive protostar M8East-IR \citep{1984ApJ...278..170S} indicating that recent star formation.
+% A blueshifted, neutral layer is also in very good agreement with predictions of champagne-flow models of blister \hii{} regions \citep{Damiani:2017b}. 
 The properties of the nebula are reviewed by \citet{2008hsf2.book..533T}.
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-lagoon}
 
-We follow the same procedure we use to describe the observed structure function of the Orion Nebula for the rest of the regions.
-The Figure~\ref{fig:strucfunc-fit-Galactic}c shows the structure function of the Lagoon nebula.
-This region presents a non-uniform behavior below the derived correlation length but still it is possible to see the characteristic ascending values of the structure function.
-The value of the observed \(\sigma\pos^2 = \SI{8}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{1}{pc} \) (in this case there is a good agreement with the derived values from our model which are \(\sigma\pos^2 = \SI{7}{km^{2}.s^{-2}}\) and \(r_0 = \SI{1}{pc} \)).
-The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{2.5}{pc} \).
-From this point the structure function shows a 'reversed hook' behavior, which mean that there is a decrease in \(B(r)\) values up until \(r_0 = \SI{4}{pc} \)) for a value of \SI{11}{km^{2}.s^{-2}}, which from this point the structure function ascends until it reaches \SI{66}{km^{2}.s^{-2}} around \SI{20}{pc}.
-This may be because our observations doesn't cover and outer correlation region (see sections~\ref{sec:D-vs-r0}) or an indication of some periodic behavior (see sections~\ref{sec:limit-model-struct}).
-There aren't any points affected by the seeing (RMS) which has a value of \SI{0.01}{pc} (\(s_0\)=\SI{3.5}{\arcsecond}).
-If we consider the first point of this \(B(r)\) to be valid, which corresponds to \SI{0.55}{km^{2}.s^{-2}} at \(r = \SI{0.05}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.89} and \num{0.86}, respectively, while our derived value is \num{1.26}.
+% We follow the same procedure we use to describe the observed structure function of the Orion Nebula for the rest of the regions.
+Figure~\ref{fig:strucfunc-fit-Galactic}c shows the structure function of the Lagoon nebula.
+The model fit gives \(\sigma\pos^2 = \SI{7 \pm 1}{km^{2}.s^{-2}}\), \(r_0 = \SI{1 \pm 0.2}{pc} \), and \(m = 1.26 \pm 0.2\).
+In this case, there is good agreement between the model value and empirically value of \(\sigma\pos^2\),
+indicating that finite box effects are unimportant.
+On the other hand, the model-derived \(m\) is steeper than would be naively derived
+from the observations, which is a symptom of the effects  of noise.
+At separations smaller than the correlation length, the structure function shows irregular oscillations about the mean ascending trend,
+which are a symptom of the relatively small number of spatial points in this source.
+
+At scales much larger than the correlation length
+the structure function begins to increase again, reaching a value of \SI{66}{km^{2}.s^{-2}} at \SI{20}{pc},
+which is greater than \(9 \sigma\pos^2\).
+As discussed in section~\ref{sec:evid-inhom-at}, this may be a sign of periodicity
+or a large-scale gradient in the velocity field.
+
+% There aren't any points affected by the seeing (RMS) which has a value of \SI{0.01}{pc} (\(s_0\)=\SI{3.5}{\arcsecond}).
+% If we consider the first point of this \(B(r)\) to be valid, which corresponds to \SI{0.55}{km^{2}.s^{-2}} at \(r = \SI{0.05}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{0.89} and \num{0.86}, respectively, while our derived value is \num{1.26}.
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-lagoon}
-The Lagoon Nebula was previously studied by \citet{Chakraborty:1999a} using the [\ion{O}{3}] \Wav{5007} line.
-The structure function was computed on an area of \num{1} \(\times\) \SI{1}{arcmin^2} centered at Herschel 36.
-Compared to our which data spans between \num{0.1} and \SI{10}{pc}), their results cover smaller scales, between \num{0.012} and \SI{0.3}{pc}.
-\citet{Chakraborty:1999a} report a  law behavior of \(m = 0.46\)
-for all its range.
-They mentioned the nebular gas physical conditions and the presence of gradients as responsible for the discrepancy of the theoretical 2/3 value.
-No flattening of the structure function at the largest scales was seen, but that is to be expected due to the finite box effect (see Appendix~\ref{sec:finite-box-effects}), but argue the possibility that the turbulent energy input is at more than one spacial scale.
-With the aid of the 2D-autocorrelation function (using \(1/e\)) they found a characteristic turbulent scale of \SI{0.12}{pc}.
-We found \(r_0 = \SI{1 \pm 0.1}{pc}\) for this nebula, which is several times larger than the region mapped by \citet{Chakraborty:1999a}.
-On the other hand, the magnitude of the velocity dispersion found by these authors greatly exceeds our own measurements.
-For instance, they find \(B(r) = \SI{278}{km^2.s^{-2}}\) at \SI{0.2}{pc}, whereas we find \(B(r) \approx \SI{2}{km^2.s^{-2}}\) at the same scale, which corresponds to a discrepancy of more than a factor of a hundred in \(\sigma^2\pos\).
-This may be due in part to the fact that \citet{Chakraborty:1999a}
-observed a small and atypical part of the nebula known as the
-Hourglass region, which includes a cluster of very young stars
-\citep{Arias:2006e}. 
-In the case of the Orion Nebula we found that the velocity dispersion
-of the central region was larger than that of the extended nebula
-and this could be an example of a similar phenomenon,
-albeit to a more extreme degree.
-\citet{Chakraborty:1999a} mentioned a good agreement between \citet{1986ApJ...304..767O}  which show different HII regions structure functions slopes between \(m = 0.18 - 0.45\) and \citet{1987ApJ...317..676O} which cover an area around 9 Sgr in M8.
-The first investigation in the Lagoon nebula structure function is from \citet{1970A&A.....8..486L} which claims that a value of \(m = 2/3\) satisfies their observations agreeing with the Kolmogorov Law.
+The first investigation of the Lagoon nebula structure function is from \citet{1970A&A.....8..486L},
+who use Fabry-Perot observation of the \ha{} line to probe scales
+between \SI{0.7}{pc} and \SI{7}{pc}.
+They find a rising power-law behavior with slope of \(m = 0.64\),
+which is slightly smaller than the value we derive.
+However, given the very coarse binning in separation of their structure function,
+and the fact that they do not account for noise or the flattening of the structure function at large scales,
+their results are broadly consistent with ours,
+with the value of \( \sigma\pos^2 = \SI{16}{km^{2}.s^{-2}}\) at \(r = \SI{3.5}{pc}\) being almost
+identical to our own value at that scale.
+
+More recent measurements of the structure function of the Lagoon Nebula
+have used the [\ion{O}{3}] \Wav{5007} line and have probed smaller scales.
+\citep{1987ApJ...317..676O} used longslit observations at a small number of position angles
+to study the structure function over an area \(\num{2} \times \SI{2}{arcmin^2}\),
+centered on the nebula's principal ionizing star, 9~Sgr.
+However, it is hard to compare their results to ours, as they carry out
+a Gaussian decomposition of the line profile into two components, A and B,
+and analyse the structure function of the two components separately.
+The total variance of component A (the stronger and narrower of the two)
+is \SI{2}{km^{2}.s^{-2}} at scales \(< \SI{1}{pc}\),
+which is significantly smaller than our value of \SI{7}{km^{2}.s^{-2}},
+but this is not surprising since they are probing scales smaller than the
+correlation length and therefore suffer from a severe finite-box effect.
+Component~B on the other hand shows a much larger variance
+of \SI{13}{km^{2}.s^{-2}} and an essentially flat structure function.
+
+Another [\ion{O}{3}] \Wav{5007} study \citep{Chakraborty:1999a}
+calculated the structure function in the Hourglass region of the nebula:
+an area of \(\num{1} \times \SI{1}{arcmin^2}\) centered at Herschel~36.
+As compared to the data used in this paper, which spans between \num{0.1} and \SI{10}{pc}),
+their results cover smaller scales, between \num{0.012} and \SI{0.3}{pc}.
+\citet{Chakraborty:1999a} report a rising power-law behavior with slope of \(m = 0.46\) over the entire range.
+No flattening of the structure function at the largest scales was seen, but that is to be expected
+if the correlation length is larger than the size of the region mapped.
+The amplitude of the fluctuations is much higher (\(\sigma^2\pos = \SI{130}{km^2.s^{-2}}\)
+than we find for the wider nebula (\(\sigma^2\pos = \SI{7}{km^2.s^{-2}}\)),
+suggesting an even more extreme version of the inhomogeneity that we find in the Orion Nebula.
+This is supported by the fact that the Hourglass region also shows
+much larger line widths than the rest of the nebula \citep{Chakraborty:1999a},
+which is probably a symptom of the ongoing active star formation in that region.
 
 \subsection{Carina Nebula}
 \label{sec:carina-nebula}
