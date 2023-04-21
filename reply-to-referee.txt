@@ -1,0 +1,66 @@
+			 ______________________
+
+			    REPLY TO REFEREE
+
+			  García-Vázquez et al
+			 ______________________
+
+
+,----
+| will be happy to recommend the manuscript for publication after some
+| clarification of some details:
+| 
+| To study the Finite box effects, as well as that of seeing the authors
+| do an interesting exercise with idealized data (as fractional Brownian
+| motion -fBm- 2D data modified to include a correlation taper).  This
+| approach is very clear, but there is one issue that requires
+| attention, and that is that of the projection from a 3D field to a 2D
+| field.  In reality the density/velocity fields are three-dimensional
+| but some information is lost in the projection to a 2D map.  For the
+| exercise presented in appendix A, the authors use a 2D map that was
+| modified to include the proper spectral index (n_2D = m +2) and a
+| correlation length r_0, in reality one would have a 3D map with a
+| spectral index (n_3D = m +3), which if integrated along the line of
+| sight would change the spectral index from n_3D to n_2D (and within
+| the transition some inertial range could be 'lost') .
+| 
+| In other words in the current version of the paper the r_0 is entirely
+| in the plane of the sky, while in reality should correspond to the 3D
+| field, and at the same time the transition from a 3D to a 2D map could
+| curve more the structure functions.  I believe that it would be
+| beneficial to obtain the 2D map from collapsing a 3D fBm (with an
+| index m+3) and the same exponential taper used and verify that the
+| main results hold, or discuss this an additional limitation.
+`----
+
+
+We thank the referee for the insightful comments. It is quite true that
+our approach of directly simulating 2d maps is not strictly correct and
+that we should really simulate three dimensional fields and then project
+them down to two dimensions for further analysis. So, we have done this
+and the results of Appendix A have now been completely replaced. It
+turns out that the new results are extremely similar to the old ones, so
+the changes to the text (highlighted in red in the manuscript) are
+minimal.
+
+One new issue that we had to grapple with in order to use this more
+realistic approach is that we needed to simulate the three dimensional
+emissivity field (assumed proportional to ionized density squared for H
+alpha) as well as the three dimensional velocity field.  For this, we
+used the results shown in our Figure 12 to estimate the variance in the
+emissivity, which we assumed to follow a log-normal distribution.  For
+the spatial properties of the emissivity fluctuations, we assumed that
+the correlation length and power law index was the same as for the
+velocity and that the velocity and emissivity fluctuations have no
+mutual correlation.  We investigated three different values of the rms
+emissivity dispersion: sigma_E = 0, 1, and 2 (in units of the mean
+value). The results were very similar in all cases, and we only show the
+sigma_E = 1 case in the paper, since this is the most appropriate for
+the majority of our regions.
+
+With the new results, we found an improved analytic approximation for
+the effects of seeing (equation 15 and A1). We have therefore re-run all
+of the model fits in section 4, but the results change by less than 1%.
+
+We have also taken the opportunity to improve some of the descriptions
+of individual regions in Appendix C.
