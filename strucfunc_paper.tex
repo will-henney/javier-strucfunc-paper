@@ -2827,14 +2827,60 @@ and has been interpreted as evidence for rotation of the cluster.
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-30dor}
 
-\citet{Melnick:2021x} also investigated the structure function in 30~Doradus finding that the structure function is entirely flat on scales from \num{3} to \SI{200}{pc}.
-This does not agree with our results, since we establish the existence of correlations up to the maximum value of the structure function that occurs at \SI{20}{pc}, separation where a value of 2\(\sigma\pos^2\) is reached.
-The VLT FLAMES/GIRAFFE observations of \citet{Melnick:2021x} may not have had the resolution to resolve the correlations at small separations, however an inspection of its velocity map (figure 7 in their work) shows that the velocity distribution is not completely random.
-\citet{Melnick:2021x} \(\sigma\pos\) values range from \num{11.6} to \SI{18.2}{km.s^{-1}} for a diverse type of fits (see figure~15 on their paper).
-The first attempt at characterizing turbulence in a giant extragalactic \hii{} region, GEHR, was done by \citet{1961MNRAS.122....1F} with the 30~Doradus complex, finding no indication of turbulent motions between spatial scales of \num{10} and \SI{100}{pc}.
-The \citet{1961MNRAS.122....1F} is in broad agreement with the \citet{Melnick:2021x} results in which they consider profiles classified as singles.
-The large scales of our structure function falls between the two previous results.
-The previous happens at \SI{5}{pc} and \SI{40}{pc} (which covers small-to-intermediate scale for previous investigations and large scales for us) and for \(B(r)\) between \num{250} to \SI{600}{km^{2}.s^{-2}} where our results show a downward 'hook' pattern.
+\citet{1961MNRAS.122....1F} investigated the structure function in 30~Doradus by using
+spectra at \(N = 37\) different points, spread over a region of diameter \SI{150}{pc}
+and with minimum separation of \SI{4}{pc}.
+Velocities were measured by combining results from multiple spectral lines in
+the blue spectral region, the strongest being of [\ion{O}{2}], [\ion{O}{3}], and \hb{}.
+They found an essentially flat \(B(r)\) for \(r > \SI{10}{pc}\) with
+\(\sigma\pos^2 = \SI{130}{km.s^{-1}}\), which is roughly half the value that we determine for the
+central region of the nebula (of diameter \SI{30}{pc}).
+This implies that the amplitude of the fluctuations is falling with radius,
+similar to what we inferred above for the Orion Nebula.
+For the smallest separations, of order \SI{4}{pc}, they found that \(B(r)\) declined
+significantly, although an exact measurement was hampered by uncertainties in the
+correction for the effects of noise.
+This behavior is consistent with our own value of \(r_0 = \SI{4}{pc}\),
+suggesting that the correlation length is not greatly different
+in the wider area covered by their study.
+This is a clear difference from the Orion Nebula,
+where we find a significantly larger correlation length
+in the extended nebula than in the core. 
+
+\citet{Melnick:1987a} used Fabry-Perot observations in \ha{} and [\ion{O}{3}]
+from \citet{Smith:1972a} to calculate
+the structure function over a region of diameter \SI{50}{pc},
+which is smaller than in \citet{1961MNRAS.122....1F}
+but with a slightly larger number of spatial samples (\(N = 44\)).
+They found an approximately flat \(B(r)\) for \(r > \SI{20}{pc}\)
+and a shallow rising power law, \(\text{index} \approx 0.16\), for \(r = 5\) to \SI{20}{pc},
+with \(\sigma\pos^2 \approx \SI{280}{km.s^{-1}}\).
+This is similar to our own results over the same range of separations,
+including the local peak in \(B(r)\) at \(r = \SI{20}{pc}\),
+which is clearly visible in Figure~A2 of \citet{Melnick:1987a}.
+The reason that \citeauthor{Melnick:1987a} measure such a shallow slope for their smallest
+separations is that they are only sampling the range from \(1.25 r_0 \to 5 r_0\),
+in which the structure function is tending toward its asymptotic value of \(2 \sigma\pos^2\).
+In order to measure the power-law portion of the structure function,
+it would be necessary to sample separations as small as \SI{1}{pc} or \SI{4}{arcsec}.
+
+\citet{Melnick:2021x} used \ha{} spectra from VLT FLAMES/GIRAFFE (see section~\ref{sec:flames-multi-fiber}) for \(N = 1668\) distinct fiber positions
+covering a region of diameter \SI{300}{pc}
+\citep{Torres-Flores:2013t}.
+They claim to find a completely flat structure function on scales from \num{3} to \SI{200}{pc},
+which seriously conflicts with our own observations at the lower end of this range.
+In particular, their two smallest separation bins are centered on \(r = 2.5\) and \SI{7.5}{pc},
+for which our own results yield \(B(r) / \sigma\los^2 \approx 0.7\) and \(1.3\),
+respectively (our Figure~\ref{fig:strucfunc-fit-MC}a),
+whereas they find \(B(r) / \sigma\los^2 \approx 2.0\) at all separations (see their Figure 15).
+We are at a loss to explain this discrepancy, which is inconsistent not only with our own results,
+but also with those of \citet{1961MNRAS.122....1F} and \citet{Melnick:1987a},
+who both found at least some evidence for a downturn in \(B(r)\) for \(r < \SI{10}{pc}\). 
+The result also seems to contradict the evidence of their own Figures~7 and~13,
+which show spatial coherence in the velocity field.
+If the structure function were truly flat, then blue shifted and red shifted profiles
+would be randomly mixed spatially, which is not observed. 
+
 
 \subsection{NGC 346}
 \label{sec:ngc-346}
