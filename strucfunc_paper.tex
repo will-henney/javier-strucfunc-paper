@@ -86,7 +86,7 @@
 
 \usepackage{upgreek}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\usepackage{placeins}
 %%%%% AUTHORS - PLACE YOUR OWN COMMANDS HERE %%%%%
 
 % Mark new changes in red
@@ -2242,7 +2242,12 @@ from the github repository \url{https://github.com/JavGVastro/PhD.Paper}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \appendix
-\colorlet{RED}{red}
+
+% Be more lenient about float placement
+\renewcommand\textfraction{0.0}
+\renewcommand\topfraction{1.0}
+\renewcommand\bottomfraction{1.0}
+
 \startNEW
 \section{Degradation of the structure function due to observational limitations}
 \label{sec:degr-struct-funct}
@@ -2486,7 +2491,8 @@ but a compromise value of \(a = 0.75\) works tolerably well for \(m = 0.7\) to \
 We therefore use this equation to represent the seeing
 in our structure function fits (section~\ref{sec:results}),
 with \(s_0\) as an additional free parameter for the models.
-\clearpage
+
+\FloatBarrier
 
 \section{Apparent velocity fluctuations from emissivity fluctuations}
 \label{sec:appar-veloc-fluct}
@@ -2983,43 +2989,49 @@ Inspection of the velocity field (Figure~\ref{fig:velocity-maps}) shows that thi
 
 We have found no previous studies of NGC~346's structure function in the literature.
 
+
 \subsection{Hubble X and Hubble V in NGC 6822}
 \label{sec:6822-hubble}
 %
-The irregular dwarf galaxy, NGC 6822, is located at a distance of 500 kpc \citetext{\SI{1}{\arcsecond} = \SI{2.42}{pc} ; \citealp{2012A&A...540A.135S}} and host the \hii{} regions Hubble X and Hubble V which are the brightest regions in the galaxy.
+The irregular dwarf galaxy, NGC 6822, is located at a distance of \SI{500}{kpc} \citetext{\SI{1}{\arcsecond} = \SI{2.42}{pc}; \citealp{2012A&A...540A.135S}} and hosts the \hii{} regions Hubble~X and Hubble~V which are the brightest regions in the galaxy
+\NEW{\citep{Hodge:1989c}}.
 
-Hubble V is located near the 'Hodge OB 8' OB association with a number of \num{\sim 36} young stellar objects \citep{2021MNRAS.507.5106K} and its core is powered by an O3 V star \citep{1999PASP..111.1382O}.
+Hubble V is located near the ``Hodge OB 8'' OB association with a number of \num{\sim 36} young stellar objects \citep{2021MNRAS.507.5106K} and its core is powered by an O3 V star \citep{1999PASP..111.1382O}.
 It has an ionizing output \(Q_0\) of \SI{e50.23}{photons.s^{-1}} (13 times higher compared to the Orion Nebula) and has a \ha{} luminosity of \SI{e38.30}{erg.s^{-1}}\citep{2002MNRAS.329..481B}.
-The mean non-thermal linewidth in \ha{} \SI{10.3 \pm 0.03}{km.s^{-1}} \citep{1986A&A...160..374H}.
+The mean non-thermal linewidth in \ha{} \(\sigma\los = \SI{10.3 \pm 0.03}{km.s^{-1}}\) \citep{1986A&A...160..374H}.
 
-Hubble X is located near the 'Hodge OB 13' OB association with a number of \num{\sim 29} young stellar objects \citep{2021MNRAS.507.5106K} and its core is powered by and O4 V star \citep{1999PASP..111.1382O}.
+Hubble X is located near the Hodge ``OB 13'' OB association with a number of \num{\sim 29} young stellar objects \citep{2021MNRAS.507.5106K} and its core is powered by an O4 V star \citep{1999PASP..111.1382O}.
 It has an ionizing output \(Q_0\) of \SI{e50.14}{photons.s^{-1}} (10 times higher compared to the Orion Nebula) and has a \ha{} luminosity of \SI{e38.21}{erg.s^{-1}} \citep{2002MNRAS.329..481B}.
-The mean non-thermal linewidth in \ha{} is \SI{10.5 \pm 0.02}{km.s^{-1}}  \citep{1986A&A...160..374H}.
-\citet{1993PASJ...45..693T} realize a study on the kinematics of both regions. 
+The mean non-thermal linewidth in \ha{} is \(\sigma\los = \SI{10.5 \pm 0.02}{km.s^{-1}}\)  \citep{1986A&A...160..374H}.
+\citet{1993PASJ...45..693T} studies the kinematics of both regions. 
 
 
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-hubbles}
 
 In the Figure~\ref{fig:strucfunc-fit-ExtraGal}a we show the structure function of Hubble V.
-The value of the observed \(\sigma\pos^2 = \SI{8}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{3}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{10}{km^{2}.s^{-2}}\) and \(r_0 = \SI{3.6}{pc} \)).
-The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{31}{pc} \).
-The maximum \(B(r)\) value is \SI{18}{km^{2}.s^{-2}} at a separation of \SI{25}{pc}. 
-%The value of the seeing for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}).
-From this value the \(B(r)\) values decrease and we observe a downturn in the structure function to \SI{9}{km^{2}.s^{-2}} at \(r =  \SI{70}{pc}\) following the tapered fluctuations behavior.
-But unlike the Orion core or 30~Dor the downturn is not as smooth, since it presents a small variation at \(r = \SI{\sim 40}{pc} \) 
-The seeing (RMS) value derived for this regions is \SI{0.5}{pc} (\(s_0\)=\SI{0.2}{\arcsecond}) and just one point of the structure function fall in the confidence interval..
-Considering the first point above this \(s_0\) value to be valid, which corresponds to \SI{2.2}{km^{2}.s^{-2}} at \(r = \SI{0.89}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.06} and \num{0.55}, respectively, while our derived value is \num{0.81}.
+\startNEW
+The model-derived parameters are \(\sigma\pos^2 = \SI{10 \pm 3}{km^{2}.s^{-2}}\),
+\(r_0 = \SI{3.6 \pm 1.0}{pc} \)), and \(m = 0.8 \pm 0.3\).
+The velocity variance is slightly higher than the empirically derived value of \(\sigma\pos^2 = \SI{8}{km^{2}.s^{-2}}\) because the model-derived seeing is only 6 times smaller than the correlation length.
+
+At the largest scales, the structure function turns downward,
+as seen in Orion.
+However, inspection of the velocity map suggests that the explanation
+may be different in this source: the velocity varies more strongly across the short axis of the nebula than along its long axis.
+There is also marginal evidence for weak periodic fluctuations
+with wavelength \(\lambda \approx \SI{50}{pc}\).
+\stopNEW
 
 The Hubble X structure function is shown in Figure~\ref{fig:strucfunc-fit-ExtraGal}b.
-The value of the observed \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) is obtained at \(r_0 = \SI{4}{pc} \) (while the derived values from our model are \(\sigma\pos^2 = \SI{15}{km^{2}.s^{-2}}\) and \(r_0 = \SI{4}{pc} \)).
-The observed value of \(2\sigma\pos^2\) corresponds to \(r = \SI{15}{pc} \).
-The maximum \(B(r)\) value of \SI{31}{km^{2}.s^{-2}} is reached at a separation of \SI{36}{pc}.
-From scales \(> \SI{15}{pc}\) we see that the structure functions fluctuates around \(2\sigma\pos^2\) with a spatial wavelength of \(\sim \SI{30}{pc}\) with a dispersion of \SI{2.3}{km^{2}.s^{-2}}.
-Since these large scales values fluctuates around \(2\sigma\pos^2\) is also possible that the structure function follows a purely homogeneous fluctuations behavior, just not as marked as it is shown in section~\ref{sec:limit-model-struct}. 
-The seeing is \SI{0.6}{pc} (\(s_0\)=\SI{0.24}{\arcsecond}) and as in Hubble V there is just one point of the structure function that falls in the \(s_0\) confidence interval.
-Considering the first point above this \(s_0\) value to be valid, which corresponds to \SI{2.6}{km^{2}.s^{-2}} at \(r = \SI{0.86}{pc} \) the slope for \(\sigma\pos^2\) and \(2\sigma\pos^2\) we obtain \num{1.04} and \num{0.80}, respectively, while our derived value is \num{1.02}.
+\startNEW
+The model-derived parameters are \(\sigma\pos^2 = \SI{15 \pm 3}{km^{2}.s^{-2}}\),
+\(r_0 = \SI{4.0 \pm 0.5}{pc} \)), and \(m = 1.0 \pm 0.2\),
+which again is slightly higher than the empirically derived value of \(\sigma\pos^2 = \SI{13}{km^{2}.s^{-2}}\) because the latter is reduced by the seeing.
 
+At the largest scales the structure function is approximately flat,
+consistent with homogeneous fluctuations. 
+\stopNEW
 
 \subsubsection{Comparison with previous studies}
 \label{sec:comparison-carina}
