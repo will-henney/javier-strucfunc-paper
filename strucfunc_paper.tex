@@ -1767,18 +1767,26 @@ but higher spatial resolution observations are required in order to study this.
 \centering 
 \includegraphics[width=\linewidth]{Figures/bright-hist-multi}
 \caption{
-  Panels a--g show histograms (blue) of the probability density function (PDF)
+  Panels a--g: Histograms (blue) of the probability density function (PDF)
   of the \ha{} surface brightness of \hii{} regions in our sample.
   Smooth lines (orange) show fitted log-normal distributions.
   In order to suppress fluctuations on scales
   smaller than the correlation length,
   surface brightness maps were rebinned by averaging
   into pixels of size \(0.5 r_0\) before calculating the PDF.
-  Also shown are the RMS Mach number of three-dimensional
+  \startNEW
+  Panel~h: RMS Mach number of three-dimensional
   velocity fluctuations (panel~h)
-  and the ratio of plane-of-sky to line-of-sight velocity dispersions (panel~i),
-  each plotted as a function of the
+  as a function of the RMS fractional brightness fluctuation calculated from the PDFs.
+  The gray shaded area shows the range of predicted values
+  for the brightness fluctuations if they are entirely due to density
+  fluctuations formed by driven turbulence with the observed Mach number.
+  Panel~i: Ratio of plane-of-sky to line-of-sight velocity dispersions
+  as a function of the
   RMS fractional brightness fluctuations calculated from the PDFs.
+  The solid and dashed lines show the expected relationship for
+  the toy models of Appendix~\ref{sec:appar-veloc-fluct}. 
+  \stopNEW
 }
 \label{fig:brightness-pdfs}
 \end{figure}
@@ -1787,6 +1795,7 @@ but higher spatial resolution observations are required in order to study this.
 \subsubsection{Plane-of-sky vs line-of-sight
   velocity dispersions}
 \label{sec:sigmapos-vs-sigmalos}
+\newcommand\siglosm{\ensuremath{\langle\sigma\los\rangle}}
 
 In Figure~\ref{fig:los-vs-pos} we show the
 mean non-thermal line-of-sight velocity dispersion
@@ -1802,7 +1811,7 @@ using different types of samples.
 \citet{2011MNRAS.413..705L} surveyed
 a sample of small-to-intermediate size \hii{} regions in M33,
 finding
-\(\langle \sigma_{\text{los}} \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \)
+\(\langle \sigma\los \rangle = (1.04 \pm 0.14) \sigma\pos + (8.15 \pm 0.93) \)
 for their sub-sample with higher resolution observations
 (21 sources).
 This is shown as the dashed line in Figure~\ref{fig:los-vs-pos},
@@ -1812,14 +1821,14 @@ Both fits are consistent with a slope of unity and an offset of
 \citet{arthur2016turbulence} calculate the relationship
 between \(\langle\sigma\los\rangle\) and \(\sigma\pos\) for different optical emission lines
 ([\ion{S}{2}], [\ion{N}{2}], \ha, [\ion{O}{3}])
-in the Orion Nebula, finding \(\langle\sigma\los \approx 2 \sigma\pos\rangle\),
+in the Orion Nebula, finding \(\langle\sigma\los\rangle \approx 2 \sigma\pos\),
 which is shown by the dotted line in Figure~\ref{fig:los-vs-pos}.
 Although this line is a fair representation of the low-\(\sigma\)
 points in our sample, it fails badly for highest dispersion source,
 30~Doradus.
 
 At least three different explanations for the relation
-between \(\sigma\pos\) and \(\sigma\los\) have been proposed previously.
+between \(\sigma\pos\) and \(\siglosm\) have been proposed previously.
 The classic interpretation 
 in terms of homogeneous incompressible turbulence \citep{von1951methode}
 is that \(\sigma\pos\) is reduced with respect to the ``true''
@@ -1828,15 +1837,15 @@ due to averaging over multiple independent turbulent cells
 along the line of sight,
 which is another manifestation of projection smearing, 
 as discussed above in section \ref{sec:constancy-power-law}.
-Assuming that \(\sigma\los\) measures the true dispersion,
-then one would expect to find \(\sigma\pos / \sigma\los = (\LL /H)^{1/2}\),
+Assuming that \(\siglosm\) measures the true dispersion,
+then one would expect to find \(\sigma\pos / \siglosm = (\LL /H)^{1/2}\),
 where \(H\) is the line-of-sight depth of the emitting gas
 and \(\LL\) is the integral length scale of
 the fluctuations defined in section~\ref{sec:methods-apply},
 % los/pos = sqrt(N) where N = H / L is # of independent cells
 % L is integral length scale: L = 1.44 r0 for m = 1
 % So H / r0 = 1.44 (los/pos)^2
-which yields \(H / r_0 \approx 1.44 (\sigma\los / \sigma\pos)^2\).
+which yields \(H / r_0 \approx 1.44 (\siglosm / \sigma\pos)^2\).
 From the results of Figure~\ref{fig:los-vs-pos} we would therefore find
 \(H / r_0 \approx 6\) for the lower dispersion sources,
 falling to \(H / r_0 \approx 2\) for the higher dispersion sources.
@@ -1849,7 +1858,7 @@ for the sources with supersonic velocity dispersion.
 \newcommand\vexp{\ensuremath{v_{\text{exp}}}}
 An alternative interpretation,
 as discussed in \citet{2011MNRAS.413..705L},
-is that \(\sigma\los\) includes a contribution due to
+is that \(\siglosm\) includes a contribution due to
 ordered large-scale velocity gradients
 (for instance, radial expansion)
 in addition to the turbulence,
@@ -1857,14 +1866,14 @@ whereas \(\sigma\pos\) includes only the turbulent motions.
 % Constant v_exp : sig_los = sqrt(sig_pos**2 + v_exp**2)
 Assuming a constant value \vexp{} for the ordered contribution
 and that projection smoothing is negligible,
-one would predict \(\sigma\los = (\sigma\pos^2 + \vexp^2)^{1/2}\),
+one would predict \(\siglosm = (\sigma\pos^2 + \vexp^2)^{1/2}\),
 which is shown by the blue shaded-area in Figure~\ref{fig:los-vs-pos}
 with an upper limit of \SI{12}{km.s^{-1}} and lower limit of \SI{8}{km.s^{-1}} for \(\vexp\).
 It can be seen that such a relationship reproduces the 
 observationally derived values almost as well as the linear fit.
 On the other hand, we can rule out the possibility that
 \vexp{} might increase in proportion to the turbulent velocity dispersion
-since that would predict that \(\sigma\los \propto \sigma\pos\),
+since that would predict that \(\siglosm \propto \sigma\pos\),
 which is inconsistent with the observations as discussed above.
 
 However, as pointed out by \citet{arthur2016turbulence},
@@ -1877,10 +1886,10 @@ Indeed, the neglect of any projection smoothing for the turbulent contribution
 in the \citeauthor{2011MNRAS.413..705L} analysis is equivalent to
 assuming \(\delta\kappa = -1\), which \emph{requires} substantial density fluctuations. 
 This leads to a third potential explanation of the
-\(\sigma\pos\)--\(\sigma\los\) relationship.
+\(\sigma\pos\)--\(\siglosm\) relationship.
 In the limit that the direct contribution of
 turbulent velocity fluctuations is negligible
-and that \(\sigma\los\) is entirely due to ordered expansion along the line of sight,
+and that \(\siglosm\) is entirely due to ordered expansion along the line of sight,
 then a non-zero \(\sigma\pos\) can arise only from emissivity fluctuations,
 which cause different parts of the ordered velocity field to be picked out
 for different lines of sight.
@@ -1888,12 +1897,12 @@ A simple model of this process is explored in Appendix~\ref{sec:appar-veloc-fluc
 where a relation between the surface brightness dispersion and the apparent
 velocity dispersions is derived.
 This is compared with the behavior of the ratio
-\(\sigma\pos / \sigma\los\) for
+\(\sigma\pos / \siglosm\) for
 our observed sample in panel~i of Figure~\ref{fig:brightness-pdfs},
 in which the solid and dashed lines show results for different assumptions
-about the effects of velocity gradients on \(\sigma\los\).
+about the effects of velocity gradients on \(\siglosm\).
 Although the model does qualitatively reproduce the increase
-in \(\sigma\pos / \sigma\los\) with increasing \(\sigma_S\), the quantitative agreement
+in \(\sigma\pos / \siglosm\) with increasing \(\sigma_S\), the quantitative agreement
 is poor, with the model substantially overestimating the magnitude of
 plane-of-sky fluctuations as compared with the line-of-sight widths.
 This is evidence that the combination of a velocity gradient with
@@ -1934,9 +1943,20 @@ It is common to study the \(L\)--\(\sigma\) relationship,
 not only in individual \hii{} regions, but also in \hii{} galaxies,
 both in the local universe and at high redshift
 \citep{terlevich1981, Chavez:2014a}.
-In such studies, the velocity dispersion is invariably derived from the
-line widths (\(\sigma\los\)) since the spatially resolved observations
-necessary for measuring \(\sigma\pos\) are not available.
+In such studies, the velocity dispersion is usually derived from the
+line width  of the entire region (\(\sigma\los\)) since the spatially resolved observations
+necessary for measuring \(\sigma\pos\) are not available.%
+\NEW{\footnote{
+  \startNEW
+  The linewidth \(\sigma\los\) for the integrated emission of an \hii{} region
+  will be larger than the mean of the spatially resolved linewidths \siglosm{}
+  since it also includes the plane-of-sky fluctuations \(\sigma\pos\).
+  Given the results of section~\ref{sec:sigmapos-vs-sigmalos},
+  and assuming that the linear relationship of Figure~\ref{fig:los-vs-pos}
+  can be extrapolated to higher values, then the approximate
+  relation is \(\sigma\los = \sqrt{2}\,\siglosm\) for \(\sigma\los \gg \SI{10}{km.s^{-1}}\).
+  \stopNEW
+}}
 A reliable empirical \(L\)--\(\sigma\) relationship allows the use of bright photoionized
 regions as standard candles in order to constrain cosmological parameters
 \citep{Chavez:2012a, 2020ApJ...888..113W, Gonzalez-Moran:2021d}.
@@ -1951,16 +1971,16 @@ Expressed in the customary form \(L \sim  \sigma^\alpha\), our result correspond
 for more luminous regions
 \citep{Moiseev:2015a, 2020ApJ...888..113W}
 but not significantly so, given the uncertainty.
-Studies that rely on \(\sigma\los\) generally find that
+Studies that rely on \(\siglosm\) generally find that
 \(\sigma\) becomes insensitive to luminosity below about \(L(\ha) = \SI{e40}{erg.s^{-1}}\),
 reaching a constant value of \(\sigma = \SI{15}{km.s^{-1}}\) \citep{Moiseev:2015a, Yu:2019a}.
 On the other hand,
-by using \(\sigma\pos\) instead of \(\sigma\los\),
+by using \(\sigma\pos\) instead of \(\siglosm\),
 we succeed in extending the same power-law relation
 down to \(L(\ha) = \SI{2e37}{erg.s^{-1}}\) and \(\sigma = \SI{3}{km.s^{-1}}\).
 Given our analysis of the previous section, one possible explanation for this
 is that \(\sigma\pos\) is a better measure of the disordered turbulent motions within
-the \hii{} regions than \(\sigma\los\) since the latter
+the \hii{} regions than \(\siglosm\) since the latter
 is contaminated by large-scale ordered motions,
 which are always at least as large as the ionized sound speed.
 
@@ -2021,7 +2041,7 @@ which are always at least as large as the ionized sound speed.
 
 %Naively, the relatively small observed CO velocity dispersion
 %(\(\sigma(\chem{CO}) \ll \sigma(\ha)\) in all regions
-%for both \(\sigma\los\) and \(\sigma\pos\))
+%for both \(\siglosm\) and \(\sigma\pos\))
 %might be thought to rule out the molecular gas kinematics
 %as a \emph{cause} of the ionized gas kinematics.
 %However, this is not necessarily the case, so long as \emph{some} molecular gas
@@ -2150,15 +2170,15 @@ Our principal findings are as follows:
   between, on the one hand, a steepening underlying velocity spectrum and,
   on the other hand, a reduced role for projection smoothing as the turbulent fluctuations
   pass from the subsonic to the supersonic regime. 
-\item The non-thermal component of the emission line widths (\(\sigma\los\)) is found
+\item The non-thermal component of the emission line widths (\(\siglosm\)) is found
   to be proportional to the amplitude of the plane-of-sky velocity centroid fluctuations
   (\(\sigma\pos\)) with a slope of unity, but an offset such that
-  \(\sigma\los \approx \SI{10}{km.s^{-1}}\) when \(\sigma\pos = 0\)
+  \(\siglosm \approx \SI{10}{km.s^{-1}}\) when \(\sigma\pos = 0\)
   (section~\ref{sec:sigmapos-vs-sigmalos}).
-  This can be explained if \(\sigma\los\) is affected by ordered velocity fields,
+  This can be explained if \(\siglosm\) is affected by ordered velocity fields,
   such as radial expansion, which leave no imprint on \(\sigma\pos\),
   implying that \(\sigma\pos\) is a better diagnostic of turbulent fluctuations than
-  \(\sigma\los\), even though it is more challenging to measure.
+  \(\siglosm\), even though it is more challenging to measure.
 \item The amplitudes of \ha{} surface brightness fluctuations
   and turbulent velocity fluctuations 
   are only weakly correlated (Figure~\ref{fig:brightness-pdfs}h).
@@ -2506,7 +2526,7 @@ with \(s_0\) as an additional free parameter for the models.
     emissivity, \(\sigma_E\), and surface brightness, \(\sigma_S\),
     together with plane-of-sky dispersion in mean velocity,
     \(\sigma\pos\),
-    and the mean RMS line width, \(\sigma\los\),
+    and the mean RMS line width, \(\siglosm\),
     both in units of the inter-layer velocity difference \(\beta\).
   }
   \label{fig:bright-to-vel-fluct}
@@ -2548,7 +2568,7 @@ are given by
   \label{eq:toy}
   \sigma\pos &=\frac{\vert\alpha - 1\vert \beta}{2 (1 + \alpha)}
   \\
-  \sigma\los &=   \frac{\alpha^{1/2}\beta}{1 + \alpha}.
+  \siglosm &=   \frac{\alpha^{1/2}\beta}{1 + \alpha}.
 \end{align}
 These are all shown in Figure~\ref{fig:bright-to-vel-fluct} as a function
 of the emissivity contrast \(\alpha\).
@@ -2558,13 +2578,13 @@ respectively as \(\alpha \to \infty\).\footnote{%
   To reach higher relative brightness dispersion \(\sigma_S > 1\) would require
   including more than two lines of sight in the model.
 }
-The line width \(\sigma\los/\beta\) behaves in the opposite sense, falling from
+The line width \(\siglosm/\beta\) behaves in the opposite sense, falling from
 a maximum value of \(0.5\) when \(\alpha = 0\) towards zero as \(\alpha \to \infty\),
 a result of the emission becoming increasingly dominated by one
 or the other of the two layers for high emissivity contrast.
 The dashed line shows the effect of including a small velocity gradient
 within each layer that contributes an additional width of \(\beta/4\),
-which is assumed to add in quadrature with \(\sigma\los\).
+which is assumed to add in quadrature with \(\siglosm\).
 
 The predictions of this model are compared with observations in
 panel~i of Figure~\ref{fig:brightness-pdfs}. 
@@ -2937,9 +2957,9 @@ covering a region of diameter \SI{300}{pc}
 They claim to find a completely flat structure function on scales from \num{3} to \SI{200}{pc},
 which seriously conflicts with our own observations at the lower end of this range.
 In particular, their two smallest separation bins are centered on \(r = 2.5\) and \SI{7.5}{pc},
-for which our own results yield \(B(r) / \sigma\los^2 \approx 0.7\) and \(1.3\),
+for which our own results yield \(B(r) / \siglosm^2 \approx 0.7\) and \(1.3\),
 respectively (our Figure~\ref{fig:strucfunc-fit-MC}a),
-whereas they find \(B(r) / \sigma\los^2 \approx 2.0\) at all separations (see their Figure 15).
+whereas they find \(B(r) / \siglosm^2 \approx 2.0\) at all separations (see their Figure 15).
 We are at a loss to explain this discrepancy, which is inconsistent not only with our own results,
 but also with those of \citet{1961MNRAS.122....1F} and \citet{Melnick:1987a},
 who both found at least some evidence for a downturn in \(B(r)\) for \(r < \SI{10}{pc}\). 
