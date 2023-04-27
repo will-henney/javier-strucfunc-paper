@@ -3161,20 +3161,24 @@ and is visually dominated by a predominant big loop, many expanding shells and d
 % and in L$_{X}$=9.3$\times$ 10$^{35}$ erg s$^{-1}$ \citep{2008ApJ...685..919T}.
 %\citet{2012ApJ...761....3M} derive an average age of 4$\pm$1 Myr and a total stellar mass of 1.6$^{+1.6}_{-1.0} \times$ 10$^{5}$M$_{\odot}$ for the region.
 
-
+\startNEW
 \subsubsection{Observed structure function and model fit}
 \label{sec:observ-struct-funct-m33}
+\stopNEW
 
 In Figure~\ref{fig:strucfunc-fit-ExtraGal}c we show the structure function of NGC 595.
+\startNEW
 The model-derived parameters are \(\sigma\pos^2 = \SI{53 \pm 5}{km^{2}.s^{-2}}\),
-\(r_0 = \SI{11 \pm 1.0}{pc} \)), and \(m = 1.4 \pm 0.2\).
+\(r_0 = \SI{11 \pm 1.0}{pc} \)), and \(m = 1.36 \pm 0.15\).
 The velocity variance is slightly higher than the observed value of \SI{44}{km^{2}.s^{-2}},
 indicative of a moderate finite box effect.
 At the largest scales, the structure function trends slowly downwards,
 which may be due to a radial decline in the amplitude of the turbulent velocity field,
 but the effect is less marked than in other regions, such as Orion. 
+\stopNEW
 
 In  Figure~\ref{fig:strucfunc-fit-ExtraGal}d we show the structure function of NGC 604.
+\startNEW
 The model-derived parameters are \(\sigma\pos^2 = \SI{84 \pm 20}{km^{2}.s^{-2}}\),
 \(r_0 = \SI{12 \pm 6}{pc} \)), and \(m = 0.8 \pm 0.2\).
 Again the model-derived velocity variance is higher than the observed value of \SI{55}{km^{2}.s^{-2}},
@@ -3187,6 +3191,8 @@ should be treated with caution.
 At the largest scales, the structure function shows a pronounced minimum
 at \(r \approx {150}{pc}\), which may be due to a periodic oscillation with \(\lambda \approx {300}{pc}\),
 which is slightly larger than the size of the map. 
+\stopNEW
+
 
 \startNEW
 \subsubsection{Comparison with previous studies}
@@ -3195,14 +3201,35 @@ which is slightly larger than the size of the map.
 \citet{lagrois2011} calculated the structure function for the \halpha\ emission line for NGC 595
 over a region of diameter \SI{300}{kpc} with a resolution of \SI{6.6}{pc.pixel^{-1}} \citep{lagrois2009multi}, presenting results for separations \(r \ge \SI{16.5}{pc}\).
 They found a total velocity variance of \(\sigma\pos^2 = \SI{35 \pm 2}{km^{2}.s^{-2}}\), which is smaller than our derived value of \(\sigma\pos^2 = \SI{53}{km^{2}.s^{-2}}\).
+Our map covers a smaller region, so part of the reason for this discrepancy may be
+a radial decline in the velocity variance, as mentioned above.
+Another reason may be that the angular resolution of the \citet{lagrois2009multi} map
+is of the same order as the correlation length, so some of the small-scale power is missing.
 
-For our NGC 595 \halpha\ emission line results there is no correspondence in the structure function from the previous investigations of \citet{lagrois2009multi} and \citet{lagrois2011}.
-Our observations cover the brightest part of the region and have smaller resolution than theirs.
-As a consequence \citet{lagrois2009multi} and \citet{lagrois2011} structure functions results does not cover scales $<$10 pc, where in our results the correlation is taking place.
-One big difference is that \citet{lagrois2011} apply a  filter to the velocity field to get rid of non-turbulent movements.
-As a comparison, for the filtered turbulent parameters they chose to represent the turbulent field, the derive a total  decorrelation length (\(C(\tau_0) = 0\)) of \SI{43}{pc} and the power-law index they provide is \num{1.55 \pm 0.01}.
-Their velocity centroid \(\sigma\) is \SI{5.92 \pm 0.15}{km.s^{-1}} while we have \SI{7.3\pm 2}{km. s^{-1}} which fall within the uncertainties.
-Due to the different observations and methodologies a direct comparison between structure functions is not possible.
+\citet{lagrois2011} employ a novel technique based on filtering the
+bidimensional velocity field to remove large-scale non-turbulent motions
+before calculating the structure function.
+They find a total decorrelation length of \(\tau_0 = \SI{43}{pc}\) and a very steep
+power-law index of \(m = \num{1.55 \pm 0.1}\).
+As discussed in section~\ref{sec:comp-with-prev}, \(\tau_0\) is predicted to be 2--3 times larger than \(r_0\), given the way that we define the correlation length,
+but even taking this into account, our derived value is still smaller than theirs
+by at least 50\%.
+Although this may be due to the difference in the areas covered,
+it is more likely due to the lower resolution of the \citeauthor{lagrois2011} data.
+
+The power-law index is somewhat steeper than our own value,
+but in part this is due to differences in methodology:
+the width of the low-pass filter that \citeauthor{lagrois2011} use to remove large-scale
+motions is \SI{8}{pixels} or \SI{53}{pc}, which is comparable to the decorrelation length.
+As a result, subtracting the filtered data causes a clear steepening of the structure function,
+as can be seen in their Figure~6d.
+The unfiltered data can be seen to show a shallower slope, more consistent
+with our own results.
+Which result is more reliable is difficult to say, but could potentially be checked
+by experimenting on fake data in a similar fashion to our Appendix~\ref{sec:degr-struct-funct}. 
+
+\stopNEW
+
 
 For NGC 604 there is good agreement in our structure function results and previous studies.
 This mainly because where are using the same TAURUS-II data as \citet{Melnick:2021x} and \citet{Medina-Tanco:1997a}.
