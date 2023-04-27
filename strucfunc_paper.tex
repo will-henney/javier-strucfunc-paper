@@ -2282,7 +2282,7 @@ the correlation length \(r_0\) and the velocity field variance \(\sigma\pos^2\).
 The synthetic velocity maps are created using a modified version of the \NEW{\texttt{make\textunderscore{}3dfield}} command from the \texttt{turbustat} Python library \citep{Koch2019AJ....158....1K},
 which creates a \NEW{three-dimensional} fractional Brownian Motion field
 \citep{Miville-Deschenes:2003a}
-based on a power-law energy spectrum in wavenumber \(k\), \(E(k) \propto k^{-n}\),
+based on a power-law energy spectrum in wavenumber \(k\), \(E(k) \propto k^{-n\DDD}\),
 and with random phases. 
 Our modification multiplies the energy spectrum by a
 low-wavenumber exponential taper:
@@ -2319,27 +2319,41 @@ and power law indices are equal.\footnote{%
   \stopNEW
 }
 
-The 3-dimensional 2nd-order structure function slope is related to the power law index as \(m\DDD = n - 3\), but the slope, \(m\), of the 2-dimensional velocity
-structure function depends not only on velocity power law index, but also on the magnitude and power law index of the emissivity fluctuations via the quantity
-\(\delta\kappa\), with the relation being \(m = n - 2 + \delta\kappa\)
-(see section \ref{sec:constancy-power-law}).
+\newcommand\DD{\ensuremath{_{\mathrm{2D}}}}
+The 3-dimensional 2nd-order structure function slope is related to the power law index as \(m\DDD = n\DDD - 3\), while the equivalent relation in two dimensions is \(m\DD = n\DD - 2\) for separations smaller than the line-of-sight
+depth of the emitting region.
+So long as the emissivity fluctuations are weak
+and uncorrelated with the velocity fluctuations, then \(n\DD = n\DDD\)
+\citep{Miville-Deschenes:2003a, Levrier:2004a},
+but if these conditions are not satisfied, then the structure function
+of the velocity centroids does not purely reflect the velocity power spectrum
+\citep{Brunt:2004a, Esquivel:2005a, Ossenkopf:2006a, Esquivel:2007b}
+and one has \(m\DD = n\DDD - 2 + \delta\kappa\) where \(\delta\kappa\) is a correction factor
+that accounts for the contribution to the structure function from
+column density fluctuations and cross terms (see section \ref{sec:constancy-power-law}).
+
 \citet{Brunt:2004a} found that \(\delta\kappa\) is a function of the Mach number for
-hydrodynamic turbulent box simulations, but we are unaware of any analytic prescription that would allow us to calculate \(\delta\kappa\) for
-the fractional Brownian motion models that we use here. 
-We therefore adopt an empirical approach by varying \(n\) until the
+hydrodynamic turbulent box simulations.  In principle,
+we could calculate \(\delta\kappa\) for
+the fractional Brownian motion models that we use here
+by using the analytic machinery of \citet{Esquivel:2007b},
+but we prefer instead to use a more empirical approach.
+We vary \(n\DDD\) until the
 resultant structure function slope matches a particular value in the
-range \(m = 0.8 \to 1.2\)
-that encompasses our observational results. 
-At each step, we estimate \(m\) by fitting our idealized model structure function
+range \(m\DD = 0.8 \to 1.2\)
+that encompasses our observational results.\footnote{%
+  Note that \(m\DD\) is written simply as \(m\) in the main text.
+}
+At each step, we estimate \(m\DD\) by fitting our idealized model structure function
 (equation~\eqref{eq:model-strucfunc-ideal}, without the seeing and noise terms)
 to the structure function of the simulated velocity map.
 In the case of a uniform emissivity field (\(\shortsig{E} = 0\)),
 we find \(\delta\kappa \approx 0\),
 which is maximal projection smoothing, exactly as expected for a case that
-mimics incompressible turbulence.
+mimics incompressible turbulence (see Appendix of \citealt{Miville-Deschenes:2003a}).
 As the amplitude of the emissivity fluctuations increase,
 we find that \(\delta\kappa\) becomes increasingly negative,
-with \(\delta\kappa \approx -0.3\) for \(\shortsig{E} = 1\) (the case that we present here)
+with \(\delta\kappa \approx -0.3\) for \(\shortsig{E} = 1\) (the case that we illustrate here)
 and \(\delta\kappa \approx -0.55\) for \(\shortsig{E} = 2\).
 This is qualitatively consistent with the results in
 Figure~12a of \citet{Brunt:2004a}, although a quantitative
