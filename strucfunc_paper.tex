@@ -242,7 +242,7 @@ Morelia, Michoacán, México C.P. 58089\\
   in the transition from subsonic to supersonic turbulence,
   possibly due to the countervailing effect of projection smoothing.
   Ionized density fluctuations are too large to be explained by the action
-  of the turbulence in all but the highest luminosity sources.
+  of the turbulence in {\NEW{any}} but the highest luminosity sources.
   A variety of behaviors are seen on scales larger than the correlation length,
   with only a minority of sources showing evidence for homogeneity on the largest scales.
 \end{abstract}
@@ -3228,21 +3228,27 @@ with our own results.
 Which result is more reliable is difficult to say, but could potentially be checked
 by experimenting on fake data in a similar fashion to our Appendix~\ref{sec:degr-struct-funct}. 
 
-\stopNEW
+All previous studies of the structure function in NGC~604 are based
+on the same TAURUS-II observational dataset that we use here
+\citep{sabalisck1995supersonic}
+and the results are unsurprisingly similar to our own,
+although there are some differences in methodology and interpretation.
+For instance, \citet{Medina-Tanco:1997a} identify an apparent ``knee''
+in the structure function at \(r \approx \SI{10}{pc}\), which they interpret as
+evidence for a broken power law.
+However, in our own results the same feature is modeled as a combination
+of two effects:
+the natural flattening of
+the structure function for \(r > r_0\),
+plus a steepening at small scales due to the smoothing effects of the seeing. 
+\citet{Melnick:2021x} also analysed the same structure function and concluded that
+separations \(< \SI{2}{arcsec}\) should be discounted due to the seeing.
+The results of our experiments with synthetic observations (Appendix~\ref{sec:effects-seeing-struc})
+suggest that the situation is even worse than \citeauthor{Melnick:2021x} surmised
+and that scales up to \SI{5}{arcsec} will be affected by the seeing.
+On the other hand, if the effects of seeing are incorporated into the model structure function,
+as we have done here, then the data at these separations do not need to be discarded entirely. 
 
-
-For NGC 604 there is good agreement in our structure function results and previous studies.
-This mainly because where are using the same TAURUS-II data as \citet{Melnick:2021x} and \citet{Medina-Tanco:1997a}.
-Despite this general agreement, the interpretations in each study is different.
-\citet{Medina-Tanco:1997a} conclude about a double regime acting on the kinetic energy spectrum.
-According to this double cascade, turbulence is being forced at scales of \(\approx\) \SI{10}{pc} while and energy cascade has developed down to the smallest scales and other, as an inverse cascade, extends up to scale of \(\approx\) \SI{70}{pc}.
-\citet{Medina-Tanco:1997a} mentioned different characteristic scale lengths, the most notorious is the \SI{\sim 10}{pc}, and they interpret it as possible source on energy associated with the expansion of shocks coming from wind bubbles.  
-\citet{Melnick:2021x} addresses some issues with TAURUS II data while comparing profiles between the previous instrument TAURUS I where there exist a difference between observations (see section 4.1 on their paper).
-They mentioned that one problem with \citet{Medina-Tanco:1997a} structure function is that they didn't take into account the observational seeing.
-This would invalidate they results and \citet{Melnick:2021x} consider that taking out the structure function values that fall within this range would make the structure function flat at scales \(<\)\SI{10}{pc}, so they rule out \citet{Medina-Tanco:1997a} results.
-Finally they point out, and we agree, the importance of observing NGC 604 at higher spatial resolution. 
-Our Fig. \ref{fig:strucfunc-fit-ExtraGal}d shows in fact that there is a velocity structure in NGC 604. 
-None of the previous studies obtained a power-law index or correlation length for the structure function to compare our results.
 
 \stopNEW
 
