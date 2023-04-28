@@ -39,9 +39,9 @@ our approach of directly simulating 2d maps is not strictly correct and
 that we should really simulate three dimensional fields and then project
 them down to two dimensions for further analysis. So, we have done this
 and the results of Appendix A have now been completely replaced. It
-turns out that the new results are extremely similar to the old ones, so
-the changes to the text (highlighted in red in the manuscript) are
-minimal.
+turns out that the new results are similar to the old ones, so the
+changes to the text (highlighted in red in the manuscript) are not
+large.
 
 One new issue that we had to grapple with in order to use this more
 realistic approach is that we needed to simulate the three dimensional
@@ -60,7 +60,13 @@ the majority of our regions.
 
 With the new results, we found an improved analytic approximation for
 the effects of seeing (equation 15 and A1). We have therefore re-run all
-of the model fits in section 4, but the results change by less than 1%.
+of the model fits in section 4, but the only significant changes were in
+some of the derived seeing widths. None of the "interesting" parameters
+(sigma, r0, m) changed by more than 1%.
 
-We have also taken the opportunity to improve some of the descriptions
-of individual regions in Appendix C.
+We have also taken the opportunity to revise and improve the
+descriptions of individual regions in Appendix C. All substantial
+changes are marked in red.
+
+Finally, we have separated the online-only supplementary figures into a
+separate PDF file, as requested by the editor.
