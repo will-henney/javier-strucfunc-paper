@@ -1222,22 +1222,19 @@ Disregarding the 5 sources where only upper limits can be determined,
 the mean and standard deviation are \SI{1.17(20)}{arcsec},
 which is perfectly consistent with expectations for seeing from ground-based observations.
 
-However, there are two outlier values that deserve closer attention.
-NGC~595 has the lowest value of \SI{0.2}{arcsec}, which seems
-unrealistically small, especially given the higher values
-derived for the other sources, such as NGC~604,
-that were obtained with the same instrument.
-On the other hand, the 95\% credibility range extends as high as \SI{0.7}{arcsec},
-which does overlap with the range for NGC~604.
-If one were to take a common compromise seeing of \SI{0.7}{arcsec}
-for both sources (\(s_0 = \SI{1.2}{pc}\)),
-then the anticorrelation between \(m\) and \(s_0\)
-%(see Figure~\ref{fig:corner-ExtraGal}a, b)
-would decrease the inferred \(m\) for NGC~595 while increasing it for NGC~604,
-thus making the two slopes more closely similar. 
+\startNEW
+However, there are a few outlier values that deserve closer attention.
+NGC~595, Hubble~V, and Hubble~X all have model-derived upper limits to the
+seeing FWHM of about \SI{0.6}{arcsec}, which seems
+unrealistically small, especially given the higher value
+derived for NGC~604,
+which was observed with the same instrument.
+Unfortunately, we do not have access to the observing logs to check this,
+so we suggest extra caution in interpreting the fit results for these objects. 
+\stopNEW
 
-The inner Orion Nebula has the largest inferred seeing FWHM of \SI{2.4(4)}{arcsec},
-which is at least two times higher than the typical seeing measured during the observations
+The inner Orion Nebula has the largest inferred seeing FWHM of \NEW{\SI{1.8(2)}{arcsec}},
+which is \NEW{nearly twice as high as} the typical seeing measured during the observations
 \citep{Doi:2004a}.
 However, this can be at least partially explained by the fact that the velocity map is constructed
 by interpolating individual longslit observations onto a regular grid
