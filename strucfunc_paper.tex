@@ -1088,9 +1088,14 @@ given in Appendix~\ref{sec:notes-individual-hii}.
 For the observational values (\(B\obs(r)\); blue symbols),
 the structure function is the average value of equation~\eqref{eq:Br}
 over all pairs of points that contribute to each radial bin.
-The uncertainty of each bin (blue error bars) is estimated
-as the standard deviation of these values divided by the square root of
-the number of contributing pairs.
+%The uncertainty of each bin (blue error bars) is estimated
+%as the standard deviation of these values divided by the square root of
+%the number of contributing pairs.
+\NEW{The uncertainty of each bin (blue error bars) is estimated
+as the fractional error of the respective \(B\obs(r)\) value.
+These values are indicated in the third column of the table given in the Appendix D. 
+In the same table, the forth and fifth columns show, as multiples of their respective fractional error, additional weight at small and large scales. 
+This is the case for the EON, and the regions observed using the FLAMES and the TAURUS instruments.}
 For most sources a fixed bin size of \SI{0.05}{dex} is used,
 but for those observed with multi-fiber spectroscopy
 (Carina and M8, see section~\ref{sec:flames-multi-fiber}),
@@ -3188,8 +3193,8 @@ should be treated with caution.
 At the largest scales, the structure function shows a pronounced minimum
 at \(r \approx \SI{150}{pc}\), which may be due to a periodic oscillation with \(\lambda \approx \SI{300}{pc}\),
 which is slightly larger than the size of the map. 
+On the other hand, if we fit the model for scales \(r \leq \SI{20}{pc}\), there is a decrease in the difference between the inferred ``true'' structure function and the observed one. With our current observations the fitting using less than half of the observational points cannot be justified; but with better quality observations and using our current model we would expect to derived more accurate parameters.
 \stopNEW
-
 
 \startNEW
 \subsubsection{Comparison with previous studies}
