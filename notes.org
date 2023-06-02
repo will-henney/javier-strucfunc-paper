@@ -1,5 +1,57 @@
+#+OPTIONS: ^:{}
+* Submission to arxiv [2023-06-02 Fri]
 
-* 
+** Metadata for arxiv
+- Title
+- Abstract
+- Authors
+
+
+** Collect the figures and check the sizes
+#+begin_src sh :dir .
+  STEM=strucfunc_paper
+  grep 'Graphic file' $STEM.log | cut -d ' ' -f2 |xargs du -sk |sort -nr
+#+end_src
+
+#+RESULTS:
+| 2376 | Figures/hii-region-mosaic.jpg                                |
+| 1060 | Figures/velocity-maps-mosaic.jpg                             |
+|  968 | Figures/model-strucfunc-annotated.pdf                        |
+|  688 | Figures/fake-3d-finite-box-images-ems-fluct_sigE_1.pdf       |
+|  236 | Figures/fake-3d-seeing-nonp-ems-fluct-thumbnails_sigE_1.pdf  |
+|  212 | Figures/corner-emcee-OrionS.pdf                              |
+|   96 | Figures/bright-to-vel-fluct-annotated.pdf                    |
+|   92 | Figures/sf-emcee-N604H.pdf                                   |
+|   88 | Figures/sf-emcee-OrionLH.pdf                                 |
+|   88 | Figures/sf-emcee-N595.pdf                                    |
+|   88 | Figures/sf-emcee-N346.pdf                                    |
+|   88 | Figures/sf-emcee-HX.pdf                                      |
+|   88 | Figures/sf-emcee-HV.pdf                                      |
+|   88 | Figures/sf-emcee-Dor.pdf                                     |
+|   84 | Figures/sf-emcee-OrionS.pdf                                  |
+|   84 | Figures/sf-emcee-M8.pdf                                      |
+|   84 | Figures/sf-emcee-CarC.pdf                                    |
+|   56 | Figures/bright-hist-multi.pdf                                |
+|   32 | Figures/fake-seeing-nonp-3d-ems-fluc_m4-reduction_sigE_1.pdf |
+|   28 | Figures/pdfs.pdf                                             |
+|   28 | Figures/fake-3d-finite-box-strucfunc-ems-fluct_sigE_1.pdf    |
+|   28 | Figures/corr-los-vs-pos.pdf                                  |
+|   20 | Figures/fake-finite-box-fits-ems-fluct_sigE_1.pdf            |
+|   20 | Figures/fake-3d-finite-box-effect-ems-fluct_sigE_1.pdf       |
+|   20 | Figures/corr-svsL.pdf                                        |
+|   20 | Figures/corr-rvsS.pdf                                        |
+
+
+** Check for \input files in the tex file
+#+begin_src sh :dir . :results verbatim
+  STEM=strucfunc_paper
+  grep '\input{' $STEM.tex | cut -d '{' -f2  | cut -d '}' -f1 
+#+end_src
+
+#+RESULTS:
+: table-results
+: Corr
+
 
 * Reply to referee
 :PROPERTIES:
