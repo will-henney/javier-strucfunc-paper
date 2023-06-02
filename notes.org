@@ -1,24 +1,77 @@
 #+OPTIONS: ^:{}
 * Submission to arxiv [2023-06-02 Fri]
-
-** Metadata for arxiv
+:PROPERTIES:
+:EXPORT_FILE_NAME: submit-to-arxiv
+:EXPORT_OPTIONS: toc:nil num:nil
+:END:
+- Should be released [2023-06-05 Mon]
+- [[file:strucfunc_paper_plus-arxiv.pdf]]
+** Problems encountered
+- arxiv compiles with a more recent version of the TeX distro (2023) and this causes some errors with siunitx
+  - The problem was things like e49.29, which I changed to 1.95e49
+  - There were lots of these!
+  - But it fixed the problem
+** DONE Metadata for arxiv
+CLOSED: [2023-06-02 Fri 11:36]
 - Title
-- Abstract
+  - Turbulence in compact to giant H II regions
+- Abstract (plain text)
+  - 
+     : Radial velocity fluctuations on the plane of the sky are a powerful
+     : tool for studying the turbulent dynamics of emission line regions. We
+     : conduct a systematic statistical analysis of the H alpha velocity
+     : field for a diverse sample of 9 H II regions, spanning two orders of
+     : magnitude in size and luminosity, located in the Milky Way and other
+     : Local Group galaxies. By fitting a simple model to the second-order
+     : spatial structure function of velocity fluctuations, we extract three
+     : fundamental parameters: the velocity dispersion, the correlation
+     : length, and the power law slope. We determine credibility limits for
+     : these parameters in each region, accounting for observational
+     : limitations of noise, atmospheric seeing, and the finite map size. The
+     : plane-of-sky velocity dispersion is found to be a better diagnostic of
+     : turbulent motions than the line width, especially for lower luminosity
+     : regions where the turbulence is subsonic. The correlation length of
+     : velocity fluctuations is found to be always roughly 2% of the H II
+     : region diameter, implying that turbulence is driven on relatively
+     : small scales. No evidence is found for any steepening of the structure
+     : function in the transition from subsonic to supersonic turbulence,
+     : possibly due to the countervailing effect of projection
+     : smoothing. Ionized density fluctuations are too large to be explained
+     : by the action of the turbulence in any but the highest luminosity
+     : sources. A variety of behaviors are seen on scales larger than the
+     : correlation length, with only a minority of sources showing evidence
+     : for homogeneity on the largest scales.
 - Authors
+  - J. García-Vázquez (1), William J. Henney (2) and H. O. Castañeda (1)
+  - ((1) ESFM-IPN, Mexico, (2) IRyA-UNAM, Morelia, Mexico)
 
 
-** Collect the figures and check the sizes
+** DONE Add the supplementary material
+CLOSED: [2023-06-02 Fri 10:46]
+- This is in [[file:strucfunc_paper_plus.tex]]
+
+** DONE Collect the figures and check the sizes
+CLOSED: [2023-06-02 Fri 10:45]
 #+begin_src sh :dir .
-  STEM=strucfunc_paper
+  STEM=strucfunc_paper_plus
   grep 'Graphic file' $STEM.log | cut -d ' ' -f2 |xargs du -sk |sort -nr
 #+end_src
 
 #+RESULTS:
-| 2376 | Figures/hii-region-mosaic.jpg                                |
-| 1060 | Figures/velocity-maps-mosaic.jpg                             |
+| 2376 | Figures/hii-region-mosaic.pdf                                |
+| 1064 | Figures/velocity-maps-mosaic.pdf                             |
 |  968 | Figures/model-strucfunc-annotated.pdf                        |
 |  688 | Figures/fake-3d-finite-box-images-ems-fluct_sigE_1.pdf       |
+|  268 | Figures/corner-emcee-CarC.pdf                                |
+|  264 | Figures/corner-emcee-M8.pdf                                  |
+|  260 | Figures/corner-emcee-N604H.pdf                               |
+|  252 | Figures/corner-emcee-N595.pdf                                |
 |  236 | Figures/fake-3d-seeing-nonp-ems-fluct-thumbnails_sigE_1.pdf  |
+|  236 | Figures/corner-emcee-HV.pdf                                  |
+|  228 | Figures/corner-emcee-Dor.pdf                                 |
+|  224 | Figures/corner-emcee-N346.pdf                                |
+|  224 | Figures/corner-emcee-HX.pdf                                  |
+|  212 | Figures/corner-emcee-OrionS.pdf                              |
 |  212 | Figures/corner-emcee-OrionS.pdf                              |
 |   96 | Figures/bright-to-vel-fluct-annotated.pdf                    |
 |   92 | Figures/sf-emcee-N604H.pdf                                   |
@@ -31,6 +84,7 @@
 |   84 | Figures/sf-emcee-OrionS.pdf                                  |
 |   84 | Figures/sf-emcee-M8.pdf                                      |
 |   84 | Figures/sf-emcee-CarC.pdf                                    |
+|   76 | Figures/corner-emcee-OrionLH.pdf                             |
 |   56 | Figures/bright-hist-multi.pdf                                |
 |   32 | Figures/fake-seeing-nonp-3d-ems-fluc_m4-reduction_sigE_1.pdf |
 |   28 | Figures/pdfs.pdf                                             |
@@ -41,17 +95,128 @@
 |   20 | Figures/corr-svsL.pdf                                        |
 |   20 | Figures/corr-rvsS.pdf                                        |
 
+None of those look too big
 
-** Check for \input files in the tex file
+** DONE Find all .tex source files, including \input
+CLOSED: [2023-06-02 Fri 10:45]
+
+- Only reliable way I can think of is to grep through the log file
+  - That way, we make sure we catch any nested inputs
 #+begin_src sh :dir . :results verbatim
-  STEM=strucfunc_paper
-  grep '\input{' $STEM.tex | cut -d '{' -f2  | cut -d '}' -f1 
+  STEM=strucfunc_paper_plus
+  grep '(\./.*\.tex' $STEM.log | cut -d '(' -f2  | cut -d ')' -f1 
 #+end_src
 
 #+RESULTS:
-: table-results
-: Corr
+: ./strucfunc_paper_plus.tex
+: ./table-results.tex
+: ./Corr.tex
+: ./sf_appendix_D.tex
+: ./table-fit-parameters.tex
 
+** DONE Make the tar file
+CLOSED: [2023-06-02 Fri 10:40]
+#+begin_src sh :dir .
+  STEM=strucfunc_paper_plus
+  FIGFILES="$(grep 'Graphic file' $STEM.log | cut -d ' ' -f2)"
+  TEXFILES="$(grep '(\./.*\.tex' $STEM.log | cut -d '(' -f2  | cut -d ')' -f1)"
+  tar --format ustar -cvzf ${STEM}-astro-ph.tgz $TEXFILES $STEM.bbl $FIGFILES
+#+end_src
+
+#+RESULTS:
+** DONE Test the tar file
+CLOSED: [2023-06-02 Fri 10:45]
+Copy to temporary folder
+#+begin_src sh :results verbatim
+  STEM=strucfunc_paper_plus
+  TMPD=/tmp/arxiv-test-$STEM
+  rm -r $TMPD
+  mkdir $TMPD
+  cp ${STEM}-astro-ph.tgz $TMPD
+  ls -ld $TMPD
+  ls -l $TMPD
+#+end_src
+
+#+RESULTS:
+: drwxr-xr-x  3 will  wheel  96 Jun  2 11:42 /tmp/arxiv-test-strucfunc_paper_plus
+: total 16872
+: -rw-r--r--@ 1 will  wheel  8637183 Jun  2 11:42 strucfunc_paper_plus-astro-ph.tgz
+
+Unpack and check listing
+#+begin_src sh :results verbatim :dir /tmp/arxiv-test-strucfunc_paper_plus
+  tar -xvzf strucfunc_paper_plus-astro-ph.tgz
+  ls -lR .
+#+end_src
+
+#+RESULTS:
+#+begin_example
+total 17328
+-rw-r--r--   1 will  wheel     1465 Apr 20 14:27 Corr.tex
+drwxr-xr-x  37 will  wheel     1184 Jun  2 11:42 Figures
+-rw-r--r--   1 will  wheel     1132 Apr 17 13:21 sf_appendix_D.tex
+-rw-r--r--@  1 will  wheel  8637183 Jun  2 11:42 strucfunc_paper_plus-astro-ph.tgz
+-rw-r--r--   1 will  wheel    33102 Jun  2 10:20 strucfunc_paper_plus.bbl
+-rw-r--r--   1 will  wheel   179432 Jun  2 11:12 strucfunc_paper_plus.tex
+-rw-r--r--   1 will  wheel     1374 Dec 19 18:46 table-fit-parameters.tex
+-rw-r--r--   1 will  wheel     2885 Apr 21 09:24 table-results.tex
+
+./Figures:
+total 17592
+-rw-r--r--  1 will  wheel    53654 Dec 12 10:17 bright-hist-multi.pdf
+-rw-r--r--  1 will  wheel    97690 Dec 12 10:22 bright-to-vel-fluct-annotated.pdf
+-rw-r--r--  1 will  wheel   272159 Apr 18 08:43 corner-emcee-CarC.pdf
+-rw-r--r--  1 will  wheel   232758 Apr 18 08:43 corner-emcee-Dor.pdf
+-rw-r--r--  1 will  wheel   241313 Apr 18 08:43 corner-emcee-HV.pdf
+-rw-r--r--  1 will  wheel   227579 Apr 18 08:43 corner-emcee-HX.pdf
+-rw-r--r--  1 will  wheel   268833 Apr 18 08:43 corner-emcee-M8.pdf
+-rw-r--r--  1 will  wheel   228494 Apr 18 08:43 corner-emcee-N346.pdf
+-rw-r--r--  1 will  wheel   255703 Apr 20 14:27 corner-emcee-N595.pdf
+-rw-r--r--  1 will  wheel   262619 Apr 18 08:43 corner-emcee-N604H.pdf
+-rw-r--r--  1 will  wheel    77472 Apr 18 08:43 corner-emcee-OrionLH.pdf
+-rw-r--r--  1 will  wheel   213453 Apr 18 08:43 corner-emcee-OrionS.pdf
+-rw-r--r--  1 will  wheel    27080 Apr 20 14:27 corr-los-vs-pos.pdf
+-rw-r--r--  1 will  wheel    16456 Apr 20 14:27 corr-rvsS.pdf
+-rw-r--r--  1 will  wheel    19779 Apr 20 14:27 corr-svsL.pdf
+-rw-r--r--  1 will  wheel    19295 Apr 14 10:09 fake-3d-finite-box-effect-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel   703097 Apr 14 10:09 fake-3d-finite-box-images-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel    25631 Apr 14 10:09 fake-3d-finite-box-strucfunc-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel   241411 Apr 14 10:09 fake-3d-seeing-nonp-ems-fluct-thumbnails_sigE_1.pdf
+-rw-r--r--  1 will  wheel    19024 Apr 14 10:09 fake-finite-box-fits-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel    31392 Apr 14 10:09 fake-seeing-nonp-3d-ems-fluc_m4-reduction_sigE_1.pdf
+-rw-r--r--  1 will  wheel  2431067 Jun  2 10:17 hii-region-mosaic.pdf
+-rw-r--r--  1 will  wheel   988000 Feb 18  2022 model-strucfunc-annotated.pdf
+-rw-r--r--  1 will  wheel    27794 Jul  8  2022 pdfs.pdf
+-rw-r--r--  1 will  wheel    84065 Apr 18 08:43 sf-emcee-CarC.pdf
+-rw-r--r--  1 will  wheel    87944 Apr 18 08:43 sf-emcee-Dor.pdf
+-rw-r--r--  1 will  wheel    89155 Apr 18 08:43 sf-emcee-HV.pdf
+-rw-r--r--  1 will  wheel    86621 Apr 18 08:43 sf-emcee-HX.pdf
+-rw-r--r--  1 will  wheel    85072 Apr 18 08:43 sf-emcee-M8.pdf
+-rw-r--r--  1 will  wheel    86632 Apr 18 08:43 sf-emcee-N346.pdf
+-rw-r--r--  1 will  wheel    86527 Apr 20 14:27 sf-emcee-N595.pdf
+-rw-r--r--  1 will  wheel    92075 Apr 18 08:43 sf-emcee-N604H.pdf
+-rw-r--r--  1 will  wheel    86994 Apr 18 08:43 sf-emcee-OrionLH.pdf
+-rw-r--r--  1 will  wheel    85162 Apr 18 08:43 sf-emcee-OrionS.pdf
+-rw-r--r--  1 will  wheel  1085590 Jun  2 10:17 velocity-maps-mosaic.pdf
+#+end_example
+
+Test compilation. Make sure to use ~-bibtex-~ option so that it just uses the bbl file
+#+begin_src sh :results verbatim :dir /tmp/arxiv-test-strucfunc_paper_plus
+  latexmk -pdf --bibtex-cond --quiet strucfunc_paper_plus
+  open ./strucfunc_paper_plus.pdf
+#+end_src
+
+#+RESULTS:
+: This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+:  restricted \write18 enabled.
+: entering extended mode
+: This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+:  restricted \write18 enabled.
+: entering extended mode
+: This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+:  restricted \write18 enabled.
+: entering extended mode
+
+That worked great. Now ready to upload.
 
 * Reply to referee
 :PROPERTIES:

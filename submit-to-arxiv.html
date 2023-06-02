@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-06-02 Fri 11:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Submission to arxiv <span class="timestamp-wrapper"><span class="timestamp">[2023-06-02 Fri]</span></span></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="William Henney" />
+<style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+/* 18 Jan 2016: Modified from the stylesheet by Zhitao Gong on
+https://github.com/gongzhitaao/orgcss/
+ */
+
+body {
+    max-width: 100%;
+    margin: 1% 1%;
+    font: normal normal normal 16px/1.6em 'Open Sans', sans-serif;
+    color: #333;
+}
+
+@media all and (min-width: 95ex) {
+    body {
+        max-width: 95ex;
+        margin: 1% auto;
+    }
+
+    .creator {
+        float: right;
+    }
+}
+
+@media not all and (min-width: 110ex) {
+
+    .creator {
+        float: left;
+    }
+
+    p img {
+        width: 95%;
+    }
+}
+
+.title {
+    padding: .5em 0;
+    text-align: center;
+    color: black;
+}
+
+.subtitle {
+    font-size: medium;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: center;
+}
+
+.abstract {
+    width: 80%;
+    margin: auto;
+    font-style: italic;
+}
+
+.abstract p:last-of-type:before {
+    content: "    ";
+    white-space: pre;
+}
+
+.status {
+    font-size: 90%;
+    margin: 2em auto;
+}
+
+[class^="section-number-"] {
+    margin-right: .5em;
+}
+
+#footnotes {
+    font-size: 90%;
+}
+
+.footpara {
+    display: inline;
+    margin: .2em auto;
+}
+
+.footdef {
+    margin-bottom: 1em;
+}
+
+.footdef sup {
+    padding-right: .5em;
+}
+
+a {
+    color: #527d9a;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #003355;
+    border-bottom: 1px dotted;
+}
+
+p img {
+    vertical-align: middle;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #A5573E;
+    line-height: 1.6em;
+    font-family: 'Droid Serif', serif;
+}
+
+h4,h5,h6 {
+    font-size: 1em;
+}
+
+table {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 2px solid;
+}
+
+table td + td, table th + th {
+    border-left: 1px solid gray;
+}
+
+table tr {
+    border-top: 1px solid lightgray;
+}
+
+td,th {
+    padding: 5px 10px;
+    vertical-align: middle;
+}
+
+code {
+    padding: 2px 5px;
+    margin: auto 1px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    background-clip: padding-box;
+    color: #333;
+    font-size: 90%;
+}
+
+blockquote {
+    margin: 1em 2em;
+    padding-left: 1em;
+    border-left: 3px solid #ccc;
+}
+
+kbd {
+    background-color: #f7f7f7;
+    font-size: 14px;
+    margin: 0 .1em;
+    padding: .1em .6em;
+}
+
+.figure {
+    padding: 1em;
+}
+
+.figure p {
+    text-align: center;
+}
+
+.todo {
+    color: red;
+    font-family: monospace;
+}
+
+.done {
+    color: green;
+    font-family: monospace;
+}
+
+.priority {
+    color: orange;
+    font-family: monospace;
+}
+
+.tag {
+    background-color: #eee;
+    font-family: monospace;
+    font-size: 80%;
+    font-weight: normal;
+    padding: 2px;
+}
+
+.timestamp {
+    color: #bebebe;
+}
+
+.timestamp-kwd {
+    color: #5f9ea0;
+}
+
+.org-right {
+    margin-left: auto;
+    margin-right: 0px;
+    text-align: right;
+}
+
+.org-left {
+    margin-left: 0px;
+    margin-right: auto;
+    text-align: left;
+}
+
+.org-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#postamble p, #preamble p {
+    font-size: 90%;
+    margin: .2em;
+}
+
+p.verse {
+    margin-left: 3%;
+}
+
+pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    font-family: monospace;
+    margin: 1.2em;
+    padding: 8pt;
+}
+
+pre.src {
+    overflow: auto;
+    padding-top: 1.2em;
+    position: relative;
+    font-size: 90%;
+    color: #dcdccc;
+    background-color: #3f3f3f; 
+}
+
+pre.src:before {
+    background-color: gray;
+    border: 1px solid black;
+    display: none;
+    padding: 3px;
+    position: absolute;
+    right: 10px;
+    /* top: -10px; */
+}
+
+pre.src:hover:before {
+    display: inline;
+}
+
+pre.src-sh:before {
+    content: 'sh';
+}
+pre.src-bash:before {
+    content: 'bash';
+}
+pre.src-emacs-lisp:before {
+    content: 'Emacs Lisp';
+}
+pre.src-R:before {
+    content: 'R';
+}
+pre.src-python:before {
+    content: 'Python';
+}
+pre.src-org:before {
+    content: 'Org';
+}
+pre.src-c++:before {
+    content: 'C++';
+}
+pre.src-c:before {
+    content: 'C';
+}
+pre.src-html:before {
+    content: 'HTML'
+}
+
+caption.t-above {
+    caption-side: top;
+}
+
+caption.t-bottom {
+    caption-side: bottom;
+}
+
+th.org-right {
+    text-align: center;
+}
+
+th.org-left {
+    text-align: center;
+}
+
+th.org-center {
+    text-align: center;
+}
+
+td.org-right {
+    text-align: right;
+}
+
+td.org-left {
+    text-align: left;
+}
+
+td.org-center {
+    text-align: center;
+}
+
+dt {
+    font-weight: bold;
+}
+
+.inlinetask {
+    background: #ffffcc;
+    border: 2px solid gray;
+    margin: 10px;
+    padding: 10px;
+}
+
+#org-div-home-and-up {
+    font-size: 70%;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.linenr {
+    font-size: smaller;
+}
+
+.code-highlighted {
+    background-color: #ffff00;
+}
+
+#bibliography {
+    font-size: 90%;
+}
+
+#bibliography table {
+    width: 100%;
+}
+
+/* .org-info-js_info-navigation { */
+/*     border-style: none; */
+/* } */
+/* #org-info-js_console-label { */
+/*     font-size: 10px; */
+/*     font-weight: bold; */
+/*     white-space: nowrap; */
+/* } */
+/* .org-info-js_search-highlight { */
+/*     background-color: #ffff00; */
+/*     color: #000000; */
+/*     font-weight: bold; */
+/* } */
+/*]]>*/-->
+</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Submission to arxiv <span class="timestamp-wrapper"><span class="timestamp">[2023-06-02 Fri]</span></span></h1>
+<ul class="org-ul">
+<li>Should be released <span class="timestamp-wrapper"><span class="timestamp">[2023-06-05 Mon]</span></span></li>
+<li><a href="strucfunc_paper_plus-arxiv.pdf">strucfunc_paper_plus-arxiv.pdf</a></li>
+</ul>
+<div id="outline-container-orgb5d2581" class="outline-2">
+<h2 id="orgb5d2581">Problems encountered</h2>
+<div class="outline-text-2" id="text-orgb5d2581">
+<ul class="org-ul">
+<li>arxiv compiles with a more recent version of the TeX distro (2023) and this causes some errors with siunitx
+<ul class="org-ul">
+<li>The problem was things like e49.29, which I changed to 1.95e49</li>
+<li>There were lots of these!</li>
+<li>But it fixed the problem</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge57e416" class="outline-2">
+<h2 id="orge57e416"><span class="done DONE">DONE</span> Metadata for arxiv</h2>
+<div class="outline-text-2" id="text-orge57e416">
+<ul class="org-ul">
+<li>Title
+<ul class="org-ul">
+<li>Turbulence in compact to giant H II regions</li>
+</ul></li>
+<li>Abstract (plain text)
+<ul class="org-ul">
+<li><pre class="example">
+Radial velocity fluctuations on the plane of the sky are a powerful
+tool for studying the turbulent dynamics of emission line regions. We
+conduct a systematic statistical analysis of the H alpha velocity
+field for a diverse sample of 9 H II regions, spanning two orders of
+magnitude in size and luminosity, located in the Milky Way and other
+Local Group galaxies. By fitting a simple model to the second-order
+spatial structure function of velocity fluctuations, we extract three
+fundamental parameters: the velocity dispersion, the correlation
+length, and the power law slope. We determine credibility limits for
+these parameters in each region, accounting for observational
+limitations of noise, atmospheric seeing, and the finite map size. The
+plane-of-sky velocity dispersion is found to be a better diagnostic of
+turbulent motions than the line width, especially for lower luminosity
+regions where the turbulence is subsonic. The correlation length of
+velocity fluctuations is found to be always roughly 2% of the H II
+region diameter, implying that turbulence is driven on relatively
+small scales. No evidence is found for any steepening of the structure
+function in the transition from subsonic to supersonic turbulence,
+possibly due to the countervailing effect of projection
+smoothing. Ionized density fluctuations are too large to be explained
+by the action of the turbulence in any but the highest luminosity
+sources. A variety of behaviors are seen on scales larger than the
+correlation length, with only a minority of sources showing evidence
+for homogeneity on the largest scales.
+</pre></li>
+</ul></li>
+<li>Authors
+<ul class="org-ul">
+<li>J. García-Vázquez (1), William J. Henney (2) and H. O. Castañeda (1)</li>
+<li>((1) ESFM-IPN, Mexico, (2) IRyA-UNAM, Morelia, Mexico)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orge7d4cf9" class="outline-2">
+<h2 id="orge7d4cf9"><span class="done DONE">DONE</span> Add the supplementary material</h2>
+<div class="outline-text-2" id="text-orge7d4cf9">
+<ul class="org-ul">
+<li>This is in <a href="strucfunc_paper_plus.tex">strucfunc_paper_plus.tex</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd88958a" class="outline-2">
+<h2 id="orgd88958a"><span class="done DONE">DONE</span> Collect the figures and check the sizes</h2>
+<div class="outline-text-2" id="text-orgd88958a">
+<div class="org-src-container">
+<pre class="src src-sh">STEM=strucfunc_paper_plus
+grep 'Graphic file' $STEM.log | cut -d ' ' -f2 |xargs du -sk |sort -nr
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">2376</td>
+<td class="org-left">Figures/hii-region-mosaic.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">1064</td>
+<td class="org-left">Figures/velocity-maps-mosaic.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">968</td>
+<td class="org-left">Figures/model-strucfunc-annotated.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">688</td>
+<td class="org-left">Figures/fake-3d-finite-box-images-ems-fluct_sigE_1.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">268</td>
+<td class="org-left">Figures/corner-emcee-CarC.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">264</td>
+<td class="org-left">Figures/corner-emcee-M8.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">260</td>
+<td class="org-left">Figures/corner-emcee-N604H.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">252</td>
+<td class="org-left">Figures/corner-emcee-N595.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">236</td>
+<td class="org-left">Figures/fake-3d-seeing-nonp-ems-fluct-thumbnails_sigE_1.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">236</td>
+<td class="org-left">Figures/corner-emcee-HV.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">228</td>
+<td class="org-left">Figures/corner-emcee-Dor.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">224</td>
+<td class="org-left">Figures/corner-emcee-N346.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">224</td>
+<td class="org-left">Figures/corner-emcee-HX.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">212</td>
+<td class="org-left">Figures/corner-emcee-OrionS.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">212</td>
+<td class="org-left">Figures/corner-emcee-OrionS.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">96</td>
+<td class="org-left">Figures/bright-to-vel-fluct-annotated.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">92</td>
+<td class="org-left">Figures/sf-emcee-N604H.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">Figures/sf-emcee-OrionLH.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">Figures/sf-emcee-N595.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">Figures/sf-emcee-N346.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">Figures/sf-emcee-HX.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">Figures/sf-emcee-HV.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">88</td>
+<td class="org-left">Figures/sf-emcee-Dor.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">84</td>
+<td class="org-left">Figures/sf-emcee-OrionS.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">84</td>
+<td class="org-left">Figures/sf-emcee-M8.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">84</td>
+<td class="org-left">Figures/sf-emcee-CarC.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">76</td>
+<td class="org-left">Figures/corner-emcee-OrionLH.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">56</td>
+<td class="org-left">Figures/bright-hist-multi.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">32</td>
+<td class="org-left">Figures/fake-seeing-nonp-3d-ems-fluc_m4-reduction_sigE_1.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-left">Figures/pdfs.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-left">Figures/fake-3d-finite-box-strucfunc-ems-fluct_sigE_1.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">28</td>
+<td class="org-left">Figures/corr-los-vs-pos.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-left">Figures/fake-finite-box-fits-ems-fluct_sigE_1.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-left">Figures/fake-3d-finite-box-effect-ems-fluct_sigE_1.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-left">Figures/corr-svsL.pdf</td>
+</tr>
+
+<tr>
+<td class="org-right">20</td>
+<td class="org-left">Figures/corr-rvsS.pdf</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+None of those look too big
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9f348c6" class="outline-2">
+<h2 id="org9f348c6"><span class="done DONE">DONE</span> Find all .tex source files, including \input</h2>
+<div class="outline-text-2" id="text-org9f348c6">
+<ul class="org-ul">
+<li>Only reliable way I can think of is to grep through the log file
+<ul class="org-ul">
+<li>That way, we make sure we catch any nested inputs</li>
+</ul></li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-sh">STEM=strucfunc_paper_plus
+grep '(\./.*\.tex' $STEM.log | cut -d '(' -f2  | cut -d ')' -f1 
+</pre>
+</div>
+
+<pre class="example">
+./strucfunc_paper_plus.tex
+./table-results.tex
+./Corr.tex
+./sf_appendix_D.tex
+./table-fit-parameters.tex
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org101bd6c" class="outline-2">
+<h2 id="org101bd6c"><span class="done DONE">DONE</span> Make the tar file</h2>
+<div class="outline-text-2" id="text-org101bd6c">
+<div class="org-src-container">
+<pre class="src src-sh">STEM=strucfunc_paper_plus
+FIGFILES="$(grep 'Graphic file' $STEM.log | cut -d ' ' -f2)"
+TEXFILES="$(grep '(\./.*\.tex' $STEM.log | cut -d '(' -f2  | cut -d ')' -f1)"
+tar --format ustar -cvzf ${STEM}-astro-ph.tgz $TEXFILES $STEM.bbl $FIGFILES
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4f7fa30" class="outline-2">
+<h2 id="org4f7fa30"><span class="done DONE">DONE</span> Test the tar file</h2>
+<div class="outline-text-2" id="text-org4f7fa30">
+<p>
+Copy to temporary folder
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">STEM=strucfunc_paper_plus
+TMPD=/tmp/arxiv-test-$STEM
+rm -r $TMPD
+mkdir $TMPD
+cp ${STEM}-astro-ph.tgz $TMPD
+ls -ld $TMPD
+ls -l $TMPD
+</pre>
+</div>
+
+<pre class="example">
+drwxr-xr-x  3 will  wheel  96 Jun  2 11:42 /tmp/arxiv-test-strucfunc_paper_plus
+total 16872
+-rw-r--r--@ 1 will  wheel  8637183 Jun  2 11:42 strucfunc_paper_plus-astro-ph.tgz
+</pre>
+
+
+<p>
+Unpack and check listing
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">tar -xvzf strucfunc_paper_plus-astro-ph.tgz
+ls -lR .
+</pre>
+</div>
+
+<pre class="example" id="orgf51de11">
+total 17328
+-rw-r--r--   1 will  wheel     1465 Apr 20 14:27 Corr.tex
+drwxr-xr-x  37 will  wheel     1184 Jun  2 11:42 Figures
+-rw-r--r--   1 will  wheel     1132 Apr 17 13:21 sf_appendix_D.tex
+-rw-r--r--@  1 will  wheel  8637183 Jun  2 11:42 strucfunc_paper_plus-astro-ph.tgz
+-rw-r--r--   1 will  wheel    33102 Jun  2 10:20 strucfunc_paper_plus.bbl
+-rw-r--r--   1 will  wheel   179432 Jun  2 11:12 strucfunc_paper_plus.tex
+-rw-r--r--   1 will  wheel     1374 Dec 19 18:46 table-fit-parameters.tex
+-rw-r--r--   1 will  wheel     2885 Apr 21 09:24 table-results.tex
+
+./Figures:
+total 17592
+-rw-r--r--  1 will  wheel    53654 Dec 12 10:17 bright-hist-multi.pdf
+-rw-r--r--  1 will  wheel    97690 Dec 12 10:22 bright-to-vel-fluct-annotated.pdf
+-rw-r--r--  1 will  wheel   272159 Apr 18 08:43 corner-emcee-CarC.pdf
+-rw-r--r--  1 will  wheel   232758 Apr 18 08:43 corner-emcee-Dor.pdf
+-rw-r--r--  1 will  wheel   241313 Apr 18 08:43 corner-emcee-HV.pdf
+-rw-r--r--  1 will  wheel   227579 Apr 18 08:43 corner-emcee-HX.pdf
+-rw-r--r--  1 will  wheel   268833 Apr 18 08:43 corner-emcee-M8.pdf
+-rw-r--r--  1 will  wheel   228494 Apr 18 08:43 corner-emcee-N346.pdf
+-rw-r--r--  1 will  wheel   255703 Apr 20 14:27 corner-emcee-N595.pdf
+-rw-r--r--  1 will  wheel   262619 Apr 18 08:43 corner-emcee-N604H.pdf
+-rw-r--r--  1 will  wheel    77472 Apr 18 08:43 corner-emcee-OrionLH.pdf
+-rw-r--r--  1 will  wheel   213453 Apr 18 08:43 corner-emcee-OrionS.pdf
+-rw-r--r--  1 will  wheel    27080 Apr 20 14:27 corr-los-vs-pos.pdf
+-rw-r--r--  1 will  wheel    16456 Apr 20 14:27 corr-rvsS.pdf
+-rw-r--r--  1 will  wheel    19779 Apr 20 14:27 corr-svsL.pdf
+-rw-r--r--  1 will  wheel    19295 Apr 14 10:09 fake-3d-finite-box-effect-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel   703097 Apr 14 10:09 fake-3d-finite-box-images-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel    25631 Apr 14 10:09 fake-3d-finite-box-strucfunc-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel   241411 Apr 14 10:09 fake-3d-seeing-nonp-ems-fluct-thumbnails_sigE_1.pdf
+-rw-r--r--  1 will  wheel    19024 Apr 14 10:09 fake-finite-box-fits-ems-fluct_sigE_1.pdf
+-rw-r--r--  1 will  wheel    31392 Apr 14 10:09 fake-seeing-nonp-3d-ems-fluc_m4-reduction_sigE_1.pdf
+-rw-r--r--  1 will  wheel  2431067 Jun  2 10:17 hii-region-mosaic.pdf
+-rw-r--r--  1 will  wheel   988000 Feb 18  2022 model-strucfunc-annotated.pdf
+-rw-r--r--  1 will  wheel    27794 Jul  8  2022 pdfs.pdf
+-rw-r--r--  1 will  wheel    84065 Apr 18 08:43 sf-emcee-CarC.pdf
+-rw-r--r--  1 will  wheel    87944 Apr 18 08:43 sf-emcee-Dor.pdf
+-rw-r--r--  1 will  wheel    89155 Apr 18 08:43 sf-emcee-HV.pdf
+-rw-r--r--  1 will  wheel    86621 Apr 18 08:43 sf-emcee-HX.pdf
+-rw-r--r--  1 will  wheel    85072 Apr 18 08:43 sf-emcee-M8.pdf
+-rw-r--r--  1 will  wheel    86632 Apr 18 08:43 sf-emcee-N346.pdf
+-rw-r--r--  1 will  wheel    86527 Apr 20 14:27 sf-emcee-N595.pdf
+-rw-r--r--  1 will  wheel    92075 Apr 18 08:43 sf-emcee-N604H.pdf
+-rw-r--r--  1 will  wheel    86994 Apr 18 08:43 sf-emcee-OrionLH.pdf
+-rw-r--r--  1 will  wheel    85162 Apr 18 08:43 sf-emcee-OrionS.pdf
+-rw-r--r--  1 will  wheel  1085590 Jun  2 10:17 velocity-maps-mosaic.pdf
+</pre>
+
+<p>
+Test compilation. Make sure to use <code>-bibtex-</code> option so that it just uses the bbl file
+</p>
+<div class="org-src-container">
+<pre class="src src-sh">latexmk -pdf --bibtex-cond --quiet strucfunc_paper_plus
+open ./strucfunc_paper_plus.pdf
+</pre>
+</div>
+
+<pre class="example">
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+</pre>
+
+
+<p>
+That worked great. Now ready to upload.
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: William Henney</p>
+<p class="date">Created: 2023-06-02 Fri 11:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
